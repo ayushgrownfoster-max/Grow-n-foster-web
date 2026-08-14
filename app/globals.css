@@ -1,50 +1,50 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface-container-highest: #353534;
+  --color-surface-container-highest: #36543b;
   --color-on-tertiary-fixed-variant: #404b1c;
   --color-tertiary: #becd90;
   --color-error: #ffb4ab;
   --color-on-surface: #e5e2e1;
   --color-secondary-container: #6d5e00;
-  --color-surface-variant: #353534;
+  --color-surface-variant: #36543b;
   --color-primary-container: #4b5a20;
   --color-on-tertiary-container: #c1cf92;
   --color-inverse-primary: #556429;
   --color-secondary: #dbc765;
   --color-secondary-fixed-dim: #dbc765;
-  --color-surface-container-low: #1c1b1b;
+  --color-surface-container-low: #1f3022;
   --color-on-primary-container: #bfd189;
-  --color-surface-container: #201f1f;
-  --color-primary-fixed-dim: #bcce87;
+  --color-surface-container: #253a28;
+  --color-primary-fixed-dim: #4b5a20;
   --color-inverse-surface: #e5e2e1;
   --color-on-error-container: #ffdad6;
   --color-error-container: #93000a;
-  --color-surface-tint: #bcce87;
+  --color-surface-tint: #4b5a20;
   --color-on-tertiary: #2a3407;
   --color-on-primary-fixed: #161f00;
   --color-on-primary: #283500;
   --color-on-error: #690005;
   --color-on-surface-variant: #c6c8b8;
-  --color-primary: #bcce87;
+  --color-primary: #4b5a20;
   --color-outline: #909283;
   --color-on-primary-fixed-variant: #3e4c13;
   --color-tertiary-container: #4d5928;
   --color-on-background: #e5e2e1;
-  --color-surface-bright: #393939;
+  --color-surface-bright: #3c5d41;
   --color-tertiary-fixed: #dae9aa;
-  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-high: #2c4430;
   --color-on-tertiary-fixed: #161e00;
   --color-on-secondary-container: #eed975;
   --color-tertiary-fixed-dim: #becd90;
-  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-lowest: #101911;
   --color-on-secondary-fixed: #211b00;
   --color-on-secondary: #393000;
   --color-inverse-on-surface: #313030;
-  --color-background: #131313;
-  --color-surface: #131313;
-  --color-surface-dim: #131313;
-  --color-outline-variant: #46483c;
+  --color-background: #19271b;
+  --color-surface: #19271b;
+  --color-surface-dim: #19271b;
+  --color-outline-variant: #38573d;
   --color-secondary-fixed: #f8e37e;
   --color-on-secondary-fixed-variant: #524600;
   --color-primary-fixed: #d8eba1;
@@ -74,7 +74,7 @@
 
 body {
   font-family: var(--font-hanken), var(--font-inter), sans-serif;
-  background-color: #131313;
+  background-color: var(--color-background);
   color: #e5e2e1;
 }
 
@@ -88,18 +88,18 @@ body {
 
 .glass-effect {
   backdrop-filter: blur(20px);
-  background: rgba(19, 19, 19, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(25, 39, 27, 0.75);
+  border: 1px solid rgba(188, 206, 135, 0.12);
 }
 
 .green-glow {
-  box-shadow: 0 0 60px -10px rgba(188, 206, 135, 0.25);
+  box-shadow: 0 0 70px -8px rgba(188, 206, 135, 0.38);
 }
 
 .hero-radial-glow {
   background: radial-gradient(circle at 50% 30%,
-      rgba(188, 206, 135, 0.15) 0%,
-      rgba(75, 90, 32, 0.08) 45%,
+      rgba(188, 206, 135, 0.22) 0%,
+      rgba(75, 90, 32, 0.13) 45%,
       transparent 70%);
 }
 
@@ -112,7 +112,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #bcce87 0%, #a3b86c 50%, #4b5a20 100%);
+  background: linear-gradient(135deg, #4b5a20 0%, #a3b86c 50%, #4b5a20 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -263,20 +263,20 @@ body {
 }
 
 .tab-button.active {
-  background-color: #bcce87;
+  background-color: #4b5a20;
   color: #283500;
 }
 
 .progress-bar {
   height: 8px;
   border-radius: 9999px;
-  background: #1c1b1b;
+  background: var(--color-surface-container-low);
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: #bcce87;
+  background: #4b5a20;
   transition: width 1s ease-in-out;
 }
 
