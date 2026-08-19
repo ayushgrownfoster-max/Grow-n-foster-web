@@ -54,21 +54,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#131313] text-[#e5e2e1] font-hanken antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-black font-hanken antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-12 bg-grid-pattern hero-radial-glow">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-12 bg-grid-pattern">
         {/* Ambient Lighting Accents */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/10 blur-[120px] pointer-events-none rounded-full"></div>
-        <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-[#4b5a20]/20 blur-[100px] pointer-events-none rounded-full"></div>
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 blur-[120px] pointer-events-none rounded-full"></div>
+        <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-primary/5 blur-[100px] pointer-events-none rounded-full"></div>
 
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 py-16">
           <div className="flex flex-col items-center text-center space-y-12">
             <div className="max-w-4xl space-y-10 relative z-20 flex flex-col items-center">
-              {/* PAGE NAME IN BIG CAPITAL LETTERS */}
-
-
               {/* Trust Eyebrow Badge */}
-              <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full glass-effect text-primary text-xs font-mono-code border border-primary/30 tracking-widest uppercase hero-fade-in stagger-1 shadow-lg shadow-primary/5">
+              <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-primary/5 text-primary text-xs font-mono-code border border-primary/30 tracking-widest uppercase hero-fade-in stagger-1 shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -79,13 +76,13 @@ export default function Home() {
               {/* Display Headline */}
               <div className="space-y-6 relative hero-fade-in stagger-2">
                 <h1 className="font-hanken text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.08] tracking-tight">
-                  Attract <span className="font-normal italic font-serif text-primary/90">Potential</span>{" "}
+                  Attract <span className="font-normal italic font-serif text-primary">Potential</span>{" "}
                   Customers with{" "}
-                  <span className="text-gradient font-black block sm:inline mt-1 sm:mt-0">
+                  <span className="text-primary font-black block sm:inline mt-1 sm:mt-0">
                     Targeted Marketing
                   </span>
                 </h1>
-                <p className="font-hanken text-lg md:text-xl text-[#c6c8b8] max-w-2xl mx-auto leading-relaxed opacity-90 font-normal">
+                <p className="font-hanken text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-normal">
                   Grow &apos;n&apos; Foster delivers comprehensive digital
                   marketing services to boost your brand visibility, drive
                   qualified traffic, and increase conversions.
@@ -94,14 +91,14 @@ export default function Home() {
 
               {/* CTA Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center pt-2 hero-fade-in stagger-3">
-                <button className="bg-primary/10 backdrop-blur-md border border-primary/30 text-primary px-10 py-5 rounded-full font-bold font-hanken text-base hover:bg-primary hover:text-[#283500] transition-all duration-300 shadow-xl shadow-primary/20 flex items-center justify-center gap-3 group">
+                <button className="bg-primary border border-primary text-white px-10 py-5 rounded-full font-bold font-hanken text-base hover:brightness-110 transition-all duration-300 shadow-md flex items-center justify-center gap-3 group">
                   Free Consultation
                   <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
                     arrow_forward
                   </span>
                 </button>
-                <button className="group flex items-center gap-4 px-8 py-5 text-[#e5e2e1] font-bold font-hanken text-base hover:text-primary transition-colors">
-                  <span className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center group-hover:border-primary transition-colors glass-effect shadow-md">
+                <button className="group flex items-center gap-4 px-8 py-5 text-black font-bold font-hanken text-base hover:text-primary transition-colors">
+                  <span className="w-12 h-12 rounded-full border border-black/15 flex items-center justify-center group-hover:border-primary transition-colors shadow-sm">
                     <span className="material-symbols-outlined text-xl">
                       play_arrow
                     </span>
@@ -111,21 +108,21 @@ export default function Home() {
               </div>
 
               {/* Metrics Bar */}
-              <div className="flex items-center gap-12 md:gap-16 pt-12 border-t border-white/10 w-full justify-center hero-fade-in stagger-4">
+              <div className="flex items-center gap-12 md:gap-16 pt-12 border-t border-black/10 w-full justify-center hero-fade-in stagger-4">
                 <div className="space-y-1 text-center">
                   <div className="text-3xl md:text-4xl font-hanken text-primary font-extrabold tracking-tight">
                     +28.5%
                   </div>
-                  <div className="text-xs font-mono-code text-[#c6c8b8] uppercase tracking-widest">
+                  <div className="text-xs font-mono-code text-gray-600 uppercase tracking-widest">
                     Conversion Growth
                   </div>
                 </div>
-                <div className="h-14 w-px bg-white/10"></div>
+                <div className="h-14 w-px bg-black/10"></div>
                 <div className="space-y-1 text-center">
                   <div className="text-3xl md:text-4xl font-hanken text-primary font-extrabold tracking-tight">
                     150+
                   </div>
-                  <div className="text-xs font-mono-code text-[#c6c8b8] uppercase tracking-widest">
+                  <div className="text-xs font-mono-code text-gray-600 uppercase tracking-widest">
                     Successful Projects
                   </div>
                 </div>
@@ -134,13 +131,13 @@ export default function Home() {
 
             {/* Showcase Media Container */}
             <div className="w-full max-w-5xl relative mt-12 hero-fade-in stagger-4">
-              <div className="relative z-10 rounded-[40px] md:rounded-[60px] overflow-hidden border border-white/15 shadow-2xl shadow-primary/10 animate-float aspect-video group green-glow">
+              <div className="relative z-10 rounded-[40px] md:rounded-[60px] overflow-hidden border border-black/10 shadow-xl animate-float aspect-video group">
                 <img
                   alt="Modern elite workspace"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoNbm6YOA5fSQVMfhHaqHkN2Mwz3NUozZGzbbAk16drpPePwXgoeUeFygSvz2lG1GT1BnhzyWV1pg6kcYLawCBmR5bIxlWedRsZkPDohboCpORFSUyRK5VP8Ccp18dFH78n2N5yrHX374iQTC8lJJLMOKNJkHarUz1WjaHctIKLfrqsDzJoNGiL6RJNdHCgOJWi18xnJVZ2FKjvYbhIv1DMFdiMLzzeJfvFSBqVx4OXCWArQswyOZ"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#131313]/60 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent"></div>
               </div>
             </div>
           </div>
@@ -162,7 +159,7 @@ export default function Home() {
                 Our Exclusive Services
               </h2>
             </div>
-            <p className="text-[#c6c8b8] max-w-md font-hanken text-base leading-relaxed">
+            <p className="text-gray-600 max-w-md font-hanken text-base leading-relaxed">
               Grow &apos;n&apos; Foster delivers comprehensive digital marketing
               services to boost your brand visibility and drive revenue
               growth.
@@ -171,28 +168,28 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
             {/* SEO */}
             <div className="flex flex-col h-full group reveal-left stagger-1">
-              <div className="relative aspect-[3/4] bg-[#1c1b1b] rounded-t-[140px] overflow-hidden border border-white/5 border-b-0">
+              <div className="relative aspect-[3/4] bg-gray-50 rounded-t-[140px] overflow-hidden border border-black/5 border-b-0">
                 <img
                   alt="SEO"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1suGxKp5oER_IkylFIcyFIUflCuhGYqYIe3x-gX6bb7UcmWW0mM4n7srjfFHXxfOcCYTg8FJjYuOebZtSIVHUTFHxUrlyCQvOHGCOmPdBfLwCZdmxSkjle9eLyv43eN5oCU9tacdrTZIXoPXw2gwqa4FksNwKsrU7LijRlR5YevywroUIs3f6DJewLBjArd68BY-DSi1cgdFoV9HEVl2K3oQ1HafsHIyEyeub_MkLd5xqSA78a0vi"
                 />
-                <div className="absolute inset-0 bg-[#131313]/20"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-[#283500] shadow-xl shadow-primary/40">
+                <div className="absolute inset-0 bg-black/5"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
                   <span className="material-symbols-outlined text-3xl">
                     query_stats
                   </span>
                 </div>
               </div>
-              <div className="flex-1 bg-[#353534]/40 backdrop-blur-md p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-white/5 border-t-0">
+              <div className="flex-1 bg-gray-50 p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-black/5 border-t-0">
                 <h3 className="font-hanken text-xl font-bold leading-tight">
                   Search Engine Optimization (SEO)
                 </h3>
-                <p className="text-[#c6c8b8] text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   Boost website visibility and drive qualified traffic with
                   expert SEO solutions that dominate rankings.
                 </p>
-                <button className="mt-4 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#283500] transition-all">
+                <button className="mt-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   <span className="material-symbols-outlined">
                     north_east
                   </span>
@@ -202,28 +199,28 @@ export default function Home() {
 
             {/* LinkedIn */}
             <div className="flex flex-col h-full group reveal-left stagger-2">
-              <div className="relative aspect-[3/4] bg-[#1c1b1b] rounded-t-[140px] overflow-hidden border border-white/5 border-b-0">
+              <div className="relative aspect-[3/4] bg-gray-50 rounded-t-[140px] overflow-hidden border border-black/5 border-b-0">
                 <img
                   alt="LinkedIn"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoNbm6YOA5fSQVMfhHaqHkN2Mwz3NUozZGzbbAk16drpPePwXgoeUeFygSvz2lG1GT1BnhzyWV1pg6kcYLawCBmR5bIxlWedRsZkPDohboCpORFSUyRK5VP8Ccp18dFH78n2N5yrHX374iQTC8lJJLMOKNJkHarUz1WjaHctIKLfrqsDzJoNGiL6RJNdHCgOJWi18xnJVZ2FKjvYbhIv1DMFdiMLzzeJfvFSBqVx4OXCWArQswyOZ"
                 />
-                <div className="absolute inset-0 bg-[#131313]/20"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-[#283500] shadow-xl shadow-primary/40">
+                <div className="absolute inset-0 bg-black/5"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
                   <span className="material-symbols-outlined text-3xl">
                     hub
                   </span>
                 </div>
               </div>
-              <div className="flex-1 bg-[#353534]/40 backdrop-blur-md p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-white/5 border-t-0">
+              <div className="flex-1 bg-gray-50 p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-black/5 border-t-0">
                 <h3 className="font-hanken text-xl font-bold leading-tight">
                   LinkedIn Outreach &amp; B2B Leads
                 </h3>
-                <p className="text-[#c6c8b8] text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   Generate high-quality B2B leads through personalized LinkedIn
                   outreach and engagement campaigns.
                 </p>
-                <button className="mt-4 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#283500] transition-all">
+                <button className="mt-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   <span className="material-symbols-outlined">
                     north_east
                   </span>
@@ -233,28 +230,28 @@ export default function Home() {
 
             {/* Content */}
             <div className="flex flex-col h-full group reveal-left stagger-3">
-              <div className="relative aspect-[3/4] bg-[#1c1b1b] rounded-t-[140px] overflow-hidden border border-white/5 border-b-0">
+              <div className="relative aspect-[3/4] bg-gray-50 rounded-t-[140px] overflow-hidden border border-black/5 border-b-0">
                 <img
                   alt="Content"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVZskmgVU99gfTIYjJNllGd1H27KTlalqO1szN_nZQ0wgLOkn0DqR7LTAEoCXb5gZBrJDYW_eL8JPNj8xFpRMAmQuWd1ZrX-fZNQz5aevIGbiljL4fYVL1C-_pUezm6G7hyd2PzlhN87zr7LdNGdzTZl2UjxyccFZIF9Ihi6lNaicqxnYD8jqKK0WhKjp5XNRJdCPGnjBSf9vn5BmiMF8vuD6ZILEO0h6nYdnkbJj6G5Y6nti4ZDm2A7hGU5UFR39qUQ"
                 />
-                <div className="absolute inset-0 bg-[#131313]/20"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-[#283500] shadow-xl shadow-primary/40">
+                <div className="absolute inset-0 bg-black/5"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
                   <span className="material-symbols-outlined text-3xl">
                     edit_note
                   </span>
                 </div>
               </div>
-              <div className="flex-1 bg-[#353534]/40 backdrop-blur-md p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-white/5 border-t-0">
+              <div className="flex-1 bg-gray-50 p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-black/5 border-t-0">
                 <h3 className="font-hanken text-xl font-bold leading-tight">
                   Content Strategy &amp; Marketing
                 </h3>
-                <p className="text-[#c6c8b8] text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   Craft compelling, SEO-friendly content to engage users and
                   improve authority in your niche.
                 </p>
-                <button className="mt-4 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#283500] transition-all">
+                <button className="mt-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   <span className="material-symbols-outlined">
                     north_east
                   </span>
@@ -264,28 +261,28 @@ export default function Home() {
 
             {/* Web */}
             <div className="flex flex-col h-full group reveal-left stagger-4">
-              <div className="relative aspect-[3/4] bg-[#1c1b1b] rounded-t-[140px] overflow-hidden border border-white/5 border-b-0">
+              <div className="relative aspect-[3/4] bg-gray-50 rounded-t-[140px] overflow-hidden border border-black/5 border-b-0">
                 <img
                   alt="Web"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqiLLg0WnqBjiuIeT4tJsHd5GHbG_yUFqWK9kGqbOBdpNok8gRyaDMl-GYw3VfQgrEKm5vzEcsk4ZTudqQ2syyBso9y6VEu-DrVhBTtP_C4qyrA3G-HMz_8oxYXlMsN0zEv2f3-RZ70zg2q1SLmrd57YQDVrjMG0B-4qbfa5RmBvSVdb25Z3rO0ORKFfegmBIYCjpEJvaCiQAYrl3peecFqT-FkA0_eGBIoP4xgVEsknohAJ2gX1oz8Al0l-q64IUA0A"
                 />
-                <div className="absolute inset-0 bg-[#131313]/20"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-[#283500] shadow-xl shadow-primary/40">
+                <div className="absolute inset-0 bg-black/5"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
                   <span className="material-symbols-outlined text-3xl">
                     terminal
                   </span>
                 </div>
               </div>
-              <div className="flex-1 bg-[#353534]/40 backdrop-blur-md p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-white/5 border-t-0">
+              <div className="flex-1 bg-gray-50 p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-black/5 border-t-0">
                 <h3 className="font-hanken text-xl font-bold leading-tight">
                   Web Design &amp; Performance
                 </h3>
-                <p className="text-[#c6c8b8] text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   Deliver seamless user experiences with modern, responsive
                   design and high-performance development.
                 </p>
-                <button className="mt-4 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#283500] transition-all">
+                <button className="mt-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   <span className="material-symbols-outlined">
                     north_east
                   </span>
@@ -297,12 +294,12 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-section-gap bg-[#0e0e0e] reveal-left">
+      <section className="py-section-gap bg-gray-50 reveal-left">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Left: Portrait Image */}
             <div className="relative reveal-left stagger-1">
-              <div className="aspect-[4/5] rounded-[60px] overflow-hidden border border-white/10 green-glow">
+              <div className="aspect-[4/5] rounded-[60px] overflow-hidden border border-black/10 shadow-lg">
                 <img
                   alt="Team at Work"
                   className="w-full h-full object-cover"
@@ -326,8 +323,8 @@ export default function Home() {
               </div>
 
               {/* Tabbed Content */}
-              <div className="space-y-8 bg-[#1c1b1b] p-8 rounded-[32px] border border-white/5">
-                <div className="flex flex-wrap gap-4 p-2 bg-[#131313] rounded-2xl border border-white/10">
+              <div className="space-y-8 bg-white p-8 rounded-[32px] border border-black/5 shadow-sm">
+                <div className="flex flex-wrap gap-4 p-2 bg-gray-50 rounded-2xl border border-black/10">
                   <button
                     className={`tab-button px-6 py-3 rounded-xl font-bold font-mono-code text-xs tracking-wider uppercase transition-all flex items-center gap-2 ${activeTab === "mission" ? "active" : ""
                       }`}
@@ -359,7 +356,7 @@ export default function Home() {
                     Our Value
                   </button>
                 </div>
-                <div className="text-[#c6c8b8] min-h-[80px] leading-relaxed font-hanken text-base">
+                <div className="text-gray-600 min-h-[80px] leading-relaxed font-hanken text-base">
                   {tabContents[activeTab]}
                 </div>
               </div>
@@ -406,7 +403,7 @@ export default function Home() {
             <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
               Seamless Process, Stellar Solutions
             </h2>
-            <p className="text-[#c6c8b8] font-hanken text-base leading-relaxed">
+            <p className="text-gray-600 font-hanken text-base leading-relaxed">
               Find out how we transform your ideas into digital solutions by
               learning how our efficient work process can turn them into
               results.
@@ -415,7 +412,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             {/* Step 1 */}
             <div className="relative group reveal-left stagger-1">
-              <div className="bg-[#1c1b1b] border border-white/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
+              <div className="bg-gray-50 border border-black/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
                 <div className="flex justify-between items-start">
                   <span className="material-symbols-outlined text-4xl text-primary">
                     analytics
@@ -426,7 +423,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2 font-hanken">Discovery</h3>
-                  <p className="text-sm text-[#c6c8b8] leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Understanding client goals and identifying key
                     opportunities for growth.
                   </p>
@@ -441,7 +438,7 @@ export default function Home() {
 
             {/* Step 2 */}
             <div className="relative group reveal-left stagger-2">
-              <div className="bg-[#1c1b1b] border border-white/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
+              <div className="bg-gray-50 border border-black/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
                 <div className="flex justify-between items-start">
                   <span className="material-symbols-outlined text-4xl text-primary">
                     architecture
@@ -452,7 +449,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2 font-hanken">Strategy</h3>
-                  <p className="text-sm text-[#c6c8b8] leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Crafting a tailored plan and multi-channel approach for
                     your brand.
                   </p>
@@ -467,7 +464,7 @@ export default function Home() {
 
             {/* Step 3 */}
             <div className="relative group reveal-left stagger-3">
-              <div className="bg-[#1c1b1b] border border-white/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
+              <div className="bg-gray-50 border border-black/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
                 <div className="flex justify-between items-start">
                   <span className="material-symbols-outlined text-4xl text-primary">
                     rocket_launch
@@ -478,7 +475,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2 font-hanken">Development</h3>
-                  <p className="text-sm text-[#c6c8b8] leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Building and executing campaigns with precision and
                     creative flair.
                   </p>
@@ -493,7 +490,7 @@ export default function Home() {
 
             {/* Step 4 */}
             <div className="relative group reveal-left stagger-4">
-              <div className="bg-[#1c1b1b] border border-white/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
+              <div className="bg-gray-50 border border-black/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
                 <div className="flex justify-between items-start">
                   <span className="material-symbols-outlined text-4xl text-primary">
                     trending_up
@@ -504,7 +501,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2 font-hanken">Launch</h3>
-                  <p className="text-sm text-[#c6c8b8] leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Deploying the final results and optimizing for continuous
                     ROI.
                   </p>
@@ -516,7 +513,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-section-gap bg-[#0e0e0e] reveal-left">
+      <section className="py-section-gap bg-gray-50 reveal-left">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
           <div className="max-w-3xl mx-auto space-y-4 mb-16 reveal-left stagger-1">
             <span className="text-primary font-bold tracking-widest text-xs font-mono-code uppercase">
@@ -525,14 +522,14 @@ export default function Home() {
             <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
               Impactful projects, every time
             </h2>
-            <p className="text-[#c6c8b8] font-hanken text-base leading-relaxed">
+            <p className="text-gray-600 font-hanken text-base leading-relaxed">
               A showcase of our commitment to delivering top-tier, innovative
               digital solutions that drive results.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
             {/* Project 1 */}
-            <div className="group bg-[#1c1b1b] rounded-[32px] overflow-hidden border border-white/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-1">
+            <div className="group bg-white rounded-[32px] overflow-hidden border border-black/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-1">
               <div className="aspect-square overflow-hidden">
                 <img
                   alt="Project"
@@ -544,17 +541,17 @@ export default function Home() {
                 <h3 className="font-hanken text-lg font-bold">
                   Dynamic Odyssey
                 </h3>
-                <p className="text-sm text-[#c6c8b8] line-clamp-2">
+                <p className="text-sm text-gray-600 line-clamp-2">
                   The road to achieving success in global eCommerce markets.
                 </p>
-                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-[#283500] transition-all">
+                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   PORTFOLIO DETAILS
                 </button>
               </div>
             </div>
 
             {/* Project 2 */}
-            <div className="group bg-[#1c1b1b] rounded-[32px] overflow-hidden border border-white/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-2">
+            <div className="group bg-white rounded-[32px] overflow-hidden border border-black/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-2">
               <div className="aspect-square overflow-hidden">
                 <img
                   alt="Project"
@@ -566,17 +563,17 @@ export default function Home() {
                 <h3 className="font-hanken text-lg font-bold">
                   Design Dynamo
                 </h3>
-                <p className="text-sm text-[#c6c8b8] line-clamp-2">
+                <p className="text-sm text-gray-600 line-clamp-2">
                   The story of breaking into global markets through branding.
                 </p>
-                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-[#283500] transition-all">
+                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   PORTFOLIO DETAILS
                 </button>
               </div>
             </div>
 
             {/* Project 3 */}
-            <div className="group bg-[#1c1b1b] rounded-[32px] overflow-hidden border border-white/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-3">
+            <div className="group bg-white rounded-[32px] overflow-hidden border border-black/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-3">
               <div className="aspect-square overflow-hidden">
                 <img
                   alt="Project"
@@ -588,17 +585,17 @@ export default function Home() {
                 <h3 className="font-hanken text-lg font-bold">
                   Fashion Velocity
                 </h3>
-                <p className="text-sm text-[#c6c8b8] line-clamp-2">
+                <p className="text-sm text-gray-600 line-clamp-2">
                   An uplifting account of digital success for retail leaders.
                 </p>
-                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-[#283500] transition-all">
+                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   PORTFOLIO DETAILS
                 </button>
               </div>
             </div>
 
             {/* Project 4 */}
-            <div className="group bg-[#1c1b1b] rounded-[32px] overflow-hidden border border-white/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-4">
+            <div className="group bg-white rounded-[32px] overflow-hidden border border-black/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-4">
               <div className="aspect-square overflow-hidden">
                 <img
                   alt="Project"
@@ -610,10 +607,10 @@ export default function Home() {
                 <h3 className="font-hanken text-lg font-bold">
                   Code Craftsmen
                 </h3>
-                <p className="text-sm text-[#c6c8b8] line-clamp-2">
+                <p className="text-sm text-gray-600 line-clamp-2">
                   A green company&apos;s bold move into the digital sphere.
                 </p>
-                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-[#283500] transition-all">
+                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   PORTFOLIO DETAILS
                 </button>
               </div>
@@ -634,7 +631,7 @@ export default function Home() {
           <h2 className="font-hanken text-4xl md:text-5xl font-bold mt-4 tracking-tight reveal-left stagger-2">
             Voices of Trust
           </h2>
-          <p className="text-[#c6c8b8] font-hanken text-base leading-relaxed mt-4 max-w-2xl mx-auto reveal-left stagger-3">
+          <p className="text-gray-600 font-hanken text-base leading-relaxed mt-4 max-w-2xl mx-auto reveal-left stagger-3">
             Real feedback from real clients who have experienced the impact of working with Grow &apos;n&apos; Foster.
           </p>
         </div>
@@ -676,7 +673,7 @@ export default function Home() {
             ].map((t, i) => (
               <div
                 key={i}
-                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-[#1c1b1b]/80 border border-white/5 relative text-left backdrop-blur-md hover:border-primary/30 transition-all duration-300 group"
+                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-gray-50 border border-black/5 relative text-left hover:border-primary/30 transition-all duration-300 group"
               >
                 <span className="material-symbols-outlined text-primary text-4xl opacity-20 absolute top-6 right-6">
                   format_quote
@@ -686,16 +683,16 @@ export default function Home() {
                     {t.tag}
                   </span>
                 )}
-                <p className="italic leading-relaxed text-[#e5e2e1]/90 mb-6 font-hanken text-sm line-clamp-5">
+                <p className="italic leading-relaxed text-black/80 mb-6 font-hanken text-sm line-clamp-5">
                   &quot;{t.quote}&quot;
                 </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold font-hanken text-sm">
+                <div className="flex items-center gap-3 pt-4 border-t border-black/5">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-hanken text-sm">
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold font-hanken text-sm text-[#e5e2e1]">{t.name}</h4>
-                    <p className="text-xs font-mono-code text-[#c6c8b8]">
+                    <h4 className="font-bold font-hanken text-sm text-black">{t.name}</h4>
+                    <p className="text-xs font-mono-code text-gray-500">
                       {t.role}
                     </p>
                   </div>
@@ -737,7 +734,7 @@ export default function Home() {
             ].map((t, i) => (
               <div
                 key={`dup-${i}`}
-                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-[#1c1b1b]/80 border border-white/5 relative text-left backdrop-blur-md hover:border-primary/30 transition-all duration-300 group"
+                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-gray-50 border border-black/5 relative text-left hover:border-primary/30 transition-all duration-300 group"
               >
                 <span className="material-symbols-outlined text-primary text-4xl opacity-20 absolute top-6 right-6">
                   format_quote
@@ -747,16 +744,16 @@ export default function Home() {
                     {t.tag}
                   </span>
                 )}
-                <p className="italic leading-relaxed text-[#e5e2e1]/90 mb-6 font-hanken text-sm line-clamp-5">
+                <p className="italic leading-relaxed text-black/80 mb-6 font-hanken text-sm line-clamp-5">
                   &quot;{t.quote}&quot;
                 </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold font-hanken text-sm">
+                <div className="flex items-center gap-3 pt-4 border-t border-black/5">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-hanken text-sm">
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold font-hanken text-sm text-[#e5e2e1]">{t.name}</h4>
-                    <p className="text-xs font-mono-code text-[#c6c8b8]">
+                    <h4 className="font-bold font-hanken text-sm text-black">{t.name}</h4>
+                    <p className="text-xs font-mono-code text-gray-500">
                       {t.role}
                     </p>
                   </div>
@@ -803,7 +800,7 @@ export default function Home() {
             ].map((t, i) => (
               <div
                 key={i}
-                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-[#1c1b1b]/80 border border-white/5 relative text-left backdrop-blur-md hover:border-primary/30 transition-all duration-300 group"
+                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-gray-50 border border-black/5 relative text-left hover:border-primary/30 transition-all duration-300 group"
               >
                 <span className="material-symbols-outlined text-primary text-4xl opacity-20 absolute top-6 right-6">
                   format_quote
@@ -813,16 +810,16 @@ export default function Home() {
                     {t.tag}
                   </span>
                 )}
-                <p className="italic leading-relaxed text-[#e5e2e1]/90 mb-6 font-hanken text-sm line-clamp-5">
+                <p className="italic leading-relaxed text-black/80 mb-6 font-hanken text-sm line-clamp-5">
                   &quot;{t.quote}&quot;
                 </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold font-hanken text-sm">
+                <div className="flex items-center gap-3 pt-4 border-t border-black/5">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-hanken text-sm">
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold font-hanken text-sm text-[#e5e2e1]">{t.name}</h4>
-                    <p className="text-xs font-mono-code text-[#c6c8b8]">
+                    <h4 className="font-bold font-hanken text-sm text-black">{t.name}</h4>
+                    <p className="text-xs font-mono-code text-gray-500">
                       {t.role}
                     </p>
                   </div>
@@ -864,7 +861,7 @@ export default function Home() {
             ].map((t, i) => (
               <div
                 key={`dup-${i}`}
-                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-[#1c1b1b]/80 border border-white/5 relative text-left backdrop-blur-md hover:border-primary/30 transition-all duration-300 group"
+                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-gray-50 border border-black/5 relative text-left hover:border-primary/30 transition-all duration-300 group"
               >
                 <span className="material-symbols-outlined text-primary text-4xl opacity-20 absolute top-6 right-6">
                   format_quote
@@ -874,16 +871,16 @@ export default function Home() {
                     {t.tag}
                   </span>
                 )}
-                <p className="italic leading-relaxed text-[#e5e2e1]/90 mb-6 font-hanken text-sm line-clamp-5">
+                <p className="italic leading-relaxed text-black/80 mb-6 font-hanken text-sm line-clamp-5">
                   &quot;{t.quote}&quot;
                 </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold font-hanken text-sm">
+                <div className="flex items-center gap-3 pt-4 border-t border-black/5">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-hanken text-sm">
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold font-hanken text-sm text-[#e5e2e1]">{t.name}</h4>
-                    <p className="text-xs font-mono-code text-[#c6c8b8]">
+                    <h4 className="font-bold font-hanken text-sm text-black">{t.name}</h4>
+                    <p className="text-xs font-mono-code text-gray-500">
                       {t.role}
                     </p>
                   </div>
@@ -897,11 +894,11 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-section-gap relative overflow-hidden reveal-left">
         <div className="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center">
-          <div className="glass-effect p-12 md:p-20 rounded-[60px] space-y-8 green-glow border border-primary/20 reveal-left stagger-1">
+          <div className="bg-gray-50 p-12 md:p-20 rounded-[60px] space-y-8 border border-primary/20 shadow-sm reveal-left stagger-1">
             <h2 className="font-hanken text-4xl md:text-5xl font-extrabold leading-tight">
               Looking to grow your business online?
             </h2>
-            <p className="text-lg text-[#c6c8b8] font-hanken max-w-xl mx-auto">
+            <p className="text-lg text-gray-600 font-hanken max-w-xl mx-auto">
               Book a free strategy session with our marketing specialist and
               get a personalized roadmap to drive traffic and boost revenue.
             </p>
@@ -913,19 +910,19 @@ export default function Home() {
               }}
             >
               <input
-                className="flex-1 bg-[#201f1f] rounded-2xl px-6 py-4 border border-white/10 focus:border-primary outline-none text-[#e5e2e1] transition-all font-hanken"
+                className="flex-1 bg-white rounded-2xl px-6 py-4 border border-black/10 focus:border-primary outline-none text-black transition-all font-hanken"
                 placeholder="Your work email"
                 required
                 type="email"
               />
               <button
-                className="bg-primary text-[#283500] px-8 py-4 rounded-2xl font-bold font-hanken hover:brightness-110 transition-all whitespace-nowrap"
+                className="bg-primary text-white px-8 py-4 rounded-2xl font-bold font-hanken hover:brightness-110 transition-all whitespace-nowrap"
                 type="submit"
               >
                 Book Now
               </button>
             </form>
-            <p className="text-xs font-mono-code text-[#c6c8b8]/60">
+            <p className="text-xs font-mono-code text-gray-500">
               No credit card required. Personalized roadmap included.
             </p>
           </div>

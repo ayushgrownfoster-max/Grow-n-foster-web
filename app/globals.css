@@ -92,6 +92,12 @@ body {
   border: 1px solid rgba(188, 206, 135, 0.12);
 }
 
+.glass-effect-light {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 .green-glow {
   box-shadow: 0 0 70px -8px rgba(188, 206, 135, 0.38);
 }
