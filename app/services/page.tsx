@@ -107,20 +107,20 @@ const servicesList = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-[#131313] text-[#e5e2e1] font-hanken py-12 px-margin-mobile md:px-margin-desktop overflow-x-hidden">
+    <div className="min-h-screen bg-white text-black font-hanken py-12 px-margin-mobile md:px-margin-desktop overflow-x-hidden">
       <div className="max-w-container-max mx-auto space-y-20">
 
         {/* Page Header - Animated Left to Right */}
         <div className="text-center space-y-6 pt-8 animate-[slideRight_0.7s_ease-out_forwards]">
           <div className="inline-block">
-            <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-primary bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20 block mb-3">
+            <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-4 py-1.5 rounded-full border border-[#4b5a20]/20 block mb-3">
               WHAT WE DO
             </span>
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold font-hanken tracking-tight text-[#e5e2e1] uppercase">
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold font-hanken tracking-tight text-black uppercase">
               SERVICES
             </h1>
           </div>
-          <p className="text-lg md:text-xl text-[#c6c8b8] max-w-2xl mx-auto font-normal leading-relaxed">
+          <p className="text-lg md:text-xl text-black max-w-2xl mx-auto font-normal leading-relaxed">
             Data-driven, full-funnel digital marketing strategies tailored to accelerate your company&apos;s revenue growth.
           </p>
         </div>
@@ -130,47 +130,47 @@ export default function ServicesPage() {
           {servicesList.map((service, index) => (
             <div
               key={index}
-              className={`glass-effect rounded-3xl p-8 border border-white/10 hover:border-primary/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 shadow-xl shadow-black/40 opacity-0 animate-[slideRight_0.6s_ease-out_forwards] ${service.delayClass}`}
+              className={`bg-white rounded-3xl p-8 border border-gray-200 hover:border-[#4b5a20]/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 shadow-lg opacity-0 animate-[slideRight_0.6s_ease-out_forwards] ${service.delayClass}`}
             >
               <div className="space-y-6">
                 <div className="flex justify-between items-start">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-[#283500] transition-all duration-300 group-hover:translate-x-1">
+                  <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/10 border border-[#4b5a20]/30 flex items-center justify-center text-[#4b5a20] group-hover:bg-[#4b5a20] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
                     <span className="material-symbols-outlined text-3xl">
                       {service.icon}
                     </span>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold font-mono-code text-primary">
+                    <div className="text-2xl font-bold font-mono-code text-[#4b5a20]">
                       {service.metric}
                     </div>
-                    <div className="text-[10px] font-mono-code text-[#c6c8b8] uppercase tracking-wider">
+                    <div className="text-[10px] font-mono-code text-black uppercase tracking-wider">
                       {service.metricLabel}
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <span className="text-[10px] font-mono-code tracking-widest text-primary uppercase block mb-1">
+                  <span className="text-[10px] font-mono-code tracking-widest text-[#4b5a20] uppercase block mb-1">
                     {service.subtitle}
                   </span>
-                  <h3 className="text-2xl font-bold font-hanken text-[#e5e2e1] group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-bold font-hanken text-black group-hover:text-[#4b5a20] transition-colors">
                     {service.title}
                   </h3>
                 </div>
 
-                <p className="text-sm text-[#c6c8b8] leading-relaxed">
+                <p className="text-sm text-black leading-relaxed">
                   {service.description}
                 </p>
 
-                <div className="pt-4 border-t border-white/5">
+                <div className="pt-4 border-t border-gray-200">
                   <ul className="space-y-2">
                     {service.features.map((feat, fIdx) => (
                       <li
                         key={fIdx}
-                        className="text-xs text-[#c6c8b8] flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-200"
+                        className="text-xs text-black flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-200"
                         style={{ transitionDelay: `${fIdx * 50}ms` }}
                       >
-                        <span className="material-symbols-outlined text-sm text-primary">
+                        <span className="material-symbols-outlined text-sm text-[#4b5a20]">
                           check_circle
                         </span>
                         {feat}
@@ -183,7 +183,7 @@ export default function ServicesPage() {
               <div className="pt-8">
                 <Link
                   href="/about"
-                  className="w-full py-3 px-4 rounded-xl border border-white/10 text-xs font-mono-code uppercase font-bold text-center tracking-wider text-[#e5e2e1] group-hover:border-primary group-hover:bg-primary group-hover:text-[#283500] transition-all duration-300 block"
+                  className="w-full py-3 px-4 rounded-xl border border-gray-300 text-xs font-mono-code uppercase font-bold text-center tracking-wider text-black group-hover:border-[#4b5a20] group-hover:bg-[#4b5a20] group-hover:text-white transition-all duration-300 block"
                 >
                   Learn Strategy
                 </Link>
@@ -193,18 +193,18 @@ export default function ServicesPage() {
         </div>
 
         {/* CTA Banner - Animated Left to Right */}
-        <div className="glass-effect rounded-3xl p-10 md:p-14 border border-primary/30 relative overflow-hidden text-center space-y-6 opacity-0 animate-[slideRight_0.8s_ease-out_700ms_forwards]">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#e5e2e1]">
+        <div className="bg-white rounded-3xl p-10 md:p-14 border border-[#4b5a20]/30 relative overflow-hidden text-center space-y-6 opacity-0 animate-[slideRight_0.8s_ease-out_700ms_forwards] shadow-lg">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#4b5a20]/10 rounded-full blur-[100px] pointer-events-none"></div>
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-black">
             Ready to Scale Your Brand?
           </h2>
-          <p className="text-[#c6c8b8] max-w-xl mx-auto text-base">
+          <p className="text-black max-w-xl mx-auto text-base">
             Get in touch with our marketing strategists to audit your current channels and create a customized roadmap.
           </p>
           <div className="pt-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-primary text-[#283500] px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-white transition-all shadow-lg shadow-primary/20 group"
+              className="inline-flex items-center gap-3 bg-[#4b5a20] text-white px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-[#3a4718] transition-all shadow-lg shadow-[#4b5a20]/20 group"
             >
               Get Started
               <span className="material-symbols-outlined text-xl group-hover:translate-x-1.5 transition-transform duration-200">
