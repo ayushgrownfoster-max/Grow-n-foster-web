@@ -112,7 +112,7 @@ export default function Footer() {
               Sector 7 Rohini, New Delhi, India 110085
             </p>
             <p className="text-primary font-bold text-sm font-mono-code underline">
-              hello@grownfoster.com
+              grownfoster.com@gmail.com
             </p>
           </div>
         </div>
