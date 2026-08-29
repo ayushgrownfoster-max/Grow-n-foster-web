@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0e0e0e] border-t border-white/10 pt-20 pb-12 mt-auto">
+    <footer className="bg-white border-t border-slate-200 pt-20 pb-12 mt-auto text-slate-900">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand Info */}
@@ -10,20 +10,18 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <img
                 alt="Grow 'n' Foster Logo"
-                className="h-10 w-auto object-contain"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqiLLg0WnqBjiuIeT4tJsHd5GHbG_yUFqWK9kGqbOBdpNok8gRyaDMl-GYw3VfQgrEKm5vzEcsk4ZTudqQ2syyBso9y6VEu-DrVhBTtP_C4qyrA3G-HMz_8oxYXlMsN0zEv2f3-RZ70zg2q1SLmrd57YQDVrjMG0B-4qbfa5RmBvSVdb25Z3rO0ORKFfegmBIYCjpEJvaCiQAYrl3peecFqT-FkA0_eGBIoP4xgVEsknohAJ2gX1oz8Al0l-q64IUA0A"
+                className="h-14 w-auto object-contain"
+                src="/gnf-logo-web.png"
               />
-              <span className="font-hanken text-2xl font-extrabold text-primary tracking-tight">
-                Grow &apos;n&apos; Foster
-              </span>
+
             </div>
-            <p className="text-[#c6c8b8] text-sm leading-relaxed font-hanken">
+            <p className="text-slate-600 text-sm leading-relaxed font-hanken">
               Transforming digital presence through targeted strategies and elite execution since 2014.
             </p>
             <div className="flex gap-4">
               <a
                 aria-label="Twitter"
-                className="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-[#c6c8b8] hover:text-primary transition-colors border border-white/10"
+                className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:text-primary transition-colors border border-slate-200 hover:border-primary/30"
                 href="#"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -32,7 +30,7 @@ export default function Footer() {
               </a>
               <a
                 aria-label="LinkedIn"
-                className="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-[#c6c8b8] hover:text-primary transition-colors border border-white/10"
+                className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:text-primary transition-colors border border-slate-200 hover:border-primary/30"
                 href="#"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -44,32 +42,32 @@ export default function Footer() {
 
           {/* Services Column */}
           <div className="space-y-6">
-            <h4 className="font-hanken font-bold text-[#e5e2e1] text-base uppercase tracking-wider">
+            <h4 className="font-hanken font-bold text-slate-900 text-base uppercase tracking-wider">
               Services
             </h4>
             <ul className="space-y-3 font-hanken text-sm">
               <li>
-                <Link className="text-[#c6c8b8] hover:text-primary transition-colors" href="/services">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
                   SEO Optimization
                 </Link>
               </li>
               <li>
-                <Link className="text-[#c6c8b8] hover:text-primary transition-colors" href="/services">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
                   LinkedIn Outreach
                 </Link>
               </li>
               <li>
-                <Link className="text-[#c6c8b8] hover:text-primary transition-colors" href="/services">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
                   Content Strategy
                 </Link>
               </li>
               <li>
-                <Link className="text-[#c6c8b8] hover:text-primary transition-colors" href="/services">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
                   Email Marketing
                 </Link>
               </li>
               <li>
-                <Link className="text-[#c6c8b8] hover:text-primary transition-colors" href="/services">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
                   Web Development
                 </Link>
               </li>
@@ -78,27 +76,27 @@ export default function Footer() {
 
           {/* Company Column */}
           <div className="space-y-6">
-            <h4 className="font-hanken font-bold text-[#e5e2e1] text-base uppercase tracking-wider">
+            <h4 className="font-hanken font-bold text-slate-900 text-base uppercase tracking-wider">
               Company
             </h4>
             <ul className="space-y-3 font-hanken text-sm">
               <li>
-                <Link className="text-[#c6c8b8] hover:text-primary transition-colors" href="/about">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/about">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link className="text-[#c6c8b8] hover:text-primary transition-colors" href="/portfolio">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/portfolio">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <a className="text-[#c6c8b8] hover:text-primary transition-colors" href="#">
+                <a className="text-slate-600 hover:text-primary transition-colors" href="#">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a className="text-[#c6c8b8] hover:text-primary transition-colors" href="#">
+                <a className="text-slate-600 hover:text-primary transition-colors" href="#">
                   Terms of Service
                 </a>
               </li>
@@ -107,10 +105,10 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div className="space-y-6">
-            <h4 className="font-hanken font-bold text-[#e5e2e1] text-base uppercase tracking-wider">
+            <h4 className="font-hanken font-bold text-slate-900 text-base uppercase tracking-wider">
               Get In Touch
             </h4>
-            <p className="text-[#c6c8b8] text-sm font-hanken">
+            <p className="text-slate-600 text-sm font-hanken">
               Sector 7 Rohini, New Delhi, India 110085
             </p>
             <p className="text-primary font-bold text-sm font-mono-code underline">
@@ -120,9 +118,9 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono-code text-[#c6c8b8]">
+        <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono-code text-slate-500">
           <span>© 2026 Grow &apos;n&apos; Foster. All rights reserved.</span>
-          <span>Designed with Verdant Aura System</span>
+          <span>Designed by Grow N Foster.</span>
         </div>
       </div>
     </footer>
