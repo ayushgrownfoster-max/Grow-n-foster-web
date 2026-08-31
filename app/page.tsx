@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import Link from "next/link";
 const tabContents = {
   mission:
     "Empower clients via actionable strategies that foster confident growth. We focus on measurable outcomes that drive real business value.",
@@ -10,6 +10,53 @@ const tabContents = {
   value:
     "Mutual success is our only metric. We pride ourselves on transparent communication, elite execution, and long-term partnerships.",
 };
+
+const featuredPortfolio = [
+  {
+    title: "Pragati Ujjayini Civic Portal",
+    category: "Web Dev & SEO",
+    client: "Ujjain Civic Initiative",
+    description:
+      "Engineered a lightning-fast civic engagement web application matching local heritage branding and providing high-speed information lookup.",
+    image: "/projects/pragati-ujjayini.png",
+    tags: ["Next.js", "TypeScript"],
+    metric: "50K+ Citizens",
+    href: "/portfolio/pragati-ujjayini",
+  },
+  {
+    title: "Planora BIM Viewer",
+    category: "3D Web WebGL",
+    client: "Planora Engineering Systems",
+    description:
+      "Created a hardware-accelerated 3D model viewer directly in a Next.js framework, enabling real-time annotations and zero-overhead reviews.",
+    image: "/projects/planora-bim.png",
+    tags: ["Next.js", "Three.js"],
+    metric: "99.9% Uptime",
+    href: "/portfolio/planora-bim",
+  },
+  {
+    title: "Jony Digital QR Engine",
+    category: "MERN SaaS Platform",
+    client: "Jony Digital Events",
+    description:
+      "Devised a high-throughput MERN stack SaaS ticketing platform featuring cryptographically signed QR codes and automated billing.",
+    image: "/projects/jony-digital.png",
+    tags: ["MERN Stack", "Stripe API"],
+    metric: "200K+ Scans",
+    href: "/portfolio/jony-digital",
+  },
+  {
+    title: "Dr. Ankur Dental Clinic",
+    category: "CMS & SEO Integration",
+    client: "Dr. Ankur Dental Care",
+    description:
+      "Designed a dentist web portal with customized calendar booking, mobile intake checklists, and optimized local service SEO indexing.",
+    image: "/projects/dr-ankur.png",
+    tags: ["WordPress", "Local SEO"],
+    metric: "+180% Growth",
+    href: "/portfolio/dr-ankur",
+  },
+];
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"mission" | "vision" | "value">(
@@ -65,13 +112,7 @@ export default function Home() {
           <div className="flex flex-col items-center text-center space-y-12">
             <div className="max-w-4xl space-y-10 relative z-20 flex flex-col items-center">
               {/* Trust Eyebrow Badge */}
-              <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-primary/5 text-primary text-xs font-mono-code border border-primary/30 tracking-widest uppercase hero-fade-in stagger-1 shadow-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                TRUSTED BY 200+ BUSINESSES WORLDWIDE
-              </div>
+
 
               {/* Display Headline */}
               <div className="space-y-6 relative hero-fade-in stagger-2">
@@ -90,43 +131,32 @@ export default function Home() {
               </div>
 
               {/* CTA Action Buttons */}
+              {/* CTA Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center pt-2 hero-fade-in stagger-3">
-                <button className="bg-primary border border-primary text-white px-10 py-5 rounded-full font-bold font-hanken text-base hover:brightness-110 transition-all duration-300 shadow-md flex items-center justify-center gap-3 group">
+                <Link
+                  href="/contact"
+                  className="bg-primary border border-primary text-white px-10 py-5 rounded-full font-bold font-hanken text-base hover:brightness-110 transition-all duration-300 shadow-md flex items-center justify-center gap-3 group"
+                >
                   Free Consultation
                   <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
                     arrow_forward
                   </span>
-                </button>
-                <button className="group flex items-center gap-4 px-8 py-5 text-black font-bold font-hanken text-base hover:text-primary transition-colors">
+                </Link>
+                <Link
+                  href="/services"
+                  className="group flex items-center gap-4 px-8 py-5 text-black font-bold font-hanken text-base hover:text-primary transition-colors"
+                >
                   <span className="w-12 h-12 rounded-full border border-black/15 flex items-center justify-center group-hover:border-primary transition-colors shadow-sm">
                     <span className="material-symbols-outlined text-xl">
                       play_arrow
                     </span>
                   </span>
                   Explore Services
-                </button>
+                </Link>
               </div>
 
               {/* Metrics Bar */}
-              <div className="flex items-center gap-12 md:gap-16 pt-12 border-t border-black/10 w-full justify-center hero-fade-in stagger-4">
-                <div className="space-y-1 text-center">
-                  <div className="text-3xl md:text-4xl font-hanken text-primary font-extrabold tracking-tight">
-                    +28.5%
-                  </div>
-                  <div className="text-xs font-mono-code text-gray-600 uppercase tracking-widest">
-                    Conversion Growth
-                  </div>
-                </div>
-                <div className="h-14 w-px bg-black/10"></div>
-                <div className="space-y-1 text-center">
-                  <div className="text-3xl md:text-4xl font-hanken text-primary font-extrabold tracking-tight">
-                    150+
-                  </div>
-                  <div className="text-xs font-mono-code text-gray-600 uppercase tracking-widest">
-                    Successful Projects
-                  </div>
-                </div>
-              </div>
+
             </div>
 
             {/* Showcase Media Container */}
@@ -147,19 +177,17 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-section-gap reveal-left">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal-left stagger-1">
-            <div className="space-y-4">
-              <span className="text-primary font-bold tracking-widest text-xs font-mono-code uppercase flex items-center gap-2">
-                <span className="material-symbols-outlined text-lg">
-                  campaign
-                </span>{" "}
-                OUR SERVICES
-              </span>
-              <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
-                Our Exclusive Services
-              </h2>
-            </div>
-            <p className="text-gray-600 max-w-md font-hanken text-base leading-relaxed">
+          <div className="flex flex-col items-start mb-16 gap-4 reveal-left stagger-1">
+            <span className="text-primary font-bold tracking-widest text-xs font-mono-code uppercase flex items-center gap-2">
+              <span className="material-symbols-outlined text-lg">
+                campaign
+              </span>{" "}
+              OUR SERVICES
+            </span>
+            <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
+              Our Exclusive Services
+            </h2>
+            <p className="text-gray-600 max-w-2xl font-hanken text-base leading-relaxed">
               Grow &apos;n&apos; Foster delivers comprehensive digital marketing
               services to boost your brand visibility and drive revenue
               growth.
@@ -203,7 +231,7 @@ export default function Home() {
                 <img
                   alt="LinkedIn"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoNbm6YOA5fSQVMfhHaqHkN2Mwz3NUozZGzbbAk16drpPePwXgoeUeFygSvz2lG1GT1BnhzyWV1pg6kcYLawCBmR5bIxlWedRsZkPDohboCpORFSUyRK5VP8Ccp18dFH78n2N5yrHX374iQTC8lJJLMOKNJkHarUz1WjaHctIKLfrqsDzJoNGiL6RJNdHCgOJWi18xnJVZ2FKjvYbhIv1DMFdiMLzzeJfvFSBqVx4OXCWArQswyOZ"
+                  src="/b2b-marketing.jpeg"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
@@ -234,7 +262,7 @@ export default function Home() {
                 <img
                   alt="Content"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVZskmgVU99gfTIYjJNllGd1H27KTlalqO1szN_nZQ0wgLOkn0DqR7LTAEoCXb5gZBrJDYW_eL8JPNj8xFpRMAmQuWd1ZrX-fZNQz5aevIGbiljL4fYVL1C-_pUezm6G7hyd2PzlhN87zr7LdNGdzTZl2UjxyccFZIF9Ihi6lNaicqxnYD8jqKK0WhKjp5XNRJdCPGnjBSf9vn5BmiMF8vuD6ZILEO0h6nYdnkbJj6G5Y6nti4ZDm2A7hGU5UFR39qUQ"
+                  src="/content-marketing.jpeg"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
@@ -265,7 +293,7 @@ export default function Home() {
                 <img
                   alt="Web"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqiLLg0WnqBjiuIeT4tJsHd5GHbG_yUFqWK9kGqbOBdpNok8gRyaDMl-GYw3VfQgrEKm5vzEcsk4ZTudqQ2syyBso9y6VEu-DrVhBTtP_C4qyrA3G-HMz_8oxYXlMsN0zEv2f3-RZ70zg2q1SLmrd57YQDVrjMG0B-4qbfa5RmBvSVdb25Z3rO0ORKFfegmBIYCjpEJvaCiQAYrl3peecFqT-FkA0_eGBIoP4xgVEsknohAJ2gX1oz8Al0l-q64IUA0A"
+                  src="/website-design.jpeg"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
@@ -516,7 +544,10 @@ export default function Home() {
       <section className="py-section-gap bg-gray-50 reveal-left">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
           <div className="max-w-3xl mx-auto space-y-4 mb-16 reveal-left stagger-1">
-            <span className="text-primary font-bold tracking-widest text-xs font-mono-code uppercase">
+            <span className="text-primary font-bold tracking-widest text-xs font-mono-code uppercase flex items-center justify-center gap-2">
+              <span className="material-symbols-outlined text-lg">
+                work
+              </span>{" "}
               FEATURED PORTFOLIO
             </span>
             <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
@@ -528,93 +559,71 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
-            {/* Project 1 */}
-            <div className="group bg-white rounded-[32px] overflow-hidden border border-black/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-1">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  alt="Project"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVZskmgVU99gfTIYjJNllGd1H27KTlalqO1szN_nZQ0wgLOkn0DqR7LTAEoCXb5gZBrJDYW_eL8JPNj8xFpRMAmQuWd1ZrX-fZNQz5aevIGbiljL4fYVL1C-_pUezm6G7hyd2PzlhN87zr7LdNGdzTZl2UjxyccFZIF9Ihi6lNaicqxnYD8jqKK0WhKjp5XNRJdCPGnjBSf9vn5BmiMF8vuD6ZILEO0h6nYdnkbJj6G5Y6nti4ZDm2A7hGU5UFR39qUQ"
-                />
-              </div>
-              <div className="p-8 flex flex-col gap-4 flex-1 text-center">
-                <h3 className="font-hanken text-lg font-bold">
-                  Dynamic Odyssey
-                </h3>
-                <p className="text-sm text-gray-600 line-clamp-2">
-                  The road to achieving success in global eCommerce markets.
-                </p>
-                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  PORTFOLIO DETAILS
-                </button>
-              </div>
-            </div>
+            {featuredPortfolio.map((item, idx) => (
+              <Link
+                key={idx}
+                href={item.href}
+                className={`group bg-white rounded-[32px] overflow-hidden border border-black/5 hover:border-primary/40 shadow-sm hover:shadow-md flex flex-col justify-between transition-all duration-300 reveal-left stagger-${(idx % 4) + 1} text-left`}
+              >
+                {/* Image & Category Overlay */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                  <img
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    src={item.image}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  <div className="absolute top-4 left-4">
+                    <span className="text-[10px] font-mono-code tracking-widest uppercase bg-white/95 backdrop-blur-md text-[#4b5a20] px-3 py-1 rounded-full border border-[#4b5a20]/30 font-semibold shadow-sm">
+                      {item.category}
+                    </span>
+                  </div>
+                </div>
 
-            {/* Project 2 */}
-            <div className="group bg-white rounded-[32px] overflow-hidden border border-black/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-2">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  alt="Project"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoNbm6YOA5fSQVMfhHaqHkN2Mwz3NUozZGzbbAk16drpPePwXgoeUeFygSvz2lG1GT1BnhzyWV1pg6kcYLawCBmR5bIxlWedRsZkPDohboCpORFSUyRK5VP8Ccp18dFH78n2N5yrHX374iQTC8lJJLMOKNJkHarUz1WjaHctIKLfrqsDzJoNGiL6RJNdHCgOJWi18xnJVZ2FKjvYbhIv1DMFdiMLzzeJfvFSBqVx4OXCWArQswyOZ"
-                />
-              </div>
-              <div className="p-8 flex flex-col gap-4 flex-1 text-center">
-                <h3 className="font-hanken text-lg font-bold">
-                  Design Dynamo
-                </h3>
-                <p className="text-sm text-gray-600 line-clamp-2">
-                  The story of breaking into global markets through branding.
-                </p>
-                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  PORTFOLIO DETAILS
-                </button>
-              </div>
-            </div>
+                {/* Content */}
+                <div className="p-6 flex flex-col gap-4 flex-1 justify-between">
+                  <div className="space-y-2">
+                    <div className="text-[11px] font-mono-code text-gray-500 uppercase tracking-wider">
+                      Client: {item.client}
+                    </div>
+                    <h3 className="font-hanken text-lg font-bold leading-snug group-hover:text-primary transition-colors flex items-center justify-between">
+                      {item.title}
+                      <span className="material-symbols-outlined text-base text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all">
+                        arrow_forward
+                      </span>
+                    </h3>
+                    <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
 
-            {/* Project 3 */}
-            <div className="group bg-white rounded-[32px] overflow-hidden border border-black/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-3">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  alt="Project"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1suGxKp5oER_IkylFIcyFIUflCuhGYqYIe3x-gX6bb7UcmWW0mM4n7srjfFHXxfOcCYTg8FJjYuOebZtSIVHUTFHxUrlyCQvOHGCOmPdBfLwCZdmxSkjle9eLyv43eN5oCU9tacdrTZIXoPXw2gwqa4FksNwKsrU7LijRlR5YevywroUIs3f6DJewLBjArd68BY-DSi1cgdFoV9HEVl2K3oQ1HafsHIyEyeub_MkLd5xqSA78a0vi"
-                />
-              </div>
-              <div className="p-8 flex flex-col gap-4 flex-1 text-center">
-                <h3 className="font-hanken text-lg font-bold">
-                  Fashion Velocity
-                </h3>
-                <p className="text-sm text-gray-600 line-clamp-2">
-                  An uplifting account of digital success for retail leaders.
-                </p>
-                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  PORTFOLIO DETAILS
-                </button>
-              </div>
-            </div>
+                  <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
+                    <span className="text-[11px] font-mono-code font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-lg">
+                      {item.metric}
+                    </span>
+                    <span className="text-xs font-mono-code font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
+                      Case Study
+                      <span className="material-symbols-outlined text-xs">
+                        north_east
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
 
-            {/* Project 4 */}
-            <div className="group bg-white rounded-[32px] overflow-hidden border border-black/5 flex flex-col hover:border-primary/20 transition-all reveal-left stagger-4">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  alt="Project"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqiLLg0WnqBjiuIeT4tJsHd5GHbG_yUFqWK9kGqbOBdpNok8gRyaDMl-GYw3VfQgrEKm5vzEcsk4ZTudqQ2syyBso9y6VEu-DrVhBTtP_C4qyrA3G-HMz_8oxYXlMsN0zEv2f3-RZ70zg2q1SLmrd57YQDVrjMG0B-4qbfa5RmBvSVdb25Z3rO0ORKFfegmBIYCjpEJvaCiQAYrl3peecFqT-FkA0_eGBIoP4xgVEsknohAJ2gX1oz8Al0l-q64IUA0A"
-                />
-              </div>
-              <div className="p-8 flex flex-col gap-4 flex-1 text-center">
-                <h3 className="font-hanken text-lg font-bold">
-                  Code Craftsmen
-                </h3>
-                <p className="text-sm text-gray-600 line-clamp-2">
-                  A green company&apos;s bold move into the digital sphere.
-                </p>
-                <button className="mt-auto px-6 py-3 border border-primary/40 rounded-xl text-xs font-mono-code tracking-wider uppercase font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  PORTFOLIO DETAILS
-                </button>
-              </div>
-            </div>
+          {/* View All Portfolio CTA */}
+          <div className="mt-12 reveal-left stagger-3">
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-3 bg-[#4b5a20] text-white px-8 py-4 rounded-full font-bold font-mono-code text-xs uppercase tracking-wider hover:bg-[#394518] transition-all duration-300 shadow-md hover:shadow-lg group"
+            >
+              Explore All Portfolio &amp; Case Studies
+              <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
+            </Link>
           </div>
         </div>
       </section>
