@@ -160,7 +160,7 @@ export default function Navbar() {
               <span className="material-symbols-outlined text-sm text-[#bfd189]">
                 mail
               </span>
-              <span>grownfoster.com@gmail.com</span>
+              <span>info@grownfoster.com</span>
             </a>
             <a
               href="tel:+919202668977"
@@ -177,11 +177,10 @@ export default function Navbar() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`w-full backdrop-blur-xl border-b border-black/10 transition-all duration-300 glass-effect-light ${
-          isScrolled
-            ? "py-2 bg-white/95 shadow-2xl shadow-black/10"
-            : "py-3 bg-white/85"
-        }`}
+        className={`w-full backdrop-blur-xl border-b border-black/10 transition-all duration-300 glass-effect-light ${isScrolled
+          ? "py-2 bg-white/95 shadow-2xl shadow-black/10"
+          : "py-3 bg-white/85"
+          }`}
       >
         <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <Link href="/" className="flex items-center group">
@@ -210,17 +209,15 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
-                      className={`inline-flex items-center gap-1 font-mono-code text-xs tracking-wider uppercase transition-all duration-200 py-1 ${
-                        isActive
-                          ? "text-primary font-bold border-b-2 border-primary"
-                          : "text-black/70 hover:text-primary"
-                      }`}
+                      className={`inline-flex items-center gap-1 font-mono-code text-xs tracking-wider uppercase transition-all duration-200 py-1 ${isActive
+                        ? "text-primary font-bold border-b-2 border-primary"
+                        : "text-black/70 hover:text-primary"
+                        }`}
                     >
                       <span>{item.name}</span>
                       <span
-                        className={`material-symbols-outlined text-sm transition-transform duration-200 ${
-                          servicesDropdownOpen ? "rotate-180 text-primary" : "text-black/50"
-                        }`}
+                        className={`material-symbols-outlined text-sm transition-transform duration-200 ${servicesDropdownOpen ? "rotate-180 text-primary" : "text-black/50"
+                          }`}
                       >
                         expand_more
                       </span>
@@ -323,11 +320,10 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`font-mono-code text-xs tracking-wider uppercase transition-all duration-200 ${
-                    isActive
-                      ? "text-primary font-bold border-b-2 border-primary pb-1"
-                      : "text-black/70 hover:text-primary"
-                  }`}
+                  className={`font-mono-code text-xs tracking-wider uppercase transition-all duration-200 ${isActive
+                    ? "text-primary font-bold border-b-2 border-primary pb-1"
+                    : "text-black/70 hover:text-primary"
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -373,11 +369,10 @@ export default function Navbar() {
                       <Link
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`font-mono-code text-sm tracking-wider uppercase transition-colors ${
-                          isActive
-                            ? "text-primary font-bold"
-                            : "text-black/80 hover:text-primary"
-                        }`}
+                        className={`font-mono-code text-sm tracking-wider uppercase transition-colors ${isActive
+                          ? "text-primary font-bold"
+                          : "text-black/80 hover:text-primary"
+                          }`}
                       >
                         {item.name}
                       </Link>
@@ -387,9 +382,8 @@ export default function Navbar() {
                         aria-label="Toggle services list"
                       >
                         <span
-                          className={`material-symbols-outlined text-lg transition-transform duration-200 ${
-                            mobileServicesOpen ? "rotate-180 text-primary" : ""
-                          }`}
+                          className={`material-symbols-outlined text-lg transition-transform duration-200 ${mobileServicesOpen ? "rotate-180 text-primary" : ""
+                            }`}
                         >
                           expand_more
                         </span>
@@ -434,11 +428,10 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block font-mono-code text-sm tracking-wider uppercase py-2 transition-colors border-b border-slate-100/50 ${
-                    isActive
-                      ? "text-primary font-bold pl-2 border-l-2 border-primary"
-                      : "text-black/70 hover:text-primary"
-                  }`}
+                  className={`block font-mono-code text-sm tracking-wider uppercase py-2 transition-colors border-b border-slate-100/50 ${isActive
+                    ? "text-primary font-bold pl-2 border-l-2 border-primary"
+                    : "text-black/70 hover:text-primary"
+                    }`}
                 >
                   {item.name}
                 </Link>

@@ -135,7 +135,7 @@ export default function Footer() {
                 href="mailto:grownfoster.com@gmail.com"
                 className="text-primary font-bold text-sm font-mono-code underline hover:text-[#3d4a1a] transition-colors block"
               >
-                grownfoster.com@gmail.com
+                info@grownfoster.com
               </a>
               <a
                 href="tel:+919202668977"
