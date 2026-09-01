@@ -10,7 +10,7 @@ const servicesList = [
   {
     icon: "search",
     title: "SEO Optimization",
-    subtitle: "DOMINATE SEARCH RANKINGS",
+
     description:
       "Engineered organic growth that brings qualified buyers directly to your website. We implement technical SEO, content authority building, and local dominance strategies.",
     features: [
@@ -25,7 +25,7 @@ const servicesList = [
   {
     icon: "work",
     title: "LinkedIn Outreach",
-    subtitle: "B2B LEAD ACCELERATION",
+
     description:
       "Personalized, automated B2B campaign management. We connect your leadership team directly with key decision-makers in targeted industries.",
     features: [
@@ -40,7 +40,7 @@ const servicesList = [
   {
     icon: "edit_note",
     title: "Content Strategy",
-    subtitle: "AUTHORITY & ENGAGEMENT",
+
     description:
       "Compelling storytelling backed by market intelligence. We create thought-leadership articles, whitepapers, and video scripts that convert readers into loyal clients.",
     features: [
@@ -55,7 +55,7 @@ const servicesList = [
   {
     icon: "mail",
     title: "Email Marketing",
-    subtitle: "REVENUE RECOVERY & RETENTION",
+
     description:
       "Automated email flows and campaign broadcasts that capture high-intent leads, nurture prospects, and maximize customer lifetime value.",
     features: [
@@ -70,7 +70,7 @@ const servicesList = [
   {
     icon: "code",
     title: "Web Development",
-    subtitle: "HIGH-CONVERTING DIGITAL EXPERIENCES",
+
     description:
       "Blazing-fast, responsive websites designed to captivate visitors and convert them into customers with modern aesthetic design systems.",
     features: [
@@ -85,7 +85,7 @@ const servicesList = [
   {
     icon: "campaign",
     title: "Paid Advertising (PPC)",
-    subtitle: "SCALABLE PAID ACQUISITION",
+
     description:
       "Data-backed ad strategy on Google, Meta, and LinkedIn targeting high-intent buyer personas to produce predictable, profitable ROAS.",
     features: [
@@ -137,18 +137,13 @@ export default function ServicesPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
                   {/* Category Pill */}
-                  <div className="absolute top-4 left-4">
-                    <span className="text-[10px] font-mono-code tracking-widest uppercase bg-white/95 backdrop-blur-md text-[#4b5a20] px-3 py-1.5 rounded-full border border-[#4b5a20]/30 font-bold shadow-sm">
-                      {service.subtitle}
-                    </span>
-                  </div>
-
-                  {/* Icon Badge */}
-                  <div className="absolute bottom-4 right-4 w-12 h-12 rounded-2xl bg-white/95 backdrop-blur-md border border-white/40 flex items-center justify-center text-[#4b5a20] shadow-md group-hover:bg-[#4b5a20] group-hover:text-white transition-colors duration-300">
-                    <span className="material-symbols-outlined text-2xl">
-                      {service.icon}
-                    </span>
-                  </div>
+                  {service.subtitle && (
+                    <div className="absolute top-4 left-4">
+                      <span className="text-[10px] font-mono-code tracking-widest uppercase bg-white/95 backdrop-blur-md text-[#4b5a20] px-3 py-1.5 rounded-full border border-[#4b5a20]/30 font-bold shadow-sm">
+                        {service.subtitle}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Card Content */}
