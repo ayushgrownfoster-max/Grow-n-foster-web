@@ -2,42 +2,25 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-<<<<<<< HEAD
-    <footer className="bg-white border-t border-gray-200 pt-20 pb-12 mt-auto">
-=======
     <footer className="bg-white border-t border-slate-200 pt-20 pb-12 mt-auto text-slate-900">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            {/* Brand Info */}
-            <div className="space-y-6 md:col-span-1">
-              <div className="flex items-center gap-3">
-                <img
-                  alt="Grow 'n' Foster Logo"
-<<<<<<< HEAD
-                  className="h-16 w-auto object-contain"
-                  src="gnf-logo-web.png"
-                />
-              </div>
-              <p className="text-gray-600 text-sm leading-relaxed font-hanken">
-=======
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          {/* Brand Info */}
+          <div className="space-y-6 md:col-span-1">
+            <div className="flex items-center gap-3">
+              <img
+                alt="Grow 'n' Foster Logo"
                 className="h-14 w-auto object-contain"
                 src="/gnf-logo-web.png"
               />
-
             </div>
             <p className="text-slate-600 text-sm leading-relaxed font-hanken">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               Transforming digital presence through targeted strategies and elite execution since 2014.
             </p>
             <div className="flex gap-4">
               <a
                 aria-label="Twitter"
-<<<<<<< HEAD
-                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-[#4b5a20] hover:bg-[#4b5a20]/10 transition-colors border border-gray-200"
-=======
                 className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:text-primary transition-colors border border-slate-200 hover:border-primary/30"
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                 href="#"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -46,11 +29,7 @@ export default function Footer() {
               </a>
               <a
                 aria-label="LinkedIn"
-<<<<<<< HEAD
-                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-[#4b5a20] hover:bg-[#4b5a20]/10 transition-colors border border-gray-200"
-=======
                 className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:text-primary transition-colors border border-slate-200 hover:border-primary/30"
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                 href="#"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -62,146 +41,87 @@ export default function Footer() {
 
           {/* Services Column */}
           <div className="space-y-6">
-<<<<<<< HEAD
-  <h4 className="font-hanken font-bold text-black text-base uppercase tracking-wider">
-=======
             <h4 className="font-hanken font-bold text-slate-900 text-base uppercase tracking-wider">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-      Services
-    </h4>
-    <ul className="space-y-3 font-hanken text-sm">
-      <li>
-<<<<<<< HEAD
-                <Link className="text-gray-600 hover:text-[#4b5a20] transition-colors" href="/services">
-=======
+              Services
+            </h4>
+            <ul className="space-y-3 font-hanken text-sm">
+              <li>
                 <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-      SEO Optimization
-    </Link>
-  </li>
-    <li>
-<<<<<<< HEAD
-                <Link className="text-gray-600 hover:text-[#4b5a20] transition-colors" href="/services">
-=======
+                  SEO Optimization
+                </Link>
+              </li>
+              <li>
                 <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-      LinkedIn Outreach
-    </Link>
-  </li>
-    <li>
-<<<<<<< HEAD
-                <Link className="text-gray-600 hover:text-[#4b5a20] transition-colors" href="/services">
-=======
+                  LinkedIn Outreach
+                </Link>
+              </li>
+              <li>
                 <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-      Content Strategy
-    </Link>
-  </li>
-    <li>
-<<<<<<< HEAD
-                <Link className="text-gray-600 hover:text-[#4b5a20] transition-colors" href="/services">
-=======
+                  Content Strategy
+                </Link>
+              </li>
+              <li>
                 <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-      Email Marketing
-    </Link>
-  </li>
-    <li>
-<<<<<<< HEAD
-  <Link className="text-gray-600 hover:text-[#4b5a20] transition-colors" href="/services">
-=======
+                  Email Marketing
+                </Link>
+              </li>
+              <li>
                 <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-      Web Development
-    </Link>
-  </li>
-            </ul >
-          </div >
+                  Web Development
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-    {/* Company Column */ }
-    < div className = "space-y-6" >
-<<<<<<< HEAD
-      <h4 className="font-hanken font-bold text-black text-base uppercase tracking-wider">
-=======
+          {/* Company Column */}
+          <div className="space-y-6">
             <h4 className="font-hanken font-bold text-slate-900 text-base uppercase tracking-wider">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-          Company
-        </h4>
-        <ul className="space-y-3 font-hanken text-sm">
-          <li>
-<<<<<<< HEAD
-                <Link className="text-gray-600 hover:text-[#4b5a20] transition-colors" href="/about">
-=======
+              Company
+            </h4>
+            <ul className="space-y-3 font-hanken text-sm">
+              <li>
                 <Link className="text-slate-600 hover:text-primary transition-colors" href="/about">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-      About Us
-    </Link>
-  </li>
-    <li>
-<<<<<<< HEAD
-                <Link className="text-gray-600 hover:text-[#4b5a20] transition-colors" href="/portfolio">
-=======
+                  About Us
+                </Link>
+              </li>
+              <li>
                 <Link className="text-slate-600 hover:text-primary transition-colors" href="/portfolio">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-      Portfolio
-    </Link>
-  </li>
-    <li>
-<<<<<<< HEAD
-                <a className="text-gray-600 hover:text-[#4b5a20] transition-colors" href="#">
-=======
+                  Portfolio
+                </Link>
+              </li>
+              <li>
                 <a className="text-slate-600 hover:text-primary transition-colors" href="#">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-      Privacy Policy
-    </a>
-  </li>
-    <li>
-<<<<<<< HEAD
-  <a className="text-gray-600 hover:text-[#4b5a20] transition-colors" href="#">
-=======
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
                 <a className="text-slate-600 hover:text-primary transition-colors" href="#">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-      Terms of Service
-    </a>
-  </li>
-            </ul >
-          </div >
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
+          </div>
 
-    {/* Contact Column */ }
-    < div className = "space-y-6" >
-<<<<<<< HEAD
-            <h4 className="font-hanken font-bold text-black text-base uppercase tracking-wider">
+          {/* Contact Column */}
+          <div className="space-y-6">
+            <h4 className="font-hanken font-bold text-slate-900 text-base uppercase tracking-wider">
               Get In Touch
             </h4>
-            <p className="text-gray-600 text-sm font-hanken">
+            <p className="text-slate-600 text-sm font-hanken">
               Sector 7 Rohini, New Delhi, India 110085
             </p>
-            <p className="text-[#4b5a20] font-bold text-sm font-mono-code underline">
-              hello@grownfoster.com
-=======
-            <h4 className="font-hanken font-bold text-slate-900 text-base uppercase tracking-wider">
-          Get In Touch
-        </h4>
-        <p className="text-slate-600 text-sm font-hanken">
-          Sector 7 Rohini, New Delhi, India 110085
-        </p>
-        <p className="text-primary font-bold text-sm font-mono-code underline">
-          grownfoster.com@gmail.com
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
-        </p>
-      </div>
-        </div >
+            <p className="text-primary font-bold text-sm font-mono-code underline">
+              grownfoster.com@gmail.com
+            </p>
+          </div>
+        </div>
 
-    {/* Copyright */ }
-<<<<<<< HEAD
-    < div className = "pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono-code text-gray-500" >
-=======
+        {/* Copyright */}
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono-code text-slate-500">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
           <span>© 2026 Grow &apos;n&apos; Foster. All rights reserved.</span>
           <span>Designed by Grow N Foster.</span>
-        </div >
-      </div >
-    </footer >
+        </div>
+      </div>
+    </footer>
   );
 }

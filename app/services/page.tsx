@@ -113,22 +113,14 @@ export default function ServicesPage() {
         {/* Page Header - Animated Left to Right */}
         <div className="text-center space-y-6 pt-8 animate-[slideRight_0.7s_ease-out_forwards]">
           <div className="inline-block">
-<<<<<<< HEAD
-            <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-4 py-1.5 rounded-full border border-[#4b5a20]/20 block mb-3">
-=======
             <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-4 py-1.5 rounded-full border border-[#4b5a20]/20 block mb-3 font-semibold">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               WHAT WE DO
             </span>
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold font-hanken tracking-tight text-black uppercase">
               SERVICES
             </h1>
           </div>
-<<<<<<< HEAD
-          <p className="text-lg md:text-xl text-black max-w-2xl mx-auto font-normal leading-relaxed">
-=======
           <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto font-normal leading-relaxed">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
             Data-driven, full-funnel digital marketing strategies tailored to accelerate your company&apos;s revenue growth.
           </p>
         </div>
@@ -138,11 +130,7 @@ export default function ServicesPage() {
           {servicesList.map((service, index) => (
             <div
               key={index}
-<<<<<<< HEAD
-              className={`bg-white rounded-3xl p-8 border border-gray-200 hover:border-[#4b5a20]/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 shadow-lg opacity-0 animate-[slideRight_0.6s_ease-out_forwards] ${service.delayClass}`}
-=======
-              className={`bg-gray-50 rounded-3xl p-8 border border-gray-200 hover:border-[#4b5a20] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 shadow-sm hover:shadow-md opacity-0 animate-[slideRight_0.6s_ease-out_forwards] ${service.delayClass}`}
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
+              className={`bg-white rounded-3xl p-8 border border-gray-200 hover:border-[#4b5a20] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 shadow-sm hover:shadow-md opacity-0 animate-[slideRight_0.6s_ease-out_forwards] ${service.delayClass}`}
             >
               <div className="space-y-6">
                 <div className="flex justify-between items-start">
@@ -155,22 +143,14 @@ export default function ServicesPage() {
                     <div className="text-2xl font-bold font-mono-code text-[#4b5a20]">
                       {service.metric}
                     </div>
-<<<<<<< HEAD
-                    <div className="text-[10px] font-mono-code text-black uppercase tracking-wider">
-=======
                     <div className="text-[10px] font-mono-code text-gray-500 uppercase tracking-wider">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                       {service.metricLabel}
                     </div>
                   </div>
                 </div>
 
                 <div>
-<<<<<<< HEAD
-                  <span className="text-[10px] font-mono-code tracking-widest text-[#4b5a20] uppercase block mb-1">
-=======
                   <span className="text-[10px] font-mono-code tracking-widest text-[#4b5a20] font-semibold uppercase block mb-1">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     {service.subtitle}
                   </span>
                   <h3 className="text-2xl font-bold font-hanken text-black group-hover:text-[#4b5a20] transition-colors">
@@ -178,11 +158,7 @@ export default function ServicesPage() {
                   </h3>
                 </div>
 
-<<<<<<< HEAD
-                <p className="text-sm text-black leading-relaxed">
-=======
                 <p className="text-sm text-gray-600 leading-relaxed">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                   {service.description}
                 </p>
 
@@ -191,11 +167,7 @@ export default function ServicesPage() {
                     {service.features.map((feat, fIdx) => (
                       <li
                         key={fIdx}
-<<<<<<< HEAD
-                        className="text-xs text-black flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-200"
-=======
                         className="text-xs text-gray-600 flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-200"
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                         style={{ transitionDelay: `${fIdx * 50}ms` }}
                       >
                         <span className="material-symbols-outlined text-sm text-[#4b5a20]">
@@ -211,11 +183,7 @@ export default function ServicesPage() {
               <div className="pt-8">
                 <Link
                   href="/about"
-<<<<<<< HEAD
-                  className="w-full py-3 px-4 rounded-xl border border-gray-300 text-xs font-mono-code uppercase font-bold text-center tracking-wider text-black group-hover:border-[#4b5a20] group-hover:bg-[#4b5a20] group-hover:text-white transition-all duration-300 block"
-=======
                   className="w-full py-3 px-4 rounded-xl border border-gray-300 bg-white text-xs font-mono-code uppercase font-bold text-center tracking-wider text-black group-hover:border-[#4b5a20] group-hover:bg-[#4b5a20] group-hover:text-white transition-all duration-300 block shadow-sm"
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                 >
                   Learn Strategy
                 </Link>
@@ -225,31 +193,18 @@ export default function ServicesPage() {
         </div>
 
         {/* CTA Banner - Animated Left to Right */}
-<<<<<<< HEAD
-        <div className="bg-white rounded-3xl p-10 md:p-14 border border-[#4b5a20]/30 relative overflow-hidden text-center space-y-6 opacity-0 animate-[slideRight_0.8s_ease-out_700ms_forwards] shadow-lg">
+        <div className="bg-gray-50 rounded-3xl p-10 md:p-14 border border-[#4b5a20]/30 relative overflow-hidden text-center space-y-6 shadow-sm opacity-0 animate-[slideRight_0.8s_ease-out_700ms_forwards]">
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#4b5a20]/10 rounded-full blur-[100px] pointer-events-none"></div>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-black">
             Ready to Scale Your Brand?
           </h2>
-          <p className="text-black max-w-xl mx-auto text-base">
-=======
-        <div className="bg-gray-50 rounded-3xl p-10 md:p-14 border border-[#4b5a20]/30 relative overflow-hidden text-center space-y-6 shadow-sm opacity-0 animate-[slideRight_0.8s_ease-out_700ms_forwards]">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#4b5a20]/5 rounded-full blur-[100px] pointer-events-none"></div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-black">
-            Ready to Scale Your Brand?
-          </h2>
           <p className="text-gray-600 max-w-xl mx-auto text-base">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
             Get in touch with our marketing strategists to audit your current channels and create a customized roadmap.
           </p>
           <div className="pt-4">
             <Link
               href="/contact"
-<<<<<<< HEAD
-              className="inline-flex items-center gap-3 bg-[#4b5a20] text-white px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-[#3a4718] transition-all shadow-lg shadow-[#4b5a20]/20 group"
-=======
-              className="inline-flex items-center gap-3 bg-[#4b5a20] text-white px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-[#394518] transition-all shadow-md group"
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
+              className="inline-flex items-center gap-3 bg-[#4b5a20] text-white px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-[#394518] transition-all shadow-lg shadow-[#4b5a20]/20 group"
             >
               Get Started
               <span className="material-symbols-outlined text-xl group-hover:translate-x-1.5 transition-transform duration-200">

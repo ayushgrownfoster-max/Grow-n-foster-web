@@ -99,11 +99,7 @@ export default function PortfolioPage() {
             </h1>
           </div>
           <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto font-normal leading-relaxed">
-<<<<<<< HEAD
             Real case studies detailing how we turn market opportunities into exponential revenue growth for our clients.
-=======
-            Real client projects detailing how we turn market opportunities into high-performance digital systems.
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
           </p>
         </div>
 
@@ -113,11 +109,7 @@ export default function PortfolioPage() {
             <Link
               href={item.href}
               key={idx}
-<<<<<<< HEAD
-              className="bg-gray-50 rounded-3xl overflow-hidden border border-gray-200 hover:border-[#4b5a20] transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md"
-=======
               className="bg-gray-50 rounded-3xl overflow-hidden border border-gray-200 hover:border-[#4b5a20] transition-all duration-300 group flex flex-col justify-between shadow-sm hover:shadow-md cursor-pointer"
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
             >
               {/* Image & Category Overlay */}
               <div className="relative h-64 overflow-hidden bg-gray-100">
@@ -126,15 +118,9 @@ export default function PortfolioPage() {
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
-<<<<<<< HEAD
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent"></div>
                 <div className="absolute top-4 left-4">
                   <span className="text-[10px] font-mono-code tracking-widest uppercase bg-white/95 backdrop-blur-md text-[#4b5a20] px-3 py-1.5 rounded-full border border-[#4b5a20]/30 font-bold shadow-sm">
-=======
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                <div className="absolute top-4 left-4">
-                  <span className="text-[10px] font-mono-code tracking-widest uppercase bg-white/90 backdrop-blur-md text-[#4b5a20] px-3 py-1.5 rounded-full border border-[#4b5a20]/30 font-semibold">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     {item.category}
                   </span>
                 </div>
@@ -143,72 +129,41 @@ export default function PortfolioPage() {
               {/* Body */}
               <div className="p-8 space-y-6 flex-grow flex flex-col justify-between">
                 <div className="space-y-4">
-<<<<<<< HEAD
                   <div className="text-xs font-mono-code text-gray-600 uppercase tracking-wider font-semibold">
                     Client: {item.client}
                   </div>
-                  <h3 className="text-2xl font-bold font-hanken text-black group-hover:text-[#4b5a20] transition-colors">
-=======
-                  <div className="text-xs font-mono-code text-gray-500 uppercase tracking-wider">
-                    Client: {item.client}
-                  </div>
                   <h3 className="text-2xl font-bold font-hanken text-black group-hover:text-[#4b5a20] transition-colors flex items-center justify-between">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     {item.title}
                     <span className="material-symbols-outlined text-gray-400 group-hover:text-[#4b5a20] group-hover:translate-x-1 transition-all">
                       arrow_forward
                     </span>
                   </h3>
-<<<<<<< HEAD
                   <p className="text-sm text-gray-700 leading-relaxed">
-=======
-                  <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     {item.description}
                   </p>
                 </div>
 
                 {/* Metrics Highlight Box */}
-<<<<<<< HEAD
                 <div className="grid grid-cols-3 gap-2 bg-white p-4 rounded-2xl border border-gray-200 text-center shadow-xs">
-=======
-                <div className="grid grid-cols-3 gap-2 bg-gray-100 p-4 rounded-2xl border border-gray-200 text-center">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                   {item.results.map((res, rIdx) => (
                     <div key={rIdx} className="space-y-1">
                       <div className="text-lg font-bold font-mono-code text-[#4b5a20]">
                         {res.value}
                       </div>
-<<<<<<< HEAD
                       <div className="text-[10px] font-mono-code text-gray-600 uppercase">
-=======
-                      <div className="text-[10px] font-mono-code text-gray-500 uppercase">
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                         {res.label}
                       </div>
                     </div>
                   ))}
                 </div>
 
-<<<<<<< HEAD
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {item.tags.map((tag, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="text-[10px] font-mono-code text-gray-700 bg-gray-200/70 px-3 py-1 rounded-full border border-gray-300/50"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-=======
                 {/* Tags & Action Row */}
                 <div className="flex justify-between items-center pt-2">
                   <div className="flex flex-wrap gap-2">
                     {item.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="text-[10px] font-mono-code text-gray-600 bg-gray-200/60 px-3 py-1 rounded-full border border-gray-200"
+                        className="text-[10px] font-mono-code text-gray-700 bg-gray-200/70 px-3 py-1 rounded-full border border-gray-300/50"
                       >
                         #{tag}
                       </span>
@@ -217,7 +172,6 @@ export default function PortfolioPage() {
                   <span className="text-xs font-mono-code font-bold uppercase tracking-wider text-[#4b5a20] group-hover:underline">
                     View Case Study
                   </span>
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                 </div>
               </div>
             </Link>
@@ -230,7 +184,6 @@ export default function PortfolioPage() {
             Cumulative Impact Across Our Portfolio
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-<<<<<<< HEAD
             <div className="space-y-2 p-4 bg-white rounded-2xl border border-gray-200 shadow-xs">
               <div className="text-4xl font-extrabold font-mono-code text-[#4b5a20]">$45M+</div>
               <div className="text-xs font-mono-code text-gray-600">Revenue Generated</div>
@@ -246,33 +199,12 @@ export default function PortfolioPage() {
             <div className="space-y-2 p-4 bg-white rounded-2xl border border-gray-200 shadow-xs">
               <div className="text-4xl font-extrabold font-mono-code text-[#4b5a20]">3.8x</div>
               <div className="text-xs font-mono-code text-gray-600">Average ROI</div>
-=======
-            <div className="space-y-2 p-4 bg-white rounded-2xl border border-gray-200">
-              <div className="text-4xl font-extrabold font-mono-code text-[#4b5a20]">$45M+</div>
-              <div className="text-xs font-mono-code text-gray-500">Revenue Generated</div>
-            </div>
-            <div className="space-y-2 p-4 bg-white rounded-2xl border border-gray-200">
-              <div className="text-4xl font-extrabold font-mono-code text-[#4b5a20]">200+</div>
-              <div className="text-xs font-mono-code text-gray-500">Clients Scaled</div>
-            </div>
-            <div className="space-y-2 p-4 bg-white rounded-2xl border border-gray-200">
-              <div className="text-4xl font-extrabold font-mono-code text-[#4b5a20]">98.4%</div>
-              <div className="text-xs font-mono-code text-gray-500">Client Retention</div>
-            </div>
-            <div className="space-y-2 p-4 bg-white rounded-2xl border border-gray-200">
-              <div className="text-4xl font-extrabold font-mono-code text-[#4b5a20]">3.8x</div>
-              <div className="text-xs font-mono-code text-gray-500">Average ROI</div>
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
             </div>
           </div>
           <div className="pt-4">
             <Link
               href="/services"
-<<<<<<< HEAD
-              className="inline-flex items-center gap-3 bg-[#4b5a20] text-white px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-[#394518] transition-all shadow-sm"
-=======
               className="inline-flex items-center gap-3 bg-[#4b5a20] text-white px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-[#394518] transition-all shadow-md"
->>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
             >
               Explore Our Services
               <span className="material-symbols-outlined text-xl">
