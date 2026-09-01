@@ -19,8 +19,7 @@ const servicesList = [
       "Backlink & Authority Building",
       "Monthly Growth Analytics",
     ],
-    metric: "+240%",
-    metricLabel: "Avg Organic Growth",
+    image: "/seo-image.jpeg",
     delayClass: "delay-[100ms]",
   },
   {
@@ -35,8 +34,7 @@ const servicesList = [
       "Verified B2B Contact Data",
       "Meeting Booking & Pipeline",
     ],
-    metric: "35+",
-    metricLabel: "Qualified Meetings / Mo",
+    image: "/linkedin-outreach.jpeg",
     delayClass: "delay-[200ms]",
   },
   {
@@ -51,8 +49,7 @@ const servicesList = [
       "Multi-Channel Distribution",
       "Performance Attribution",
     ],
-    metric: "4.8x",
-    metricLabel: "Engagement Multiplier",
+    image: "/content-strategy.jpeg",
     delayClass: "delay-[300ms]",
   },
   {
@@ -67,8 +64,7 @@ const servicesList = [
       "A/B Subject & Creative Testing",
       "Deliverability Optimization",
     ],
-    metric: "38%",
-    metricLabel: "Average Open Rate",
+    image: "/email-marketing.jpeg",
     delayClass: "delay-[400ms]",
   },
   {
@@ -83,8 +79,7 @@ const servicesList = [
       "Mobile-First Responsive Layouts",
       "Core Web Vitals Perfection",
     ],
-    metric: "99+",
-    metricLabel: "PageSpeed Performance",
+    image: "/website-design.jpeg",
     delayClass: "delay-[500ms]",
   },
   {
@@ -99,8 +94,7 @@ const servicesList = [
       "Creative Ad Copy & Banners",
       "Real-Time Budget Allocation",
     ],
-    metric: "3.4x",
-    metricLabel: "Target ROAS Achieved",
+    image: "/paid-ads.jpeg",
     delayClass: "delay-[600ms]",
   },
 ];
@@ -125,67 +119,79 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        {/* Services Grid with Staggered Left-to-Right Slide */}
+        {/* Services Grid with Structured Cards and Images */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesList.map((service, index) => (
             <div
               key={index}
-              className={`bg-white rounded-3xl p-8 border border-gray-200 hover:border-[#4b5a20] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 shadow-sm hover:shadow-md opacity-0 animate-[slideRight_0.6s_ease-out_forwards] ${service.delayClass}`}
+              className={`bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-[#4b5a20] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 shadow-sm hover:shadow-xl opacity-0 animate-[slideRight_0.6s_ease-out_forwards] ${service.delayClass}`}
             >
-              <div className="space-y-6">
-                <div className="flex justify-between items-start">
-                  <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/10 border border-[#4b5a20]/30 flex items-center justify-center text-[#4b5a20] group-hover:bg-[#4b5a20] group-hover:text-white transition-all duration-300 group-hover:translate-x-1">
-                    <span className="material-symbols-outlined text-3xl">
+              <div>
+                {/* Image Banner Header */}
+                <div className="relative h-56 w-full overflow-hidden bg-gray-100">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+                  {/* Category Pill */}
+                  <div className="absolute top-4 left-4">
+                    <span className="text-[10px] font-mono-code tracking-widest uppercase bg-white/95 backdrop-blur-md text-[#4b5a20] px-3 py-1.5 rounded-full border border-[#4b5a20]/30 font-bold shadow-sm">
+                      {service.subtitle}
+                    </span>
+                  </div>
+
+                  {/* Icon Badge */}
+                  <div className="absolute bottom-4 right-4 w-12 h-12 rounded-2xl bg-white/95 backdrop-blur-md border border-white/40 flex items-center justify-center text-[#4b5a20] shadow-md group-hover:bg-[#4b5a20] group-hover:text-white transition-colors duration-300">
+                    <span className="material-symbols-outlined text-2xl">
                       {service.icon}
                     </span>
                   </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold font-mono-code text-[#4b5a20]">
-                      {service.metric}
-                    </div>
-                    <div className="text-[10px] font-mono-code text-gray-500 uppercase tracking-wider">
-                      {service.metricLabel}
-                    </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="p-8 space-y-6">
+                  <div>
+                    <h3 className="text-2xl font-bold font-hanken text-black group-hover:text-[#4b5a20] transition-colors">
+                      {service.title}
+                    </h3>
                   </div>
-                </div>
 
-                <div>
-                  <span className="text-[10px] font-mono-code tracking-widest text-[#4b5a20] font-semibold uppercase block mb-1">
-                    {service.subtitle}
-                  </span>
-                  <h3 className="text-2xl font-bold font-hanken text-black group-hover:text-[#4b5a20] transition-colors">
-                    {service.title}
-                  </h3>
-                </div>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
 
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-
-                <div className="pt-4 border-t border-gray-200">
-                  <ul className="space-y-2">
-                    {service.features.map((feat, fIdx) => (
-                      <li
-                        key={fIdx}
-                        className="text-xs text-gray-600 flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-200"
-                        style={{ transitionDelay: `${fIdx * 50}ms` }}
-                      >
-                        <span className="material-symbols-outlined text-sm text-[#4b5a20]">
-                          check_circle
-                        </span>
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="pt-4 border-t border-gray-100">
+                    <ul className="space-y-2.5">
+                      {service.features.map((feat, fIdx) => (
+                        <li
+                          key={fIdx}
+                          className="text-xs text-gray-700 flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-200 font-medium"
+                          style={{ transitionDelay: `${fIdx * 50}ms` }}
+                        >
+                          <span className="material-symbols-outlined text-base text-[#4b5a20] flex-shrink-0">
+                            check_circle
+                          </span>
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
 
-              <div className="pt-8">
+              {/* Card Footer Button */}
+              <div className="px-8 pb-8 pt-2">
                 <Link
-                  href="/about"
-                  className="w-full py-3 px-4 rounded-xl border border-gray-300 bg-white text-xs font-mono-code uppercase font-bold text-center tracking-wider text-black group-hover:border-[#4b5a20] group-hover:bg-[#4b5a20] group-hover:text-white transition-all duration-300 block shadow-sm"
+                  href="/contact"
+                  className="w-full py-3.5 px-5 rounded-2xl border border-gray-300 bg-gray-50 hover:bg-[#4b5a20] text-xs font-mono-code uppercase font-bold text-center tracking-wider text-black hover:text-white hover:border-[#4b5a20] transition-all duration-300 flex items-center justify-center gap-2 shadow-xs group-hover:shadow-sm"
                 >
-                  Learn Strategy
+                  <span>Get Started</span>
+                  <span className="material-symbols-outlined text-base">
+                    arrow_forward
+                  </span>
                 </Link>
               </div>
             </div>

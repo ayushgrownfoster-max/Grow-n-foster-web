@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+
 const tabContents = {
   mission:
     "Empower clients via actionable strategies that foster confident growth. We focus on measurable outcomes that drive real business value.",
@@ -111,9 +112,6 @@ export default function Home() {
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 py-16">
           <div className="flex flex-col items-center text-center space-y-12">
             <div className="max-w-4xl space-y-10 relative z-20 flex flex-col items-center">
-              {/* Trust Eyebrow Badge */}
-
-
               {/* Display Headline */}
               <div className="space-y-6 relative hero-fade-in stagger-2">
                 <h1 className="font-hanken text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.08] tracking-tight">
@@ -130,7 +128,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* CTA Action Buttons */}
               {/* CTA Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center pt-2 hero-fade-in stagger-3">
                 <Link
@@ -154,9 +151,6 @@ export default function Home() {
                   Explore Services
                 </Link>
               </div>
-
-              {/* Metrics Bar */}
-
             </div>
 
             {/* Showcase Media Container */}
@@ -178,12 +172,7 @@ export default function Home() {
       <section className="py-section-gap reveal-left">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="flex flex-col items-start mb-16 gap-4 reveal-left stagger-1">
-            <span className="text-primary font-bold tracking-widest text-xs font-mono-code uppercase flex items-center gap-2">
-              <span className="material-symbols-outlined text-lg">
-                campaign
-              </span>{" "}
-              OUR SERVICES
-            </span>
+
             <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
               Our Exclusive Services
             </h2>
@@ -200,14 +189,9 @@ export default function Home() {
                 <img
                   alt="SEO"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1suGxKp5oER_IkylFIcyFIUflCuhGYqYIe3x-gX6bb7UcmWW0mM4n7srjfFHXxfOcCYTg8FJjYuOebZtSIVHUTFHxUrlyCQvOHGCOmPdBfLwCZdmxSkjle9eLyv43eN5oCU9tacdrTZIXoPXw2gwqa4FksNwKsrU7LijRlR5YevywroUIs3f6DJewLBjArd68BY-DSi1cgdFoV9HEVl2K3oQ1HafsHIyEyeub_MkLd5xqSA78a0vi"
+                  src="/seo-image.jpeg"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
-                  <span className="material-symbols-outlined text-3xl">
-                    query_stats
-                  </span>
-                </div>
               </div>
               <div className="flex-1 bg-gray-50 p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-black/5 border-t-0">
                 <h3 className="font-hanken text-xl font-bold leading-tight">
@@ -231,14 +215,9 @@ export default function Home() {
                 <img
                   alt="LinkedIn"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  src="/b2b-marketing.jpeg"
+                  src="/linkedin-outreach.jpeg"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
-                  <span className="material-symbols-outlined text-3xl">
-                    hub
-                  </span>
-                </div>
               </div>
               <div className="flex-1 bg-gray-50 p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-black/5 border-t-0">
                 <h3 className="font-hanken text-xl font-bold leading-tight">
@@ -265,11 +244,6 @@ export default function Home() {
                   src="/content-marketing.jpeg"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
-                  <span className="material-symbols-outlined text-3xl">
-                    edit_note
-                  </span>
-                </div>
               </div>
               <div className="flex-1 bg-gray-50 p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-black/5 border-t-0">
                 <h3 className="font-hanken text-xl font-bold leading-tight">
@@ -296,11 +270,6 @@ export default function Home() {
                   src="/website-design.jpeg"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
-                  <span className="material-symbols-outlined text-3xl">
-                    terminal
-                  </span>
-                </div>
               </div>
               <div className="flex-1 bg-gray-50 p-8 text-center rounded-b-[140px] flex flex-col items-center gap-4 relative border border-black/5 border-t-0">
                 <h3 className="font-hanken text-xl font-bold leading-tight">
@@ -339,12 +308,7 @@ export default function Home() {
             {/* Right: Tabs and Progress */}
             <div className="space-y-12 reveal-left stagger-2">
               <div className="space-y-6">
-                <span className="text-primary font-bold tracking-widest text-xs font-mono-code uppercase flex items-center gap-2">
-                  <span className="material-symbols-outlined text-lg">
-                    verified
-                  </span>{" "}
-                  WHY CHOOSE US
-                </span>
+
                 <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
                   We are a Digital Agency with added Value for your Business
                 </h2>
@@ -393,8 +357,12 @@ export default function Home() {
               <div className="space-y-8 pt-4">
                 <div className="space-y-3">
                   <div className="flex justify-between items-end">
-                    <h4 className="font-hanken font-bold text-lg">Digital Analysis</h4>
-                    <span className="text-primary font-bold font-mono-code">98%</span>
+                    <h4 className="font-hanken font-bold text-lg">
+                      Digital Analysis
+                    </h4>
+                    <span className="text-primary font-bold font-mono-code">
+                      98%
+                    </span>
                   </div>
                   <div className="progress-bar">
                     <div
@@ -405,8 +373,12 @@ export default function Home() {
                 </div>
                 <div className="space-y-3">
                   <div className="flex justify-between items-end">
-                    <h4 className="font-hanken font-bold text-lg">Web Development</h4>
-                    <span className="text-primary font-bold font-mono-code">95%</span>
+                    <h4 className="font-hanken font-bold text-lg">
+                      Web Development
+                    </h4>
+                    <span className="text-primary font-bold font-mono-code">
+                      95%
+                    </span>
                   </div>
                   <div className="progress-bar">
                     <div
@@ -425,9 +397,7 @@ export default function Home() {
       <section className="py-section-gap reveal-left overflow-hidden">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
           <div className="max-w-2xl mx-auto space-y-4 mb-20 reveal-left stagger-1">
-            <span className="text-primary font-bold tracking-widest text-xs font-mono-code uppercase">
-              WORK PROCESS
-            </span>
+
             <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
               Seamless Process, Stellar Solutions
             </h2>
@@ -450,7 +420,9 @@ export default function Home() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 font-hanken">Discovery</h3>
+                  <h3 className="text-xl font-bold mb-2 font-hanken">
+                    Discovery
+                  </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Understanding client goals and identifying key
                     opportunities for growth.
@@ -476,7 +448,9 @@ export default function Home() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 font-hanken">Strategy</h3>
+                  <h3 className="text-xl font-bold mb-2 font-hanken">
+                    Strategy
+                  </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Crafting a tailored plan and multi-channel approach for
                     your brand.
@@ -502,7 +476,9 @@ export default function Home() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 font-hanken">Development</h3>
+                  <h3 className="text-xl font-bold mb-2 font-hanken">
+                    Development
+                  </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Building and executing campaigns with precision and
                     creative flair.
@@ -528,7 +504,9 @@ export default function Home() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 font-hanken">Launch</h3>
+                  <h3 className="text-xl font-bold mb-2 font-hanken">
+                    Launch
+                  </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     Deploying the final results and optimizing for continuous
                     ROI.
@@ -544,12 +522,7 @@ export default function Home() {
       <section className="py-section-gap bg-gray-50 reveal-left">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
           <div className="max-w-3xl mx-auto space-y-4 mb-16 reveal-left stagger-1">
-            <span className="text-primary font-bold tracking-widest text-xs font-mono-code uppercase flex items-center justify-center gap-2">
-              <span className="material-symbols-outlined text-lg">
-                work
-              </span>{" "}
-              FEATURED PORTFOLIO
-            </span>
+
             <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
               Impactful projects, every time
             </h2>
@@ -563,7 +536,8 @@ export default function Home() {
               <Link
                 key={idx}
                 href={item.href}
-                className={`group bg-white rounded-[32px] overflow-hidden border border-black/5 hover:border-primary/40 shadow-sm hover:shadow-md flex flex-col justify-between transition-all duration-300 reveal-left stagger-${(idx % 4) + 1} text-left`}
+                className={`group bg-white rounded-[32px] overflow-hidden border border-black/5 hover:border-primary/40 shadow-sm hover:shadow-md flex flex-col justify-between transition-all duration-300 reveal-left stagger-${(idx % 4) + 1
+                  } text-left`}
               >
                 {/* Image & Category Overlay */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">

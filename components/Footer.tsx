@@ -17,23 +17,43 @@ export default function Footer() {
             <p className="text-slate-600 text-sm leading-relaxed font-hanken">
               Transforming digital presence through targeted strategies and elite execution since 2014.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
+              {/* Facebook */}
               <a
-                aria-label="Twitter"
-                className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:text-primary transition-colors border border-slate-200 hover:border-primary/30"
-                href="#"
+                aria-label="Facebook"
+                className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:text-[#4b5a20] hover:bg-[#4b5a20]/10 transition-colors border border-slate-200 hover:border-[#4b5a20]/30"
+                href="https://www.facebook.com/profile.php?id=61565508944312"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.642c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z" />
                 </svg>
               </a>
+
+              {/* LinkedIn */}
               <a
                 aria-label="LinkedIn"
-                className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:text-primary transition-colors border border-slate-200 hover:border-primary/30"
-                href="#"
+                className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:text-[#4b5a20] hover:bg-[#4b5a20]/10 transition-colors border border-slate-200 hover:border-[#4b5a20]/30"
+                href="https://www.linkedin.com/company/grownfoster/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+
+              {/* X / Twitter */}
+              <a
+                aria-label="X (Twitter)"
+                className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:text-[#4b5a20] hover:bg-[#4b5a20]/10 transition-colors border border-slate-200 hover:border-[#4b5a20]/30"
+                href="https://x.com/grownfoster"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
             </div>
@@ -110,9 +130,20 @@ export default function Footer() {
             <p className="text-slate-600 text-sm font-hanken">
               Sector 7 Rohini, New Delhi, India 110085
             </p>
-            <p className="text-primary font-bold text-sm font-mono-code underline">
-              grownfoster.com@gmail.com
-            </p>
+            <div className="space-y-2">
+              <a
+                href="mailto:grownfoster.com@gmail.com"
+                className="text-primary font-bold text-sm font-mono-code underline hover:text-[#3d4a1a] transition-colors block"
+              >
+                grownfoster.com@gmail.com
+              </a>
+              <a
+                href="tel:+919202668977"
+                className="text-slate-700 font-bold text-sm font-mono-code hover:text-primary transition-colors block"
+              >
+                +91 92026 68977
+              </a>
+            </div>
           </div>
         </div>
 

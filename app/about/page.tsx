@@ -48,13 +48,13 @@ const timeline = [
   },
   {
     year: "2022",
-    title: "VERDANT MARTECH SYSTEM",
+    title: "GROW N FOSTER",
     description:
-      "Engineered proprietary multi-channel attribution and analytics reporting frameworks for enterprise brands.",
+      "Collaborated with 10+ startups and helped them grow their business exponentially",
   },
   {
     year: "2026",
-    title: "200+ BRANDS SCALED",
+    title: "20+ BRANDS SCALED",
     description:
       "Celebrating over 12 years of continuous growth, managing multi-million dollar ad spend and delivering industry-leading ROI.",
   },
@@ -184,10 +184,10 @@ export default function AboutPage() {
           </p>
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="mailto:hello@grownfoster.com"
+              href="mailto:grownfoster.com@gmail.com"
               className="bg-[#4b5a20] text-white px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-[#3d4a1a] transition-all shadow-lg shadow-[#4b5a20]/20"
             >
-              Email Us: hello@grownfoster.com
+              Email Us: grownfoster.com@gmail.com
             </a>
             <Link
               href="/services"
