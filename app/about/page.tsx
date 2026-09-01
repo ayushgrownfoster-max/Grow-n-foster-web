@@ -71,17 +71,28 @@ export default function AboutPage() {
               WHO WE ARE
             </span>
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold font-hanken tracking-tight text-black uppercase">
+<<<<<<< HEAD
               ABOUT <span className="text-[#4b5a20]">US</span>
             </h1>
           </div>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-normal leading-relaxed">
+=======
+              ABOUT US
+            </h1>
+          </div>
+          <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto font-normal leading-relaxed">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
             We are a team of growth strategists, media buyers, data analysts, and developers obsessed with accelerating business outcomes.
           </p>
         </div>
 
         {/* Mission & Vision Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+<<<<<<< HEAD
           <div className="bg-gray-50 rounded-3xl p-10 border border-gray-200 space-y-6 hover:border-[#4b5a20]/40 transition-colors">
+=======
+          <div className="bg-gray-50 rounded-3xl p-10 border border-gray-200 space-y-6 shadow-sm">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
             <div className="w-12 h-12 rounded-xl bg-[#4b5a20]/10 border border-[#4b5a20]/30 flex items-center justify-center text-[#4b5a20]">
               <span className="material-symbols-outlined text-2xl">
                 center_focus_strong
@@ -95,7 +106,11 @@ export default function AboutPage() {
             </p>
           </div>
 
+<<<<<<< HEAD
           <div className="bg-gray-50 rounded-3xl p-10 border border-gray-200 space-y-6 hover:border-[#4b5a20]/40 transition-colors">
+=======
+          <div className="bg-gray-50 rounded-3xl p-10 border border-gray-200 space-y-6 shadow-sm">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
             <div className="w-12 h-12 rounded-xl bg-[#4b5a20]/10 border border-[#4b5a20]/30 flex items-center justify-center text-[#4b5a20]">
               <span className="material-symbols-outlined text-2xl">
                 visibility
@@ -125,7 +140,11 @@ export default function AboutPage() {
             {companyValues.map((val, idx) => (
               <div
                 key={idx}
+<<<<<<< HEAD
                 className="bg-gray-50 rounded-2xl p-8 border border-gray-200 space-y-4 hover:border-[#4b5a20]/50 transition-colors"
+=======
+                className="bg-gray-50 rounded-2xl p-8 border border-gray-200 space-y-4 hover:border-[#4b5a20]/60 transition-colors shadow-sm"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               >
                 <div className="w-10 h-10 rounded-lg bg-[#4b5a20]/10 border border-[#4b5a20]/30 flex items-center justify-center text-[#4b5a20]">
                   <span className="material-symbols-outlined text-xl">
@@ -149,16 +168,24 @@ export default function AboutPage() {
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-black">
               Our Growth Journey
             </h2>
+<<<<<<< HEAD
             <p className="text-gray-600 text-base">
               Over a decade of relentless execution and continuous innovation.
             </p>
+=======
+            <p className="text-gray-600 text-base">Over a decade of relentless execution and continuous innovation.</p>
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {timeline.map((item, idx) => (
               <div
                 key={idx}
+<<<<<<< HEAD
                 className="bg-gray-50 rounded-2xl p-6 border border-gray-200 space-y-3 relative overflow-hidden"
+=======
+                className="bg-gray-50 rounded-2xl p-6 border border-gray-200 space-y-3 relative overflow-hidden shadow-sm"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               >
                 <div className="text-3xl font-black font-mono-code text-[#4b5a20]">
                   {item.year}
@@ -175,7 +202,11 @@ export default function AboutPage() {
         </div>
 
         {/* Contact CTA */}
+<<<<<<< HEAD
         <div className="bg-[#4b5a20]/5 rounded-3xl p-10 md:p-14 border border-[#4b5a20]/20 text-center space-y-6">
+=======
+        <div className="bg-gray-50 rounded-3xl p-10 md:p-14 border border-[#4b5a20]/30 text-center space-y-6 shadow-sm">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
           <h2 className="text-3xl sm:text-4xl font-extrabold font-hanken text-black">
             Let&apos;s Build Your Growth Strategy Together
           </h2>
@@ -185,13 +216,21 @@ export default function AboutPage() {
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="mailto:hello@grownfoster.com"
+<<<<<<< HEAD
               className="bg-[#4b5a20] text-white px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-[#3d4a1a] transition-all shadow-lg shadow-[#4b5a20]/20"
+=======
+              className="bg-[#4b5a20] text-white px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-[#394518] transition-all shadow-md"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
             >
               Email Us: hello@grownfoster.com
             </a>
             <Link
               href="/services"
+<<<<<<< HEAD
               className="px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider text-black border border-gray-300 hover:border-[#4b5a20] hover:text-[#4b5a20] transition-all bg-white"
+=======
+              className="px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider text-black border border-gray-300 hover:border-[#4b5a20] transition-all bg-white"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
             >
               Explore Services
             </Link>

@@ -90,24 +90,40 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white text-black font-hanken antialiased overflow-x-hidden">
       {/* Hero Section */}
+<<<<<<< HEAD
       <section className="relative py-section-gap overflow-hidden bg-gray-50/50">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#4b5a20]/10 blur-[120px] pointer-events-none rounded-full"></div>
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#4b5a20]/5 text-[#4b5a20] text-xs font-mono-code border border-[#4b5a20]/30 tracking-widest uppercase shadow-sm">
+=======
+      <section className="relative py-section-gap overflow-hidden bg-slate-50 border-b border-slate-100">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#4b5a20]/10 blur-[120px] pointer-events-none rounded-full"></div>
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#4b5a20]/10 text-[#4b5a20] text-xs font-mono-code border border-[#4b5a20]/30 tracking-widest uppercase shadow-sm">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4b5a20] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4b5a20]"></span>
               </span>
               CONTACT US
             </div>
+<<<<<<< HEAD
             <h1 className="font-hanken text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.08] tracking-tight text-black">
+=======
+            <h1 className="font-hanken text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.08] tracking-tight text-slate-900">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               Let&apos;s Grow Your{" "}
               <span className="text-[#4b5a20] font-black">
                 Business Together
               </span>
             </h1>
+<<<<<<< HEAD
             <p className="font-hanken text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+=======
+            <p className="font-hanken text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               Have a project in mind or looking for the right digital marketing
               strategy? Tell us about your business, goals, and challenges. Our
               team will get back to you to discuss the best way forward.
@@ -115,7 +131,11 @@ export default function ContactPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact-form"
+<<<<<<< HEAD
                 className="bg-[#4b5a20] border border-[#4b5a20] text-white px-10 py-5 rounded-full font-bold font-hanken text-base hover:bg-[#3d4a1a] transition-all duration-300 shadow-xl shadow-[#4b5a20]/20 flex items-center justify-center gap-3 group"
+=======
+                className="bg-[#4b5a20] text-white px-10 py-5 rounded-full font-bold font-hanken text-base hover:bg-[#3d4a1a] transition-all duration-300 shadow-xl shadow-[#4b5a20]/20 flex items-center justify-center gap-3 group"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               >
                 Send Your Enquiry
                 <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
@@ -124,10 +144,17 @@ export default function ContactPage() {
               </a>
               <a
                 href="#contact-info"
+<<<<<<< HEAD
                 className="group flex items-center gap-4 px-8 py-5 text-black font-bold font-hanken text-base hover:text-[#4b5a20] transition-colors justify-center"
               >
                 <span className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-[#4b5a20] transition-colors bg-white shadow-sm">
                   <span className="material-symbols-outlined text-xl text-[#4b5a20]">
+=======
+                className="group flex items-center gap-4 px-8 py-5 text-slate-800 font-bold font-hanken text-base hover:text-[#4b5a20] transition-colors justify-center"
+              >
+                <span className="w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center group-hover:border-[#4b5a20] transition-colors bg-white shadow-sm">
+                  <span className="material-symbols-outlined text-xl">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     call
                   </span>
                 </span>
@@ -138,7 +165,11 @@ export default function ContactPage() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Contact Form */}
+=======
+      {/* Contact Form Section */}
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
       <section id="contact-form" className="py-section-gap bg-white">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid lg:grid-cols-5 gap-16 items-start">
@@ -151,10 +182,17 @@ export default function ContactPage() {
                   </span>{" "}
                   ENQUIRY FORM
                 </span>
+<<<<<<< HEAD
                 <h2 className="font-hanken text-3xl md:text-4xl font-bold tracking-tight text-black">
                   Tell Us About Your Project
                 </h2>
                 <p className="text-gray-600 text-base leading-relaxed max-w-xl">
+=======
+                <h2 className="font-hanken text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+                  Tell Us About Your Project
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed max-w-xl">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                   Fill out the form below and our team will get back to you
                   within 24 hours to discuss the best way forward.
                 </p>
@@ -175,7 +213,11 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
+<<<<<<< HEAD
                     <label className="text-xs font-mono-code text-gray-700 uppercase tracking-wider">
+=======
+                    <label className="text-xs font-mono-code text-slate-700 uppercase tracking-wider">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                       Full Name <span className="text-[#4b5a20]">*</span>
                     </label>
                     <input
@@ -185,11 +227,19 @@ export default function ContactPage() {
                       value={formData.fullName}
                       onChange={handleChange}
                       placeholder="Your full name"
+<<<<<<< HEAD
                       className="w-full bg-gray-50 rounded-2xl px-6 py-4 border border-gray-200 focus:border-[#4b5a20] focus:bg-white outline-none text-black transition-all font-hanken placeholder:text-gray-400"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-mono-code text-gray-700 uppercase tracking-wider">
+=======
+                      className="w-full bg-slate-50 rounded-2xl px-6 py-4 border border-slate-200 focus:border-[#4b5a20] focus:bg-white outline-none text-slate-900 transition-all font-hanken placeholder:text-slate-400"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-mono-code text-slate-700 uppercase tracking-wider">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                       Business / Company Name
                     </label>
                     <input
@@ -198,14 +248,22 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="Your company name"
+<<<<<<< HEAD
                       className="w-full bg-gray-50 rounded-2xl px-6 py-4 border border-gray-200 focus:border-[#4b5a20] focus:bg-white outline-none text-black transition-all font-hanken placeholder:text-gray-400"
+=======
+                      className="w-full bg-slate-50 rounded-2xl px-6 py-4 border border-slate-200 focus:border-[#4b5a20] focus:bg-white outline-none text-slate-900 transition-all font-hanken placeholder:text-slate-400"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
+<<<<<<< HEAD
                     <label className="text-xs font-mono-code text-gray-700 uppercase tracking-wider">
+=======
+                    <label className="text-xs font-mono-code text-slate-700 uppercase tracking-wider">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                       Work Email <span className="text-[#4b5a20]">*</span>
                     </label>
                     <input
@@ -215,11 +273,19 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="you@company.com"
+<<<<<<< HEAD
                       className="w-full bg-gray-50 rounded-2xl px-6 py-4 border border-gray-200 focus:border-[#4b5a20] focus:bg-white outline-none text-black transition-all font-hanken placeholder:text-gray-400"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-mono-code text-gray-700 uppercase tracking-wider">
+=======
+                      className="w-full bg-slate-50 rounded-2xl px-6 py-4 border border-slate-200 focus:border-[#4b5a20] focus:bg-white outline-none text-slate-900 transition-all font-hanken placeholder:text-slate-400"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-mono-code text-slate-700 uppercase tracking-wider">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                       Phone Number
                     </label>
                     <input
@@ -228,13 +294,21 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 (555) 000-0000"
+<<<<<<< HEAD
                       className="w-full bg-gray-50 rounded-2xl px-6 py-4 border border-gray-200 focus:border-[#4b5a20] focus:bg-white outline-none text-black transition-all font-hanken placeholder:text-gray-400"
+=======
+                      className="w-full bg-slate-50 rounded-2xl px-6 py-4 border border-slate-200 focus:border-[#4b5a20] focus:bg-white outline-none text-slate-900 transition-all font-hanken placeholder:text-slate-400"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
+<<<<<<< HEAD
                   <label className="text-xs font-mono-code text-gray-700 uppercase tracking-wider">
+=======
+                  <label className="text-xs font-mono-code text-slate-700 uppercase tracking-wider">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     Website URL
                   </label>
                   <input
@@ -243,13 +317,21 @@ export default function ContactPage() {
                     value={formData.website}
                     onChange={handleChange}
                     placeholder="https://yourwebsite.com"
+<<<<<<< HEAD
                     className="w-full bg-gray-50 rounded-2xl px-6 py-4 border border-gray-200 focus:border-[#4b5a20] focus:bg-white outline-none text-black transition-all font-hanken placeholder:text-gray-400"
+=======
+                    className="w-full bg-slate-50 rounded-2xl px-6 py-4 border border-slate-200 focus:border-[#4b5a20] focus:bg-white outline-none text-slate-900 transition-all font-hanken placeholder:text-slate-400"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
+<<<<<<< HEAD
                     <label className="text-xs font-mono-code text-gray-700 uppercase tracking-wider">
+=======
+                    <label className="text-xs font-mono-code text-slate-700 uppercase tracking-wider">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                       Service Interested In{" "}
                       <span className="text-[#4b5a20]">*</span>
                     </label>
@@ -258,7 +340,11 @@ export default function ContactPage() {
                       required
                       value={formData.service}
                       onChange={handleChange}
+<<<<<<< HEAD
                       className="w-full bg-gray-50 rounded-2xl px-6 py-4 border border-gray-200 focus:border-[#4b5a20] focus:bg-white outline-none text-black transition-all font-hanken appearance-none cursor-pointer"
+=======
+                      className="w-full bg-slate-50 rounded-2xl px-6 py-4 border border-slate-200 focus:border-[#4b5a20] focus:bg-white outline-none text-slate-900 transition-all font-hanken appearance-none cursor-pointer"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     >
                       <option value="" disabled className="text-gray-400">
                         Select a service
@@ -271,14 +357,22 @@ export default function ContactPage() {
                     </select>
                   </div>
                   <div className="space-y-2">
+<<<<<<< HEAD
                     <label className="text-xs font-mono-code text-gray-700 uppercase tracking-wider">
+=======
+                    <label className="text-xs font-mono-code text-slate-700 uppercase tracking-wider">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                       Monthly Marketing Budget
                     </label>
                     <select
                       name="budget"
                       value={formData.budget}
                       onChange={handleChange}
+<<<<<<< HEAD
                       className="w-full bg-gray-50 rounded-2xl px-6 py-4 border border-gray-200 focus:border-[#4b5a20] focus:bg-white outline-none text-black transition-all font-hanken appearance-none cursor-pointer"
+=======
+                      className="w-full bg-slate-50 rounded-2xl px-6 py-4 border border-slate-200 focus:border-[#4b5a20] focus:bg-white outline-none text-slate-900 transition-all font-hanken appearance-none cursor-pointer"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     >
                       <option value="" disabled className="text-gray-400">
                         Select a range
@@ -293,7 +387,11 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-2">
+<<<<<<< HEAD
                   <label className="text-xs font-mono-code text-gray-700 uppercase tracking-wider">
+=======
+                  <label className="text-xs font-mono-code text-slate-700 uppercase tracking-wider">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     Tell Us About Your Project or Goals{" "}
                     <span className="text-[#4b5a20]">*</span>
                   </label>
@@ -304,12 +402,20 @@ export default function ContactPage() {
                     onChange={handleChange}
                     rows={5}
                     placeholder="Describe your project, goals, challenges, or any specific requirements..."
+<<<<<<< HEAD
                     className="w-full bg-gray-50 rounded-2xl px-6 py-4 border border-gray-200 focus:border-[#4b5a20] focus:bg-white outline-none text-black transition-all font-hanken resize-none placeholder:text-gray-400"
+=======
+                    className="w-full bg-slate-50 rounded-2xl px-6 py-4 border border-slate-200 focus:border-[#4b5a20] focus:bg-white outline-none text-slate-900 transition-all font-hanken resize-none placeholder:text-slate-400"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                   />
                 </div>
 
                 <div className="space-y-2">
+<<<<<<< HEAD
                   <label className="text-xs font-mono-code text-gray-700 uppercase tracking-wider">
+=======
+                  <label className="text-xs font-mono-code text-slate-700 uppercase tracking-wider">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     Preferred Contact Method
                   </label>
                   <div className="flex flex-wrap gap-3">
@@ -318,7 +424,11 @@ export default function ContactPage() {
                         key={m}
                         className={`cursor-pointer px-5 py-3 rounded-xl border text-sm font-hanken font-medium transition-all ${formData.contactMethod === m
                             ? "border-[#4b5a20] bg-[#4b5a20]/10 text-[#4b5a20]"
+<<<<<<< HEAD
                             : "border-gray-200 text-gray-700 hover:border-[#4b5a20]/30 bg-gray-50"
+=======
+                            : "border-slate-200 text-slate-600 hover:border-[#4b5a20]/40"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                           }`}
                       >
                         <input
@@ -350,8 +460,13 @@ export default function ContactPage() {
             {/* Sidebar */}
             <div className="lg:col-span-2 space-y-8">
               {/* Why Choose Us Mini */}
+<<<<<<< HEAD
               <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200 space-y-6">
                 <h3 className="font-hanken text-xl font-bold text-black">
+=======
+              <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200/80 shadow-sm space-y-6">
+                <h3 className="font-hanken text-xl font-bold text-slate-900">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                   Why Choose Grow &apos;n&apos; Foster?
                 </h3>
                 {[
@@ -383,10 +498,17 @@ export default function ContactPage() {
                       </span>
                     </div>
                     <div>
+<<<<<<< HEAD
                       <h4 className="font-bold font-hanken text-sm mb-1 text-black">
                         {item.title}
                       </h4>
                       <p className="text-xs text-gray-600 leading-relaxed">
+=======
+                      <h4 className="font-bold font-hanken text-sm mb-1 text-slate-900">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-slate-600 leading-relaxed">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                         {item.desc}
                       </p>
                     </div>
@@ -395,8 +517,13 @@ export default function ContactPage() {
               </div>
 
               {/* Social Media */}
+<<<<<<< HEAD
               <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200 space-y-6">
                 <h3 className="font-hanken text-lg font-bold text-black">
+=======
+              <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200/80 shadow-sm space-y-6">
+                <h3 className="font-hanken text-lg font-bold text-slate-900">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                   Connect With Grow &apos;n&apos; Foster
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
@@ -421,7 +548,11 @@ export default function ContactPage() {
                     <a
                       key={s.name}
                       href="#"
+<<<<<<< HEAD
                       className="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 bg-white hover:border-[#4b5a20]/30 transition-all group"
+=======
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-200 bg-white hover:border-[#4b5a20]/40 transition-all group shadow-sm"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     >
                       <svg
                         className="w-5 h-5 fill-current text-[#4b5a20]"
@@ -429,7 +560,11 @@ export default function ContactPage() {
                       >
                         <path d={s.path}></path>
                       </svg>
+<<<<<<< HEAD
                       <span className="text-sm font-hanken font-medium text-gray-700 group-hover:text-[#4b5a20] transition-colors">
+=======
+                      <span className="text-sm font-hanken font-medium text-slate-700 group-hover:text-[#4b5a20] transition-colors">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                         {s.name}
                       </span>
                     </a>
@@ -442,13 +577,21 @@ export default function ContactPage() {
       </section>
 
       {/* How Can We Help */}
+<<<<<<< HEAD
       <section className="py-section-gap bg-gray-50">
+=======
+      <section className="py-section-gap bg-slate-50 border-y border-slate-100">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-16">
             <span className="text-[#4b5a20] font-bold tracking-widest text-xs font-mono-code uppercase">
               OUR EXPERTISE
             </span>
+<<<<<<< HEAD
             <h2 className="font-hanken text-3xl md:text-4xl font-bold mt-4 tracking-tight text-black">
+=======
+            <h2 className="font-hanken text-3xl md:text-4xl font-bold mt-4 tracking-tight text-slate-900">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               How Can We Help?
             </h2>
           </div>
@@ -485,17 +628,28 @@ export default function ContactPage() {
             ].map((card, i) => (
               <div
                 key={i}
+<<<<<<< HEAD
                 className="bg-white rounded-3xl p-8 border border-gray-200 hover:border-[#4b5a20]/30 hover:shadow-lg transition-all group flex flex-col"
+=======
+                className="bg-white rounded-3xl p-8 border border-slate-200 hover:border-[#4b5a20]/40 transition-all group flex flex-col shadow-sm hover:shadow-md"
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               >
                 <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/10 border border-[#4b5a20]/30 flex items-center justify-center text-[#4b5a20] mb-6 group-hover:bg-[#4b5a20] group-hover:text-white transition-all">
                   <span className="material-symbols-outlined text-3xl">
                     {card.icon}
                   </span>
                 </div>
+<<<<<<< HEAD
                 <h3 className="font-hanken text-lg font-bold mb-3 text-black">
                   {card.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-6 flex-1">
+=======
+                <h3 className="font-hanken text-lg font-bold mb-3 text-slate-900">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                   {card.desc}
                 </p>
                 <Link
@@ -511,7 +665,11 @@ export default function ContactPage() {
       </section>
 
       {/* Office / Location */}
+<<<<<<< HEAD
       <section id="contact-info" className="py-section-gap bg-white">
+=======
+      <section className="py-section-gap bg-white">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -522,7 +680,11 @@ export default function ContactPage() {
                   </span>{" "}
                   OUR LOCATION
                 </span>
+<<<<<<< HEAD
                 <h2 className="font-hanken text-3xl md:text-4xl font-bold mt-4 tracking-tight text-black">
+=======
+                <h2 className="font-hanken text-3xl md:text-4xl font-bold mt-4 tracking-tight text-slate-900">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                   Visit Our Office
                 </h2>
               </div>
@@ -532,10 +694,15 @@ export default function ContactPage() {
                     location_on
                   </span>
                   <div>
+<<<<<<< HEAD
                     <p className="font-bold font-hanken text-base text-black">
                       Address
                     </p>
                     <p className="text-gray-600 text-sm">
+=======
+                    <p className="font-bold font-hanken text-base text-slate-900">Address</p>
+                    <p className="text-slate-600 text-sm">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                       Sector 7 Rohini, New Delhi, India 110085
                     </p>
                   </div>
@@ -545,9 +712,13 @@ export default function ContactPage() {
                     mail
                   </span>
                   <div>
+<<<<<<< HEAD
                     <p className="font-bold font-hanken text-base text-black">
                       Email
                     </p>
+=======
+                    <p className="font-bold font-hanken text-base text-slate-900">Email</p>
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                     <p className="text-[#4b5a20] text-sm font-mono-code">
                       hello@grownfoster.com
                     </p>
@@ -558,10 +729,17 @@ export default function ContactPage() {
                     schedule
                   </span>
                   <div>
+<<<<<<< HEAD
                     <p className="font-bold font-hanken text-base text-black">
                       Business Hours
                     </p>
                     <p className="text-gray-600 text-sm">
+=======
+                    <p className="font-bold font-hanken text-base text-slate-900">
+                      Business Hours
+                    </p>
+                    <p className="text-slate-600 text-sm">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
                       Monday–Friday, 9:00 AM–6:00 PM
                     </p>
                   </div>
@@ -579,21 +757,24 @@ export default function ContactPage() {
                 Get Directions
               </a>
             </div>
+<<<<<<< HEAD
             <div className="rounded-3xl overflow-hidden border border-gray-200 aspect-video shadow-md">
+=======
+            <div className="rounded-3xl overflow-hidden border border-slate-200 aspect-video shadow-md">
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.8877!2d77.1082!3d28.7186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01a7d0000001%3A0x1234567890abcdef!2sSector%207%2C%20Rohini%2C%20New%20Delhi%2C%20Delhi%20110085!5e0!3m2!1sen!2sin!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.8877!2d77.1082!3d28.7186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01a7d0000001%3A0x1234567890abcdef!2sSector%207%2C%20Rohini%2C%20New%20Delhi%2C%20Delhi%20110085!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "350px" }}
-                allowFullScreen
+                style={{ border: 0 }}
+                allowFullScreen={false}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Grow n Foster Office Location"
               ></iframe>
             </div>
           </div>
         </div>
       </section>
+<<<<<<< HEAD
 
       {/* FAQs */}
       <section className="py-section-gap bg-gray-50">
@@ -639,6 +820,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+=======
+>>>>>>> dec6dd578eb994e3f6ae22942179ace748a0cfc8
     </div>
   );
 }
