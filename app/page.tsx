@@ -104,24 +104,33 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black font-hanken antialiased overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-12 bg-grid-pattern">
-        {/* Ambient Lighting Accents */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 blur-[120px] pointer-events-none rounded-full"></div>
-        <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-primary/5 blur-[100px] pointer-events-none rounded-full"></div>
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-12 bg-white text-black">
 
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 py-16">
-          <div className="flex flex-col items-center text-center space-y-12">
-            <div className="max-w-4xl space-y-10 relative z-20 flex flex-col items-center">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 py-20">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left Column: Text + CTAs */}
+            <div className="flex flex-col space-y-10 relative z-20">
+
+              {/* Eyebrow Badge */}
+              <div className="hero-fade-in stagger-1 flex items-center gap-3">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary font-mono-code text-xs tracking-widest uppercase font-semibold">
+                  <span className="material-symbols-outlined text-sm">campaign</span>
+                  Digital Growth Agency
+                </span>
+              </div>
+
               {/* Display Headline */}
-              <div className="space-y-6 relative hero-fade-in stagger-2">
-                <h1 className="font-hanken text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.08] tracking-tight">
-                  Attract <span className="font-normal italic font-serif text-primary">Potential</span>{" "}
+              <div className="space-y-6 hero-fade-in stagger-2">
+                <h1 className="font-hanken text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight text-black">
+                  Attract{" "}
+                  <span className="font-normal italic font-serif" style={{ color: "#4b5a20" }}>Potential</span>{" "}
                   Customers with{" "}
-                  <span className="text-primary font-black block sm:inline mt-1 sm:mt-0">
+                  <span className="font-black" style={{ color: "#4b5a20" }}>
                     Targeted Marketing
                   </span>
                 </h1>
-                <p className="font-hanken text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-normal">
+                <p className="font-hanken text-lg text-gray-600 max-w-xl leading-relaxed font-normal">
                   Grow &apos;n&apos; Foster delivers comprehensive digital
                   marketing services to boost your brand visibility, drive
                   qualified traffic, and increase conversions.
@@ -129,10 +138,10 @@ export default function Home() {
               </div>
 
               {/* CTA Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center pt-2 hero-fade-in stagger-3">
+              <div className="flex flex-col sm:flex-row gap-4 hero-fade-in stagger-3">
                 <Link
                   href="/contact"
-                  className="bg-primary border border-primary text-white px-10 py-5 rounded-full font-bold font-hanken text-base hover:brightness-110 transition-all duration-300 shadow-md flex items-center justify-center gap-3 group"
+                  className="bg-primary border border-primary text-white px-8 py-4 rounded-full font-bold font-hanken text-base hover:brightness-110 transition-all duration-300 shadow-lg shadow-primary/20 flex items-center justify-center gap-3 group"
                 >
                   Free Consultation
                   <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
@@ -141,29 +150,252 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/services"
-                  className="group flex items-center gap-4 px-8 py-5 text-black font-bold font-hanken text-base hover:text-primary transition-colors"
+                  className="group flex items-center gap-3 px-8 py-4 rounded-full border border-black/15 text-black font-bold font-hanken text-base hover:border-primary hover:text-primary transition-all duration-300"
                 >
-                  <span className="w-12 h-12 rounded-full border border-black/15 flex items-center justify-center group-hover:border-primary transition-colors shadow-sm">
-                    <span className="material-symbols-outlined text-xl">
+                  <span className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                    <span className="material-symbols-outlined text-base">
                       play_arrow
                     </span>
                   </span>
                   Explore Services
                 </Link>
               </div>
-            </div>
 
-            {/* Showcase Media Container */}
-            <div className="w-full max-w-5xl relative mt-12 hero-fade-in stagger-4">
-              <div className="relative z-10 rounded-[40px] md:rounded-[60px] overflow-hidden border border-black/10 shadow-xl animate-float aspect-video group">
-                <img
-                  alt="Modern elite workspace"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoNbm6YOA5fSQVMfhHaqHkN2Mwz3NUozZGzbbAk16drpPePwXgoeUeFygSvz2lG1GT1BnhzyWV1pg6kcYLawCBmR5bIxlWedRsZkPDohboCpORFSUyRK5VP8Ccp18dFH78n2N5yrHX374iQTC8lJJLMOKNJkHarUz1WjaHctIKLfrqsDzJoNGiL6RJNdHCgOJWi18xnJVZ2FKjvYbhIv1DMFdiMLzzeJfvFSBqVx4OXCWArQswyOZ"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent"></div>
+              {/* Social Proof Row */}
+              <div className="flex flex-wrap items-center gap-8 pt-4 hero-fade-in stagger-4 border-t border-black/10">
+                {/* Happy Clients */}
+                <div className="flex items-center gap-3">
+                  <div className="flex -space-x-2">
+                    {["S", "K", "J", "A"].map((initial, i) => (
+                      <div
+                        key={i}
+                        className="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold font-hanken text-white"
+                        style={{ backgroundColor: i % 2 === 0 ? "#4b5a20" : "#6b7f34" }}
+                      >
+                        {initial}
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-yellow-500 text-xs">★</span>
+                      ))}
+                    </div>
+                    <p className="text-gray-500 text-xs font-hanken mt-0.5">50+ Happy Clients</p>
+                  </div>
+                </div>
+                {/* Divider */}
+                <div className="h-10 w-px bg-black/10 hidden sm:block"></div>
+                {/* Stat */}
+                <div>
+                  <p className="text-2xl font-black font-hanken text-black">200+</p>
+                  <p className="text-gray-500 text-xs font-hanken">Campaigns Launched</p>
+                </div>
+                <div className="h-10 w-px bg-black/10 hidden sm:block"></div>
+
               </div>
             </div>
+
+            {/* Right Column: Visual Panel */}
+            <div className="relative hidden lg:flex items-center justify-center hero-fade-in stagger-3">
+
+              {/* Main visual card */}
+              <div className="relative w-full max-w-[480px]">
+                {/* Background glow blob */}
+                <div className="absolute inset-0 rounded-[48px] bg-primary/10 blur-3xl scale-110"></div>
+
+                {/* Main image container */}
+                <div className="relative rounded-[48px] overflow-hidden border border-primary/15 shadow-2xl bg-gray-50">
+                  <div className="aspect-[4/5] relative">
+                    <img
+                      alt="Digital marketing professional"
+                      className="w-full h-full object-cover object-center"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoNbm6YOA5fSQVMfhHaqHkN2Mwz3NUozZGzbbAk16drpPePwXgoeUeFygSvz2lG1GT1BnhzyWV1pg6kcYLawCBmR5bIxlWedRsZkPDohboCpORFSUyRK5VP8Ccp18dFH78n2N5yrHX374iQTC8lJJLMOKNJkHarUz1WjaHctIKLfrqsDzJoNGiL6RJNdHCgOJWi18xnJVZ2FKjvYbhIv1DMFdiMLzzeJfvFSBqVx4OXCWArQswyOZ"
+                    />
+                    {/* Subtle bottom fade */}
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(255,255,255,0.3) 0%, transparent 40%)" }}></div>
+                  </div>
+                </div>
+
+                {/* Floating Card: Projects Completed */}
+                <div
+                  className="absolute -top-6 -right-8 bg-white rounded-2xl px-5 py-4 flex items-center gap-3 shadow-lg animate-float border border-black/8"
+                  style={{ animationDelay: "0s" }}
+                >
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#4b5a20" }}>
+                    <span className="material-symbols-outlined text-white text-base">check_circle</span>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-black font-hanken text-black leading-none">550+</p>
+                    <p className="text-gray-500 text-xs font-hanken mt-0.5">Projects Completed</p>
+                  </div>
+                </div>
+
+                {/* Floating Card: Team Members */}
+                <div
+                  className="absolute -bottom-6 -left-8 bg-white rounded-2xl px-5 py-4 shadow-lg animate-float border border-black/8"
+                  style={{ animationDelay: "2s" }}
+                >
+                  <p className="text-gray-500 text-xs font-hanken mb-2">Team Members</p>
+                  <div className="flex items-center gap-2">
+                    <div className="flex -space-x-2">
+                      {["T", "A", "R", "M"].map((initial, i) => (
+                        <div
+                          key={i}
+                          className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold text-white"
+                          style={{ backgroundColor: i % 2 === 0 ? "#4b5a20" : "#6b7f34" }}
+                        >
+                          {initial}
+                        </div>
+                      ))}
+                      <div className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: "#4b5a20" }}>+</div>
+                    </div>
+                    <span className="text-gray-500 text-xs font-mono-code ml-1">& more</span>
+                  </div>
+                </div>
+
+                {/* Floating Chat Bubble */}
+                <div
+                  className="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-white rounded-2xl p-3 shadow-lg animate-float border border-black/8"
+                  style={{ animationDelay: "4s" }}
+                >
+                  <span className="material-symbols-outlined text-2xl" style={{ color: "#4b5a20" }}>chat_bubble</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* About Our Agency Section */}
+      <section className="py-section-gap bg-white reveal-left">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+          {/* Top: Heading row */}
+          <div className="grid lg:grid-cols-2 gap-12 items-end mb-16 reveal-left stagger-1">
+            {/* Left: Eyebrow + Heading */}
+            <div className="space-y-5">
+              <span className="inline-flex items-center gap-2 text-primary font-mono-code text-xs tracking-widest uppercase font-semibold">
+                <span className="material-symbols-outlined text-sm">campaign</span>
+                About Our Agency
+              </span>
+              <h2 className="font-hanken text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-black">
+                Digital Marketing{" "}
+                <span style={{ color: "#4b5a20" }}>Solutions</span>{" "}
+                for Your Business Growth
+              </h2>
+            </div>
+            {/* Right: Description */}
+            <div className="space-y-4">
+              <p className="text-gray-600 font-hanken text-base leading-relaxed">
+                At Grow &apos;n&apos; Foster, we combine data-driven strategy with creative
+                execution to deliver measurable results. Our team of digital experts
+                crafts bespoke marketing campaigns that connect your brand with the
+                right audience at the right time.
+              </p>
+              <p className="text-gray-600 font-hanken text-base leading-relaxed">
+                From SEO and LinkedIn outreach to content marketing and web design,
+                we offer end-to-end digital growth solutions tailored to your business goals.
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom: Bento Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 reveal-left stagger-2">
+
+            {/* Left: Team Photo — spans 2 rows */}
+            <div className="lg:row-span-2 rounded-[32px] overflow-hidden border border-black/5 shadow-sm relative group">
+              <img
+                alt="Grow n Foster team at work"
+                className="w-full h-full object-cover min-h-[400px] lg:min-h-full group-hover:scale-105 transition-transform duration-700"
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6">
+                <span className="text-white font-hanken font-bold text-lg">Our Expert Team</span>
+                <p className="text-white/70 text-sm font-hanken mt-1">Strategy & Execution</p>
+              </div>
+            </div>
+
+            {/* Middle Top: Your Growth, Our Priority */}
+            <div className="bg-gray-50 rounded-[32px] p-8 border border-black/5 flex flex-col justify-between gap-6 group hover:border-primary/30 transition-all duration-300">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "#4b5a20" }}>
+                  <span className="material-symbols-outlined text-white text-xl">trending_up</span>
+                </div>
+                <h3 className="font-hanken text-2xl font-extrabold text-black leading-tight">
+                  Your Growth,{" "}
+                  <span style={{ color: "#4b5a20" }}>Our Priority</span>
+                </h3>
+                <p className="text-gray-600 font-hanken text-sm leading-relaxed">
+                  We treat your business as our own. Every campaign, every strategy,
+                  and every decision is driven by a singular goal — measurable growth
+                  that compounds over time.
+                </p>
+              </div>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-black font-bold font-hanken text-sm group-hover:text-primary transition-colors"
+              >
+                Learn More
+                <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">north_east</span>
+              </Link>
+            </div>
+
+            {/* Right Top: Stats */}
+            <div className="rounded-[32px] border border-black/5 overflow-hidden shadow-sm">
+              <div className="p-8 border-b border-black/5 bg-white hover:bg-gray-50 transition-colors">
+                <p className="font-hanken text-5xl font-black" style={{ color: "#4b5a20" }}>550+</p>
+                <p className="text-gray-600 font-hanken text-sm mt-2 font-medium">Projects Completed</p>
+              </div>
+              <div className="p-8 bg-white hover:bg-gray-50 transition-colors">
+                <p className="font-hanken text-5xl font-black" style={{ color: "#4b5a20" }}>50+</p>
+                <p className="text-gray-600 font-hanken text-sm mt-2 font-medium">Happy Clients Served</p>
+              </div>
+            </div>
+
+            {/* Bottom spanning 2 cols: Innovating for Your Success */}
+            <div
+              className="lg:col-span-2 rounded-[32px] p-8 md:p-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-8"
+              style={{ backgroundColor: "#4b5a20" }}
+            >
+              <div className="space-y-4 max-w-xl">
+                <h3 className="font-hanken text-2xl md:text-3xl font-extrabold text-white leading-tight">
+                  Innovating for Your Success
+                </h3>
+                <p className="text-white/70 font-hanken text-sm leading-relaxed">
+                  We stay ahead of every algorithm update, platform shift, and industry trend
+                  so your brand always leads the conversation. Our proactive approach means
+                  you&apos;re never playing catch-up — you&apos;re always one step ahead.
+                </p>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 text-white font-bold font-hanken text-sm hover:gap-3 transition-all"
+                >
+                  Learn More
+                  <span className="material-symbols-outlined text-base">north_east</span>
+                </Link>
+              </div>
+              {/* Navigation arrows */}
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <Link
+                  href="/about"
+                  className="w-12 h-12 rounded-full flex items-center justify-center border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300"
+                >
+                  <span className="material-symbols-outlined text-xl">south_west</span>
+                </Link>
+                <Link
+                  href="/services"
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-black hover:brightness-90 transition-all duration-300"
+                  style={{ backgroundColor: "#becd90" }}
+                >
+                  <span className="material-symbols-outlined text-xl">north_east</span>
+                </Link>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
