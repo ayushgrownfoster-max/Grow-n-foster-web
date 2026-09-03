@@ -629,126 +629,94 @@ export default function Home() {
       <section className="py-section-gap reveal-left overflow-hidden">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
           <div className="max-w-2xl mx-auto space-y-4 mb-20 reveal-left stagger-1">
-
+            <span className="inline-flex items-center gap-2 text-primary font-mono-code text-xs tracking-widest uppercase font-semibold justify-center">
+              <span className="material-symbols-outlined text-sm">route</span>
+              How We Work
+            </span>
             <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
-              Seamless Process, Stellar Solutions
+              Our Proven Growth Process
             </h2>
             <p className="text-gray-600 font-hanken text-base leading-relaxed">
-              Find out how we transform your ideas into digital solutions by
-              learning how our efficient work process can turn them into
-              results.
+              A strategic, data-driven approach that takes your business from
+              understanding its challenges to executing the right strategy,
+              optimizing performance, and driving sustainable growth.
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            {/* Step 1 */}
-            <div className="relative group reveal-left stagger-1">
-              <div className="bg-gray-50 border border-black/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
-                <div className="flex justify-between items-start">
-                  <span className="material-symbols-outlined text-4xl text-primary">
-                    analytics
+            {[
+              {
+                icon: "search_insights",
+                title: "Discovery & Audit",
+                desc: "Learn about the client's business, goals, and current challenges.",
+              },
+              {
+                icon: "architecture",
+                title: "Strategy & Plan",
+                desc: "Build a custom marketing roadmap and target audience profile.",
+              },
+              {
+                icon: "rocket_launch",
+                title: "Execution & Launch",
+                desc: "Implement campaigns, build assets, and run the marketing plan.",
+              },
+              {
+                icon: "trending_up",
+                title: "Growth & Review",
+                desc: "Track performance data, optimize results, and scale success.",
+              },
+            ].map((step, idx) => (
+              <div key={idx} className={`relative group reveal-left stagger-${idx + 1}`}>
+                <div
+                  className="p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  style={{
+                    backgroundColor: "#4b5a20",
+                  }}
+                >
+                  {/* Big oversized number watermark */}
+                  <span className="absolute -top-4 -right-2 text-8xl font-hanken font-black text-white/10 select-none">
+                    {idx + 1}
                   </span>
-                  <span className="text-7xl font-hanken font-black opacity-10">
-                    1
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 font-hanken">
-                    Discovery
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Understanding client goals and identifying key
-                    opportunities for growth.
-                  </p>
-                </div>
-              </div>
-              <div className="hidden md:flex absolute top-1/2 -right-4 translate-x-1/2 z-10 text-primary opacity-30">
-                <span className="material-symbols-outlined text-4xl">
-                  arrow_forward
-                </span>
-              </div>
-            </div>
 
-            {/* Step 2 */}
-            <div className="relative group reveal-left stagger-2">
-              <div className="bg-gray-50 border border-black/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
-                <div className="flex justify-between items-start">
-                  <span className="material-symbols-outlined text-4xl text-primary">
-                    architecture
-                  </span>
-                  <span className="text-7xl font-hanken font-black opacity-10">
-                    2
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 font-hanken">
-                    Strategy
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Crafting a tailored plan and multi-channel approach for
-                    your brand.
-                  </p>
-                </div>
-              </div>
-              <div className="hidden md:flex absolute top-1/2 -right-4 translate-x-1/2 z-10 text-primary opacity-30">
-                <span className="material-symbols-outlined text-4xl">
-                  arrow_forward
-                </span>
-              </div>
-            </div>
+                  {/* Bigger icon in filled circle */}
+                  <div className="relative w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg">
+                    <span
+                      className="material-symbols-outlined text-4xl"
+                      style={{ color: "#4b5a20" }}
+                    >
+                      {step.icon}
+                    </span>
+                  </div>
 
-            {/* Step 3 */}
-            <div className="relative group reveal-left stagger-3">
-              <div className="bg-gray-50 border border-black/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
-                <div className="flex justify-between items-start">
-                  <span className="material-symbols-outlined text-4xl text-primary">
-                    rocket_launch
-                  </span>
-                  <span className="text-7xl font-hanken font-black opacity-10">
-                    3
-                  </span>
+                  <div className="relative space-y-2">
+                    <h3 className="text-xl font-bold font-hanken text-white">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 font-hanken">
-                    Development
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Building and executing campaigns with precision and
-                    creative flair.
-                  </p>
-                </div>
-              </div>
-              <div className="hidden md:flex absolute top-1/2 -right-4 translate-x-1/2 z-10 text-primary opacity-30">
-                <span className="material-symbols-outlined text-4xl">
-                  arrow_forward
-                </span>
-              </div>
-            </div>
 
-            {/* Step 4 */}
-            <div className="relative group reveal-left stagger-4">
-              <div className="bg-gray-50 border border-black/5 p-10 rounded-[32px] text-left space-y-6 relative overflow-hidden transition-all duration-300 hover:border-primary/30">
-                <div className="flex justify-between items-start">
-                  <span className="material-symbols-outlined text-4xl text-primary">
-                    trending_up
-                  </span>
-                  <span className="text-7xl font-hanken font-black opacity-10">
-                    4
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 font-hanken">
-                    Launch
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Deploying the final results and optimizing for continuous
-                    ROI.
-                  </p>
-                </div>
+                {/* Connector arrow between cards */}
+                {idx < 3 && (
+                  <div className="hidden md:flex absolute top-1/2 -right-4 -translate-y-1/2 translate-x-1/2 z-10 w-8 h-8 rounded-full bg-white border-2 items-center justify-center"
+                    style={{ borderColor: "#4b5a20" }}
+                  >
+                    <span
+                      className="material-symbols-outlined text-lg"
+                      style={{ color: "#4b5a20" }}
+                    >
+                      arrow_forward
+                    </span>
+                  </div>
+                )}
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
+
 
       {/* Portfolio Section */}
       <section className="py-section-gap bg-gray-50 reveal-left">
