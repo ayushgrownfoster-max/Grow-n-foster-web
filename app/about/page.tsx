@@ -184,10 +184,10 @@ export default function AboutPage() {
           </p>
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="mailto:grownfoster.com@gmail.com"
+              href="mailto:info@grownfoster.com"
               className="bg-[#4b5a20] text-white px-8 py-4 rounded-xl font-bold font-mono-code text-sm uppercase tracking-wider hover:bg-[#3d4a1a] transition-all shadow-lg shadow-[#4b5a20]/20"
             >
-              Email Us: grownfoster.com@gmail.com
+              Email Us: info@grownfoster.com
             </a>
             <Link
               href="/services"

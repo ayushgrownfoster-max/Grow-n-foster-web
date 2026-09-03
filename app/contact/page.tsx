@@ -30,7 +30,7 @@ const contactMethods = ["Email", "Phone", "WhatsApp", "Video Call"];
 const faqs = [
   {
     q: "How can I contact Grow 'n' Foster?",
-    a: "You can reach us through the contact form on this page, email us at hello@grownfoster.com, or call us during business hours (Monday–Friday, 9:00 AM–6:00 PM). We aim to respond to all enquiries within 24 hours.",
+    a: "You can reach us through the contact form on this page, email us at info@grownfoster.com, or call us during business hours (Monday–Friday, 9:00 AM–6:00 PM). We aim to respond to all enquiries within 24 hours.",
   },
   {
     q: "What services does Grow 'n' Foster provide?",
@@ -317,8 +317,8 @@ export default function ContactPage() {
                       <label
                         key={m}
                         className={`cursor-pointer px-5 py-3 rounded-xl border text-sm font-hanken font-medium transition-all ${formData.contactMethod === m
-                            ? "border-[#4b5a20] bg-[#4b5a20]/10 text-[#4b5a20]"
-                            : "border-slate-200 text-slate-600 hover:border-[#4b5a20]/40 bg-white"
+                          ? "border-[#4b5a20] bg-[#4b5a20]/10 text-[#4b5a20]"
+                          : "border-slate-200 text-slate-600 hover:border-[#4b5a20]/40 bg-white"
                           }`}
                       >
                         <input
@@ -442,75 +442,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* How Can We Help */}
-      <section className="py-section-gap bg-slate-50 border-y border-slate-100">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <div className="text-center mb-16">
-            <span className="text-[#4b5a20] font-bold tracking-widest text-xs font-mono-code uppercase">
-              OUR EXPERTISE
-            </span>
-            <h2 className="font-hanken text-3xl md:text-4xl font-bold mt-4 tracking-tight text-slate-900">
-              How Can We Help?
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: "search",
-                title: "Improve Your Search Visibility",
-                desc: "Need more organic traffic, rankings, or local visibility? Our SEO team can develop a strategy based on your market and goals.",
-                link: "Explore SEO Services →",
-                href: "/services",
-              },
-              {
-                icon: "group_add",
-                title: "Generate More Qualified Leads",
-                desc: "Looking to generate B2B leads through LinkedIn outreach, email campaigns, or targeted prospecting?",
-                link: "Explore Lead Generation →",
-                href: "/services",
-              },
-              {
-                icon: "code",
-                title: "Build or Improve Your Website",
-                desc: "Need a new business website, landing page, or website redesign?",
-                link: "Explore Web Design & Development →",
-                href: "/services",
-              },
-              {
-                icon: "share",
-                title: "Grow Your Social Presence",
-                desc: "Need help with social media strategy, content creation, or paid social campaigns?",
-                link: "Explore Social Media Marketing →",
-                href: "/services",
-              },
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-3xl p-8 border border-slate-200 hover:border-[#4b5a20]/40 transition-all group flex flex-col shadow-sm hover:shadow-md"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/10 border border-[#4b5a20]/30 flex items-center justify-center text-[#4b5a20] mb-6 group-hover:bg-[#4b5a20] group-hover:text-white transition-all">
-                  <span className="material-symbols-outlined text-3xl">
-                    {card.icon}
-                  </span>
-                </div>
-                <h3 className="font-hanken text-lg font-bold mb-3 text-slate-900">
-                  {card.title}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1">
-                  {card.desc}
-                </p>
-                <Link
-                  href={card.href}
-                  className="text-[#4b5a20] font-bold text-sm font-hanken hover:underline group-hover:translate-x-1 transition-transform inline-block"
-                >
-                  {card.link}
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Office / Location */}
       <section id="contact-info" className="py-section-gap bg-white">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
@@ -546,10 +477,10 @@ export default function ContactPage() {
                   <div>
                     <p className="font-bold font-hanken text-base text-slate-900">Email</p>
                     <a
-                      href="mailto:grownfoster.com@gmail.com"
+                      href="mailto:info@grownfoster.com"
                       className="text-[#4b5a20] text-sm font-mono-code hover:underline"
                     >
-                      grownfoster.com@gmail.com
+                      info@grownfoster.com
                     </a>
                   </div>
                 </div>
@@ -595,7 +526,7 @@ export default function ContactPage() {
 
       {/* FAQs */}
       <section className="py-section-gap bg-slate-50 border-t border-slate-100">
-        <div className="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop">
+        <div className="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-16">
             <span className="text-[#4b5a20] font-bold tracking-widest text-xs font-mono-code uppercase flex items-center gap-2 justify-center">
               <span className="material-symbols-outlined text-lg">help</span>{" "}
@@ -605,23 +536,23 @@ export default function ContactPage() {
               Got Questions?
             </h2>
           </div>
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all duration-300 shadow-sm"
+                className="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all duration-300 shadow-sm h-fit"
               >
                 <button
                   onClick={() =>
                     setOpenFaq(openFaq === index ? null : index)
                   }
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-hanken font-bold text-base md:text-lg text-slate-900 hover:text-[#4b5a20] transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-hanken font-bold text-base text-slate-900 hover:text-[#4b5a20] transition-colors"
                 >
                   <span>{faq.q}</span>
                   <span
                     className={`material-symbols-outlined transition-transform duration-300 flex-shrink-0 ${openFaq === index
-                        ? "rotate-180 text-[#4b5a20]"
-                        : "text-slate-400"
+                      ? "rotate-180 text-[#4b5a20]"
+                      : "text-slate-400"
                       }`}
                   >
                     expand_more

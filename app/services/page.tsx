@@ -6,11 +6,19 @@ export const metadata = {
     "Explore our high-impact digital marketing services: SEO, LinkedIn outreach, content strategy, email marketing, and web development.",
 };
 
-const servicesList = [
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  features: string[];
+  image: string;
+  delayClass: string;
+}
+
+const servicesList: Service[] = [
   {
     icon: "search",
     title: "SEO Optimization",
-
     description:
       "Engineered organic growth that brings qualified buyers directly to your website. We implement technical SEO, content authority building, and local dominance strategies.",
     features: [
@@ -25,7 +33,6 @@ const servicesList = [
   {
     icon: "work",
     title: "LinkedIn Outreach",
-
     description:
       "Personalized, automated B2B campaign management. We connect your leadership team directly with key decision-makers in targeted industries.",
     features: [
@@ -40,7 +47,6 @@ const servicesList = [
   {
     icon: "edit_note",
     title: "Content Strategy",
-
     description:
       "Compelling storytelling backed by market intelligence. We create thought-leadership articles, whitepapers, and video scripts that convert readers into loyal clients.",
     features: [
@@ -55,7 +61,6 @@ const servicesList = [
   {
     icon: "mail",
     title: "Email Marketing",
-
     description:
       "Automated email flows and campaign broadcasts that capture high-intent leads, nurture prospects, and maximize customer lifetime value.",
     features: [
@@ -70,7 +75,6 @@ const servicesList = [
   {
     icon: "code",
     title: "Web Development",
-
     description:
       "Blazing-fast, responsive websites designed to captivate visitors and convert them into customers with modern aesthetic design systems.",
     features: [
@@ -85,7 +89,6 @@ const servicesList = [
   {
     icon: "campaign",
     title: "Paid Advertising (PPC)",
-
     description:
       "Data-backed ad strategy on Google, Meta, and LinkedIn targeting high-intent buyer personas to produce predictable, profitable ROAS.",
     features: [
@@ -104,7 +107,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-white text-black font-hanken py-12 px-margin-mobile md:px-margin-desktop overflow-x-hidden">
       <div className="max-w-container-max mx-auto space-y-20">
 
-        {/* Page Header - Animated Left to Right */}
+        {/* Page Header */}
         <div className="text-center space-y-6 pt-8 animate-[slideRight_0.7s_ease-out_forwards]">
           <div className="inline-block">
             <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-4 py-1.5 rounded-full border border-[#4b5a20]/20 block mb-3 font-semibold">
@@ -119,7 +122,7 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        {/* Services Grid with Structured Cards and Images */}
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesList.map((service, index) => (
             <div
@@ -135,15 +138,6 @@ export default function ServicesPage() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-
-                  {/* Category Pill */}
-                  {service.subtitle && (
-                    <div className="absolute top-4 left-4">
-                      <span className="text-[10px] font-mono-code tracking-widest uppercase bg-white/95 backdrop-blur-md text-[#4b5a20] px-3 py-1.5 rounded-full border border-[#4b5a20]/30 font-bold shadow-sm">
-                        {service.subtitle}
-                      </span>
-                    </div>
-                  )}
                 </div>
 
                 {/* Card Content */}
@@ -193,7 +187,7 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        {/* CTA Banner - Animated Left to Right */}
+        {/* CTA Banner */}
         <div className="bg-gray-50 rounded-3xl p-10 md:p-14 border border-[#4b5a20]/30 relative overflow-hidden text-center space-y-6 shadow-sm opacity-0 animate-[slideRight_0.8s_ease-out_700ms_forwards]">
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#4b5a20]/10 rounded-full blur-[100px] pointer-events-none"></div>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-black">
