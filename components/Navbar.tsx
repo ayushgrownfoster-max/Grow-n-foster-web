@@ -55,11 +55,28 @@ const servicesMenu = [
   },
 ];
 
+const portfolioMenu = [
+  {
+    title: "Web Development",
+    subtitle: "Next.js web applications, 3D WebGL viewers, SaaS & E-commerce",
+    href: "/portfolio/web-development",
+    icon: "code",
+    badge: "5 Projects",
+  },
+  {
+    title: "Performance Marketing",
+    subtitle: "High-ROI Meta & Google Ads campaigns, B2B & multi-location lead gen",
+    href: "/portfolio/performance-marketing",
+    icon: "campaign",
+    badge: "4 Campaigns",
+  },
+];
+
 const navItems = [
   { name: "HOME", href: "/" },
-  { name: "SERVICES", href: "/services", hasDropdown: true },
-  { name: "CASE STUDIES", href: "/case-studies" },
-  { name: "PORTFOLIO", href: "/portfolio" },
+  { name: "SERVICES", href: "/services", hasDropdown: true, dropdownType: "services" },
+  // { name: "CASE STUDIES", href: "/case-studies" },
+  { name: "PORTFOLIO", href: "/portfolio", hasDropdown: true, dropdownType: "portfolio" },
   { name: "ABOUT US", href: "/about" },
 ];
 
@@ -67,8 +84,9 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<"services" | "portfolio" | null>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobilePortfolioOpen, setMobilePortfolioOpen] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -86,20 +104,20 @@ export default function Navbar() {
 
   // Close dropdown on route change
   useEffect(() => {
-    setServicesDropdownOpen(false);
+    setActiveDropdown(null);
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (type: "services" | "portfolio") => {
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
     }
-    setServicesDropdownOpen(true);
+    setActiveDropdown(type);
   };
 
   const handleMouseLeave = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
-      setServicesDropdownOpen(false);
+      setActiveDropdown(null);
     }, 180);
   };
 
@@ -200,11 +218,13 @@ export default function Navbar() {
                   : pathname.startsWith(item.href);
 
               if (item.hasDropdown) {
+                const isThisDropdownOpen = activeDropdown === item.dropdownType;
+
                 return (
                   <div
                     key={item.href}
                     className="relative"
-                    onMouseEnter={handleMouseEnter}
+                    onMouseEnter={() => handleMouseEnter(item.dropdownType as "services" | "portfolio")}
                     onMouseLeave={handleMouseLeave}
                   >
                     <Link
@@ -216,7 +236,7 @@ export default function Navbar() {
                     >
                       <span>{item.name}</span>
                       <span
-                        className={`material-symbols-outlined text-sm transition-transform duration-200 ${servicesDropdownOpen ? "rotate-180 text-primary" : "text-black/50"
+                        className={`material-symbols-outlined text-sm transition-transform duration-200 ${isThisDropdownOpen ? "rotate-180 text-primary" : "text-black/50"
                           }`}
                       >
                         expand_more
@@ -224,10 +244,10 @@ export default function Navbar() {
                     </Link>
 
                     {/* Services Mega Dropdown Menu */}
-                    {servicesDropdownOpen && (
+                    {isThisDropdownOpen && item.dropdownType === "services" && (
                       <div
                         className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[720px] max-w-[90vw] z-50 animate-in fade-in slide-in-from-top-2 duration-200"
-                        onMouseEnter={handleMouseEnter}
+                        onMouseEnter={() => handleMouseEnter("services")}
                         onMouseLeave={handleMouseLeave}
                       >
                         <div className="bg-white/98 backdrop-blur-2xl rounded-3xl border border-slate-200/90 shadow-2xl shadow-black/15 p-6 overflow-hidden">
@@ -260,7 +280,6 @@ export default function Navbar() {
                                 href={svc.href}
                                 className="group flex items-start gap-3.5 p-3 rounded-2xl border border-slate-100 hover:border-[#4b5a20]/40 hover:bg-[#4b5a20]/5 transition-all duration-200 bg-slate-50/50"
                               >
-                                {/* Thumbnail Image with Icon Badge */}
                                 <div className="relative w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 bg-slate-200 border border-slate-200 group-hover:border-[#4b5a20]/50 transition-colors">
                                   <img
                                     src={svc.image}
@@ -275,7 +294,6 @@ export default function Navbar() {
                                   </div>
                                 </div>
 
-                                {/* Text Info */}
                                 <div className="flex-1 min-w-0">
                                   <div className="flex items-center justify-between gap-1 mb-0.5">
                                     <h5 className="font-hanken font-bold text-sm text-slate-900 group-hover:text-[#4b5a20] transition-colors truncate">
@@ -308,6 +326,68 @@ export default function Navbar() {
                                 chevron_right
                               </span>
                             </Link>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Portfolio Dropdown Menu */}
+                    {isThisDropdownOpen && item.dropdownType === "portfolio" && (
+                      <div
+                        className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[440px] max-w-[90vw] z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+                        onMouseEnter={() => handleMouseEnter("portfolio")}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <div className="bg-white/98 backdrop-blur-2xl rounded-3xl border border-slate-200/90 shadow-2xl shadow-black/15 p-5 overflow-hidden">
+                          {/* Dropdown Header */}
+                          <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+                            <div>
+                              <span className="text-[10px] font-mono-code uppercase tracking-widest text-[#4b5a20] font-bold">
+                                Case Studies &amp; Results
+                              </span>
+                              <h4 className="text-sm font-bold font-hanken text-slate-900">
+                                Portfolio Categories
+                              </h4>
+                            </div>
+                            <Link
+                              href="/portfolio"
+                              className="text-xs font-mono-code text-[#4b5a20] font-bold hover:underline flex items-center gap-1"
+                            >
+                              <span>All Work</span>
+                              <span className="material-symbols-outlined text-sm">
+                                arrow_forward
+                              </span>
+                            </Link>
+                          </div>
+
+                          {/* Options */}
+                          <div className="space-y-2">
+                            {portfolioMenu.map((item, pIdx) => (
+                              <Link
+                                key={pIdx}
+                                href={item.href}
+                                className="group flex items-center gap-3.5 p-3 rounded-2xl border border-slate-100 hover:border-[#4b5a20]/40 hover:bg-[#4b5a20]/5 transition-all duration-200 bg-slate-50/50"
+                              >
+                                <div className="w-10 h-10 rounded-xl bg-[#4b5a20]/10 text-[#4b5a20] flex items-center justify-center flex-shrink-0 font-bold group-hover:bg-[#4b5a20] group-hover:text-white transition-colors">
+                                  <span className="material-symbols-outlined text-lg">
+                                    {item.icon}
+                                  </span>
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-center justify-between gap-1">
+                                    <h5 className="font-hanken font-bold text-sm text-slate-900 group-hover:text-[#4b5a20] transition-colors">
+                                      {item.title}
+                                    </h5>
+                                    <span className="text-[9px] font-mono-code font-bold text-[#4b5a20] bg-[#4b5a20]/10 px-1.5 py-0.5 rounded border border-[#4b5a20]/20 flex-shrink-0">
+                                      {item.badge}
+                                    </span>
+                                  </div>
+                                  <p className="text-xs text-slate-500 line-clamp-1 group-hover:text-slate-700 transition-colors">
+                                    {item.subtitle}
+                                  </p>
+                                </div>
+                              </Link>
+                            ))}
                           </div>
                         </div>
                       </div>
@@ -363,6 +443,13 @@ export default function Navbar() {
                   : pathname.startsWith(item.href);
 
               if (item.hasDropdown) {
+                const isServices = item.dropdownType === "services";
+                const isPortfolio = item.dropdownType === "portfolio";
+                const isOpen = isServices ? mobileServicesOpen : mobilePortfolioOpen;
+                const toggleFn = isServices
+                  ? () => setMobileServicesOpen(!mobileServicesOpen)
+                  : () => setMobilePortfolioOpen(!mobilePortfolioOpen);
+
                 return (
                   <div key={item.href} className="border-b border-slate-100 pb-2">
                     <div className="flex items-center justify-between py-2">
@@ -377,12 +464,12 @@ export default function Navbar() {
                         {item.name}
                       </Link>
                       <button
-                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        onClick={toggleFn}
                         className="p-1.5 rounded-lg bg-slate-100 text-slate-700 hover:text-primary"
-                        aria-label="Toggle services list"
+                        aria-label={`Toggle ${item.name} list`}
                       >
                         <span
-                          className={`material-symbols-outlined text-lg transition-transform duration-200 ${mobileServicesOpen ? "rotate-180 text-primary" : ""
+                          className={`material-symbols-outlined text-lg transition-transform duration-200 ${isOpen ? "rotate-180 text-primary" : ""
                             }`}
                         >
                           expand_more
@@ -390,8 +477,8 @@ export default function Navbar() {
                       </button>
                     </div>
 
-                    {/* Mobile Services Accordion Submenu */}
-                    {mobileServicesOpen && (
+                    {/* Mobile Services Submenu */}
+                    {isServices && mobileServicesOpen && (
                       <div className="pl-2 pt-2 pb-2 space-y-2 border-l-2 border-[#4b5a20]/30 ml-2">
                         {servicesMenu.map((svc, sIdx) => (
                           <Link
@@ -413,6 +500,34 @@ export default function Navbar() {
                               </div>
                               <div className="text-[10px] font-mono-code text-[#4b5a20]">
                                 {svc.badge}
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Mobile Portfolio Submenu */}
+                    {isPortfolio && mobilePortfolioOpen && (
+                      <div className="pl-2 pt-2 pb-2 space-y-2 border-l-2 border-[#4b5a20]/30 ml-2">
+                        {portfolioMenu.map((pItem, pIdx) => (
+                          <Link
+                            key={pIdx}
+                            href={pItem.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors"
+                          >
+                            <div className="w-8 h-8 rounded-lg bg-[#4b5a20]/10 text-[#4b5a20] flex items-center justify-center flex-shrink-0 font-bold">
+                              <span className="material-symbols-outlined text-base">
+                                {pItem.icon}
+                              </span>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="text-xs font-bold font-hanken text-slate-900 truncate">
+                                {pItem.title}
+                              </div>
+                              <div className="text-[10px] font-mono-code text-[#4b5a20]">
+                                {pItem.badge}
                               </div>
                             </div>
                           </Link>

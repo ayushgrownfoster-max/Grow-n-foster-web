@@ -59,10 +59,38 @@ const featuredPortfolio = [
   },
 ];
 
+const allTestimonials = [
+  {
+    name: "Aarav Sharma",
+    role: "CEO, Civic Tech Initiative",
+    content:
+      "Grow 'n' Foster transformed our portal's performance and outreach. Their team is exceptionally proactive and results-driven.",
+    tag: "Web Dev & SEO",
+    rating: 5,
+  },
+  {
+    name: "Priya Patel",
+    role: "Marketing Director, Planora",
+    content:
+      "The 3D BIM viewer integration and digital strategy exceeded our expectations. Our client engagement skyrocketed.",
+    tag: "3D & WebGL",
+    rating: 5,
+  },
+  {
+    name: "Rohan Gupta",
+    role: "Founder, Jony Digital",
+    content:
+      "High-throughput SaaS infrastructure delivered flawlessly and on time. I strongly recommend their engineering and marketing services.",
+    tag: "MERN SaaS",
+    rating: 5,
+  },
+];
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"mission" | "vision" | "value">(
     "mission"
   );
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -113,12 +141,7 @@ export default function Home() {
             <div className="flex flex-col space-y-10 relative z-20">
 
               {/* Eyebrow Badge */}
-              <div className="hero-fade-in stagger-1 flex items-center gap-3">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary font-mono-code text-xs tracking-widest uppercase font-semibold">
-                  <span className="material-symbols-outlined text-sm">campaign</span>
-                  Digital Growth Agency
-                </span>
-              </div>
+
 
               {/* Display Headline */}
               <div className="space-y-6 hero-fade-in stagger-2">
@@ -198,7 +221,7 @@ export default function Home() {
             </div>
 
             {/* Right Column: Visual Panel */}
-            <div className="relative hidden lg:flex items-center justify-center hero-fade-in stagger-3">
+            <div className="relative hidden lg:flex items-center justify-center hero-fade-in stagger-3 lg:-mt-20">
 
               {/* Main visual card */}
               <div className="relative w-full max-w-[480px]">
@@ -211,7 +234,7 @@ export default function Home() {
                     <img
                       alt="Digital marketing professional"
                       className="w-full h-full object-cover object-center"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoNbm6YOA5fSQVMfhHaqHkN2Mwz3NUozZGzbbAk16drpPePwXgoeUeFygSvz2lG1GT1BnhzyWV1pg6kcYLawCBmR5bIxlWedRsZkPDohboCpORFSUyRK5VP8Ccp18dFH78n2N5yrHX374iQTC8lJJLMOKNJkHarUz1WjaHctIKLfrqsDzJoNGiL6RJNdHCgOJWi18xnJVZ2FKjvYbhIv1DMFdiMLzzeJfvFSBqVx4OXCWArQswyOZ"
+                      src="/Website Image 1.png"
                     />
                     {/* Subtle bottom fade */}
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(255,255,255,0.3) 0%, transparent 40%)" }}></div>
@@ -306,11 +329,12 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 reveal-left stagger-2">
 
             {/* Left: Team Photo — spans 2 rows */}
+            {/* NOTE: swap this src for your own verified team photo if this one doesn't read as Indian-origin to you */}
             <div className="lg:row-span-2 rounded-[32px] overflow-hidden border border-black/5 shadow-sm relative group">
               <img
                 alt="Grow n Foster team at work"
                 className="w-full h-full object-cover min-h-[400px] lg:min-h-full group-hover:scale-105 transition-transform duration-700"
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80"
+                src="https://burst.shopifycdn.com/photos/team-shares-a-laugh-in-modern-coworking-space-in-india.jpg?width=1200&format=pjpg&exif=0&iptc=0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6">
@@ -419,9 +443,9 @@ export default function Home() {
             <div className="flex flex-col h-full group reveal-left stagger-1">
               <div className="relative aspect-[3/4] bg-gray-50 rounded-t-[140px] overflow-hidden border border-black/5 border-b-0">
                 <img
-                  alt="SEO"
+                  alt="SEO analytics dashboard"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  src="/seo-image.jpeg"
+                  src="https://images.pexels.com/photos/3183126/pexels-photo-3183126.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
               </div>
@@ -445,9 +469,9 @@ export default function Home() {
             <div className="flex flex-col h-full group reveal-left stagger-2">
               <div className="relative aspect-[3/4] bg-gray-50 rounded-t-[140px] overflow-hidden border border-black/5 border-b-0">
                 <img
-                  alt="LinkedIn"
+                  alt="LinkedIn networking and outreach"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  src="/linkedin-outreach.jpeg"
+                  src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
               </div>
@@ -471,9 +495,9 @@ export default function Home() {
             <div className="flex flex-col h-full group reveal-left stagger-3">
               <div className="relative aspect-[3/4] bg-gray-50 rounded-t-[140px] overflow-hidden border border-black/5 border-b-0">
                 <img
-                  alt="Content"
+                  alt="Content strategy and creative planning"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  src="/content-marketing.jpeg"
+                  src="https://images.pexels.com/photos/3205571/pexels-photo-3205571.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
               </div>
@@ -497,9 +521,9 @@ export default function Home() {
             <div className="flex flex-col h-full group reveal-left stagger-4">
               <div className="relative aspect-[3/4] bg-gray-50 rounded-t-[140px] overflow-hidden border border-black/5 border-b-0">
                 <img
-                  alt="Web"
+                  alt="Web design and development code"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  src="/website-design.jpeg"
+                  src="https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
                 />
                 <div className="absolute inset-0 bg-black/5"></div>
               </div>
@@ -530,9 +554,9 @@ export default function Home() {
             <div className="relative reveal-left stagger-1">
               <div className="aspect-[4/5] rounded-[60px] overflow-hidden border border-black/10 shadow-lg">
                 <img
-                  alt="Team at Work"
+                  alt="Digital marketing team in India collaborating"
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoNbm6YOA5fSQVMfhHaqHkN2Mwz3NUozZGzbbAk16drpPePwXgoeUeFygSvz2lG1GT1BnhzyWV1pg6kcYLawCBmR5bIxlWedRsZkPDohboCpORFSUyRK5VP8Ccp18dFH78n2N5yrHX374iQTC8lJJLMOKNJkHarUz1WjaHctIKLfrqsDzJoNGiL6RJNdHCgOJWi18xnJVZ2FKjvYbhIv1DMFdiMLzzeJfvFSBqVx4OXCWArQswyOZ"
+                  src="https://burst.shopifycdn.com/photos/team-shares-a-laugh-in-modern-coworking-space-in-india.jpg?width=1000&format=pjpg&exif=0&iptc=0"
                 />
               </div>
             </div>
@@ -542,45 +566,57 @@ export default function Home() {
               <div className="space-y-6">
 
                 <h2 className="font-hanken text-4xl md:text-5xl font-bold tracking-tight">
-                  We are a Digital Agency with added Value for your Business
+                  We are a Digital Marketing Agency
+                  <span className="block mt-2">
+                    with added <span style={{ color: "#4b5a20" }}>Value</span> for your Business
+                  </span>
                 </h2>
               </div>
 
               {/* Tabbed Content */}
-              <div className="space-y-8 bg-white p-8 rounded-[32px] border border-black/5 shadow-sm">
-                <div className="flex flex-wrap gap-4 p-2 bg-gray-50 rounded-2xl border border-black/10">
+              <div className="space-y-8 bg-white text-black p-8 rounded-[32px] border border-gray-200 shadow-sm">
+                <div className="flex flex-nowrap gap-1 sm:gap-2 p-1.5 bg-gray-50 rounded-2xl border border-gray-200">
                   <button
-                    className={`tab-button px-6 py-3 rounded-xl font-bold font-mono-code text-xs tracking-wider uppercase transition-all flex items-center gap-2 ${activeTab === "mission" ? "active" : ""
+                    className={`tab-button flex-1 min-w-0 px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl font-bold font-mono-code text-[9px] sm:text-[11px] md:text-xs tracking-tight sm:tracking-wider uppercase transition-all flex items-center justify-center gap-1 ${activeTab === "mission"
+                      ? "bg-[#4b5a20] text-white shadow-md"
+                      : "text-gray-600 hover:text-black hover:bg-white"
                       }`}
                     onClick={() => setActiveTab("mission")}
                   >
-                    <span className="material-symbols-outlined text-sm">
+                    <span className="material-symbols-outlined text-xs sm:text-sm shrink-0">
                       chevron_right
-                    </span>{" "}
-                    Our Mission
+                    </span>
+                    <span className="truncate">Our Mission</span>
                   </button>
+
                   <button
-                    className={`tab-button px-6 py-3 rounded-xl font-bold font-mono-code text-xs tracking-wider uppercase transition-all flex items-center gap-2 ${activeTab === "vision" ? "active" : ""
+                    className={`tab-button flex-1 min-w-0 px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl font-bold font-mono-code text-[9px] sm:text-[11px] md:text-xs tracking-tight sm:tracking-wider uppercase transition-all flex items-center justify-center gap-1 ${activeTab === "vision"
+                      ? "bg-[#4b5a20] text-white shadow-md"
+                      : "text-gray-600 hover:text-black hover:bg-white"
                       }`}
                     onClick={() => setActiveTab("vision")}
                   >
-                    <span className="material-symbols-outlined text-sm">
+                    <span className="material-symbols-outlined text-xs sm:text-sm shrink-0">
                       chevron_right
-                    </span>{" "}
-                    Our Vision
+                    </span>
+                    <span className="truncate">Our Vision</span>
                   </button>
+
                   <button
-                    className={`tab-button px-6 py-3 rounded-xl font-bold font-mono-code text-xs tracking-wider uppercase transition-all flex items-center gap-2 ${activeTab === "value" ? "active" : ""
+                    className={`tab-button flex-1 min-w-0 px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl font-bold font-mono-code text-[9px] sm:text-[11px] md:text-xs tracking-tight sm:tracking-wider uppercase transition-all flex items-center justify-center gap-1 ${activeTab === "value"
+                      ? "bg-[#4b5a20] text-white shadow-md"
+                      : "text-gray-600 hover:text-black hover:bg-white"
                       }`}
                     onClick={() => setActiveTab("value")}
                   >
-                    <span className="material-symbols-outlined text-sm">
+                    <span className="material-symbols-outlined text-xs sm:text-sm shrink-0">
                       chevron_right
-                    </span>{" "}
-                    Our Value
+                    </span>
+                    <span className="truncate">Our Value</span>
                   </button>
                 </div>
-                <div className="text-gray-600 min-h-[80px] leading-relaxed font-hanken text-base">
+
+                <div className="text-gray-700 min-h-[80px] leading-relaxed font-hanken text-base">
                   {tabContents[activeTab]}
                 </div>
               </div>
@@ -803,273 +839,149 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-section-gap reveal-left overflow-hidden">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
-          <span className="text-primary font-bold tracking-widest text-xs font-mono-code uppercase flex items-center gap-2 justify-center reveal-left stagger-1">
-            <span className="material-symbols-outlined text-lg">
-              format_quote
-            </span>{" "}
-            CLIENT TESTIMONIALS
-          </span>
-          <h2 className="font-hanken text-4xl md:text-5xl font-bold mt-4 tracking-tight reveal-left stagger-2">
-            Voices of Trust
-          </h2>
-          <p className="text-gray-600 font-hanken text-base leading-relaxed mt-4 max-w-2xl mx-auto reveal-left stagger-3">
-            Real feedback from real clients who have experienced the impact of working with Grow &apos;n&apos; Foster.
-          </p>
-        </div>
+      <section className="py-section-gap relative overflow-hidden bg-gray-50/70 border-y border-gray-200">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* Row 1 — scrolls left */}
-        <div className="testimonial-marquee mb-8 reveal-left stagger-2">
-          <div className="testimonial-track">
-            {[
-              {
-                quote: "Twinka has been an invaluable asset to our team. Hired her to enhance our digital presence and develop a comprehensive social media strategy, she exceeded our expectations. Her deep understanding of our business, innovative approach, and high-quality content significantly improved our online visibility. Twinka's proactive attitude, adaptability to trends, and clear communication ensured our goals were met. Her detailed analytics and creative ideas boosted our engagement rates and brand awareness. I highly recommend Twinka for her professionalism, creativity, and strategic insight.",
-                name: "Sandeep S.",
-                role: "CEO",
-                tag: "Social Media Marketing",
-              },
-              {
-                quote: "Twinka is an amazing in her knowledge with digital marketing and lead generation. She has help me a tremendously to create the digital presence needed to reach my ideal clients. It is an absolute joy to work with Twinka because she is motivated, and self motivated which is very important for me as business owner. We set weekly plans and goals together and the goals are always accomplished with excellence. She provides great ideas to improving the overall workings of the business that are very much appreciated. I love to have Twinka as part of the team because she understands the value her participation brings to the overall success of the company. Very professional, knowledgeable, friendly, and a great team player.",
-                name: "Kiara S.",
-                role: "Chief Executive Officer",
-                tag: "Digital Marketing & Lead Generation",
-              },
-              {
-                quote: "We are working with Twinka since last 1 year, and she has always been very responsive, adhered to the given timeline, and has good experience on Sales, Marketing, and Customer-driven areas. We are happy to continue this association with her in the future as well. Thanks for being our freelancer and like a team member.",
-                name: "Sandra H.",
-                role: "CEO",
-                tag: "Social Media Strategy",
-              },
-              {
-                quote: "Twinka possesses a strong set of marketing skills, particularly in SEO and digital marketing. She consistently demonstrates effective communication and a sense of responsibility in her work.",
-                name: "Jimena Calderon",
-                role: "Alta Consulting",
-                tag: "SEO & Digital Marketing",
-              },
-              {
-                quote: "Twinka is very knowledgeable and attended to my needs promptly. She had great suggestions and strategies. I appreciated her guidance throughout our time together.",
-                name: "Kheprer Counselling",
-                role: "Marketing Client",
-                tag: "Marketing Strategy",
-              },
-            ].map((t, i) => (
-              <div
-                key={i}
-                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-gray-50 border border-black/5 relative text-left hover:border-primary/30 transition-all duration-300 group"
-              >
-                <span className="material-symbols-outlined text-primary text-4xl opacity-20 absolute top-6 right-6">
-                  format_quote
+            {/* Left: Heading + Stats */}
+            <div className="space-y-10 reveal-left stagger-1">
+              <div className="space-y-6">
+                <span className="inline-flex items-center gap-2 text-[#4b5a20] font-mono-code text-xs tracking-widest uppercase font-semibold bg-[#4b5a20]/10 px-3.5 py-1.5 rounded-full border border-[#4b5a20]/20">
+                  <span className="material-symbols-outlined text-sm">campaign</span>
+                  Testimonials
                 </span>
-                {t.tag && (
-                  <span className="inline-block text-[10px] font-mono-code tracking-widest uppercase text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20 mb-4">
-                    {t.tag}
-                  </span>
-                )}
-                <p className="italic leading-relaxed text-black/80 mb-6 font-hanken text-sm line-clamp-5">
-                  &quot;{t.quote}&quot;
+                <h2 className="font-hanken text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-black">
+                  What Our Clients Say!
+                </h2>
+                <p className="text-gray-600 font-hanken text-base leading-relaxed max-w-md">
+                  Real feedback from real clients who have experienced the impact
+                  of working with Grow &apos;n&apos; Foster.
                 </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-black/5">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-hanken text-sm">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-bold font-hanken text-sm text-black">{t.name}</h4>
-                    <p className="text-xs font-mono-code text-gray-500">
-                      {t.role}
-                    </p>
-                  </div>
-                </div>
               </div>
-            ))}
-            {/* Duplicate for seamless loop */}
-            {[
-              {
-                quote: "Twinka has been an invaluable asset to our team. Hired her to enhance our digital presence and develop a comprehensive social media strategy, she exceeded our expectations. Her deep understanding of our business, innovative approach, and high-quality content significantly improved our online visibility. Twinka's proactive attitude, adaptability to trends, and clear communication ensured our goals were met. Her detailed analytics and creative ideas boosted our engagement rates and brand awareness. I highly recommend Twinka for her professionalism, creativity, and strategic insight.",
-                name: "Sandeep S.",
-                role: "CEO",
-                tag: "Social Media Marketing",
-              },
-              {
-                quote: "Twinka is an amazing in her knowledge with digital marketing and lead generation. She has help me a tremendously to create the digital presence needed to reach my ideal clients. It is an absolute joy to work with Twinka because she is motivated, and self motivated which is very important for me as business owner. We set weekly plans and goals together and the goals are always accomplished with excellence. She provides great ideas to improving the overall workings of the business that are very much appreciated. I love to have Twinka as part of the team because she understands the value her participation brings to the overall success of the company. Very professional, knowledgeable, friendly, and a great team player.",
-                name: "Kiara S.",
-                role: "Chief Executive Officer",
-                tag: "Digital Marketing & Lead Generation",
-              },
-              {
-                quote: "We are working with Twinka since last 1 year, and she has always been very responsive, adhered to the given timeline, and has good experience on Sales, Marketing, and Customer-driven areas. We are happy to continue this association with her in the future as well. Thanks for being our freelancer and like a team member.",
-                name: "Sandra H.",
-                role: "CEO",
-                tag: "Social Media Strategy",
-              },
-              {
-                quote: "Twinka possesses a strong set of marketing skills, particularly in SEO and digital marketing. She consistently demonstrates effective communication and a sense of responsibility in her work.",
-                name: "Jimena Calderon",
-                role: "Alta Consulting",
-                tag: "SEO & Digital Marketing",
-              },
-              {
-                quote: "Twinka is very knowledgeable and attended to my needs promptly. She had great suggestions and strategies. I appreciated her guidance throughout our time together.",
-                name: "Kheprer Counselling",
-                role: "Marketing Client",
-                tag: "Marketing Strategy",
-              },
-            ].map((t, i) => (
-              <div
-                key={`dup-${i}`}
-                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-gray-50 border border-black/5 relative text-left hover:border-primary/30 transition-all duration-300 group"
-              >
-                <span className="material-symbols-outlined text-primary text-4xl opacity-20 absolute top-6 right-6">
-                  format_quote
-                </span>
-                {t.tag && (
-                  <span className="inline-block text-[10px] font-mono-code tracking-widest uppercase text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20 mb-4">
-                    {t.tag}
-                  </span>
-                )}
-                <p className="italic leading-relaxed text-black/80 mb-6 font-hanken text-sm line-clamp-5">
-                  &quot;{t.quote}&quot;
-                </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-black/5">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-hanken text-sm">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-bold font-hanken text-sm text-black">{t.name}</h4>
-                    <p className="text-xs font-mono-code text-gray-500">
-                      {t.role}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Row 2 — scrolls right */}
-        <div className="testimonial-marquee-reverse reveal-left stagger-3">
-          <div className="testimonial-track-reverse">
-            {[
-              {
-                quote: "Twinka is the most responsive sales pro I've ever worked with. Her integrity and reliability are rare. She delivers top-notch service, exceeds expectations, and is a true asset to any team.",
-                name: "Extraordinary Headhunters LLC",
-                role: "Client",
-                tag: "Sales & Business Development",
-              },
-              {
-                quote: "Twinka helped me in deploying linkedin outreach for my business. She was well versed with the process flow & was willing to go above and beyond. She is accessible & is open to giving feedback where she finds a pivot is needed.",
-                name: "Sadaf J.",
-                role: "Executive Coach & Founder",
-                tag: "LinkedIn Marketing",
-              },
-              {
-                quote: "Twinka is a top email marketer—skilled, versatile, and detail-oriented. She's responsive, asks smart questions, and always delivers quality work on time. A true professional to rely on.",
-                name: "Francesco Coni",
-                role: "Client",
-                tag: "Email Marketing",
-              },
-              {
-                quote: "Working with Twinka was great. She boosted our social media presence, brought real results, and was a valued team member. We'd gladly rehire her for future social media support anytime.",
-                name: "Irja Emma Gerdes",
-                role: "Inlovis UG",
-                tag: "Social Media Marketing",
-              },
-              {
-                quote: "Twinka is an amazing person, very professional and skilled. She delivered a good work. We had a very nice collaboration and communication and I like the most that she is very careful with details. She is the business developer that every company needs.",
-                name: "Carla",
-                role: "Client",
-                tag: "Business Development",
-              },
-            ].map((t, i) => (
-              <div
-                key={i}
-                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-gray-50 border border-black/5 relative text-left hover:border-primary/30 transition-all duration-300 group"
-              >
-                <span className="material-symbols-outlined text-primary text-4xl opacity-20 absolute top-6 right-6">
-                  format_quote
-                </span>
-                {t.tag && (
-                  <span className="inline-block text-[10px] font-mono-code tracking-widest uppercase text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20 mb-4">
-                    {t.tag}
+              <div className="border-t border-gray-200 pt-8 flex flex-wrap items-center gap-10">
+                <div>
+                  <p className="font-hanken text-2xl font-black text-black mb-1">
+                    Global Reviews
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-amber-500 text-sm">★</span>
+                      ))}
+                    </div>
+                    <span className="text-gray-600 text-sm font-hanken">
+                      50+ Happy Clients
+                    </span>
+                  </div>
+                </div>
+
+                <div className="h-10 w-px bg-gray-200 hidden sm:block" />
+
+                <div>
+                  <div className="flex items-center gap-0.5 mb-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-amber-500 text-sm">★</span>
+                    ))}
+                  </div>
+                  <span className="text-gray-600 text-sm font-hanken">
+                    200+ Campaigns Launched
                   </span>
-                )}
-                <p className="italic leading-relaxed text-black/80 mb-6 font-hanken text-sm line-clamp-5">
-                  &quot;{t.quote}&quot;
-                </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-black/5">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-hanken text-sm">
-                    {t.name.charAt(0)}
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Sliding Card */}
+            <div className="relative reveal-left stagger-2">
+              <div className="relative bg-white border border-gray-200 rounded-[40px] p-10 md:p-12 overflow-hidden min-h-[320px] flex flex-col justify-between shadow-md">
+                {/* Giant quote mark watermark */}
+                <span
+                  className="absolute -top-2 right-8 font-serif text-[#4b5a20]/10 select-none leading-none pointer-events-none"
+                  style={{ fontSize: "9rem" }}
+                  aria-hidden="true"
+                >
+                  &rdquo;
+                </span>
+
+                <div className="relative">
+                  <div className="flex items-center gap-1 mb-6">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-amber-500 text-lg">★</span>
+                    ))}
+                  </div>
+
+                  {allTestimonials[activeTestimonial].tag && (
+                    <span className="inline-block text-[10px] font-mono-code tracking-widest uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-3 py-1 rounded-full border border-[#4b5a20]/20 mb-5 font-semibold">
+                      {allTestimonials[activeTestimonial].tag}
+                    </span>
+                  )}
+
+                  <p className="text-gray-800 font-hanken text-lg leading-relaxed mb-8 min-h-[110px]">
+                    &ldquo;{allTestimonials[activeTestimonial].content}&rdquo;
+                  </p>
+                </div>
+
+                <div className="relative flex items-center gap-4 pt-6 border-t border-gray-200">
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold font-hanken text-lg shrink-0"
+                    style={{ backgroundColor: "#4b5a20" }}
+                  >
+                    {allTestimonials[activeTestimonial].name.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold font-hanken text-sm text-black">{t.name}</h4>
-                    <p className="text-xs font-mono-code text-gray-500">
-                      {t.role}
+                    <h4 className="font-bold font-hanken text-black text-base">
+                      {allTestimonials[activeTestimonial].name}
+                    </h4>
+                    <p className="text-gray-500 text-sm font-hanken">
+                      {allTestimonials[activeTestimonial].role}
                     </p>
                   </div>
                 </div>
               </div>
-            ))}
-            {/* Duplicate for seamless loop */}
-            {[
-              {
-                quote: "Twinka is the most responsive sales pro I've ever worked with. Her integrity and reliability are rare. She delivers top-notch service, exceeds expectations, and is a true asset to any team.",
-                name: "Extraordinary Headhunters LLC",
-                role: "Client",
-                tag: "Sales & Business Development",
-              },
-              {
-                quote: "Twinka helped me in deploying linkedin outreach for my business. She was well versed with the process flow & was willing to go above and beyond. She is accessible & is open to giving feedback where she finds a pivot is needed.",
-                name: "Sadaf J.",
-                role: "Executive Coach & Founder",
-                tag: "LinkedIn Marketing",
-              },
-              {
-                quote: "Twinka is a top email marketer—skilled, versatile, and detail-oriented. She's responsive, asks smart questions, and always delivers quality work on time. A true professional to rely on.",
-                name: "Francesco Coni",
-                role: "Client",
-                tag: "Email Marketing",
-              },
-              {
-                quote: "Working with Twinka was great. She boosted our social media presence, brought real results, and was a valued team member. We'd gladly rehire her for future social media support anytime.",
-                name: "Irja Emma Gerdes",
-                role: "Inlovis UG",
-                tag: "Social Media Marketing",
-              },
-              {
-                quote: "Twinka is an amazing person, very professional and skilled. She delivered a good work. We had a very nice collaboration and communication and I like the most that she is very careful with details. She is the business developer that every company needs.",
-                name: "Carla",
-                role: "Client",
-                tag: "Business Development",
-              },
-            ].map((t, i) => (
-              <div
-                key={`dup-${i}`}
-                className="testimonial-card flex-shrink-0 w-[420px] p-8 rounded-[32px] bg-gray-50 border border-black/5 relative text-left hover:border-primary/30 transition-all duration-300 group"
-              >
-                <span className="material-symbols-outlined text-primary text-4xl opacity-20 absolute top-6 right-6">
-                  format_quote
-                </span>
-                {t.tag && (
-                  <span className="inline-block text-[10px] font-mono-code tracking-widest uppercase text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20 mb-4">
-                    {t.tag}
-                  </span>
-                )}
-                <p className="italic leading-relaxed text-black/80 mb-6 font-hanken text-sm line-clamp-5">
-                  &quot;{t.quote}&quot;
-                </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-black/5">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-hanken text-sm">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-bold font-hanken text-sm text-black">{t.name}</h4>
-                    <p className="text-xs font-mono-code text-gray-500">
-                      {t.role}
-                    </p>
-                  </div>
+
+              {/* Controls */}
+              <div className="flex items-center justify-between mt-8">
+                <div className="flex items-center gap-2">
+                  {allTestimonials.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveTestimonial(i)}
+                      aria-label={`Show testimonial ${i + 1}`}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${i === activeTestimonial ? "w-6 bg-[#4b5a20]" : "w-1.5 bg-gray-300"
+                        }`}
+                    />
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() =>
+                      setActiveTestimonial(
+                        (prev) => (prev - 1 + allTestimonials.length) % allTestimonials.length
+                      )
+                    }
+                    aria-label="Previous testimonial"
+                    className="w-11 h-11 rounded-full flex items-center justify-center border border-gray-300 text-black hover:bg-[#4b5a20] hover:text-white hover:border-[#4b5a20] transition-all duration-300"
+                  >
+                    <span className="material-symbols-outlined text-lg">
+                      chevron_left
+                    </span>
+                  </button>
+                  <button
+                    onClick={() =>
+                      setActiveTestimonial((prev) => (prev + 1) % allTestimonials.length)
+                    }
+                    aria-label="Next testimonial"
+                    className="w-11 h-11 rounded-full flex items-center justify-center text-white hover:bg-[#394518] transition-all duration-300 shadow-sm"
+                    style={{ backgroundColor: "#4b5a20" }}
+                  >
+                    <span className="material-symbols-outlined text-lg">
+                      chevron_right
+                    </span>
+                  </button>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
