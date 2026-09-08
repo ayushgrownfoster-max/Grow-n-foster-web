@@ -155,9 +155,11 @@ export default function PerformanceMarketingCard({
                 <p className="text-xs text-gray-700 italic leading-relaxed">
                   &ldquo;{project.testimonial.quote}&rdquo;
                 </p>
-                <div className="text-[11px] font-mono-code text-[#4b5a20] font-bold">
-                  — {project.testimonial.author}
-                </div>
+                {project.testimonial.author && (
+                  <div className="text-[11px] font-mono-code text-[#4b5a20] font-bold">
+                    — {project.testimonial.author}
+                  </div>
+                )}
               </div>
             </div>
           )}

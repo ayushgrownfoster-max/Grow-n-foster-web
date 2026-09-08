@@ -78,6 +78,7 @@ const navItems = [
   // { name: "CASE STUDIES", href: "/case-studies" },
   { name: "PORTFOLIO", href: "/portfolio", hasDropdown: true, dropdownType: "portfolio" },
   { name: "ABOUT US", href: "/about" },
+  { name: "BLOG", href: "/blog" },
 ];
 
 export default function Navbar() {

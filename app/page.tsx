@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useActionState } from "react";
 import Link from "next/link";
+import { submitEmailCapture } from "@/app/actions/submitEmailCapture";
 
 const tabContents = {
   mission:
@@ -92,6 +93,10 @@ export default function Home() {
   );
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [emailState, emailAction, isEmailPending] = useActionState(
+    submitEmailCapture,
+    { success: false, message: "" }
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -997,26 +1002,44 @@ export default function Home() {
               Book a free strategy session with our marketing specialist and
               get a personalized roadmap to drive traffic and boost revenue.
             </p>
-            <form
-              className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto"
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("Success! We will reach out shortly.");
-              }}
-            >
-              <input
-                className="flex-1 bg-white rounded-2xl px-6 py-4 border border-black/10 focus:border-primary outline-none text-black transition-all font-hanken"
-                placeholder="Your work email"
-                required
-                type="email"
-              />
-              <button
-                className="bg-primary text-white px-8 py-4 rounded-2xl font-bold font-hanken hover:brightness-110 transition-all whitespace-nowrap"
-                type="submit"
-              >
-                Book Now
-              </button>
-            </form>
+
+            {emailState.success ? (
+              <div className="flex items-center justify-center gap-3 py-4 text-[#4b5a20] font-hanken font-semibold">
+                <span className="material-symbols-outlined text-2xl">check_circle</span>
+                <span>{emailState.message}</span>
+              </div>
+            ) : (
+              <>
+                <form
+                  action={emailAction}
+                  className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto"
+                >
+                  <input
+                    name="email"
+                    className="flex-1 bg-white rounded-2xl px-6 py-4 border border-black/10 focus:border-primary outline-none text-black transition-all font-hanken"
+                    placeholder="Your work email"
+                    required
+                    type="email"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isEmailPending}
+                    className="bg-primary text-white px-8 py-4 rounded-2xl font-bold font-hanken hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed transition-all whitespace-nowrap flex items-center gap-2"
+                  >
+                    {isEmailPending ? (
+                      <>
+                        <span className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+                        Booking...
+                      </>
+                    ) : "Book Now"}
+                  </button>
+                </form>
+                {emailState.message && !emailState.success && (
+                  <p className="text-red-600 text-sm font-hanken">{emailState.message}</p>
+                )}
+              </>
+            )}
+
             <p className="text-xs font-mono-code text-gray-500">
               No credit card required. Personalized roadmap included.
             </p>

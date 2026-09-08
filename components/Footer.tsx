@@ -110,6 +110,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/blog">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/contact">
+                  Contact
+                </Link>
+              </li>
+              <li>
                 <a className="text-slate-600 hover:text-primary transition-colors" href="#">
                   Privacy Policy
                 </a>

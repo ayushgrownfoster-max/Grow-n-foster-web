@@ -30,7 +30,7 @@ export interface PerformanceMarketingProject {
   resultsSummary: string;
   testimonial?: {
     quote: string;
-    author: string;
+    author?: string;
   };
   ctaText: string;
   ctaButtonText?: string;
@@ -98,7 +98,6 @@ export const performanceMarketingProjects: PerformanceMarketingProject[] = [
     testimonial: {
       quote:
         "The team brought surgical precision to our campaign. Instead of flooding us with random inquiries, every lead was someone who could actually afford our membership.",
-      author: "[Name, Title], [Client Name]",
     },
     ctaText: "Selling a premium membership to a mass-market audience?",
     ctaButtonText: "Talk to Grow 'n' Foster",
@@ -147,7 +146,7 @@ export const performanceMarketingProjects: PerformanceMarketingProject[] = [
         title: "Google Ads — catching buyers already sourcing",
         description:
           "Alongside Meta, we ran Google Search campaigns built around the exact terms UAE buyers use when actively vetting new suppliers — “rice supplier UAE,” “wholesale spice exporter India,” “wheat importer Dubai,” and similar sourcing-specific keywords. These weren't cold impressions; they were buyers already comparing suppliers, so a much higher share of clicks turned into real sourcing conversations.",
-        badge: "Search Sourcing",
+        badge: "Search Intent",
       },
       {
         title: "Retargeting to close the loop",
@@ -163,7 +162,6 @@ export const performanceMarketingProjects: PerformanceMarketingProject[] = [
     testimonial: {
       quote:
         "Connecting directly via WhatsApp with vetted Dubai procurement heads gave us immediate traction in a new market without waiting months for trade shows.",
-      author: "[Name, Title], [Client Name]",
     },
     ctaText: "Trying to reach overseas buyers who don't know your brand yet?",
     ctaButtonText: "Talk to Grow 'n' Foster",
@@ -227,7 +225,6 @@ export const performanceMarketingProjects: PerformanceMarketingProject[] = [
     testimonial: {
       quote:
         "Consolidating 25 branches into one clean ad architecture eliminated chaos. Every lead reached the exact branch team within minutes without manual intervention.",
-      author: "[Name, Title], [Client Name]",
     },
     ctaText:
       "Managing ad accounts for multiple locations is eating your team's time?",
@@ -298,7 +295,6 @@ export const performanceMarketingProjects: PerformanceMarketingProject[] = [
     testimonial: {
       quote:
         "The OTP verification step transformed our lead quality. Our sales team stopped wasting time on fake numbers and focused 100% on serious buyers.",
-      author: "VP of Sales, Real Estate Group",
     },
     ctaText: "Dealing with fake leads in your high-ticket ad campaigns?",
     ctaButtonText: "Talk to Grow 'n' Foster",

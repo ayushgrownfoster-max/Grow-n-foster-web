@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useActionState } from "react";
 import Link from "next/link";
+import { submitContact } from "@/app/actions/submitContact";
 
 const serviceOptions = [
   "SEO Services",
@@ -58,7 +59,13 @@ const faqs = [
   },
 ];
 
+const initialState = { success: false, message: "" };
+
 export default function ContactPage() {
+  const [formState, formAction, isPending] = useActionState(
+    submitContact,
+    initialState
+  );
   const [formData, setFormData] = useState({
     fullName: "",
     company: "",
@@ -71,13 +78,6 @@ export default function ContactPage() {
     contactMethod: "",
   });
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 4000);
-  };
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -160,19 +160,21 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {isSubmitted && (
+              {formState.success && (
                 <div className="mb-8 p-6 rounded-2xl bg-[#4b5a20]/10 border border-[#4b5a20]/30 text-[#4b5a20] font-hanken flex items-center gap-3">
-                  <span className="material-symbols-outlined text-2xl">
-                    check_circle
-                  </span>
-                  <span>
-                    Thank you! Your enquiry has been submitted. We&apos;ll get
-                    back to you shortly.
-                  </span>
+                  <span className="material-symbols-outlined text-2xl">check_circle</span>
+                  <span>{formState.message}</span>
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              {formState.message && !formState.success && (
+                <div className="mb-8 p-6 rounded-2xl bg-red-50 border border-red-200 text-red-700 font-hanken flex items-center gap-3">
+                  <span className="material-symbols-outlined text-2xl">error</span>
+                  <span>{formState.message}</span>
+                </div>
+              )}
+
+              <form action={formAction} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-mono-code text-slate-700 uppercase tracking-wider">
@@ -337,12 +339,20 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full sm:w-auto bg-[#4b5a20] text-white px-10 py-5 rounded-2xl font-bold font-hanken text-base hover:bg-[#3d4a1a] transition-all shadow-xl shadow-[#4b5a20]/20 flex items-center justify-center gap-3 group"
+                  disabled={isPending}
+                  className="w-full sm:w-auto bg-[#4b5a20] text-white px-10 py-5 rounded-2xl font-bold font-hanken text-base hover:bg-[#3d4a1a] disabled:opacity-60 disabled:cursor-not-allowed transition-all shadow-xl shadow-[#4b5a20]/20 flex items-center justify-center gap-3 group"
                 >
-                  Send My Enquiry
-                  <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
-                    send
-                  </span>
+                  {isPending ? (
+                    <>
+                      <span className="w-5 h-5 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send My Enquiry
+                      <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">send</span>
+                    </>
+                  )}
                 </button>
               </form>
             </div>
