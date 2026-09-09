@@ -64,8 +64,81 @@ export default async function BlogPostPage({ params }: Props) {
     ? urlFor(post.coverImage).width(1200).height(600).fit("crop").url()
     : null;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": post.schemaType || "BlogPosting",
+    "headline": post.seoTitle || post.title,
+    "description": post.seoDescription || post.excerpt,
+    "image": coverImageUrl ? [coverImageUrl] : [],
+    "datePublished": post.publishedAt,
+    "dateModified": post.publishedAt,
+    "author": [
+      {
+        "@type": "Person",
+        "name": post.author || "Grow 'n' Foster Team",
+        "jobTitle": post.authorRole || "Digital Marketing Expert",
+      },
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Grow 'n' Foster",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://grownfoster.com/gnf-logo-web.png",
+      },
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://grownfoster.com/blog/${slug}`,
+    },
+  };
+
+  const faqJsonLd =
+    post.faqItems && post.faqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": post.faqItems.map((item) => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer,
+            },
+          })),
+        }
+      : null;
+
+  const cleanedCustomJsonLd = post.customJsonLd
+    ? post.customJsonLd
+        .replace(/<script[^>]*>/gi, "")
+        .replace(/<\/script>/gi, "")
+        .trim()
+    : null;
+
   return (
     <div className="min-h-screen bg-white text-black font-hanken antialiased">
+      {/* Blog Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* FAQ Schema */}
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
+
+      {/* Custom JSON-LD Schema */}
+      {cleanedCustomJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: cleanedCustomJsonLd }}
+        />
+      )}
 
       {/* ── Hero / Cover ───────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-slate-50 border-b border-slate-100">

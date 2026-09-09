@@ -1,6 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/studio")) {
+    return null;
+  }
+
   return (
     <footer className="bg-white border-t border-slate-200 pt-20 pb-12 mt-auto text-slate-900">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">

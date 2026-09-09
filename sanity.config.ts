@@ -18,36 +18,18 @@ export default defineConfig({
     structureTool({
       structure: (S) =>
         S.list()
-          .title("Content")
+          .title("Content Management")
           .items([
-            S.listItem()
+            S.documentTypeListItem("post")
               .title("Blog Posts")
-              .icon(() => "📝")
-              .child(
-                S.documentList()
-                  .title("Blog Posts")
-                  .filter('_type == "post"')
-                  .defaultOrdering([{ field: "publishedAt", direction: "desc" }])
-              ),
+              .icon(() => "📝"),
             S.divider(),
-            S.listItem()
+            S.documentTypeListItem("contactSubmission")
               .title("Contact Submissions")
-              .icon(() => "📩")
-              .child(
-                S.documentList()
-                  .title("Contact Submissions")
-                  .filter('_type == "contactSubmission"')
-                  .defaultOrdering([{ field: "submittedAt", direction: "desc" }])
-              ),
-            S.listItem()
+              .icon(() => "📩"),
+            S.documentTypeListItem("emailCapture")
               .title("Email Captures")
-              .icon(() => "📧")
-              .child(
-                S.documentList()
-                  .title("Email Captures")
-                  .filter('_type == "emailCapture"')
-                  .defaultOrdering([{ field: "submittedAt", direction: "desc" }])
-              ),
+              .icon(() => "📧"),
           ]),
     }),
     visionTool(),

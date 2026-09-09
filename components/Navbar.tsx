@@ -83,6 +83,11 @@ const navItems = [
 
 export default function Navbar() {
   const pathname = usePathname();
+
+  if (pathname?.startsWith("/studio")) {
+    return null;
+  }
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<"services" | "portfolio" | null>(null);

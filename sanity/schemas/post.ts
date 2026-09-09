@@ -205,6 +205,48 @@ export default defineType({
       description: "Meta description for search engines (max 160 chars)",
       validation: (Rule) => Rule.max(160),
     }),
+    defineField({
+      name: "schemaType",
+      title: "Blog Schema Type (Structured Data)",
+      type: "string",
+      description: "SEO Schema.org classification for search engine indexers",
+      initialValue: "BlogPosting",
+      options: {
+        list: [
+          { title: "BlogPosting (Recommended for Blogs)", value: "BlogPosting" },
+          { title: "Article (General Article)", value: "Article" },
+          { title: "TechArticle (Technical Guides)", value: "TechArticle" },
+          { title: "NewsArticle (News Content)", value: "NewsArticle" },
+        ],
+      },
+    }),
+    defineField({
+      name: "faqItems",
+      title: "FAQ Schema Builder",
+      type: "array",
+      description: "Add Questions & Answers to automatically generate FAQPage JSON-LD schema for Google",
+      of: [
+        {
+          type: "object",
+          name: "faqItem",
+          title: "FAQ Item",
+          fields: [
+            { name: "question", type: "string", title: "Question", validation: (Rule) => Rule.required() },
+            { name: "answer", type: "text", title: "Answer", rows: 3, validation: (Rule) => Rule.required() },
+          ],
+          preview: {
+            select: { title: "question", subtitle: "answer" },
+          },
+        },
+      ],
+    }),
+    defineField({
+      name: "customJsonLd",
+      title: "Custom JSON-LD Schema (Raw Code)",
+      type: "text",
+      rows: 8,
+      description: "Paste custom JSON-LD schema (e.g. <script type=\"application/ld+json\">...</script> or JSON object). Rendered directly into page head.",
+    }),
   ],
   orderings: [
     {

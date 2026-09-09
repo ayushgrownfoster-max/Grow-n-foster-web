@@ -22,10 +22,18 @@ export interface PostSummary {
   featured: boolean;
 }
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface Post extends PostSummary {
   body: unknown[];
   seoTitle: string | null;
   seoDescription: string | null;
+  schemaType: string | null;
+  faqItems?: FaqItem[] | null;
+  customJsonLd?: string | null;
 }
 
 // ─── Queries ────────────────────────────────────────────────────────────────
@@ -68,7 +76,10 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       ${postSummaryFields},
       body,
       seoTitle,
-      seoDescription
+      seoDescription,
+      schemaType,
+      faqItems,
+      customJsonLd
     }`,
     { slug }
   );
