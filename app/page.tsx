@@ -226,15 +226,12 @@ export default function Home() {
             </div>
 
             {/* Right Column: Visual Panel */}
-            <div className="relative hidden lg:flex items-center justify-center hero-fade-in stagger-3 lg:-mt-20">
+            <div className="relative hidden lg:flex items-center justify-center hero-fade-in stagger-3 lg:-mt-40">
 
               {/* Main visual card */}
               <div className="relative w-full max-w-[480px]">
-                {/* Background glow blob */}
-                <div className="absolute inset-0 rounded-[48px] bg-primary/10 blur-3xl scale-110"></div>
-
-                {/* Main image container */}
-                <div className="relative rounded-[48px] overflow-hidden border border-primary/15 shadow-2xl bg-gray-50">
+                {/* Main image container — no shadow/border/glow, sits flush with the white background */}
+                <div className="relative rounded-[48px] overflow-hidden bg-gray-50">
                   <div className="aspect-[4/5] relative">
                     <img
                       alt="Digital marketing professional"
