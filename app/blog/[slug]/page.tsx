@@ -1,10 +1,13 @@
-import { getPostBySlug, getRecentPosts, getAllPostSlugs } from "@/lib/sanity/queries";
+import { getPostBySlug, getAllPostSlugs, getAllPosts, type PostSummary } from "@/lib/sanity/queries";
 import { urlFor } from "@/lib/sanity/image";
 import { PortableTextRenderer } from "./PortableTextRenderer";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -53,12 +56,26 @@ function formatDate(dateString: string) {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const [post, recentPosts] = await Promise.all([
-    getPostBySlug(slug),
-    getRecentPosts(4, slug),
-  ]);
+  const post = await getPostBySlug(slug);
 
   if (!post) notFound();
+
+  const allPosts = await getAllPosts();
+
+  const currentSlug = post.slug?.current ?? slug;
+  const currentIndex = allPosts.findIndex(
+    (p) => (p.slug?.current ?? p._id) === currentSlug || p._id === post._id
+  );
+
+  const prevPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const nextPost =
+    currentIndex >= 0 && currentIndex < allPosts.length - 1
+      ? allPosts[currentIndex + 1]
+      : null;
+
+  const otherPosts = allPosts.filter(
+    (p) => (p.slug?.current ?? p._id) !== currentSlug && p._id !== post._id
+  );
 
   const coverImageUrl = post.coverImage
     ? urlFor(post.coverImage).width(1200).height(600).fit("crop").url()
@@ -267,8 +284,45 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Body */}
             {post.body && <PortableTextRenderer value={post.body as unknown[]} />}
 
+            {/* ── Previous & Next Blog Strip ── */}
+            {(prevPost || nextPost) && (
+              <div className="mt-12 grid sm:grid-cols-2 gap-4">
+                {prevPost ? (
+                  <Link
+                    href={`/blog/${prevPost.slug?.current ?? prevPost._id}`}
+                    className="group flex flex-col p-5 bg-slate-50 hover:bg-[#4b5a20]/5 rounded-2xl border border-slate-200 hover:border-[#4b5a20]/40 transition-all text-left"
+                  >
+                    <span className="text-[11px] font-mono text-[#4b5a20] font-semibold uppercase tracking-wider flex items-center gap-1 mb-1">
+                      <span className="material-symbols-outlined text-sm">arrow_back</span>
+                      Previous Article
+                    </span>
+                    <span className="font-hanken font-bold text-sm text-slate-900 group-hover:text-[#4b5a20] transition-colors line-clamp-2">
+                      {prevPost.title}
+                    </span>
+                  </Link>
+                ) : (
+                  <div className="hidden sm:block" />
+                )}
+
+                {nextPost && (
+                  <Link
+                    href={`/blog/${nextPost.slug?.current ?? nextPost._id}`}
+                    className="group flex flex-col p-5 bg-slate-50 hover:bg-[#4b5a20]/5 rounded-2xl border border-slate-200 hover:border-[#4b5a20]/40 transition-all text-right sm:col-start-2"
+                  >
+                    <span className="text-[11px] font-mono text-[#4b5a20] font-semibold uppercase tracking-wider flex items-center justify-end gap-1 mb-1">
+                      Next Article
+                      <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    </span>
+                    <span className="font-hanken font-bold text-sm text-slate-900 group-hover:text-[#4b5a20] transition-colors line-clamp-2">
+                      {nextPost.title}
+                    </span>
+                  </Link>
+                )}
+              </div>
+            )}
+
             {/* Share / CTA strip */}
-            <div className="mt-16 p-8 bg-slate-50 rounded-3xl border border-slate-200 space-y-4">
+            <div className="mt-12 p-8 bg-slate-50 rounded-3xl border border-slate-200 space-y-4">
               <p className="font-hanken font-bold text-slate-900 text-lg">
                 Found this useful? Let&apos;s grow your business too.
               </p>
@@ -293,77 +347,186 @@ export default async function BlogPostPage({ params }: Props) {
                 className="inline-flex items-center gap-2 text-slate-500 hover:text-[#4b5a20] font-mono text-sm font-semibold transition-colors"
               >
                 <span className="material-symbols-outlined text-base">arrow_back</span>
-                Back to Blog
+                Back to All Articles
               </Link>
             </div>
           </article>
 
-          {/* Sidebar */}
-          <aside className="space-y-8">
-            {/* Recent Posts */}
-            {recentPosts.length > 0 && (
-              <div className="bg-slate-50 rounded-3xl p-6 border border-slate-200">
-                <h3 className="font-hanken font-extrabold text-slate-900 text-lg mb-5 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#4b5a20] text-xl">rss_feed</span>
-                  Recent Articles
-                </h3>
-                <div className="space-y-5">
-                  {recentPosts.map((rp) => {
-                    const thumb = rp.coverImage
-                      ? urlFor(rp.coverImage).width(80).height(80).fit("crop").url()
+          {/* ── Sticky Right Sidebar ───────────────────────────── */}
+          <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-1">
+
+            {/* 1. Previous / Next Blog Navigation Buttons */}
+            {(prevPost || nextPost) && (
+              <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 space-y-3">
+                <div className="flex items-center gap-2 pb-2 border-b border-slate-200">
+                  <span className="material-symbols-outlined text-[#4b5a20] text-lg">swap_horiz</span>
+                  <h3 className="font-hanken font-bold text-slate-900 text-sm tracking-wide uppercase">
+                    Blog Navigation
+                  </h3>
+                </div>
+
+                {prevPost && (
+                  <Link
+                    href={`/blog/${prevPost.slug?.current ?? prevPost._id}`}
+                    className="group block p-3 rounded-2xl bg-white border border-slate-200/80 hover:border-[#4b5a20]/40 hover:bg-[#4b5a20]/5 transition-all shadow-xs"
+                  >
+                    <div className="text-[10px] font-mono text-[#4b5a20] font-bold uppercase tracking-wider flex items-center gap-1 mb-1">
+                      <span className="material-symbols-outlined text-xs">arrow_back</span>
+                      Previous Blog
+                    </div>
+                    <p className="font-hanken font-semibold text-xs text-slate-800 group-hover:text-[#4b5a20] transition-colors line-clamp-2">
+                      {prevPost.title}
+                    </p>
+                  </Link>
+                )}
+
+                {nextPost && (
+                  <Link
+                    href={`/blog/${nextPost.slug?.current ?? nextPost._id}`}
+                    className="group block p-3 rounded-2xl bg-white border border-slate-200/80 hover:border-[#4b5a20]/40 hover:bg-[#4b5a20]/5 transition-all shadow-xs"
+                  >
+                    <div className="text-[10px] font-mono text-[#4b5a20] font-bold uppercase tracking-wider flex items-center justify-between mb-1">
+                      <span>Next Blog</span>
+                      <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                    </div>
+                    <p className="font-hanken font-semibold text-xs text-slate-800 group-hover:text-[#4b5a20] transition-colors line-clamp-2">
+                      {nextPost.title}
+                    </p>
+                  </Link>
+                )}
+              </div>
+            )}
+
+            {/* 2. Navigate to Other Blogs List */}
+            {otherPosts.length > 0 && (
+              <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200">
+                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
+                  <h3 className="font-hanken font-bold text-slate-900 text-sm tracking-wide uppercase flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[#4b5a20] text-lg">menu_book</span>
+                    Other Blogs
+                  </h3>
+                  <Link
+                    href="/blog"
+                    className="text-[11px] font-mono text-[#4b5a20] hover:underline font-semibold"
+                  >
+                    All ({allPosts.length})
+                  </Link>
+                </div>
+
+                <div className="space-y-3">
+                  {otherPosts.map((op, idx) => {
+                    const thumb = op.coverImage
+                      ? urlFor(op.coverImage).width(90).height(90).fit("crop").url()
                       : null;
+                    const opSlug = op.slug?.current ?? op._id;
                     return (
                       <Link
-                        key={rp._id}
-                        href={`/blog/${rp.slug.current}`}
-                        className="flex gap-3 group"
+                        key={op._id}
+                        href={`/blog/${opSlug}`}
+                        className="flex gap-3 group p-2.5 rounded-2xl bg-white/70 hover:bg-white border border-slate-200/60 hover:border-[#4b5a20]/40 hover:shadow-sm transition-all"
                       >
-                        <div className="w-16 h-16 rounded-xl overflow-hidden bg-[#4b5a20]/10 shrink-0 relative">
+                        <div className="w-14 h-14 rounded-xl overflow-hidden bg-[#4b5a20]/10 shrink-0 relative">
                           {thumb ? (
-                            <Image src={thumb} alt={rp.title} fill className="object-cover" />
+                            <Image src={thumb} alt={op.title} fill className="object-cover group-hover:scale-105 transition-transform" />
                           ) : (
                             <div className="absolute inset-0 flex items-center justify-center">
-                              <span className="material-symbols-outlined text-[#4b5a20]/40 text-xl">article</span>
+                              <span className="material-symbols-outlined text-[#4b5a20]/40 text-lg">article</span>
                             </div>
                           )}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="font-hanken font-semibold text-sm text-slate-900 leading-snug line-clamp-2 group-hover:text-[#4b5a20] transition-colors">
-                            {rp.title}
+                          <p className="font-hanken font-semibold text-xs text-slate-900 leading-snug line-clamp-2 group-hover:text-[#4b5a20] transition-colors">
+                            {op.title}
                           </p>
-                          <p className="text-[10px] font-mono text-slate-400 mt-1">
-                            {rp.category}
-                          </p>
+                          <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400 mt-1">
+                            <span className="text-[#4b5a20] font-semibold">{op.category}</span>
+                            {op.readTime && <span>· {op.readTime} min</span>}
+                          </div>
                         </div>
                       </Link>
                     );
                   })}
                 </div>
-                <Link
-                  href="/blog"
-                  className="mt-5 flex items-center gap-1 text-[#4b5a20] text-xs font-mono font-semibold hover:underline"
-                >
-                  View all articles
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Link>
               </div>
             )}
 
-            {/* Contact CTA */}
-            <div className="bg-[#4b5a20] rounded-3xl p-6 text-white space-y-4 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <h3 className="font-hanken font-extrabold text-xl relative z-10">
-                Ready to grow?
+            {/* 3. Official Website Social Links */}
+            <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 space-y-3.5">
+              <div className="flex items-center gap-2 pb-2 border-b border-slate-200">
+                <span className="material-symbols-outlined text-[#4b5a20] text-lg">share</span>
+                <h3 className="font-hanken font-bold text-slate-900 text-sm tracking-wide uppercase">
+                  Follow &amp; Connect
+                </h3>
+              </div>
+              <p className="text-xs text-slate-500 font-hanken">
+                Stay updated with Grow &apos;n&apos; Foster on our official social channels:
+              </p>
+              <div className="grid grid-cols-2 gap-2.5">
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/company/grownfoster/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#0077b5] hover:bg-[#0077b5]/5 text-slate-700 hover:text-[#0077b5] transition-all text-xs font-mono font-semibold shadow-2xs"
+                >
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+
+                {/* X / Twitter */}
+                <a
+                  href="https://x.com/grownfoster"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-black hover:bg-black/5 text-slate-700 hover:text-black transition-all text-xs font-mono font-semibold shadow-2xs"
+                >
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                  <span>Twitter (X)</span>
+                </a>
+
+                {/* Facebook */}
+                <a
+                  href="https://www.facebook.com/profile.php?id=61565508944312"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#1877f2] hover:bg-[#1877f2]/5 text-slate-700 hover:text-[#1877f2] transition-all text-xs font-mono font-semibold shadow-2xs"
+                >
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.642c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z" />
+                  </svg>
+                  <span>Facebook</span>
+                </a>
+
+                {/* Email */}
+                <a
+                  href="mailto:info@grownfoster.com"
+                  className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#4b5a20] hover:bg-[#4b5a20]/5 text-slate-700 hover:text-[#4b5a20] transition-all text-xs font-mono font-semibold shadow-2xs"
+                >
+                  <span className="material-symbols-outlined text-base text-[#4b5a20]">mail</span>
+                  <span>Email</span>
+                </a>
+              </div>
+            </div>
+
+            {/* 4. Consultation CTA */}
+            <div className="bg-[#4b5a20] rounded-3xl p-5 text-white space-y-3 relative overflow-hidden shadow-lg shadow-[#4b5a20]/15">
+              <div className="absolute top-0 right-0 w-28 h-28 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+              <h3 className="font-hanken font-extrabold text-base relative z-10">
+                Need Marketing Growth?
               </h3>
-              <p className="text-[#d8eba1] text-sm leading-relaxed relative z-10">
-                Get a free strategy session tailored to your business goals.
+              <p className="text-[#d8eba1] text-xs leading-relaxed relative z-10">
+                Get a free consultation roadmap tailored to your industry and goals.
               </p>
               <Link
                 href="/contact"
-                className="relative z-10 inline-flex items-center gap-2 bg-white text-[#4b5a20] px-5 py-2.5 rounded-full font-bold font-hanken text-sm hover:bg-[#d8eba1] transition-all"
+                className="relative z-10 inline-flex items-center gap-1.5 bg-white text-[#4b5a20] px-4 py-2 rounded-full font-bold font-hanken text-xs hover:bg-[#d8eba1] transition-all"
               >
-                Get Started
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                <span>Get Started</span>
+                <span className="material-symbols-outlined text-xs">arrow_forward</span>
               </Link>
             </div>
           </aside>

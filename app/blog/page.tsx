@@ -4,6 +4,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Blog | Grow 'n' Foster — Digital Marketing Insights",
   description:
@@ -36,9 +39,11 @@ function PostCard({ post }: { post: PostSummary }) {
     ? urlFor(post.coverImage).width(600).height(340).fit("crop").url()
     : null;
 
+  const slug = post.slug?.current ?? post._id;
+
   return (
     <Link
-      href={`/blog/${post.slug.current}`}
+      href={`/blog/${slug}`}
       className="group flex flex-col bg-white border border-slate-200 rounded-3xl overflow-hidden hover:border-[#4b5a20]/40 hover:shadow-xl hover:shadow-[#4b5a20]/10 transition-all duration-300"
     >
       {/* Cover Image */}

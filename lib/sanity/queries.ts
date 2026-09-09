@@ -55,7 +55,7 @@ const postSummaryFields = groq`
 
 export async function getAllPosts(): Promise<PostSummary[]> {
   return client.fetch(
-    groq`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+    groq`*[_type == "post"] | order(coalesce(publishedAt, _createdAt) desc) {
       ${postSummaryFields}
     }`
   );
@@ -63,7 +63,7 @@ export async function getAllPosts(): Promise<PostSummary[]> {
 
 export async function getFeaturedPosts(limit = 3): Promise<PostSummary[]> {
   return client.fetch(
-    groq`*[_type == "post" && featured == true && defined(slug.current)] | order(publishedAt desc) [0...$limit] {
+    groq`*[_type == "post" && featured == true] | order(coalesce(publishedAt, _createdAt) desc) [0...$limit] {
       ${postSummaryFields}
     }`,
     { limit }
@@ -72,7 +72,7 @@ export async function getFeaturedPosts(limit = 3): Promise<PostSummary[]> {
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
   return client.fetch(
-    groq`*[_type == "post" && slug.current == $slug][0] {
+    groq`*[_type == "post" && (slug.current == $slug || _id == $slug)][0] {
       ${postSummaryFields},
       body,
       seoTitle,
@@ -88,17 +88,35 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 export async function getRecentPosts(limit = 4, excludeSlug?: string): Promise<PostSummary[]> {
   if (excludeSlug) {
     return client.fetch(
-      groq`*[_type == "post" && defined(slug.current) && slug.current != $excludeSlug] | order(publishedAt desc) [0...$limit] {
+      groq`*[_type == "post" && slug.current != $excludeSlug && _id != $excludeSlug] | order(coalesce(publishedAt, _createdAt) desc) [0...$limit] {
         ${postSummaryFields}
       }`,
       { limit, excludeSlug }
     );
   }
   return client.fetch(
-    groq`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0...$limit] {
+    groq`*[_type == "post"] | order(coalesce(publishedAt, _createdAt) desc) [0...$limit] {
       ${postSummaryFields}
     }`,
     { limit }
+  );
+}
+
+export async function getAdjacentPosts(
+  publishedAt: string | undefined,
+  currentSlug: string
+): Promise<{ prev: PostSummary | null; next: PostSummary | null }> {
+  const date = publishedAt || new Date().toISOString();
+  return client.fetch(
+    groq`{
+      "prev": *[_type == "post" && (slug.current != $currentSlug && _id != $currentSlug) && coalesce(publishedAt, _createdAt) <= $date] | order(coalesce(publishedAt, _createdAt) desc)[0] {
+        ${postSummaryFields}
+      },
+      "next": *[_type == "post" && (slug.current != $currentSlug && _id != $currentSlug) && coalesce(publishedAt, _createdAt) >= $date] | order(coalesce(publishedAt, _createdAt) asc)[0] {
+        ${postSummaryFields}
+      }
+    }`,
+    { currentSlug, date }
   );
 }
 
