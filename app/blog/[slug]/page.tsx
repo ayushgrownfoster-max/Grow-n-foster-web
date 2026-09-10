@@ -121,8 +121,6 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-hanken antialiased">
-      {/* ── Canonical Link Tag (Ensures immediate detection by extensions) ── */}
-      <link rel="canonical" href={pageCanonicalUrl} />
 
       {/* ── FAQ Schema ── */}
       {faqJsonLd && (
