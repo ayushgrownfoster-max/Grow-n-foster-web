@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPostSlugs, getAllPosts, type PostSummary } from "@/lib/sanity/queries";
+import { getPostBySlug, getAllPostSlugs, getAllPosts } from "@/lib/sanity/queries";
 import { urlFor } from "@/lib/sanity/image";
 import { PortableTextRenderer } from "./PortableTextRenderer";
 import Link from "next/link";
@@ -81,35 +81,6 @@ export default async function BlogPostPage({ params }: Props) {
     ? urlFor(post.coverImage).width(1200).height(600).fit("crop").url()
     : null;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": post.schemaType || "BlogPosting",
-    "headline": post.seoTitle || post.title,
-    "description": post.seoDescription || post.excerpt,
-    "image": coverImageUrl ? [coverImageUrl] : [],
-    "datePublished": post.publishedAt,
-    "dateModified": post.publishedAt,
-    "author": [
-      {
-        "@type": "Person",
-        "name": post.author || "Grow 'n' Foster Team",
-        "jobTitle": post.authorRole || "Digital Marketing Expert",
-      },
-    ],
-    "publisher": {
-      "@type": "Organization",
-      "name": "Grow 'n' Foster",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://grownfoster.com/gnf-logo-web.png",
-      },
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://grownfoster.com/blog/${slug}`,
-    },
-  };
-
   const faqJsonLd =
     post.faqItems && post.faqItems.length > 0
       ? {
@@ -135,12 +106,6 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-white text-black font-hanken antialiased">
-      {/* Blog Article Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       {/* FAQ Schema */}
       {faqJsonLd && (
         <script
@@ -172,7 +137,7 @@ export default async function BlogPostPage({ params }: Props) {
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/90 to-white" />
 
-        <div className="max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-24 relative z-10 space-y-6">
+        <div className="max-w-5xl mx-auto px-6 md:px-12 py-16 md:py-24 relative z-10 space-y-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 text-xs font-mono text-slate-500">
@@ -211,7 +176,7 @@ export default async function BlogPostPage({ params }: Props) {
           </h1>
 
           {/* Excerpt */}
-          <p className="text-slate-600 text-xl leading-relaxed max-w-2xl">
+          <p className="text-slate-600 text-xl leading-relaxed max-w-3xl">
             {post.excerpt}
           </p>
 
@@ -248,7 +213,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* ── Cover Image ───────────────────────────────────────────── */}
       {coverImageUrl && (
-        <div className="max-w-5xl mx-auto px-6 md:px-12 -mt-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 -mt-8 relative z-10">
           <div className="relative w-full h-64 md:h-96 rounded-3xl overflow-hidden shadow-2xl shadow-slate-200">
             <Image
               src={coverImageUrl}
@@ -261,12 +226,111 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       )}
 
-      {/* ── Main Content ──────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        <div className="grid lg:grid-cols-[1fr_320px] gap-12 lg:gap-16">
+      {/* ── 3-Column Layout: Left (Sticky Nav), Center (Article), Right (Sticky Follow & Connect) ── */}
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 items-start">
 
-          {/* Article */}
-          <article className="min-w-0">
+          {/* ── LEFT SIDEBAR: Sticky Blog Navigation ───────────────────────── */}
+          <aside className="w-full lg:w-[280px] xl:w-[320px] shrink-0 order-2 lg:order-1 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto space-y-6 [scrollbar-width:thin] [scrollbar-color:#cbd5e1_transparent]">
+            
+            {/* 1. Previous / Next Blog Quick Switcher */}
+            {(prevPost || nextPost) && (
+              <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 space-y-3 shadow-xs">
+                <div className="flex items-center gap-2 pb-2 border-b border-slate-200">
+                  <span className="material-symbols-outlined text-[#4b5a20] text-lg">swap_horiz</span>
+                  <h3 className="font-hanken font-bold text-slate-900 text-xs tracking-wider uppercase">
+                    Blog Navigation
+                  </h3>
+                </div>
+
+                {prevPost && (
+                  <Link
+                    href={`/blog/${prevPost.slug?.current ?? prevPost._id}`}
+                    className="group block p-3 rounded-2xl bg-white border border-slate-200/80 hover:border-[#4b5a20]/40 hover:bg-[#4b5a20]/5 transition-all shadow-2xs"
+                  >
+                    <div className="text-[10px] font-mono text-[#4b5a20] font-bold uppercase tracking-wider flex items-center gap-1 mb-1">
+                      <span className="material-symbols-outlined text-xs">arrow_back</span>
+                      Previous Blog
+                    </div>
+                    <p className="font-hanken font-semibold text-xs text-slate-800 group-hover:text-[#4b5a20] transition-colors line-clamp-2 leading-snug">
+                      {prevPost.title}
+                    </p>
+                  </Link>
+                )}
+
+                {nextPost && (
+                  <Link
+                    href={`/blog/${nextPost.slug?.current ?? nextPost._id}`}
+                    className="group block p-3 rounded-2xl bg-white border border-slate-200/80 hover:border-[#4b5a20]/40 hover:bg-[#4b5a20]/5 transition-all shadow-2xs"
+                  >
+                    <div className="text-[10px] font-mono text-[#4b5a20] font-bold uppercase tracking-wider flex items-center justify-between mb-1">
+                      <span>Next Blog</span>
+                      <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                    </div>
+                    <p className="font-hanken font-semibold text-xs text-slate-800 group-hover:text-[#4b5a20] transition-colors line-clamp-2 leading-snug">
+                      {nextPost.title}
+                    </p>
+                  </Link>
+                )}
+              </div>
+            )}
+
+            {/* 2. List of Other Blogs */}
+            {otherPosts.length > 0 && (
+              <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 shadow-xs">
+                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
+                  <h3 className="font-hanken font-bold text-slate-900 text-xs tracking-wider uppercase flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[#4b5a20] text-lg">menu_book</span>
+                    Other Blogs
+                  </h3>
+                  <Link
+                    href="/blog"
+                    className="text-[11px] font-mono text-[#4b5a20] hover:underline font-semibold"
+                  >
+                    All ({allPosts.length})
+                  </Link>
+                </div>
+
+                <div className="space-y-3">
+                  {otherPosts.map((op) => {
+                    const thumb = op.coverImage
+                      ? urlFor(op.coverImage).width(90).height(90).fit("crop").url()
+                      : null;
+                    const opSlug = op.slug?.current ?? op._id;
+                    return (
+                      <Link
+                        key={op._id}
+                        href={`/blog/${opSlug}`}
+                        className="flex gap-3 group p-2.5 rounded-2xl bg-white hover:bg-white border border-slate-200/70 hover:border-[#4b5a20]/40 hover:shadow-xs transition-all"
+                      >
+                        <div className="w-12 h-12 rounded-xl overflow-hidden bg-[#4b5a20]/10 shrink-0 relative">
+                          {thumb ? (
+                            <Image src={thumb} alt={op.title} fill className="object-cover group-hover:scale-105 transition-transform" />
+                          ) : (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <span className="material-symbols-outlined text-[#4b5a20]/40 text-base">article</span>
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-hanken font-semibold text-xs text-slate-900 leading-snug line-clamp-2 group-hover:text-[#4b5a20] transition-colors">
+                            {op.title}
+                          </p>
+                          <div className="flex items-center gap-1.5 text-[10px] font-mono text-slate-400 mt-1">
+                            <span className="text-[#4b5a20] font-semibold truncate">{op.category}</span>
+                            {op.readTime && <span>· {op.readTime}m</span>}
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </aside>
+
+          {/* ── CENTER COLUMN: Main Article Content ───────────────────────── */}
+          <article className="flex-1 min-w-0 order-1 lg:order-2 w-full">
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-8">
@@ -284,7 +348,7 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Body */}
             {post.body && <PortableTextRenderer value={post.body as unknown[]} />}
 
-            {/* ── Previous & Next Blog Strip ── */}
+            {/* Bottom Prev/Next navigation */}
             {(prevPost || nextPost) && (
               <div className="mt-12 grid sm:grid-cols-2 gap-4">
                 {prevPost ? (
@@ -352,116 +416,21 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </article>
 
-          {/* ── Sticky Right Sidebar ───────────────────────────── */}
-          <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-1">
+          {/* ── RIGHT SIDEBAR: Sticky Follow & Connect + CTA ──────────────── */}
+          <aside className="w-full lg:w-[260px] xl:w-[290px] shrink-0 order-3 lg:order-3 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto space-y-6 [scrollbar-width:thin] [scrollbar-color:#cbd5e1_transparent]">
 
-            {/* 1. Previous / Next Blog Navigation Buttons */}
-            {(prevPost || nextPost) && (
-              <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 space-y-3">
-                <div className="flex items-center gap-2 pb-2 border-b border-slate-200">
-                  <span className="material-symbols-outlined text-[#4b5a20] text-lg">swap_horiz</span>
-                  <h3 className="font-hanken font-bold text-slate-900 text-sm tracking-wide uppercase">
-                    Blog Navigation
-                  </h3>
-                </div>
-
-                {prevPost && (
-                  <Link
-                    href={`/blog/${prevPost.slug?.current ?? prevPost._id}`}
-                    className="group block p-3 rounded-2xl bg-white border border-slate-200/80 hover:border-[#4b5a20]/40 hover:bg-[#4b5a20]/5 transition-all shadow-xs"
-                  >
-                    <div className="text-[10px] font-mono text-[#4b5a20] font-bold uppercase tracking-wider flex items-center gap-1 mb-1">
-                      <span className="material-symbols-outlined text-xs">arrow_back</span>
-                      Previous Blog
-                    </div>
-                    <p className="font-hanken font-semibold text-xs text-slate-800 group-hover:text-[#4b5a20] transition-colors line-clamp-2">
-                      {prevPost.title}
-                    </p>
-                  </Link>
-                )}
-
-                {nextPost && (
-                  <Link
-                    href={`/blog/${nextPost.slug?.current ?? nextPost._id}`}
-                    className="group block p-3 rounded-2xl bg-white border border-slate-200/80 hover:border-[#4b5a20]/40 hover:bg-[#4b5a20]/5 transition-all shadow-xs"
-                  >
-                    <div className="text-[10px] font-mono text-[#4b5a20] font-bold uppercase tracking-wider flex items-center justify-between mb-1">
-                      <span>Next Blog</span>
-                      <span className="material-symbols-outlined text-xs">arrow_forward</span>
-                    </div>
-                    <p className="font-hanken font-semibold text-xs text-slate-800 group-hover:text-[#4b5a20] transition-colors line-clamp-2">
-                      {nextPost.title}
-                    </p>
-                  </Link>
-                )}
-              </div>
-            )}
-
-            {/* 2. Navigate to Other Blogs List */}
-            {otherPosts.length > 0 && (
-              <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200">
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
-                  <h3 className="font-hanken font-bold text-slate-900 text-sm tracking-wide uppercase flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[#4b5a20] text-lg">menu_book</span>
-                    Other Blogs
-                  </h3>
-                  <Link
-                    href="/blog"
-                    className="text-[11px] font-mono text-[#4b5a20] hover:underline font-semibold"
-                  >
-                    All ({allPosts.length})
-                  </Link>
-                </div>
-
-                <div className="space-y-3">
-                  {otherPosts.map((op, idx) => {
-                    const thumb = op.coverImage
-                      ? urlFor(op.coverImage).width(90).height(90).fit("crop").url()
-                      : null;
-                    const opSlug = op.slug?.current ?? op._id;
-                    return (
-                      <Link
-                        key={op._id}
-                        href={`/blog/${opSlug}`}
-                        className="flex gap-3 group p-2.5 rounded-2xl bg-white/70 hover:bg-white border border-slate-200/60 hover:border-[#4b5a20]/40 hover:shadow-sm transition-all"
-                      >
-                        <div className="w-14 h-14 rounded-xl overflow-hidden bg-[#4b5a20]/10 shrink-0 relative">
-                          {thumb ? (
-                            <Image src={thumb} alt={op.title} fill className="object-cover group-hover:scale-105 transition-transform" />
-                          ) : (
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              <span className="material-symbols-outlined text-[#4b5a20]/40 text-lg">article</span>
-                            </div>
-                          )}
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="font-hanken font-semibold text-xs text-slate-900 leading-snug line-clamp-2 group-hover:text-[#4b5a20] transition-colors">
-                            {op.title}
-                          </p>
-                          <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400 mt-1">
-                            <span className="text-[#4b5a20] font-semibold">{op.category}</span>
-                            {op.readTime && <span>· {op.readTime} min</span>}
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-
-            {/* 3. Official Website Social Links */}
-            <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 space-y-3.5">
+            {/* 1. Official Website Social / Follow & Connect */}
+            <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 space-y-3.5 shadow-xs">
               <div className="flex items-center gap-2 pb-2 border-b border-slate-200">
                 <span className="material-symbols-outlined text-[#4b5a20] text-lg">share</span>
-                <h3 className="font-hanken font-bold text-slate-900 text-sm tracking-wide uppercase">
+                <h3 className="font-hanken font-bold text-slate-900 text-xs tracking-wider uppercase">
                   Follow &amp; Connect
                 </h3>
               </div>
-              <p className="text-xs text-slate-500 font-hanken">
-                Stay updated with Grow &apos;n&apos; Foster on our official social channels:
+              <p className="text-xs text-slate-500 font-hanken leading-relaxed">
+                Connect with Grow &apos;n&apos; Foster across our official platforms:
               </p>
-              <div className="grid grid-cols-2 gap-2.5">
+              <div className="grid grid-cols-2 gap-2">
                 {/* LinkedIn */}
                 <a
                   href="https://www.linkedin.com/company/grownfoster/"
@@ -469,7 +438,7 @@ export default async function BlogPostPage({ params }: Props) {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#0077b5] hover:bg-[#0077b5]/5 text-slate-700 hover:text-[#0077b5] transition-all text-xs font-mono font-semibold shadow-2xs"
                 >
-                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                   </svg>
                   <span>LinkedIn</span>
@@ -482,10 +451,10 @@ export default async function BlogPostPage({ params }: Props) {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-black hover:bg-black/5 text-slate-700 hover:text-black transition-all text-xs font-mono font-semibold shadow-2xs"
                 >
-                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
-                  <span>Twitter (X)</span>
+                  <span>Twitter</span>
                 </a>
 
                 {/* Facebook */}
@@ -495,7 +464,7 @@ export default async function BlogPostPage({ params }: Props) {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#1877f2] hover:bg-[#1877f2]/5 text-slate-700 hover:text-[#1877f2] transition-all text-xs font-mono font-semibold shadow-2xs"
                 >
-                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.642c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z" />
                   </svg>
                   <span>Facebook</span>
@@ -506,30 +475,31 @@ export default async function BlogPostPage({ params }: Props) {
                   href="mailto:info@grownfoster.com"
                   className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#4b5a20] hover:bg-[#4b5a20]/5 text-slate-700 hover:text-[#4b5a20] transition-all text-xs font-mono font-semibold shadow-2xs"
                 >
-                  <span className="material-symbols-outlined text-base text-[#4b5a20]">mail</span>
+                  <span className="material-symbols-outlined text-sm text-[#4b5a20]">mail</span>
                   <span>Email</span>
                 </a>
               </div>
             </div>
 
-            {/* 4. Consultation CTA */}
+            {/* 2. Free Marketing Consultation Card */}
             <div className="bg-[#4b5a20] rounded-3xl p-5 text-white space-y-3 relative overflow-hidden shadow-lg shadow-[#4b5a20]/15">
               <div className="absolute top-0 right-0 w-28 h-28 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <h3 className="font-hanken font-extrabold text-base relative z-10">
-                Need Marketing Growth?
+              <h3 className="font-hanken font-extrabold text-sm relative z-10">
+                Accelerate Your Growth
               </h3>
               <p className="text-[#d8eba1] text-xs leading-relaxed relative z-10">
-                Get a free consultation roadmap tailored to your industry and goals.
+                Get a custom digital roadmap engineered for your specific business goals.
               </p>
               <Link
                 href="/contact"
-                className="relative z-10 inline-flex items-center gap-1.5 bg-white text-[#4b5a20] px-4 py-2 rounded-full font-bold font-hanken text-xs hover:bg-[#d8eba1] transition-all"
+                className="relative z-10 inline-flex items-center gap-1.5 bg-white text-[#4b5a20] px-4 py-2 rounded-full font-bold font-hanken text-xs hover:bg-[#d8eba1] transition-all shadow-xs"
               >
                 <span>Get Started</span>
                 <span className="material-symbols-outlined text-xs">arrow_forward</span>
               </Link>
             </div>
           </aside>
+
         </div>
       </div>
     </div>
