@@ -1,6 +1,8 @@
 import { getPostBySlug, getAllPostSlugs, getAllPosts } from "@/lib/sanity/queries";
 import { urlFor } from "@/lib/sanity/image";
 import { PortableTextRenderer } from "./PortableTextRenderer";
+import { BlogSocialShare } from "./BlogSocialShare";
+import { BlogFaqAccordion } from "./BlogFaqAccordion";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -22,12 +24,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? urlFor(post.coverImage).width(1200).height(630).fit("crop").url()
     : undefined;
 
+  const canonicalUrl =
+    post.canonicalUrl || `https://grownfoster.com/blog/${slug}`;
+
   return {
-    title: `${post.seoTitle ?? post.title} | Grow 'n' Foster Blog`,
+    metadataBase: new URL("https://grownfoster.com"),
+    title: `${post.seoTitle ?? post.title} | Grow 'n' Foster`,
     description: post.seoDescription ?? post.excerpt,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: post.seoTitle ?? post.title,
       description: post.seoDescription ?? post.excerpt,
+      url: canonicalUrl,
       images: ogImage ? [{ url: ogImage, width: 1200, height: 630 }] : [],
       type: "article",
       publishedTime: post.publishedAt,
@@ -77,36 +87,44 @@ export default async function BlogPostPage({ params }: Props) {
     (p) => (p.slug?.current ?? p._id) !== currentSlug && p._id !== post._id
   );
 
+  const relatedArticles = otherPosts.slice(0, 3);
+
   const coverImageUrl = post.coverImage
-    ? urlFor(post.coverImage).width(1200).height(600).fit("crop").url()
+    ? urlFor(post.coverImage).width(1600).height(900).fit("crop").url()
     : null;
+
+  const pageCanonicalUrl =
+    post.canonicalUrl || `https://grownfoster.com/blog/${slug}`;
 
   const faqJsonLd =
     post.faqItems && post.faqItems.length > 0
       ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": post.faqItems.map((item) => ({
-            "@type": "Question",
-            "name": item.question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": item.answer,
-            },
-          })),
-        }
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
       : null;
 
   const cleanedCustomJsonLd = post.customJsonLd
     ? post.customJsonLd
-        .replace(/<script[^>]*>/gi, "")
-        .replace(/<\/script>/gi, "")
-        .trim()
+      .replace(/<script[^>]*>/gi, "")
+      .replace(/<\/script>/gi, "")
+      .trim()
     : null;
 
   return (
-    <div className="min-h-screen bg-white text-black font-hanken antialiased">
-      {/* FAQ Schema */}
+    <div className="min-h-screen bg-white text-slate-900 font-hanken antialiased">
+      {/* ── Canonical Link Tag (Ensures immediate detection by extensions) ── */}
+      <link rel="canonical" href={pageCanonicalUrl} />
+
+      {/* ── FAQ Schema ── */}
       {faqJsonLd && (
         <script
           type="application/ld+json"
@@ -114,7 +132,7 @@ export default async function BlogPostPage({ params }: Props) {
         />
       )}
 
-      {/* Custom JSON-LD Schema */}
+      {/* ── Custom JSON-LD Schema (Rendered exclusively as requested) ── */}
       {cleanedCustomJsonLd && (
         <script
           type="application/ld+json"
@@ -122,122 +140,98 @@ export default async function BlogPostPage({ params }: Props) {
         />
       )}
 
-      {/* ── Hero / Cover ───────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-slate-50 border-b border-slate-100">
-        {coverImageUrl && (
-          <div className="absolute inset-0">
-            <Image
-              src={coverImageUrl}
-              alt={post.coverImage?.alt ?? post.title}
-              fill
-              className="object-cover opacity-15"
-              priority
-            />
-          </div>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/90 to-white" />
+      {/* ── Top Hero Header Section (Centered Title & Header) ── */}
+      <section className="pt-8 pb-10 md:pt-14 md:pb-12 bg-gradient-to-b from-slate-50/80 via-slate-50/40 to-white border-b border-slate-100">
+        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center space-y-5">
+            {/* Breadcrumb & Post Meta */}
+            <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-500">
+              <nav aria-label="Breadcrumb">
+                <ol className="flex items-center gap-2">
+                  <li>
+                    <Link href="/" className="hover:text-[#4b5a20] transition-colors">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <span className="material-symbols-outlined text-xs text-slate-400">
+                      chevron_right
+                    </span>
+                  </li>
+                  <li>
+                    <Link href="/blog" className="hover:text-[#4b5a20] transition-colors">
+                      Blog
+                    </Link>
+                  </li>
+                </ol>
+              </nav>
 
-        <div className="max-w-5xl mx-auto px-6 md:px-12 py-16 md:py-24 relative z-10 space-y-6">
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-xs font-mono text-slate-500">
-              <li>
-                <Link href="/" className="hover:text-[#4b5a20] transition-colors">Home</Link>
-              </li>
-              <li>
-                <span className="material-symbols-outlined text-xs">chevron_right</span>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-[#4b5a20] transition-colors">Blog</Link>
-              </li>
-              <li>
-                <span className="material-symbols-outlined text-xs">chevron_right</span>
-              </li>
-              <li className="text-slate-400 truncate max-w-[200px]">{post.title}</li>
-            </ol>
-          </nav>
+              <span className="text-slate-300">·</span>
 
-          {/* Category + Featured */}
-          <div className="flex items-center gap-3 flex-wrap">
-            <span className="bg-[#4b5a20] text-white text-[10px] font-mono tracking-widest uppercase px-4 py-1.5 rounded-full font-semibold">
-              {post.category}
-            </span>
-            {post.featured && (
-              <span className="bg-amber-500 text-white text-[10px] font-mono tracking-widest uppercase px-3 py-1.5 rounded-full font-semibold flex items-center gap-1">
-                <span className="material-symbols-outlined text-xs">star</span>
-                Featured
-              </span>
-            )}
-          </div>
-
-          {/* Title */}
-          <h1 className="font-hanken text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-            {post.title}
-          </h1>
-
-          {/* Excerpt */}
-          <p className="text-slate-600 text-xl leading-relaxed max-w-3xl">
-            {post.excerpt}
-          </p>
-
-          {/* Meta row */}
-          <div className="flex flex-wrap items-center gap-6 pt-2 border-t border-slate-200">
-            {/* Author */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#4b5a20] flex items-center justify-center text-white font-bold font-hanken text-sm shrink-0">
-                {post.author?.charAt(0) ?? "G"}
-              </div>
-              <div>
-                <p className="font-semibold text-slate-900 text-sm font-hanken">{post.author}</p>
-                <p className="text-slate-500 text-xs font-hanken">{post.authorRole}</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 text-xs font-mono text-slate-500 flex-wrap">
               {post.publishedAt && (
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-sm">calendar_today</span>
+                <span className="font-semibold text-slate-600">
                   {formatDate(post.publishedAt)}
                 </span>
               )}
-              {post.readTime && (
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-sm">schedule</span>
-                  {post.readTime} min read
-                </span>
+
+              {post.category && (
+                <>
+                  <span className="text-slate-300">·</span>
+                  <span className="bg-[#4b5a20]/10 text-[#4b5a20] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider text-[10px]">
+                    {post.category}
+                  </span>
+                </>
               )}
+
+              {post.readTime && (
+                <>
+                  <span className="text-slate-300">·</span>
+                  <span className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-xs">schedule</span>
+                    {post.readTime} min read
+                  </span>
+                </>
+              )}
+            </div>
+
+            {/* Main Post Title (Centered) */}
+            <h1 className="font-hanken text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold text-slate-900 leading-[1.12] tracking-tight max-w-4xl mx-auto">
+              {post.title}
+            </h1>
+
+            {/* Excerpt Lead (Centered) */}
+            {post.excerpt && (
+              <p className="text-slate-600 text-lg md:text-xl leading-relaxed font-normal max-w-3xl mx-auto">
+                {post.excerpt}
+              </p>
+            )}
+
+            {/* Post Social Share Bar (Centered under Header) */}
+            <div className="flex justify-center w-full">
+              <BlogSocialShare
+                title={post.title}
+                url={pageCanonicalUrl}
+                className="justify-center"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Cover Image ───────────────────────────────────────────── */}
-      {coverImageUrl && (
-        <div className="max-w-6xl mx-auto px-6 md:px-12 -mt-8 relative z-10">
-          <div className="relative w-full h-64 md:h-96 rounded-3xl overflow-hidden shadow-2xl shadow-slate-200">
-            <Image
-              src={coverImageUrl}
-              alt={post.coverImage?.alt ?? post.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
-      )}
+      {/* ── Main Content Grid: Sticky Left Sidebar + Right Article ── */}
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+        <div className="grid lg:grid-cols-[330px_1fr] xl:grid-cols-[350px_1fr] gap-10 xl:gap-14 items-start">
 
-      {/* ── 3-Column Layout: Left (Sticky Nav), Center (Article), Right (Sticky Follow & Connect) ── */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 items-start">
+          {/* ── LEFT SIDEBAR (Sticky Navigation & Articles, independently scrollable) ── */}
+          <aside className="w-full order-2 lg:order-1 lg:sticky lg:top-28 lg:self-start lg:max-h-[calc(100vh-8.5rem)] lg:overflow-y-auto lg:overflow-x-hidden pr-2 space-y-6 [scrollbar-width:thin] [scrollbar-color:#cbd5e1_transparent] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-300 hover:[&::-webkit-scrollbar-thumb]:bg-slate-400 [&::-webkit-scrollbar-track]:bg-transparent">
 
-          {/* ── LEFT SIDEBAR: Sticky Blog Navigation ───────────────────────── */}
-          <aside className="w-full lg:w-[280px] xl:w-[320px] shrink-0 order-2 lg:order-1 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto space-y-6 [scrollbar-width:thin] [scrollbar-color:#cbd5e1_transparent]">
-            
-            {/* 1. Previous / Next Blog Quick Switcher */}
+            {/* 3. Previous / Next Quick Navigation Switcher */}
             {(prevPost || nextPost) && (
               <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 space-y-3 shadow-xs">
                 <div className="flex items-center gap-2 pb-2 border-b border-slate-200">
-                  <span className="material-symbols-outlined text-[#4b5a20] text-lg">swap_horiz</span>
+                  <span className="material-symbols-outlined text-[#4b5a20] text-base">
+                    swap_horiz
+                  </span>
                   <h3 className="font-hanken font-bold text-slate-900 text-xs tracking-wider uppercase">
                     Blog Navigation
                   </h3>
@@ -250,7 +244,7 @@ export default async function BlogPostPage({ params }: Props) {
                   >
                     <div className="text-[10px] font-mono text-[#4b5a20] font-bold uppercase tracking-wider flex items-center gap-1 mb-1">
                       <span className="material-symbols-outlined text-xs">arrow_back</span>
-                      Previous Blog
+                      Previous Article
                     </div>
                     <p className="font-hanken font-semibold text-xs text-slate-800 group-hover:text-[#4b5a20] transition-colors line-clamp-2 leading-snug">
                       {prevPost.title}
@@ -264,7 +258,7 @@ export default async function BlogPostPage({ params }: Props) {
                     className="group block p-3 rounded-2xl bg-white border border-slate-200/80 hover:border-[#4b5a20]/40 hover:bg-[#4b5a20]/5 transition-all shadow-2xs"
                   >
                     <div className="text-[10px] font-mono text-[#4b5a20] font-bold uppercase tracking-wider flex items-center justify-between mb-1">
-                      <span>Next Blog</span>
+                      <span>Next Article</span>
                       <span className="material-symbols-outlined text-xs">arrow_forward</span>
                     </div>
                     <p className="font-hanken font-semibold text-xs text-slate-800 group-hover:text-[#4b5a20] transition-colors line-clamp-2 leading-snug">
@@ -275,12 +269,14 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             )}
 
-            {/* 2. List of Other Blogs */}
+            {/* 4. Other Articles Feed */}
             {otherPosts.length > 0 && (
               <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 shadow-xs">
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
                   <h3 className="font-hanken font-bold text-slate-900 text-xs tracking-wider uppercase flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[#4b5a20] text-lg">menu_book</span>
+                    <span className="material-symbols-outlined text-[#4b5a20] text-base">
+                      menu_book
+                    </span>
                     Other Blogs
                   </h3>
                   <Link
@@ -292,9 +288,9 @@ export default async function BlogPostPage({ params }: Props) {
                 </div>
 
                 <div className="space-y-3">
-                  {otherPosts.map((op) => {
+                  {otherPosts.slice(0, 5).map((op) => {
                     const thumb = op.coverImage
-                      ? urlFor(op.coverImage).width(90).height(90).fit("crop").url()
+                      ? urlFor(op.coverImage).width(100).height(100).fit("crop").url()
                       : null;
                     const opSlug = op.slug?.current ?? op._id;
                     return (
@@ -305,10 +301,17 @@ export default async function BlogPostPage({ params }: Props) {
                       >
                         <div className="w-12 h-12 rounded-xl overflow-hidden bg-[#4b5a20]/10 shrink-0 relative">
                           {thumb ? (
-                            <Image src={thumb} alt={op.title} fill className="object-cover group-hover:scale-105 transition-transform" />
+                            <Image
+                              src={thumb}
+                              alt={op.title}
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform"
+                            />
                           ) : (
                             <div className="absolute inset-0 flex items-center justify-center">
-                              <span className="material-symbols-outlined text-[#4b5a20]/40 text-base">article</span>
+                              <span className="material-symbols-outlined text-[#4b5a20]/40 text-base">
+                                article
+                              </span>
                             </div>
                           )}
                         </div>
@@ -317,7 +320,9 @@ export default async function BlogPostPage({ params }: Props) {
                             {op.title}
                           </p>
                           <div className="flex items-center gap-1.5 text-[10px] font-mono text-slate-400 mt-1">
-                            <span className="text-[#4b5a20] font-semibold truncate">{op.category}</span>
+                            <span className="text-[#4b5a20] font-semibold truncate">
+                              {op.category}
+                            </span>
                             {op.readTime && <span>· {op.readTime}m</span>}
                           </div>
                         </div>
@@ -327,11 +332,76 @@ export default async function BlogPostPage({ params }: Props) {
                 </div>
               </div>
             )}
+
+            {/* 5. Follow & Connect */}
+            <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 space-y-3 shadow-xs">
+              <div className="flex items-center gap-2 pb-2 border-b border-slate-200">
+                <span className="material-symbols-outlined text-[#4b5a20] text-base">share</span>
+                <h3 className="font-hanken font-bold text-slate-900 text-xs tracking-wider uppercase">
+                  Follow &amp; Connect
+                </h3>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href="https://www.linkedin.com/company/grownfoster/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 p-2 rounded-xl bg-white border border-slate-200 hover:border-[#0077b5] text-slate-700 hover:text-[#0077b5] transition-all text-xs font-mono font-medium"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+                <a
+                  href="https://x.com/grownfoster"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 p-2 rounded-xl bg-white border border-slate-200 hover:border-black text-slate-700 hover:text-black transition-all text-xs font-mono font-medium"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                  <span>Twitter</span>
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61565508944312"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 p-2 rounded-xl bg-white border border-slate-200 hover:border-[#1877f2] text-slate-700 hover:text-[#1877f2] transition-all text-xs font-mono font-medium"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.642c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z" />
+                  </svg>
+                  <span>Facebook</span>
+                </a>
+                <a
+                  href="mailto:info@grownfoster.com"
+                  className="flex items-center gap-2 p-2 rounded-xl bg-white border border-slate-200 hover:border-[#4b5a20] text-slate-700 hover:text-[#4b5a20] transition-all text-xs font-mono font-medium"
+                >
+                  <span className="material-symbols-outlined text-sm text-[#4b5a20]">mail</span>
+                  <span>Email</span>
+                </a>
+              </div>
+            </div>
           </aside>
 
-          {/* ── CENTER COLUMN: Main Article Content ───────────────────────── */}
-          <article className="flex-1 min-w-0 order-1 lg:order-2 w-full">
-            {/* Tags */}
+          {/* ── RIGHT MAIN ARTICLE (post-inner matching DesignInDC) ── */}
+          <article className="min-w-0 max-w-4xl order-1 lg:order-2 w-full">
+            {/* Featured Image (DesignInDC post-inner cover image) */}
+            {coverImageUrl && (
+              <div className="relative w-full aspect-[16/9] md:aspect-[21/10] rounded-[26px] overflow-hidden shadow-xl mb-10 border border-slate-200/60">
+                <Image
+                  src={coverImageUrl}
+                  alt={post.coverImage?.alt ?? post.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
+
+            {/* Tags strip */}
             {post.tags && post.tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-8">
                 {post.tags.map((tag) => (
@@ -339,18 +409,49 @@ export default async function BlogPostPage({ params }: Props) {
                     key={tag}
                     className="bg-[#4b5a20]/8 text-[#4b5a20] text-xs font-mono px-3 py-1.5 rounded-lg border border-[#4b5a20]/15"
                   >
-                    {tag}
+                    #{tag}
                   </span>
                 ))}
               </div>
             )}
 
-            {/* Body */}
-            {post.body && <PortableTextRenderer value={post.body as unknown[]} />}
+            {/* Main PortableText Content */}
+            {post.body && (
+              <div className="prose prose-slate prose-lg max-w-none">
+                <PortableTextRenderer value={post.body as unknown[]} />
+              </div>
+            )}
 
-            {/* Bottom Prev/Next navigation */}
+            {/* FAQ Accordion (matches DesignInDC FAQ acc-def) */}
+            {post.faqItems && post.faqItems.length > 0 && (
+              <BlogFaqAccordion faqItems={post.faqItems} />
+            )}
+
+            {/* Author Profile Box */}
+            <div className="mt-12 p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+              <div className="w-14 h-14 rounded-full bg-[#4b5a20] text-white flex items-center justify-center font-bold text-xl shrink-0 shadow-md">
+                {post.author?.charAt(0) ?? "G"}
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <h4 className="font-hanken font-bold text-slate-900 text-base">
+                    Written by {post.author || "Grow 'n' Foster Team"}
+                  </h4>
+                  {post.authorRole && (
+                    <span className="text-[11px] font-mono text-[#4b5a20] bg-[#4b5a20]/10 px-2.5 py-0.5 rounded-full font-semibold">
+                      {post.authorRole}
+                    </span>
+                  )}
+                </div>
+                <p className="text-slate-600 text-xs md:text-sm font-hanken leading-relaxed">
+                  Grow &apos;n&apos; Foster is an elite digital marketing &amp; web consultancy helping brands scale revenue through conversion architecture, technical SEO, and performance campaigns.
+                </p>
+              </div>
+            </div>
+
+            {/* In-Article Prev / Next Post Navigation strip */}
             {(prevPost || nextPost) && (
-              <div className="mt-12 grid sm:grid-cols-2 gap-4">
+              <div className="mt-10 grid sm:grid-cols-2 gap-4">
                 {prevPost ? (
                   <Link
                     href={`/blog/${prevPost.slug?.current ?? prevPost._id}`}
@@ -384,124 +485,135 @@ export default async function BlogPostPage({ params }: Props) {
                 )}
               </div>
             )}
-
-            {/* Share / CTA strip */}
-            <div className="mt-12 p-8 bg-slate-50 rounded-3xl border border-slate-200 space-y-4">
-              <p className="font-hanken font-bold text-slate-900 text-lg">
-                Found this useful? Let&apos;s grow your business too.
-              </p>
-              <p className="text-slate-600 text-sm">
-                Book a free strategy session with our team and get a personalized roadmap.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#4b5a20] text-white px-7 py-3.5 rounded-full font-bold font-hanken text-sm hover:bg-[#3d4a1a] transition-all duration-300 shadow-lg shadow-[#4b5a20]/20 group"
-              >
-                Book a Free Consultation
-                <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
-              </Link>
-            </div>
-
-            {/* Back to blog */}
-            <div className="mt-8">
-              <Link
-                href="/blog"
-                className="inline-flex items-center gap-2 text-slate-500 hover:text-[#4b5a20] font-mono text-sm font-semibold transition-colors"
-              >
-                <span className="material-symbols-outlined text-base">arrow_back</span>
-                Back to All Articles
-              </Link>
-            </div>
           </article>
-
-          {/* ── RIGHT SIDEBAR: Sticky Follow & Connect + CTA ──────────────── */}
-          <aside className="w-full lg:w-[260px] xl:w-[290px] shrink-0 order-3 lg:order-3 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto space-y-6 [scrollbar-width:thin] [scrollbar-color:#cbd5e1_transparent]">
-
-            {/* 1. Official Website Social / Follow & Connect */}
-            <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200 space-y-3.5 shadow-xs">
-              <div className="flex items-center gap-2 pb-2 border-b border-slate-200">
-                <span className="material-symbols-outlined text-[#4b5a20] text-lg">share</span>
-                <h3 className="font-hanken font-bold text-slate-900 text-xs tracking-wider uppercase">
-                  Follow &amp; Connect
-                </h3>
-              </div>
-              <p className="text-xs text-slate-500 font-hanken leading-relaxed">
-                Connect with Grow &apos;n&apos; Foster across our official platforms:
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {/* LinkedIn */}
-                <a
-                  href="https://www.linkedin.com/company/grownfoster/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#0077b5] hover:bg-[#0077b5]/5 text-slate-700 hover:text-[#0077b5] transition-all text-xs font-mono font-semibold shadow-2xs"
-                >
-                  <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                  <span>LinkedIn</span>
-                </a>
-
-                {/* X / Twitter */}
-                <a
-                  href="https://x.com/grownfoster"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-black hover:bg-black/5 text-slate-700 hover:text-black transition-all text-xs font-mono font-semibold shadow-2xs"
-                >
-                  <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                  <span>Twitter</span>
-                </a>
-
-                {/* Facebook */}
-                <a
-                  href="https://www.facebook.com/profile.php?id=61565508944312"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#1877f2] hover:bg-[#1877f2]/5 text-slate-700 hover:text-[#1877f2] transition-all text-xs font-mono font-semibold shadow-2xs"
-                >
-                  <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.642c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z" />
-                  </svg>
-                  <span>Facebook</span>
-                </a>
-
-                {/* Email */}
-                <a
-                  href="mailto:info@grownfoster.com"
-                  className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#4b5a20] hover:bg-[#4b5a20]/5 text-slate-700 hover:text-[#4b5a20] transition-all text-xs font-mono font-semibold shadow-2xs"
-                >
-                  <span className="material-symbols-outlined text-sm text-[#4b5a20]">mail</span>
-                  <span>Email</span>
-                </a>
-              </div>
-            </div>
-
-            {/* 2. Free Marketing Consultation Card */}
-            <div className="bg-[#4b5a20] rounded-3xl p-5 text-white space-y-3 relative overflow-hidden shadow-lg shadow-[#4b5a20]/15">
-              <div className="absolute top-0 right-0 w-28 h-28 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <h3 className="font-hanken font-extrabold text-sm relative z-10">
-                Accelerate Your Growth
-              </h3>
-              <p className="text-[#d8eba1] text-xs leading-relaxed relative z-10">
-                Get a custom digital roadmap engineered for your specific business goals.
-              </p>
-              <Link
-                href="/contact"
-                className="relative z-10 inline-flex items-center gap-1.5 bg-white text-[#4b5a20] px-4 py-2 rounded-full font-bold font-hanken text-xs hover:bg-[#d8eba1] transition-all shadow-xs"
-              >
-                <span>Get Started</span>
-                <span className="material-symbols-outlined text-xs">arrow_forward</span>
-              </Link>
-            </div>
-          </aside>
-
         </div>
       </div>
+
+      {/* ── Related Articles Section (Matching DesignInDC Related Articles section) ── */}
+      {relatedArticles.length > 0 && (
+        <section className="border-t border-slate-200 bg-slate-50/50 py-16 md:py-24">
+          <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+              <span className="text-[11px] font-mono text-[#4b5a20] font-bold uppercase tracking-widest bg-[#4b5a20]/10 px-3 py-1 rounded-full">
+                Keep Reading
+              </span>
+              <h2 className="font-hanken text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+                Related Articles
+              </h2>
+              <p className="text-slate-600 text-sm">
+                Explore more insights on growth strategy, SEO, and web engineering.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {relatedArticles.map((ra) => {
+                const raThumb = ra.coverImage
+                  ? urlFor(ra.coverImage).width(800).height(500).fit("crop").url()
+                  : null;
+                const raSlug = ra.slug?.current ?? ra._id;
+
+                return (
+                  <article
+                    key={ra._id}
+                    className="group flex flex-col bg-white rounded-3xl border border-slate-200/80 overflow-hidden hover:shadow-xl hover:border-[#4b5a20]/40 transition-all duration-300"
+                  >
+                    {/* Thumbnail with bottom overlay info */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                      {raThumb ? (
+                        <Image
+                          src={raThumb}
+                          alt={ra.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center bg-[#4b5a20]/10">
+                          <span className="material-symbols-outlined text-[#4b5a20]/40 text-4xl">
+                            article
+                          </span>
+                        </div>
+                      )}
+
+                      {/* Glassmorphic info bar over image bottom */}
+                      <div className="absolute inset-x-0 bottom-0 px-4 py-2.5 backdrop-blur-md bg-black/45 border-t border-white/20 text-white flex items-center justify-between text-[11px] font-mono">
+                        <span>{ra.publishedAt ? formatDate(ra.publishedAt) : "Grow 'n' Foster"}</span>
+                        <span className="bg-[#4b5a20] text-white px-2 py-0.5 rounded-full font-bold uppercase text-[9px]">
+                          {ra.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Article Details */}
+                    <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                      <div className="space-y-2">
+                        <h3 className="font-hanken font-bold text-lg text-slate-900 group-hover:text-[#4b5a20] transition-colors line-clamp-2 leading-snug">
+                          {ra.title}
+                        </h3>
+                        {ra.excerpt && (
+                          <p className="text-slate-600 text-xs leading-relaxed line-clamp-2 font-hanken">
+                            {ra.excerpt}
+                          </p>
+                        )}
+                      </div>
+
+                      <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-mono">
+                        <span className="text-slate-400">{ra.readTime ? `${ra.readTime} min read` : "Insights"}</span>
+                        <Link
+                          href={`/blog/${raSlug}`}
+                          className="text-[#4b5a20] font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
+                        >
+                          <span>Read article</span>
+                          <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Bottom Full-Width CTA Banner (Matching DesignInDC "Elevate Your Brand" banner) ── */}
+      <section className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+        <div className="relative rounded-[36px] bg-[#1a220c] text-white p-8 md:p-16 text-center overflow-hidden shadow-2xl">
+          {/* Subtle background glow circle */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#4b5a20]/30 rounded-full blur-[100px] pointer-events-none" />
+
+          <div className="relative z-10 max-w-3xl mx-auto space-y-5">
+            <span className="text-[11px] font-mono text-[#d8eba1] font-bold uppercase tracking-widest bg-white/10 px-4 py-1.5 rounded-full border border-white/15">
+              Let&apos;s Build Together
+            </span>
+
+            <h2 className="font-hanken text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+              Elevate Your Brand <span className="text-[#d8eba1] font-light">with Grow &apos;n&apos; Foster</span>
+            </h2>
+
+            <p className="text-slate-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+              Get in touch with our team to discuss how our comprehensive digital marketing solutions, SEO engines, and conversion design can drive exponential results for your brand.
+            </p>
+
+            <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2.5 bg-[#4b5a20] hover:bg-[#5a6d28] text-white px-8 py-4 rounded-full font-bold font-hanken text-sm transition-all duration-300 shadow-lg shadow-[#4b5a20]/40 hover:scale-105"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#d8eba1] animate-pulse" />
+                <span>Book a Strategy Call</span>
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
+              </Link>
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-7 py-4 rounded-full font-bold font-hanken text-sm transition-all duration-300"
+              >
+                <span>View Our Work</span>
+                <span className="material-symbols-outlined text-base">arrow_outward</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

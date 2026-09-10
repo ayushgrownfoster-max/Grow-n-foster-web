@@ -206,6 +206,12 @@ export default defineType({
       validation: (Rule) => Rule.max(160),
     }),
     defineField({
+      name: "canonicalUrl",
+      title: "Canonical URL",
+      type: "url",
+      description: "Custom canonical URL if syndicated or originally published elsewhere. Leave blank to default to https://grownfoster.com/blog/[slug]",
+    }),
+    defineField({
       name: "schemaType",
       title: "Blog Schema Type (Structured Data)",
       type: "string",

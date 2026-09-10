@@ -29,9 +29,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://grownfoster.com"
+  ),
   title: "Grow 'n' Foster | Elite Digital Marketing Agency",
   description:
     "Grow 'n' Foster delivers comprehensive digital marketing services to boost your brand visibility, drive qualified traffic, and increase conversions.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

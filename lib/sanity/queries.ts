@@ -31,6 +31,7 @@ export interface Post extends PostSummary {
   body: unknown[];
   seoTitle: string | null;
   seoDescription: string | null;
+  canonicalUrl?: string | null;
   schemaType: string | null;
   faqItems?: FaqItem[] | null;
   customJsonLd?: string | null;
@@ -77,6 +78,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       body,
       seoTitle,
       seoDescription,
+      canonicalUrl,
       schemaType,
       faqItems,
       customJsonLd
