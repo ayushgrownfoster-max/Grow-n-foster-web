@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : undefined;
 
   const canonicalUrl =
-    post.canonicalUrl || `https://grownfoster.com/blog/${slug}`;
+    post.canonicalUrl || `https://www.grownfoster.com/blog/${slug}`;
 
   return {
-    metadataBase: new URL("https://grownfoster.com"),
+    metadataBase: new URL("https://www.grownfoster.com"),
     title: `${post.seoTitle ?? post.title} | Grow 'n' Foster`,
     description: post.seoDescription ?? post.excerpt,
     alternates: {
@@ -94,7 +94,7 @@ export default async function BlogPostPage({ params }: Props) {
     : null;
 
   const pageCanonicalUrl =
-    post.canonicalUrl || `https://grownfoster.com/blog/${slug}`;
+    post.canonicalUrl || `https://www.grownfoster.com/blog/${slug}`;
 
   const faqJsonLd =
     post.faqItems && post.faqItems.length > 0

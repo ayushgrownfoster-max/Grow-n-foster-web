@@ -30,7 +30,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://grownfoster.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.grownfoster.com"
   ),
   title: "Grow 'n' Foster | Elite Digital Marketing Agency",
   description:
