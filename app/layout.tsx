@@ -39,9 +39,10 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   verification: {
-    google: "V7O9_8ObmIdmVnaGbkrO0_Z-A755CrtCIRDWOW7TIDI",
+    google: "bLD8qLvEuP1WiNy_iL3bWaqkgidcxSLYMcAevrWhpQ0",
   },
 };
+
 
 export default function RootLayout({
   children,
