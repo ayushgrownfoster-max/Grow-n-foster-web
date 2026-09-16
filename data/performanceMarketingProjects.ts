@@ -14,7 +14,6 @@ export interface PerformanceMarketingProject {
   id: string;
   tagline: string;
   title: string;
-  client: string;
   industry: string;
   location: string;
   services: string;
@@ -42,7 +41,6 @@ export const performanceMarketingProjects: PerformanceMarketingProject[] = [
     id: "boutique-wellness",
     tagline: "BOUTIQUE WELLNESS · META ADS & GOOGLE ADS",
     title: "Targeting the Top 1%: Filling a ₹1.5L Pilates Membership in Gurugram",
-    client: "[Pilates Studio Name]",
     industry: "Wellness / Boutique Fitness",
     location: "Gurugram, Haryana",
     services: "Meta Ads · Google Ads",
@@ -108,7 +106,6 @@ export const performanceMarketingProjects: PerformanceMarketingProject[] = [
     tagline: "IMPORT & EXPORT · META ADS & GOOGLE ADS",
     title:
       "Reaching Dubai's Decision-Makers: A Meta & Google Ads Strategy for an Indian Food Exporter",
-    client: "[Import/Export Client Name]",
     industry: "Import & Export — Spices, Whole Grains, Rice & Wheat",
     location: "India → UAE (Dubai)",
     services: "Meta Ads · Google Ads",
@@ -172,7 +169,6 @@ export const performanceMarketingProjects: PerformanceMarketingProject[] = [
     tagline: "FITNESS CHAIN · META ADS & GOOGLE ADS",
     title:
       "One Campaign, 25 Gyms: Simplifying Multi-Location Lead Gen Without Losing Local Performance",
-    client: "[Fitness Client Name] — a 25-location gym chain",
     industry: "Fitness & Wellness",
     location: "25 Locations Network",
     services: "Meta Ads · Google Ads",
@@ -236,7 +232,6 @@ export const performanceMarketingProjects: PerformanceMarketingProject[] = [
     tagline: "REAL ESTATE · META ADS & GOOGLE ADS",
     title:
       "Solving the Fake-Lead Problem: How OTP Verification Fixed a Real Estate Meta Campaign",
-    client: "NCR Premium Property Group",
     industry: "Real Estate",
     location: "Gurugram / NCR",
     services: "Meta Ads · Google Ads · OTP Verification",

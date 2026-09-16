@@ -15,9 +15,9 @@ const tabContents = {
 
 const featuredPortfolio = [
   {
-    title: "Pragati Ujjayini Civic Portal",
+    title: "Pragati Ujjayini Website",
     category: "Web Dev & SEO",
-    client: "Ujjain Civic Initiative",
+    client: "Pragati ujjayini",
     description:
       "Engineered a lightning-fast civic engagement web application matching local heritage branding and providing high-speed information lookup.",
     image: "/projects/pragati-ujjayini.png",
@@ -37,9 +37,9 @@ const featuredPortfolio = [
     href: "/portfolio/planora-bim",
   },
   {
-    title: "Jony Digital QR Engine",
+    title: "Jony Digital QR Generator",
     category: "MERN SaaS Platform",
-    client: "Jony Digital Events",
+    client: "Jony Digital",
     description:
       "Devised a high-throughput MERN stack SaaS ticketing platform featuring cryptographically signed QR codes and automated billing.",
     image: "/projects/jony-digital.png",
@@ -331,10 +331,9 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 reveal-left stagger-2">
 
             {/* Left: Team Photo — spans 2 rows */}
-            {/* NOTE: swap this src for your own verified team photo if this one doesn't read as Indian-origin to you */}
             <div className="lg:row-span-2 rounded-[32px] overflow-hidden border border-black/5 shadow-sm relative group">
               <img
-                alt="Grow n Foster team at work"
+                alt="Grow n Foster team at work in a modern coworking space in India"
                 className="w-full h-full object-cover min-h-[400px] lg:min-h-full group-hover:scale-105 transition-transform duration-700"
                 src="https://burst.shopifycdn.com/photos/team-shares-a-laugh-in-modern-coworking-space-in-india.jpg?width=1200&format=pjpg&exif=0&iptc=0"
               />

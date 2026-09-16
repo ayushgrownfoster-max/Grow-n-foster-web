@@ -46,7 +46,7 @@ export default function PerformanceMarketingCard({
           {/* Header Info */}
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono-code text-gray-500 uppercase tracking-wider">
-              <span>Client: <strong className="text-gray-900">{project.client}</strong></span>
+
               <span className="text-gray-300">•</span>
               <span>Industry: <strong className="text-gray-900">{project.industry}</strong></span>
             </div>
