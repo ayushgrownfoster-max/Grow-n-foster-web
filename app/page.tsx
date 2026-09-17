@@ -333,9 +333,9 @@ export default function Home() {
             {/* Left: Team Photo — spans 2 rows */}
             <div className="lg:row-span-2 rounded-[32px] overflow-hidden border border-black/5 shadow-sm relative group">
               <img
-                alt="Grow n Foster team at work in a modern coworking space in India"
+                alt="Grow n Foster team collaborating at a coworking desk in India"
                 className="w-full h-full object-cover min-h-[400px] lg:min-h-full group-hover:scale-105 transition-transform duration-700"
-                src="https://burst.shopifycdn.com/photos/team-shares-a-laugh-in-modern-coworking-space-in-india.jpg?width=1200&format=pjpg&exif=0&iptc=0"
+                src="https://burst.shopifycdn.com/photos/coworkers-sync-up-at-table.jpg?width=1200&format=pjpg&exif=0&iptc=0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6">
