@@ -1,17 +1,15 @@
 import Link from "next/link";
 import { FeaturedPerformanceProject } from "@/data/performanceMarketingProjects";
 
-interface PerformanceMarketingCardProps {
+interface PerfCardProps {
   project: FeaturedPerformanceProject;
 }
 
-export default function PerformanceMarketingCard({
-  project,
-}: PerformanceMarketingCardProps) {
+export default function PerfCard({ project }: PerfCardProps) {
   return (
     <Link
       href={`/portfolio/performance-marketing/${project.slug}`}
-      className="group bg-[#F3F2EA] rounded-3xl p-6 sm:p-8 border border-[#DDDDD0] hover:border-[#4B5A20] transition-all duration-300 flex flex-col justify-between shadow-xs hover:shadow-xl cursor-pointer block"
+      className="group bg-[#F3F2EA] rounded-3xl p-6 sm:p-8 border border-[#DDDDD0] hover:border-[#4B5A20] transition-all duration-300 flex flex-col justify-between shadow-xs hover:shadow-xl cursor-pointer"
     >
       <div className="space-y-6">
         {/* Container Mockup / Image Box */}
@@ -19,15 +17,24 @@ export default function PerformanceMarketingCard({
           className="w-full h-52 sm:h-64 rounded-2xl flex flex-col items-center justify-center p-6 text-center relative overflow-hidden transition-transform duration-500 group-hover:scale-[1.01]"
           style={{ backgroundColor: project.imageBgColor || "#B4BE98" }}
         >
+          <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-white/20 blur-xl"></div>
+          <div className="absolute -left-8 -bottom-8 w-32 h-32 rounded-full bg-[#0E1205]/10 blur-lg"></div>
+
+          {/* Placeholder illustration icon */}
           <div className="w-14 h-14 rounded-2xl bg-[#0E1205]/10 backdrop-blur-md border border-[#0E1205]/20 flex items-center justify-center mb-3 text-[#0E1205]">
-            <span className="material-symbols-outlined text-2xl">analytics</span>
+            <span className="material-symbols-outlined text-2xl">
+              {project.filter === "Meta Ads" ? "campaign" : "ads_click"}
+            </span>
           </div>
           <p className="text-xs font-mono-code font-semibold tracking-wider text-[#0E1205]/80 uppercase max-w-xs">
             [ Add screenshot: {project.imageNote} ]
           </p>
+          <span className="mt-2 text-[10px] font-mono-code px-2.5 py-1 rounded-full bg-[#0E1205]/10 text-[#0E1205] font-bold">
+            Live Campaign Analytics &amp; ROAS
+          </span>
         </div>
 
-        {/* Header */}
+        {/* Card Header Tag & Client */}
         <div className="flex items-center justify-between gap-3 pt-2">
           <span className="text-[11px] font-mono-code font-semibold uppercase tracking-wider bg-[#0E1205] text-[#AD9E49] px-3 py-1 rounded-full border border-[#AD9E49]/30">
             {project.tag}
@@ -37,7 +44,7 @@ export default function PerformanceMarketingCard({
           </span>
         </div>
 
-        {/* Content */}
+        {/* Headline & Summary */}
         <div className="space-y-3">
           <h3 className="text-xl sm:text-2xl font-bold font-hanken text-[#161616] group-hover:text-[#4B5A20] transition-colors leading-snug">
             {project.headline}
@@ -48,7 +55,7 @@ export default function PerformanceMarketingCard({
         </div>
       </div>
 
-      {/* Metrics Row */}
+      {/* Metrics Row & Read Case Study Link */}
       <div className="pt-8 border-t border-[#DDDDD0] mt-8 space-y-6">
         <div className="grid grid-cols-3 gap-2">
           {project.numbers.map((num, idx) => (

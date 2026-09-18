@@ -57,6 +57,13 @@ const servicesMenu = [
 
 const portfolioMenu = [
   {
+    title: "Lead Generation",
+    subtitle: "LinkedIn outreach & cold email campaigns for B2B pipeline growth",
+    href: "/portfolio/lead-generation",
+    icon: "groups",
+    badge: "14 Clients",
+  },
+  {
     title: "Web Development",
     subtitle: "Next.js web applications, 3D WebGL viewers, SaaS & E-commerce",
     href: "/portfolio/web-development",

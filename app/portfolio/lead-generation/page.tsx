@@ -3,25 +3,25 @@
 import { useState } from "react";
 import Link from "next/link";
 import PortfolioCategorySelector from "@/components/PortfolioCategorySelector";
-import PerfCard from "@/components/PerfCard";
-import PerfResultCard from "@/components/PerfResultCard";
+import LeadGenCard from "@/components/LeadGenCard";
+import LeadGenResultCard from "@/components/LeadGenResultCard";
 import {
-  perfHeroStats,
-  perfHowItWorksSteps,
-  perfClientList,
-  featuredPerformanceProjects,
-  morePerformanceResults,
-} from "@/data/performanceMarketingProjects";
+  heroStats,
+  howItWorksSteps,
+  clientList,
+  featuredCaseStudies,
+  moreClientResults,
+} from "@/data/leadGenPortfolio";
 
-export default function PerformanceMarketingPortfolioPage() {
-  const [activeFilter, setActiveFilter] = useState<"All" | "Meta Ads" | "Google Ads">("All");
+export default function LeadGenerationPortfolioPage() {
+  const [activeFilter, setActiveFilter] = useState<"All" | "LinkedIn" | "Email">("All");
 
-  const filteredFeatured = featuredPerformanceProjects.filter((project) => {
+  const filteredFeatured = featuredCaseStudies.filter((study) => {
     if (activeFilter === "All") return true;
-    return project.filter === activeFilter;
+    return study.filter === activeFilter;
   });
 
-  const filteredResults = morePerformanceResults.filter((card) => {
+  const filteredResults = moreClientResults.filter((card) => {
     if (activeFilter === "All") return true;
     return card.filter === activeFilter;
   });
@@ -32,29 +32,29 @@ export default function PerformanceMarketingPortfolioPage() {
       <section className="bg-[#0E1205] text-white pt-12 pb-20 px-margin-mobile md:px-margin-desktop border-b border-[#DDDDD0]/20">
         <div className="max-w-container-max mx-auto space-y-12">
           {/* Category Navigation Dropdown / Tabs */}
-          <PortfolioCategorySelector currentCategory="performance-marketing" />
+          <PortfolioCategorySelector currentCategory="lead-generation" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Hero Content */}
             <div className="lg:col-span-7 space-y-6">
               <span className="inline-block text-xs font-mono-code tracking-[0.25em] uppercase text-[#AD9E49] bg-[#AD9E49]/10 px-4 py-1.5 rounded-full border border-[#AD9E49]/20 font-semibold">
-                PORTFOLIO / PERFORMANCE MARKETING
+                PORTFOLIO / LEAD GENERATION
               </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight font-hanken">
-                Performance marketing engineered for real revenue.
+                Lead generation that fills your sales calendar.
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-[#C8CFB4] font-normal leading-relaxed max-w-2xl">
-                Data-backed Meta &amp; Google ad strategies engineered for high ROAS, qualified leads, HNI buyer targeting, and multi-location scale — not vanity clicks.
+                We find your ideal buyers, start the conversation on LinkedIn and email, and hand your team warm, qualified leads. Here is how that has worked for B2B and service businesses in the USA, Canada, UK, India and the GCC.
               </p>
             </div>
 
             {/* Right Hero Stats */}
             <div className="lg:col-span-5 bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-[#DDDDD0]/15 space-y-8">
-              {perfHeroStats.map((stat, idx) => (
+              {heroStats.map((stat, idx) => (
                 <div
                   key={idx}
                   className={`space-y-1 ${
-                    idx !== perfHeroStats.length - 1
+                    idx !== heroStats.length - 1
                       ? "border-b border-[#DDDDD0]/15 pb-6"
                       : ""
                   }`}
@@ -78,15 +78,15 @@ export default function PerformanceMarketingPortfolioPage() {
         <section className="space-y-10">
           <div className="space-y-2">
             <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              OUR PPC &amp; AD METHODOLOGY
+              HOW IT WORKS
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
-              Four pillars of paid ad scale
+              One system, two channels
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {perfHowItWorksSteps.map((step) => (
+            {howItWorksSteps.map((step) => (
               <div
                 key={step.number}
                 className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs hover:border-[#4B5A20] transition-colors"
@@ -105,19 +105,19 @@ export default function PerformanceMarketingPortfolioPage() {
           </div>
         </section>
 
-        {/* Brands We Have Scaled */}
+        {/* Businesses We Have Worked With */}
         <section className="space-y-8 bg-white/60 p-8 sm:p-12 rounded-3xl border border-[#DDDDD0]">
           <div className="space-y-2">
             <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              BRANDS &amp; CAMPAIGNS WE HAVE SCALED
+              BUSINESSES WE HAVE WORKED WITH
             </span>
             <h3 className="text-xl sm:text-2xl font-bold font-hanken text-[#161616]">
-              Trusted by high-growth D2C, B2B &amp; multi-location brands
+              Trusted by B2B leaders &amp; high-growth companies
             </h3>
           </div>
 
           <div className="flex flex-wrap gap-3">
-            {perfClientList.map((client, idx) => (
+            {clientList.map((client, idx) => (
               <div
                 key={idx}
                 className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-full border border-[#DDDDD0] shadow-2xs hover:border-[#4B5A20] transition-colors"
@@ -133,21 +133,21 @@ export default function PerformanceMarketingPortfolioPage() {
           </div>
         </section>
 
-        {/* Results by Channel & Featured Project Containers */}
+        {/* Results by Channel & Featured Case Studies */}
         <section className="space-y-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#DDDDD0] pb-8">
             <div className="space-y-2">
               <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-                CAMPAIGN CASE STUDIES
+                CASE STUDIES
               </span>
               <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
-                Results by ad channel
+                Results by channel
               </h2>
             </div>
 
             {/* Filter Buttons */}
             <div className="flex items-center gap-2 p-1.5 bg-white rounded-2xl border border-[#DDDDD0]">
-              {(["All", "Meta Ads", "Google Ads"] as const).map((filter) => {
+              {(["All", "LinkedIn", "Email"] as const).map((filter) => {
                 const isActive = activeFilter === filter;
                 return (
                   <button
@@ -159,37 +159,37 @@ export default function PerformanceMarketingPortfolioPage() {
                         : "text-[#161616]/70 hover:text-black hover:bg-[#F3F2EA]"
                     }`}
                   >
-                    {filter === "All" ? "All paid ads" : filter}
+                    {filter === "All" ? "All lead gen" : filter}
                   </button>
                 );
               })}
             </div>
           </div>
 
-          {/* Featured Cards Container Grid (4 cards, 2 per row, each opening its page) */}
+          {/* Featured Cards Grid (4 cards, 2 per row) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {filteredFeatured.map((project) => (
-              <PerfCard key={project.id} project={project} />
+            {filteredFeatured.map((study) => (
+              <LeadGenCard key={study.id} study={study} />
             ))}
           </div>
         </section>
 
-        {/* More Campaign Results Section */}
+        {/* More Client Results Section */}
         {filteredResults.length > 0 && (
           <section className="space-y-10 pt-8">
             <div className="space-y-2">
               <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-                MORE CAMPAIGN RESULTS
+                MORE CLIENT RESULTS
               </span>
               <h3 className="text-2xl sm:text-4xl font-extrabold font-hanken text-[#161616]">
-                Every campaign, by the numbers
+                Every client, by the numbers
               </h3>
             </div>
 
-            {/* 10 Result Container Cards Grid (3 per row) */}
+            {/* 10 Result Cards Grid (3 per row on desktop) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredResults.map((card) => (
-                <PerfResultCard key={card.id} card={card} />
+                <LeadGenResultCard key={card.id} card={card} />
               ))}
             </div>
           </section>
@@ -199,10 +199,10 @@ export default function PerformanceMarketingPortfolioPage() {
         <section className="bg-[#4B5A20] text-white rounded-3xl p-10 sm:p-16 border border-[#4B5A20] text-center space-y-8 shadow-xl">
           <div className="max-w-3xl mx-auto space-y-4">
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken leading-tight">
-              Ready to scale your ad ROI?
+              Want qualified leads in your inbox every week?
             </h2>
             <p className="text-base sm:text-lg text-[#C8CFB4] font-normal leading-relaxed">
-              Book a free 30-minute campaign audit. We will inspect your current Meta &amp; Google Ad accounts and show you what a high-ROAS structure looks like.
+              Book a free 30-minute call. We will map your ideal buyer and show you what a LinkedIn and email campaign could look like for your business.
             </p>
           </div>
 

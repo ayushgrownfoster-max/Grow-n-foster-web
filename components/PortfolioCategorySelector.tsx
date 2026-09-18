@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 interface PortfolioCategorySelectorProps {
-  currentCategory: "all" | "web-development" | "performance-marketing";
+  currentCategory: "all" | "web-development" | "performance-marketing" | "lead-generation";
 }
 
 export default function PortfolioCategorySelector({
@@ -21,7 +21,14 @@ export default function PortfolioCategorySelector({
       label: "All Projects",
       href: "/portfolio",
       icon: "grid_view",
-      count: "9 Case Studies",
+      count: "13 Case Studies",
+    },
+    {
+      id: "lead-generation",
+      label: "Lead Generation",
+      href: "/portfolio/lead-generation",
+      icon: "groups",
+      count: "14 Clients",
     },
     {
       id: "web-development",
