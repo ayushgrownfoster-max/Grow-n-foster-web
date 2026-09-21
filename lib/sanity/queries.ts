@@ -78,6 +78,22 @@ export interface SanityPage {
     label?: string;
     link?: string;
   };
+  overviewTitle?: string;
+  overviewEyebrow?: string;
+  overviewSubtitle?: string;
+  overviewImage?: {
+    asset: { _ref: string };
+    alt?: string;
+  };
+  overviewChecklist?: string[];
+  reverseSectionTitle?: string;
+  reverseSectionEyebrow?: string;
+  reverseSectionSubtitle?: string;
+  reverseSectionImage?: {
+    asset: { _ref: string };
+    alt?: string;
+  };
+  reverseSectionChecklist?: string[];
   featuresTitle?: string;
   featuresSubtitle?: string;
   features?: FeatureItem[];
@@ -212,6 +228,16 @@ export async function getPageBySlug(slug: string): Promise<SanityPage | null> {
       heroImage { asset, alt, caption, hotspot },
       primaryCta,
       secondaryCta,
+      overviewTitle,
+      overviewEyebrow,
+      overviewSubtitle,
+      overviewImage { asset, alt },
+      overviewChecklist,
+      reverseSectionTitle,
+      reverseSectionEyebrow,
+      reverseSectionSubtitle,
+      reverseSectionImage { asset, alt },
+      reverseSectionChecklist,
       featuresTitle,
       featuresSubtitle,
       features,

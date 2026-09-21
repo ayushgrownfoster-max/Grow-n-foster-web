@@ -114,6 +114,76 @@ export default defineType({
       ],
     }),
 
+    // ─── OVERVIEW & VALUE PROPOSITION SECTION (LEFT CONTENT, RIGHT IMAGE) ──────
+    defineField({
+      name: "overviewTitle",
+      title: "Section 1 Title (Left Content, Right Image)",
+      type: "string",
+      description: "Headline for section with Content on Left and Image on Right",
+    }),
+    defineField({
+      name: "overviewEyebrow",
+      title: "Section 1 Eyebrow Tag",
+      type: "string",
+      initialValue: "WHY IT MATTERS",
+    }),
+    defineField({
+      name: "overviewSubtitle",
+      title: "Section 1 Description Narrative",
+      type: "text",
+      rows: 4,
+    }),
+    defineField({
+      name: "overviewImage",
+      title: "Section 1 Image (Right Side)",
+      type: "image",
+      options: { hotspot: true },
+      fields: [
+        defineField({ name: "alt", title: "Alt Text", type: "string" }),
+      ],
+    }),
+    defineField({
+      name: "overviewChecklist",
+      title: "Section 1 Highlights Checklist",
+      type: "array",
+      of: [{ type: "string" }],
+    }),
+
+    // ─── ALTERNATING SECTION (LEFT IMAGE, RIGHT CONTENT) ──────────────────────
+    defineField({
+      name: "reverseSectionTitle",
+      title: "Section 2 Title (Left Image, Right Content)",
+      type: "string",
+      description: "Headline for section with Image on Left and Content on Right",
+    }),
+    defineField({
+      name: "reverseSectionEyebrow",
+      title: "Section 2 Eyebrow Tag",
+      type: "string",
+      initialValue: "STRATEGIC DOMINANCE",
+    }),
+    defineField({
+      name: "reverseSectionSubtitle",
+      title: "Section 2 Description Narrative",
+      type: "text",
+      rows: 4,
+    }),
+    defineField({
+      name: "reverseSectionImage",
+      title: "Section 2 Image (Left Side)",
+      type: "image",
+      options: { hotspot: true },
+      fields: [
+        defineField({ name: "alt", title: "Alt Text", type: "string" }),
+      ],
+    }),
+    defineField({
+      name: "reverseSectionChecklist",
+      title: "Section 2 Highlights Checklist",
+      type: "array",
+      of: [{ type: "string" }],
+    }),
+
     // ─── DYNAMIC PAGE SECTIONS ──────────────────────────────────────────────────
     defineField({
       name: "featuresTitle",
