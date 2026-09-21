@@ -20,6 +20,9 @@ export default defineConfig({
         S.list()
           .title("Content Management")
           .items([
+            S.documentTypeListItem("page")
+              .title("Pages (Dynamic)")
+              .icon(() => "📄"),
             S.documentTypeListItem("post")
               .title("Blog Posts")
               .icon(() => "📝"),

@@ -37,6 +37,67 @@ export interface Post extends PostSummary {
   customJsonLd?: string | null;
 }
 
+export interface FeatureItem {
+  icon?: string;
+  title?: string;
+  description?: string;
+  deliverables?: string[];
+}
+
+export interface ProcessStep {
+  stepNumber?: string;
+  title?: string;
+  description?: string;
+  deliverable?: string;
+}
+
+export interface StatItem {
+  value?: string;
+  label?: string;
+  description?: string;
+}
+
+export interface SanityPage {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  eyebrow?: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroImage?: {
+    asset: { _ref: string };
+    alt?: string;
+    caption?: string;
+    hotspot?: { x: number; y: number };
+  };
+  primaryCta?: {
+    label?: string;
+    link?: string;
+  };
+  secondaryCta?: {
+    label?: string;
+    link?: string;
+  };
+  featuresTitle?: string;
+  featuresSubtitle?: string;
+  features?: FeatureItem[];
+  processTitle?: string;
+  processSubtitle?: string;
+  processSteps?: ProcessStep[];
+  statsTitle?: string;
+  stats?: StatItem[];
+  body?: unknown[];
+  faqTitle?: string;
+  faqItems?: FaqItem[];
+  ctaTitle?: string;
+  ctaSubtitle?: string;
+  ctaButtonText?: string;
+  ctaButtonLink?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  canonicalUrl?: string;
+}
+
 // ─── Queries ────────────────────────────────────────────────────────────────
 
 const postSummaryFields = groq`
@@ -136,3 +197,47 @@ export async function getPostsByCategory(category: string): Promise<PostSummary[
     { category }
   );
 }
+
+export async function getPageBySlug(slug: string): Promise<SanityPage | null> {
+  // Normalize slug to match with or without leading slashes
+  const cleanSlug = slug.replace(/^\/+|\/+$/g, "");
+  return client.fetch(
+    groq`*[_type == "page" && (slug.current == $slug || slug.current == $cleanSlug || _id == $slug)][0] {
+      _id,
+      title,
+      slug,
+      eyebrow,
+      heroTitle,
+      heroSubtitle,
+      heroImage { asset, alt, caption, hotspot },
+      primaryCta,
+      secondaryCta,
+      featuresTitle,
+      featuresSubtitle,
+      features,
+      processTitle,
+      processSubtitle,
+      processSteps,
+      statsTitle,
+      stats,
+      body,
+      faqTitle,
+      faqItems,
+      ctaTitle,
+      ctaSubtitle,
+      ctaButtonText,
+      ctaButtonLink,
+      seoTitle,
+      seoDescription,
+      canonicalUrl
+    }`,
+    { slug, cleanSlug }
+  );
+}
+
+export async function getAllPageSlugs(): Promise<{ slug: { current: string } }[]> {
+  return client.fetch(
+    groq`*[_type == "page" && defined(slug.current)] { slug }`
+  );
+}
+
