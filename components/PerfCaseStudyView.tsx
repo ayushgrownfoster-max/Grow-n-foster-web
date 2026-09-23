@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PerfCategorySelector from "@/components/PerfCategorySelector";
 import { FeaturedPerformanceProject, featuredPerformanceProjects } from "@/data/performanceMarketingProjects";
 
@@ -133,18 +134,28 @@ export default function PerfCaseStudyView({ project }: PerfCaseStudyViewProps) {
           </div>
         </section>
 
-        {/* Image Box Placeholder */}
-        <section className="w-full h-64 sm:h-96 rounded-3xl bg-[#B4BE98]/40 border border-[#DDDDD0] p-8 flex flex-col items-center justify-center text-center space-y-3 relative overflow-hidden">
-          <div className="w-16 h-16 rounded-2xl bg-[#0E1205]/10 flex items-center justify-center text-[#0E1205]">
-            <span className="material-symbols-outlined text-3xl">analytics</span>
-          </div>
-          <div className="text-sm font-mono-code font-bold uppercase text-[#0E1205] tracking-wider max-w-md">
-            [ Add screenshot: {project.imageNote} ]
-          </div>
-          <span className="text-xs font-mono-code bg-[#0E1205]/10 text-[#0E1205] px-3 py-1 rounded-full font-semibold">
-            Live Campaign ROAS &amp; Conversion Screenshots
-          </span>
-        </section>
+        {/* Image Section */}
+        {project.image ? (
+          <section className="w-full h-64 sm:h-96 rounded-3xl overflow-hidden relative border border-[#DDDDD0] shadow-sm">
+            <Image
+              src={project.image}
+              alt={project.imageNote}
+              fill
+              sizes="(max-width: 768px) 100vw, 90vw"
+              className="object-cover"
+              priority
+            />
+          </section>
+        ) : (
+          <section className="w-full h-64 sm:h-96 rounded-3xl bg-[#B4BE98]/40 border border-[#DDDDD0] p-8 flex flex-col items-center justify-center text-center space-y-3 relative overflow-hidden">
+            <div className="w-16 h-16 rounded-2xl bg-[#0E1205]/10 flex items-center justify-center text-[#0E1205]">
+              <span className="material-symbols-outlined text-3xl">analytics</span>
+            </div>
+            <div className="text-sm font-mono-code font-bold uppercase text-[#0E1205] tracking-wider max-w-md">
+              {project.imageNote}
+            </div>
+          </section>
+        )}
 
         {/* Challenge & Goal */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">

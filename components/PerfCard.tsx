@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FeaturedPerformanceProject } from "@/data/performanceMarketingProjects";
 
 interface PerfCardProps {
@@ -12,26 +13,35 @@ export default function PerfCard({ project }: PerfCardProps) {
       className="group bg-[#F3F2EA] rounded-3xl p-6 sm:p-8 border border-[#DDDDD0] hover:border-[#4B5A20] transition-all duration-300 flex flex-col justify-between shadow-xs hover:shadow-xl cursor-pointer"
     >
       <div className="space-y-6">
-        {/* Container Mockup / Image Box */}
+        {/* Image Box */}
         <div
-          className="w-full h-52 sm:h-64 rounded-2xl flex flex-col items-center justify-center p-6 text-center relative overflow-hidden transition-transform duration-500 group-hover:scale-[1.01]"
+          className="w-full h-52 sm:h-64 rounded-2xl relative overflow-hidden transition-transform duration-500 group-hover:scale-[1.01]"
           style={{ backgroundColor: project.imageBgColor || "#B4BE98" }}
         >
-          <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-white/20 blur-xl"></div>
-          <div className="absolute -left-8 -bottom-8 w-32 h-32 rounded-full bg-[#0E1205]/10 blur-lg"></div>
-
-          {/* Placeholder illustration icon */}
-          <div className="w-14 h-14 rounded-2xl bg-[#0E1205]/10 backdrop-blur-md border border-[#0E1205]/20 flex items-center justify-center mb-3 text-[#0E1205]">
-            <span className="material-symbols-outlined text-2xl">
-              {project.filter === "Meta Ads" ? "campaign" : "ads_click"}
-            </span>
-          </div>
-          <p className="text-xs font-mono-code font-semibold tracking-wider text-[#0E1205]/80 uppercase max-w-xs">
-            [ Add screenshot: {project.imageNote} ]
-          </p>
-          <span className="mt-2 text-[10px] font-mono-code px-2.5 py-1 rounded-full bg-[#0E1205]/10 text-[#0E1205] font-bold">
-            Live Campaign Analytics &amp; ROAS
-          </span>
+          {project.image ? (
+            <Image
+              src={project.image}
+              alt={project.imageNote}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          ) : (
+            <>
+              <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-white/20 blur-xl" />
+              <div className="absolute -left-8 -bottom-8 w-32 h-32 rounded-full bg-[#0E1205]/10 blur-lg" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                <div className="w-14 h-14 rounded-2xl bg-[#0E1205]/10 backdrop-blur-md border border-[#0E1205]/20 flex items-center justify-center mb-3 text-[#0E1205]">
+                  <span className="material-symbols-outlined text-2xl">
+                    {project.filter === "Meta Ads" ? "campaign" : "ads_click"}
+                  </span>
+                </div>
+                <p className="text-xs font-mono-code font-semibold tracking-wider text-[#0E1205]/80 uppercase max-w-xs">
+                  {project.imageNote}
+                </p>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Card Header Tag & Client */}
