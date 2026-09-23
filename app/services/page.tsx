@@ -174,7 +174,19 @@ export default function ServicesPage() {
               {/* Card Footer Button */}
               <div className="px-8 pb-8 pt-2">
                 <Link
-                  href="/contact"
+                  href={
+                    service.title === "SEO Optimization"
+                      ? "/services/seo-optimization"
+                      : service.title === "LinkedIn Outreach"
+                        ? "/services/linkedin-outreach-services"
+                        : service.title === "Content Strategy"
+                          ? "/services/content-strategy"
+                          : service.title === "Email Marketing"
+                            ? "/services/email-marketing-services"
+                            : service.title === "Web Development"
+                              ? "/services/web-development-services"
+                              : "/services/paid-advertising-services"
+                  }
                   className="w-full py-3.5 px-5 rounded-2xl border border-gray-300 bg-gray-50 hover:bg-[#4b5a20] text-xs font-mono-code uppercase font-bold text-center tracking-wider text-black hover:text-white hover:border-[#4b5a20] transition-all duration-300 flex items-center justify-center gap-2 shadow-xs group-hover:shadow-sm"
                 >
                   <span>Get Started</span>

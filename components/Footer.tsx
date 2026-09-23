@@ -6,7 +6,14 @@ import { usePathname } from "next/navigation";
 export default function Footer() {
   const pathname = usePathname();
 
-  if (pathname?.startsWith("/studio")) {
+  if (
+    pathname?.startsWith("/studio") ||
+    pathname?.startsWith("/services/seo-optimization") ||
+    pathname?.startsWith("/services/linkedin-outreach-services") ||
+    pathname?.startsWith("/services/content-strategy") ||
+    pathname?.startsWith("/services/email-marketing-services") ||
+    pathname?.startsWith("/services/web-development-services")
+  ) {
     return null;
   }
 
@@ -75,27 +82,27 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 font-hanken text-sm">
               <li>
-                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services/seo-optimization">
                   SEO Optimization
                 </Link>
               </li>
               <li>
-                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services/linkedin-outreach-services">
                   LinkedIn Outreach
                 </Link>
               </li>
               <li>
-                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services/content-strategy">
                   Content Strategy
                 </Link>
               </li>
               <li>
-                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services/email-marketing-services">
                   Email Marketing
                 </Link>
               </li>
               <li>
-                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services">
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services/web-development-services">
                   Web Development
                 </Link>
               </li>
