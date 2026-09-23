@@ -141,6 +141,7 @@ export default function LeadGenCaseStudyView({ study }: LeadGenCaseStudyViewProp
               src={study.image}
               alt={study.imageNote}
               fill
+              unoptimized
               sizes="(max-width: 768px) 100vw, 90vw"
               className="object-cover"
               priority

@@ -141,6 +141,7 @@ export default function PerfCaseStudyView({ project }: PerfCaseStudyViewProps) {
               src={project.image}
               alt={project.imageNote}
               fill
+              unoptimized
               sizes="(max-width: 768px) 100vw, 90vw"
               className="object-cover"
               priority
