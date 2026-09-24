@@ -6,14 +6,7 @@ import { usePathname } from "next/navigation";
 export default function Footer() {
   const pathname = usePathname();
 
-  if (
-    pathname?.startsWith("/studio") ||
-    pathname?.startsWith("/services/seo-optimization") ||
-    pathname?.startsWith("/services/linkedin-outreach-services") ||
-    pathname?.startsWith("/services/content-strategy") ||
-    pathname?.startsWith("/services/email-marketing-services") ||
-    pathname?.startsWith("/services/web-development-services")
-  ) {
+  if (pathname?.startsWith("/studio")) {
     return null;
   }
 
@@ -81,6 +74,11 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-3 font-hanken text-sm">
+              <li>
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/services/paid-advertising-services">
+                  Paid Advertising
+                </Link>
+              </li>
               <li>
                 <Link className="text-slate-600 hover:text-primary transition-colors" href="/services/seo-optimization">
                   SEO Optimization
