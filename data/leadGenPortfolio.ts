@@ -321,7 +321,7 @@ export const featuredCaseStudies: FeaturedCaseStudy[] = [
     numbersNote:
       "Measured across all 6 emails over the 3-week campaign. Source: Mailchimp reports and the school tour calendar.",
     imageNote: "2 to 3 Primrose campaign emails shown on mobile",
-    image: "/projects/leadgen/primrose-school.jpg",
+    image: "/Lead Genration - IMG 3.png",
     imageBgColor: "#B4BE98",
     challenge:
       "The school had a list of past enquiries sitting unused. Some families had never visited, others had toured but not enrolled, and one generic email would not speak to either group properly.",
@@ -411,7 +411,7 @@ export const featuredCaseStudies: FeaturedCaseStudy[] = [
     numbersNote:
       "Measured over 8 weeks across 1,500 verified contacts. Source: the sending tool and the lead tracker.",
     imageNote: "Sequence dashboard screenshot with names blurred",
-    image: "/projects/leadgen/aptibit.jpg",
+    image: "/Lead Genration - IMG 4.png",
     imageBgColor: "#DDDDD0",
     challenge:
       "Aptibit needed to reach corporate technology decision-makers without risking domain reputation or sending generic unverified cold messages.",

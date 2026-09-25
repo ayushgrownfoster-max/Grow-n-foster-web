@@ -65,9 +65,9 @@ export default function PragatiUjjayiniPage() {
         {/* Project Showcase Screenshot */}
         <div className="relative aspect-video rounded-[32px] md:rounded-[48px] overflow-hidden border border-slate-200 shadow-xl bg-slate-100 group">
           <img
-            src="/projects/pragati-ujjayini.png"
+            src="/projects/pragati-ujjayini-portfolio-image.png"
             alt={projectInfo.title}
-            className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+            className="w-full h-full object-cover object-top group-hover:scale-[1.01] transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
         </div>
@@ -180,30 +180,62 @@ export default function PragatiUjjayiniPage() {
               Our marketing framework focuses on continuous optimization—combining fast web performance with targeted SEO strategies to drive high-converting user traffic.
             </p>
 
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <span className="text-lg font-extrabold font-mono-code text-[#4b5a20]">01</span>
-                <div>
-                  <h4 className="text-base font-bold text-black">Search Engine Optimization</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed mt-1">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Card 1: Search Engine Optimization */}
+              <div className="bg-slate-50 border border-slate-200 rounded-3xl p-5 flex flex-col justify-between hover:shadow-md transition-all duration-300 group">
+                <div className="space-y-3">
+                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 border border-black/5 shadow-inner">
+                    <img
+                      src="/seo-image.jpeg"
+                      alt="Search Engine Optimization"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 pt-1">
+                    <span className="text-xs font-extrabold font-mono-code text-[#4b5a20] bg-[#4b5a20]/10 px-2.5 py-1 rounded-full border border-[#4b5a20]/20">01</span>
+                    <h4 className="text-sm font-bold text-black">Search Engine Optimization</h4>
+                  </div>
+                  <p className="text-xs text-gray-600 leading-relaxed">
                     Optimized technical SEO and page metadata structure to secure top rankings for target commercial keywords.
                   </p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <span className="text-lg font-extrabold font-mono-code text-[#4b5a20]">02</span>
-                <div>
-                  <h4 className="text-base font-bold text-black">Conversion Rate Optimization</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed mt-1">
+
+              {/* Card 2: Conversion Rate Optimization */}
+              <div className="bg-slate-50 border border-slate-200 rounded-3xl p-5 flex flex-col justify-between hover:shadow-md transition-all duration-300 group">
+                <div className="space-y-3">
+                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 border border-black/5 shadow-inner">
+                    <img
+                      src="/website-design.jpeg"
+                      alt="Conversion Rate Optimization"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 pt-1">
+                    <span className="text-xs font-extrabold font-mono-code text-[#4b5a20] bg-[#4b5a20]/10 px-2.5 py-1 rounded-full border border-[#4b5a20]/20">02</span>
+                    <h4 className="text-sm font-bold text-black">Conversion Rate Optimization</h4>
+                  </div>
+                  <p className="text-xs text-gray-600 leading-relaxed">
                     Designed clear call-to-actions and clean layouts to seamlessly guide web visitors into qualified leads.
                   </p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <span className="text-lg font-extrabold font-mono-code text-[#4b5a20]">03</span>
-                <div>
-                  <h4 className="text-base font-bold text-black">Performance Analytics</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed mt-1">
+
+              {/* Card 3: Performance Analytics */}
+              <div className="bg-slate-50 border border-slate-200 rounded-3xl p-5 flex flex-col justify-between hover:shadow-md transition-all duration-300 group">
+                <div className="space-y-3">
+                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 border border-black/5 shadow-inner">
+                    <img
+                      src="/Wp - 3.png"
+                      alt="Performance Analytics"
+                      className="w-full h-full object-contain object-top bg-white group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 pt-1">
+                    <span className="text-xs font-extrabold font-mono-code text-[#4b5a20] bg-[#4b5a20]/10 px-2.5 py-1 rounded-full border border-[#4b5a20]/20">03</span>
+                    <h4 className="text-sm font-bold text-black">Performance Analytics</h4>
+                  </div>
+                  <p className="text-xs text-gray-600 leading-relaxed">
                     Configured Google Analytics tracking to monitor user funnels, acquisition sources, and campaign performance.
                   </p>
                 </div>

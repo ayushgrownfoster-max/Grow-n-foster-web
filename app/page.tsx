@@ -20,7 +20,7 @@ const featuredPortfolio = [
     client: "Pragati ujjayini",
     description:
       "Engineered a lightning-fast civic engagement web application matching local heritage branding and providing high-speed information lookup.",
-    image: "/projects/pragati-ujjayini.png",
+    image: "/projects/pragati-ujjayini-portfolio-image.png",
     tags: ["Next.js", "TypeScript"],
     metric: "50K+ Citizens",
     href: "/portfolio/pragati-ujjayini",
@@ -780,11 +780,11 @@ export default function Home() {
                 <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
                   <img
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     src={item.image}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                  <div className="absolute top-4 left-4 z-10">
                     <span className="text-[10px] font-mono-code tracking-widest uppercase bg-white/95 backdrop-blur-md text-[#4b5a20] px-3 py-1 rounded-full border border-[#4b5a20]/30 font-semibold shadow-sm">
                       {item.category}
                     </span>

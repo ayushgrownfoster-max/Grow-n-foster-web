@@ -18,7 +18,7 @@ const galleryImages = [
 
 const caseStudies = [
   {
-    title: "Pragati Ujjayini Civic Portal",
+    title: "Pragati Ujjayini website",
     category: "Web Dev & SEO",
     client: "Ujjain Civic Initiative",
     results: [
@@ -27,8 +27,8 @@ const caseStudies = [
       { label: "Response Delay", value: "-35%" },
     ],
     description:
-      "Engineered a lightning-fast civic engagement web application matching local heritage branding and providing high-speed information lookup.",
-    image: "/projects/pragati-ujjayini.png",
+      "Created a lightning fast website with the help of next.js to give consumer smooth and hastle free experience.",
+    image: "/projects/pragati-ujjayini-portfolio-image.png",
     tags: ["Next.js", "TypeScript", "TailwindCSS"],
     href: "/portfolio/pragati-ujjayini",
   },
@@ -125,7 +125,7 @@ export default function PortfolioPage() {
                 alt={img.alt}
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover hover:scale-105 transition-transform duration-500"
+                className="object-cover object-top hover:scale-105 transition-transform duration-500"
               />
             </div>
           ))}
@@ -168,10 +168,10 @@ export default function PortfolioPage() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent"></div>
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 via-transparent to-transparent"></div>
+                  <div className="absolute top-4 left-4 z-10">
                     <span className="text-[10px] font-mono-code tracking-widest uppercase bg-white/95 backdrop-blur-md text-[#4b5a20] px-3 py-1.5 rounded-full border border-[#4b5a20]/30 font-bold shadow-sm">
                       {item.category}
                     </span>
