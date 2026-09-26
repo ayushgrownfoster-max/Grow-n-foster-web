@@ -67,9 +67,7 @@ export default function AboutPage() {
         {/* Page Header */}
         <div className="text-center space-y-6 pt-8">
           <div className="inline-block">
-            <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-4 py-1.5 rounded-full border border-[#4b5a20]/20 block mb-3 font-semibold">
-              WHO WE ARE
-            </span>
+
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold font-hanken tracking-tight text-black uppercase">
               ABOUT <span className="text-[#4b5a20]">US</span>
             </h1>
@@ -146,12 +144,7 @@ export default function AboutPage() {
         {/* Timeline */}
         <div className="space-y-16">
           <div className="text-center space-y-3">
-            <span
-              className="text-xs font-mono-code tracking-[0.3em] uppercase text-white px-4 py-1.5 rounded-full inline-block font-semibold"
-              style={{ backgroundColor: "#4b5a20" }}
-            >
-              OUR STORY
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-black">
               Our Growth Journey
             </h2>
@@ -272,13 +265,7 @@ export default function AboutPage() {
 
             {/* Closing line */}
             <div className="relative text-center pt-4 pl-16 md:pl-0">
-              <span
-                className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold font-hanken text-base shadow-md"
-                style={{ backgroundColor: "#4b5a20" }}
-              >
-                <span className="material-symbols-outlined text-lg">auto_awesome</span>
-                And this is only the beginning.
-              </span>
+
             </div>
           </div>
         </div>

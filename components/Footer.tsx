@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-slate-200 pt-20 pb-12 mt-auto text-slate-900">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
           {/* Brand Info */}
           <div className="space-y-6 md:col-span-1">
             <div className="flex items-center gap-3">
@@ -142,6 +142,20 @@ export default function Footer() {
                 <a className="text-slate-600 hover:text-primary transition-colors" href="#">
                   Terms of Service
                 </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Countries We Serve Column */}
+          <div className="space-y-6">
+            <h4 className="font-hanken font-bold text-slate-900 text-base uppercase tracking-wider">
+              Countries We Serve
+            </h4>
+            <ul className="space-y-3 font-hanken text-sm">
+              <li>
+                <Link className="text-slate-600 hover:text-primary transition-colors" href="/locations/usa">
+                  USA
+                </Link>
               </li>
             </ul>
           </div>

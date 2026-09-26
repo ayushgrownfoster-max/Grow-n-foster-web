@@ -162,13 +162,7 @@ export default async function BlogPage() {
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-2xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#4b5a20]/10 text-[#4b5a20] text-xs font-mono border border-[#4b5a20]/25 tracking-widest uppercase">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4b5a20] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4b5a20]" />
-              </span>
-              Insights & Strategy
-            </div>
+
 
             <h1 className="font-hanken text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight text-slate-900">
               The Grow{" "}
@@ -260,10 +254,7 @@ export default async function BlogPage() {
           <div className="absolute inset-0 bg-[#4b5a20]/20 rounded-[40px]" />
           <div className="absolute top-0 right-0 w-72 h-72 bg-[#4b5a20]/30 blur-[80px] rounded-full" />
           <div className="relative z-10 space-y-6">
-            <span className="inline-flex items-center gap-2 text-[#d8eba1] text-xs font-mono tracking-widest uppercase border border-[#4b5a20]/50 px-4 py-2 rounded-full">
-              <span className="material-symbols-outlined text-sm">campaign</span>
-              Stay Updated
-            </span>
+
             <h2 className="font-hanken text-3xl md:text-4xl font-extrabold text-white">
               Get expert marketing tips in your inbox
             </h2>

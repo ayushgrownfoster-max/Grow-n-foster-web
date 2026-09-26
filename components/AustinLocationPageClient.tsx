@@ -147,13 +147,13 @@ const faqs = [
 
 const usaLocations = [
   { label: "Austin, TX", href: "/locations/usa/austin-tx/" },
-  { label: "Dallas, TX", href: "/locations/usa/dallas-tx/" },
-  { label: "Chicago, IL", href: "/locations/usa/chicago-il/" },
-  { label: "Boston, MA", href: "/locations/usa/boston-ma/" },
-  { label: "Los Angeles, CA", href: "/locations/usa/los-angeles-ca/" },
-  { label: "Miami, FL", href: "/locations/usa/miami-fl/" },
-  { label: "Washington, DC", href: "/locations/usa/washington-dc/" },
-  { label: "Detroit, MI", href: "/locations/usa/detroit-mi/" },
+  // { label: "Dallas, TX", href: "/locations/usa/dallas-tx/" },
+  //{ label: "Chicago, IL", href: "/locations/usa/chicago-il/" },
+  //{ label: "Boston, MA", href: "/locations/usa/boston-ma/" },
+  //{ label: "Los Angeles, CA", href: "/locations/usa/los-angeles-ca/" },
+  //{ label: "Miami, FL", href: "/locations/usa/miami-fl/" },
+  //{ label: "Washington, DC", href: "/locations/usa/washington-dc/" },
+  //{ label: "Detroit, MI", href: "/locations/usa/detroit-mi/" },
 ];
 
 export default function AustinLocationPageClient() {
@@ -369,23 +369,27 @@ export default function AustinLocationPageClient() {
         <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-16">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end reveal-bottom">
-            <div className="lg:col-span-8 flex flex-col gap-4">
+            <div className="lg:col-span-8 flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00] tracking-tight">
+                  How Grow n Foster Approaches Digital Marketing for Austin Businesses
+                </h2>
+                <p className="text-base sm:text-lg text-[#606853] leading-relaxed max-w-3xl">
+                  Every Austin engagement starts with research: we look at your current rankings, your competitors in the Austin market, and the actual search behavior of the customers you&apos;re trying to reach before recommending a channel mix. From there we build a strategy around your specific audience who they are, what they search, and where they convert instead of applying a one-size-fits-all playbook. Implementation is staged so early wins fund the next phase of work, and every campaign is tracked from day one so we know what&apos;s actually driving results. Reporting closes the loop each month with what changed, what it drove, and what we&apos;re adjusting next.
+                </p>
+              </div>
 
-              <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00] tracking-tight">
-                How Grow n Foster Approaches Digital Marketing for Austin Businesses
-              </h2>
-              <p className="text-base sm:text-lg text-[#606853] leading-relaxed max-w-3xl">
-                Every Austin engagement starts with research: we look at your current rankings, your competitors in the Austin market, and the actual search behavior of the customers you&apos;re trying to reach before recommending a channel mix. From there we build a strategy around your specific audience who they are, what they search, and where they convert instead of applying a one-size-fits-all playbook. Implementation is staged so early wins fund the next phase of work, and every campaign is tracked from day one so we know what&apos;s actually driving results. Reporting closes the loop each month with what changed, what it drove, and what we&apos;re adjusting next.
-              </p>
-            </div>
-            <div className="lg:col-span-4 flex lg:justify-end">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white border border-[#E2E8D5] text-[#283500] hover:bg-[#BFD189]/30 font-hanken text-sm font-semibold transition-all shadow-sm"
-              >
-                <span>Talk to a Strategist About Austin</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-              </Link>
+              <div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#485A20] hover:bg-[#202500] text-white font-hanken text-sm font-semibold transition-all shadow-sm"
+                >
+                  <span>Talk to a Strategist About Austin</span>
+                  <span className="material-symbols-outlined text-[18px]">
+                    arrow_forward
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -583,9 +587,7 @@ export default function AustinLocationPageClient() {
         <div className="max-w-[1320px] mx-auto px-6 lg:px-12 relative reveal-bottom">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 flex flex-col gap-2">
-              <span className="font-mono-code text-xs text-[#BFD189] uppercase tracking-widest font-semibold flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#BFD189]"></span> Company-Wide Track Record
-              </span>
+
               <p className="font-hanken text-[26px] sm:text-[36px] lg:text-[40px] leading-tight font-bold tracking-tight text-white">
                 150+ successful projects delivered worldwide with client growth reaching up to <span className="text-[#BFD189] underline decoration-[#BFD189] decoration-4">80%</span>.
               </p>
@@ -594,8 +596,8 @@ export default function AustinLocationPageClient() {
             <div className="lg:col-span-4 flex flex-col items-start lg:items-end">
               <div className="bg-[#4B5A20]/60 border border-[#BFD189]/30 rounded-2xl p-5 w-full sm:w-auto min-w-[240px]">
                 <div className="flex items-center justify-between text-[#BFD189] font-mono-code text-xs uppercase pb-1">
-                  <span>Growth Velocity</span>
-                  <span className="font-bold">Verified</span>
+
+
                 </div>
                 <div className="text-white font-hanken text-3xl font-bold">80% Max Lift</div>
                 <p className="text-white/80 text-xs font-hanken mt-1">Multi-channel campaign optimization.</p>

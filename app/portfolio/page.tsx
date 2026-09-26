@@ -101,9 +101,7 @@ export default function PortfolioPage() {
         {/* Header */}
         <div className="text-center space-y-6 pt-8 max-w-4xl mx-auto">
           <div className="inline-block">
-            <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-4 py-1.5 rounded-full border border-[#4b5a20]/20 block mb-3 font-semibold">
-              PROOF OF EXECUTION
-            </span>
+
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold font-hanken tracking-tight text-black uppercase">
               PORTFOLIO
             </h1>
@@ -138,9 +136,7 @@ export default function PortfolioPage() {
         <div className="space-y-10" id="web-development-section">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-b border-gray-200 pb-6">
             <div className="space-y-2">
-              <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-3.5 py-1 rounded-full border border-[#4b5a20]/20 inline-block font-semibold">
-                FEATURED WORK
-              </span>
+
               <h2 className="text-3xl sm:text-4xl font-extrabold font-hanken tracking-tight text-black">
                 Web Development Projects
               </h2>
@@ -235,9 +231,7 @@ export default function PortfolioPage() {
         <div className="space-y-10" id="lead-generation-section">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-b border-gray-200 pb-6">
             <div className="space-y-2">
-              <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-3.5 py-1 rounded-full border border-[#4b5a20]/20 inline-block font-semibold">
-                OUTBOUND &amp; EMAIL OUTREACH
-              </span>
+
               <h2 className="text-3xl sm:text-4xl font-extrabold font-hanken tracking-tight text-black">
                 Lead Generation Systems
               </h2>
@@ -258,9 +252,7 @@ export default function PortfolioPage() {
 
           <div className="bg-[#0E1205] rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-4 max-w-xl">
-              <span className="text-xs font-mono-code text-[#AD9E49] uppercase tracking-widest bg-[#AD9E49]/10 px-3 py-1 rounded-full border border-[#AD9E49]/20 font-bold">
-                14+ B2B CLIENT CASE STUDIES
-              </span>
+
               <h3 className="text-2xl sm:text-4xl font-extrabold font-hanken">
                 Lead generation that fills your sales calendar.
               </h3>
@@ -283,9 +275,7 @@ export default function PortfolioPage() {
           {/* Section Header */}
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-b border-gray-200 pb-6">
             <div className="space-y-2">
-              <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-3.5 py-1 rounded-full border border-[#4b5a20]/20 inline-block font-semibold">
-                PAID ADS &amp; LEAD GENERATION
-              </span>
+
               <h2 className="text-3xl sm:text-4xl font-extrabold font-hanken tracking-tight text-black">
                 Performance Marketing Campaigns
               </h2>
@@ -307,9 +297,7 @@ export default function PortfolioPage() {
           {/* Render Performance Marketing Featured Projects Grid */}
           <div className="bg-[#0E1205] rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-4 max-w-xl">
-              <span className="text-xs font-mono-code text-[#AD9E49] uppercase tracking-widest bg-[#AD9E49]/10 px-3 py-1 rounded-full border border-[#AD9E49]/20 font-bold">
-                14+ HIGH-ROI AD CAMPAIGNS
-              </span>
+
               <h3 className="text-2xl sm:text-4xl font-extrabold font-hanken">
                 Performance marketing engineered for real revenue.
               </h3>
