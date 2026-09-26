@@ -226,7 +226,18 @@ body {
   will-change: opacity, transform, filter;
 }
 
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  filter: blur(4px);
+  transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
 .reveal-left.active,
+.reveal-right.active,
 .reveal-bottom.active,
 .reveal.active {
   opacity: 1;

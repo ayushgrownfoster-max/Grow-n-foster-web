@@ -79,11 +79,67 @@ const portfolioMenu = [
   },
 ];
 
+const marketsMenu = [
+  {
+    region: "UNITED STATES",
+    href: "/locations/usa",
+    flag: "🇺🇸",
+    cities: [
+      { name: "Austin Digital Marketing", href: "/locations/usa/austin-tx", isLive: true },
+      // { name: "Dallas Digital Marketing", href: "/locations/usa/dallas-tx", isLive: false },
+      // { name: "Chicago Digital Marketing", href: "/locations/usa/chicago-il", isLive: false },
+      // { name: "Miami Digital Marketing", href: "/locations/usa/miami-fl", isLive: false },
+      // { name: "Los Angeles Digital Marketing", href: "/locations/usa/los-angeles-ca", isLive: false },
+      // { name: "San Francisco Digital Marketing", href: "/locations/usa/san-francisco-ca", isLive: false },
+    ]
+  },
+  // {
+  //   region: "CANADA",
+  //   href: "/locations/usa",
+  //   flag: "🇨🇦",
+  //   cities: [
+  //     { name: "Toronto Digital Marketing", href: "/locations/usa", isLive: false },
+  //     { name: "Vancouver Digital Marketing", href: "/locations/usa", isLive: false },
+  //     { name: "Montreal Digital Marketing", href: "/locations/usa", isLive: false },
+  //   ]
+  // },
+  // {
+  //   region: "EUROPE & UK",
+  //   href: "/locations/usa",
+  //   flag: "🇬🇧",
+  //   cities: [
+  //     { name: "London Digital Marketing", href: "/locations/usa", isLive: false },
+  //     { name: "Berlin Digital Marketing", href: "/locations/usa", isLive: false },
+  //     { name: "Paris Digital Marketing", href: "/locations/usa", isLive: false },
+  //   ]
+  // },
+  // {
+  //   region: "MIDDLE EAST & AFRICA",
+  //   href: "/locations/usa",
+  //   flag: "🇦🇪",
+  //   cities: [
+  //     { name: "Dubai Digital Marketing", href: "/locations/usa", isLive: false },
+  //     { name: "Riyadh Digital Marketing", href: "/locations/usa", isLive: false },
+  //     { name: "Abu Dhabi Digital Marketing", href: "/locations/usa", isLive: false },
+  //   ]
+  // },
+  // {
+  //   region: "ASIA-PACIFIC",
+  //   href: "/locations/usa",
+  //   flag: "🇸🇬",
+  //   cities: [
+  //     { name: "Singapore Digital Marketing", href: "/locations/usa", isLive: false },
+  //     { name: "Sydney Digital Marketing", href: "/locations/usa", isLive: false },
+  //     { name: "Tokyo Digital Marketing", href: "/locations/usa", isLive: false },
+  //   ]
+  // },
+];
+
 const navItems = [
   { name: "HOME", href: "/" },
   { name: "SERVICES", href: "/services", hasDropdown: true, dropdownType: "services" },
-  // { name: "CASE STUDIES", href: "/case-studies" },
   { name: "PORTFOLIO", href: "/portfolio", hasDropdown: true, dropdownType: "portfolio" },
+  { name: "MARKETS", href: "/locations/usa", hasDropdown: true, dropdownType: "markets" },
   { name: "ABOUT US", href: "/about" },
   { name: "BLOG", href: "/blog" },
 ];
@@ -97,10 +153,21 @@ export default function Navbar() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<"services" | "portfolio" | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<"services" | "portfolio" | "markets" | null>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobilePortfolioOpen, setMobilePortfolioOpen] = useState(false);
+  const [mobileMarketsOpen, setMobileMarketsOpen] = useState(false);
+  const [expandedRegions, setExpandedRegions] = useState<Record<string, boolean>>({ "UNITED STATES": true });
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const toggleRegion = (regionName: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setExpandedRegions((prev) => ({
+      ...prev,
+      [regionName]: !prev[regionName],
+    }));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -121,7 +188,7 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  const handleMouseEnter = (type: "services" | "portfolio") => {
+  const handleMouseEnter = (type: "services" | "portfolio" | "markets") => {
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
     }
@@ -402,6 +469,224 @@ export default function Navbar() {
                               </Link>
                             ))}
                           </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Markets Mega Dropdown Menu */}
+                    {isThisDropdownOpen && item.dropdownType === "markets" && (
+                      <div
+                        className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[860px] max-w-[94vw] z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+                        onMouseEnter={() => handleMouseEnter("markets")}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <div className="bg-white backdrop-blur-2xl rounded-3xl border border-[#E2E8D5] shadow-2xl p-6 sm:p-8 overflow-hidden text-[#1a1c15]">
+
+                          {/* Top Header Row */}
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-[#E2E8D5] gap-4">
+                            <div>
+                              <h4 className="text-xl font-extrabold font-hanken text-[#283500]">
+                                Choose a market
+                              </h4>
+                              <p className="text-xs font-hanken text-[#606853] mt-0.5">
+                                Open a region, then select a country or city.
+                              </p>
+                            </div>
+                            <Link
+                              href="/locations/usa"
+                              onClick={() => setActiveDropdown(null)}
+                              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#BFD189] text-[#283500] font-hanken text-xs font-bold hover:bg-[#283500] hover:text-white transition-all shadow-sm w-fit"
+                            >
+                              <span>Explore USA Market</span>
+                              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                            </Link>
+                          </div>
+
+                          {/* Regions Grid (3 Columns) */}
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+
+                            {/* Column 1: United States & Canada */}
+                            <div className="space-y-6">
+                              {marketsMenu.slice(0, 2).map((mReg, rIdx) => {
+                                const isExpanded = !!expandedRegions[mReg.region];
+
+                                return (
+                                  <div key={rIdx} className="space-y-3">
+                                    {/* Region Header Bar */}
+                                    <div className="flex items-center justify-between pb-2 border-b-2 border-[#BFD189]">
+                                      <Link
+                                        href={mReg.href}
+                                        onClick={() => setActiveDropdown(null)}
+                                        className="font-mono-code text-xs font-extrabold tracking-wider uppercase text-[#283500] hover:text-[#4b5a20] transition-colors flex items-center gap-1.5"
+                                      >
+                                        <span>{mReg.region}</span>
+                                      </Link>
+                                      <button
+                                        type="button"
+                                        onClick={(e) => toggleRegion(mReg.region, e)}
+                                        className="w-7 h-7 rounded-full bg-[#283500] text-white flex items-center justify-center hover:bg-[#4b5a20] transition-colors shadow-xs"
+                                        aria-label={`Toggle ${mReg.region} list`}
+                                      >
+                                        <span className="material-symbols-outlined text-sm font-bold">
+                                          {isExpanded ? "remove" : "add"}
+                                        </span>
+                                      </button>
+                                    </div>
+
+                                    {/* Cities List */}
+                                    {isExpanded && (
+                                      <div className="space-y-2 pt-1">
+                                        {mReg.cities.map((city, cIdx) => (
+                                          <Link
+                                            key={cIdx}
+                                            href={city.href}
+                                            onClick={() => setActiveDropdown(null)}
+                                            className="group flex items-center justify-between p-2 rounded-xl hover:bg-white border border-transparent hover:border-[#E2E8D5] transition-all"
+                                          >
+                                            <div className="flex items-center gap-2.5">
+                                              <span className="w-6 h-6 rounded-full bg-white border border-[#E2E8D5] flex items-center justify-center text-xs shadow-2xs">
+                                                {mReg.flag}
+                                              </span>
+                                              <span className="font-hanken text-xs font-bold text-[#283500] group-hover:text-[#4b5a20] transition-colors">
+                                                {city.name}
+                                              </span>
+                                            </div>
+                                            {city.isLive ? (
+                                              <span className="text-[10px] font-mono-code font-bold text-[#283500] bg-[#BFD189] px-2 py-0.5 rounded-full">
+                                                Active
+                                              </span>
+                                            ) : (
+                                              <span className="text-[10px] font-mono-code text-[#606853] opacity-60">
+                                                Explore
+                                              </span>
+                                            )}
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
+                                );
+                              })}
+                            </div>
+
+                            {/* Column 2: Europe & UK + Asia Pacific */}
+                            <div className="space-y-6">
+                              {marketsMenu.slice(2, 4).map((mReg, rIdx) => {
+                                const isExpanded = !!expandedRegions[mReg.region];
+
+                                return (
+                                  <div key={rIdx} className="space-y-3">
+                                    {/* Region Header Bar */}
+                                    <div className="flex items-center justify-between pb-2 border-b-2 border-[#BFD189]">
+                                      <Link
+                                        href={mReg.href}
+                                        onClick={() => setActiveDropdown(null)}
+                                        className="font-mono-code text-xs font-extrabold tracking-wider uppercase text-[#283500] hover:text-[#4b5a20] transition-colors flex items-center gap-1.5"
+                                      >
+                                        <span>{mReg.region}</span>
+                                      </Link>
+                                      <button
+                                        type="button"
+                                        onClick={(e) => toggleRegion(mReg.region, e)}
+                                        className="w-7 h-7 rounded-full bg-[#283500] text-white flex items-center justify-center hover:bg-[#4b5a20] transition-colors shadow-xs"
+                                        aria-label={`Toggle ${mReg.region} list`}
+                                      >
+                                        <span className="material-symbols-outlined text-sm font-bold">
+                                          {isExpanded ? "remove" : "add"}
+                                        </span>
+                                      </button>
+                                    </div>
+
+                                    {/* Cities List */}
+                                    {isExpanded && (
+                                      <div className="space-y-2 pt-1">
+                                        {mReg.cities.map((city, cIdx) => (
+                                          <Link
+                                            key={cIdx}
+                                            href={city.href}
+                                            onClick={() => setActiveDropdown(null)}
+                                            className="group flex items-center justify-between p-2 rounded-xl hover:bg-white border border-transparent hover:border-[#E2E8D5] transition-all"
+                                          >
+                                            <div className="flex items-center gap-2.5">
+                                              <span className="w-6 h-6 rounded-full bg-white border border-[#E2E8D5] flex items-center justify-center text-xs shadow-2xs">
+                                                {mReg.flag}
+                                              </span>
+                                              <span className="font-hanken text-xs font-bold text-[#283500] group-hover:text-[#4b5a20] transition-colors">
+                                                {city.name}
+                                              </span>
+                                            </div>
+                                            <span className="text-[10px] font-mono-code text-[#606853] opacity-60">
+                                              Explore
+                                            </span>
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
+                                );
+                              })}
+                            </div>
+
+                            {/* Column 3: Middle East & Africa */}
+                            <div className="space-y-6">
+                              {marketsMenu.slice(4).map((mReg, rIdx) => {
+                                const isExpanded = !!expandedRegions[mReg.region];
+
+                                return (
+                                  <div key={rIdx} className="space-y-3">
+                                    {/* Region Header Bar */}
+                                    <div className="flex items-center justify-between pb-2 border-b-2 border-[#BFD189]">
+                                      <Link
+                                        href={mReg.href}
+                                        onClick={() => setActiveDropdown(null)}
+                                        className="font-mono-code text-xs font-extrabold tracking-wider uppercase text-[#283500] hover:text-[#4b5a20] transition-colors flex items-center gap-1.5"
+                                      >
+                                        <span>{mReg.region}</span>
+                                      </Link>
+                                      <button
+                                        type="button"
+                                        onClick={(e) => toggleRegion(mReg.region, e)}
+                                        className="w-7 h-7 rounded-full bg-[#283500] text-white flex items-center justify-center hover:bg-[#4b5a20] transition-colors shadow-xs"
+                                        aria-label={`Toggle ${mReg.region} list`}
+                                      >
+                                        <span className="material-symbols-outlined text-sm font-bold">
+                                          {isExpanded ? "remove" : "add"}
+                                        </span>
+                                      </button>
+                                    </div>
+
+                                    {/* Cities List */}
+                                    {isExpanded && (
+                                      <div className="space-y-2 pt-1">
+                                        {mReg.cities.map((city, cIdx) => (
+                                          <Link
+                                            key={cIdx}
+                                            href={city.href}
+                                            onClick={() => setActiveDropdown(null)}
+                                            className="group flex items-center justify-between p-2 rounded-xl hover:bg-white border border-transparent hover:border-[#E2E8D5] transition-all"
+                                          >
+                                            <div className="flex items-center gap-2.5">
+                                              <span className="w-6 h-6 rounded-full bg-white border border-[#E2E8D5] flex items-center justify-center text-xs shadow-2xs">
+                                                {mReg.flag}
+                                              </span>
+                                              <span className="font-hanken text-xs font-bold text-[#283500] group-hover:text-[#4b5a20] transition-colors">
+                                                {city.name}
+                                              </span>
+                                            </div>
+                                            <span className="text-[10px] font-mono-code text-[#606853] opacity-60">
+                                              Explore
+                                            </span>
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
+                                );
+                              })}
+                            </div>
+
+                          </div>
+
                         </div>
                       </div>
                     )}

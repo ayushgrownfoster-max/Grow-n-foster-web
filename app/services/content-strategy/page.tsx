@@ -245,7 +245,7 @@ export default function ContentStrategyPage() {
                 {/* Topic Cluster Status */}
                 <div className="space-y-3">
                   <div className="text-xs font-mono-code text-[#C8CFB4] font-bold uppercase tracking-wider">Active Topic Clusters</div>
-                  
+
                   <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
                     <div className="flex justify-between items-center text-xs font-mono-code">
                       <span className="text-white font-bold">Enterprise SaaS Security Hub</span>
@@ -709,9 +709,7 @@ export default function ContentStrategyPage() {
         {/* SECTION 10: INDUSTRY SPECIFIC STRATEGIES */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              SECTOR SPECIALIZATION
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Industry Specific Content Strategies
             </h2>
