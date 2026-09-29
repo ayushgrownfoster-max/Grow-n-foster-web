@@ -203,13 +203,8 @@ export default function AustinLocationPageClient() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#BFD189]/40 text-[#283500] border border-[#BFD189] text-xs font-mono-code font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-[#283500] animate-pulse"></span>
-              Austin Market Hub Active
-            </span>
-            <span className="hidden sm:inline-block text-xs font-mono-code text-[#606853]">
-              Silicon Hills & Local Commercial Squads
-            </span>
+
+
           </div>
         </div>
       </section>
