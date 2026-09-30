@@ -8,7 +8,7 @@ const servicesMenu = [
   {
     title: "SEO Optimization",
     subtitle: "Dominate search rankings & organic traffic",
-    href: "/services",
+    href: "/services/seo-optimization",
     icon: "search",
     image: "/seo-image.jpeg",
     badge: "+240% Growth",
@@ -16,7 +16,7 @@ const servicesMenu = [
   {
     title: "LinkedIn Outreach",
     subtitle: "B2B lead acceleration & direct meetings",
-    href: "/services",
+    href: "/services/linkedin-outreach-services",
     icon: "work",
     image: "/linkedin-outreach.jpeg",
     badge: "35+ MQLs/mo",
@@ -24,7 +24,7 @@ const servicesMenu = [
   {
     title: "Content Strategy",
     subtitle: "High-authority articles & brand storytelling",
-    href: "/services",
+    href: "/services/content-strategy",
     icon: "edit_note",
     image: "/content-marketing.jpeg",
     badge: "4.8x Reach",
@@ -32,7 +32,7 @@ const servicesMenu = [
   {
     title: "Email Marketing",
     subtitle: "Automated retention flows & revenue recovery",
-    href: "/services",
+    href: "/services/email-marketing-services",
     icon: "mail",
     image: "/email-marketing.jpeg",
     badge: "38% Opens",
@@ -40,7 +40,7 @@ const servicesMenu = [
   {
     title: "Web Development",
     subtitle: "Next.js high-converting digital platforms",
-    href: "/services",
+    href: "/services/web-development-services",
     icon: "code",
     image: "/website-design.jpeg",
     badge: "99+ Speed",
@@ -48,7 +48,7 @@ const servicesMenu = [
   {
     title: "Paid Advertising (PPC)",
     subtitle: "Targeted Google, Meta & LinkedIn ad scale",
-    href: "/services",
+    href: "/services/paid-advertising-services",
     icon: "campaign",
     image: "/paid-ads.jpeg",
     badge: "3.4x ROAS",
@@ -334,9 +334,7 @@ export default function Navbar() {
                           {/* Dropdown Header */}
                           <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
                             <div>
-                              <span className="text-[10px] font-mono-code uppercase tracking-widest text-[#4b5a20] font-bold">
-                                Growth Capabilities
-                              </span>
+
                               <h4 className="text-base font-bold font-hanken text-slate-900">
                                 Digital Marketing & Growth Services
                               </h4>

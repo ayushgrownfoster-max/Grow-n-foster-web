@@ -12,7 +12,7 @@ export default function SeoOptimizationPage() {
 
   return (
     <div className="min-h-screen bg-[#F3F2EA] text-[#161616] font-hanken pb-20 selection:bg-[#4B5A20]/30 overflow-x-hidden">
-      
+
       {/* SECTION 1: HERO SECTION */}
       <section className="relative w-full overflow-hidden bg-[#0E1205] text-white pt-12 pb-20 px-margin-mobile md:px-margin-desktop border-b border-[#DDDDD0]/20">
         <div className="max-w-container-max mx-auto space-y-12">
@@ -28,10 +28,7 @@ export default function SeoOptimizationPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Hero Text Column */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 text-xs font-mono-code tracking-[0.25em] uppercase text-[#AD9E49] bg-[#AD9E49]/10 px-4 py-1.5 rounded-full border border-[#AD9E49]/20 font-semibold">
-                <span className="w-2 h-2 rounded-full bg-[#94A269] animate-pulse"></span>
-                SEO Optimization Services
-              </div>
+
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] font-hanken">
                 SEO Optimization Services to Grow Traffic, Leads, and Sales
               </h1>
@@ -167,9 +164,7 @@ export default function SeoOptimizationPage() {
         <section className="space-y-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-                SEARCH VISIBILITY &amp; ARCHITECTURE
-              </span>
+
               <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616] leading-tight">
                 Build a Stronger Organic Search Presence
               </h2>
@@ -251,9 +246,7 @@ export default function SeoOptimizationPage() {
         {/* SECTION 3: MEET YOUR SEO OPTIMIZATION EXPERTS */}
         <section className="space-y-10">
           <div className="max-w-3xl space-y-3">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              COLLABORATIVE STRATEGIC EXECUTION
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Meet Your SEO Optimization Experts
             </h2>
@@ -310,9 +303,7 @@ export default function SeoOptimizationPage() {
         {/* SECTION 4: KEY CAPABILITIES OF SEO OPTIMIZATION */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              HOLISTIC GROWTH CAPABILITIES
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Key Capabilities of SEO Optimization
             </h2>
@@ -356,9 +347,7 @@ export default function SeoOptimizationPage() {
         <section className="space-y-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#DDDDD0] pb-8">
             <div className="space-y-2 max-w-2xl">
-              <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-                VALIDATION &amp; RETURN
-              </span>
+
               <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
                 See Our SEO Impact
               </h2>
@@ -403,9 +392,7 @@ export default function SeoOptimizationPage() {
         {/* SECTION 6: WHY SEO OPTIMIZATION INVESTMENT PAYS OFF */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              LONG-TERM BUSINESS DIVIDEND
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Why SEO Optimization Investment Pays Off
             </h2>
@@ -437,9 +424,7 @@ export default function SeoOptimizationPage() {
         {/* SECTION 7: MEASURABLE SEO GROWTH BANNER */}
         <section className="bg-[#4B5A20] text-white rounded-3xl p-8 sm:p-14 border border-[#4B5A20] space-y-8 shadow-xl relative overflow-hidden" id="consultation">
           <div className="max-w-3xl space-y-4">
-            <span className="inline-block text-xs font-mono-code tracking-[0.2em] uppercase bg-white/10 text-[#94A269] px-4 py-1 rounded-full border border-white/15 font-semibold">
-              SUSTAINABLE EXPANSION
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken leading-tight">
               Ready to Grow Smarter? Partner with strategists who understand how to build a marketing ecosystem that fuels sustainable business expansion.
             </h2>
@@ -462,9 +447,7 @@ export default function SeoOptimizationPage() {
         <section className="space-y-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-6">
-              <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-                RESEARCH-FIRST METHODOLOGY
-              </span>
+
               <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
                 Data Driven SEO Optimization
               </h2>
@@ -538,9 +521,7 @@ export default function SeoOptimizationPage() {
         {/* SECTION 9: SEO PARTNERSHIP VS ALTERNATIVES */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              STRATEGIC POSITIONING
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               SEO Partnership vs Alternatives
             </h2>
@@ -600,9 +581,7 @@ export default function SeoOptimizationPage() {
         {/* SECTION 10: INDUSTRY SPECIFIC SEO STRATEGIES */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              SECTOR SPECIALIZATION
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Industry Specific SEO Strategies
             </h2>
@@ -642,9 +621,7 @@ export default function SeoOptimizationPage() {
         {/* SECTION 11: WHAT OUR CLIENTS SAY */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              PARTNERSHIP TESTIMONIALS
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               What Our Clients Say
             </h2>
@@ -706,9 +683,7 @@ export default function SeoOptimizationPage() {
         {/* SECTION 12: SEO OPTIMIZATION FAQS */}
         <section className="space-y-10" id="faq">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              CLEAR ANSWERS
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               SEO Optimization FAQs
             </h2>
@@ -770,9 +745,7 @@ export default function SeoOptimizationPage() {
         <section className="bg-[#0E1205] text-white rounded-3xl p-8 sm:p-16 border border-[#0E1205] space-y-8 shadow-2xl relative overflow-hidden" id="contact">
           <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#4B5A20]/30 blur-3xl pointer-events-none"></div>
           <div className="max-w-3xl space-y-6 relative z-10">
-            <span className="inline-block text-xs font-mono-code tracking-[0.25em] uppercase text-[#AD9E49] bg-[#AD9E49]/10 px-4 py-1.5 rounded-full border border-[#AD9E49]/20 font-semibold">
-              ACCELERATE YOUR TRAJECTORY
-            </span>
+
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-hanken leading-tight text-white">
               Start Growing With SEO Optimization
             </h2>

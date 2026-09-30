@@ -164,10 +164,7 @@ export default function WebDevelopmentServicesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 text-xs font-mono-code tracking-[0.25em] uppercase text-[#AD9E49] bg-[#AD9E49]/10 px-4 py-1.5 rounded-full border border-[#AD9E49]/20 font-semibold">
-                <span className="w-2 h-2 rounded-full bg-[#94A269] animate-pulse"></span>
-                Web Development Services
-              </div>
+
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] font-hanken">
                 Web Development Services to Build Fast, Secure, and High Converting Websites
               </h1>
@@ -279,9 +276,7 @@ export default function WebDevelopmentServicesPage() {
         <section className="space-y-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-                PERFORMANCE-FIRST WEBSITE SYSTEM
-              </span>
+
               <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616] leading-tight">
                 Build a Stronger Digital Presence
               </h2>
@@ -356,9 +351,7 @@ export default function WebDevelopmentServicesPage() {
         {/* SECTION 3: MEET YOUR WEB DEVELOPMENT EXPERTS */}
         <section className="space-y-10">
           <div className="max-w-3xl space-y-3">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              STRATEGY, DESIGN AND ENGINEERING
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Meet Your Web Development Experts
             </h2>
@@ -415,9 +408,7 @@ export default function WebDevelopmentServicesPage() {
         {/* SECTION 4: KEY CAPABILITIES */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              FULL-STACK WEB CAPABILITIES
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Key Capabilities of Web Development
             </h2>
@@ -462,9 +453,7 @@ export default function WebDevelopmentServicesPage() {
         <section className="space-y-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#DDDDD0] pb-8">
             <div className="space-y-2 max-w-2xl">
-              <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-                VALIDATION AND PERFORMANCE ROI
-              </span>
+
               <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
                 See Our Web Development Impact
               </h2>
@@ -509,9 +498,7 @@ export default function WebDevelopmentServicesPage() {
         {/* SECTION 6: WHY IT PAYS OFF */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              LONG-TERM DIGITAL DIVIDEND
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Why Web Development Investment Pays Off
             </h2>
@@ -543,9 +530,7 @@ export default function WebDevelopmentServicesPage() {
         {/* SECTION 7: GREEN CTA BANNER */}
         <section className="bg-[#4B5A20] text-white rounded-3xl p-8 sm:p-14 border border-[#4B5A20] space-y-8 shadow-xl relative overflow-hidden" id="consultation">
           <div className="max-w-3xl space-y-4">
-            <span className="inline-block text-xs font-mono-code tracking-[0.2em] uppercase bg-white/10 text-[#94A269] px-4 py-1 rounded-full border border-white/15 font-semibold">
-              MEASURABLE WEBSITE GROWTH
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken leading-tight">
               Ready to Grow Smarter? Partner with strategists who understand how to build a marketing ecosystem that fuels sustainable business expansion.
             </h2>
@@ -568,9 +553,7 @@ export default function WebDevelopmentServicesPage() {
         <section className="space-y-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-6">
-              <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-                WEBSITE INTELLIGENCE
-              </span>
+
               <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
                 Data Driven Web Development
               </h2>
@@ -645,9 +628,7 @@ export default function WebDevelopmentServicesPage() {
         {/* SECTION 9: WEB DEVELOPMENT VS ALTERNATIVES */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              STRATEGIC POSITIONING
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Web Development vs Alternatives
             </h2>
@@ -707,9 +688,7 @@ export default function WebDevelopmentServicesPage() {
         {/* SECTION 10: INDUSTRY SPECIFIC STRATEGIES */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              SECTOR SPECIALIZATION
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Industry Specific Web Development Strategies
             </h2>
@@ -749,9 +728,7 @@ export default function WebDevelopmentServicesPage() {
         {/* SECTION 11: CLIENT TESTIMONIALS */}
         <section className="space-y-10">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              CLIENT TESTIMONIALS
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               What Our Clients Say
             </h2>
@@ -809,9 +786,7 @@ export default function WebDevelopmentServicesPage() {
         {/* SECTION 12: FAQs */}
         <section className="space-y-10" id="faq">
           <div className="space-y-2 max-w-3xl">
-            <span className="text-xs font-mono-code tracking-[0.25em] uppercase text-[#7E6E13] font-semibold block">
-              CLEAR ANSWERS
-            </span>
+
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
               Web Development FAQs
             </h2>
@@ -853,9 +828,7 @@ export default function WebDevelopmentServicesPage() {
         <section className="bg-[#0E1205] text-white rounded-3xl p-8 sm:p-16 border border-[#0E1205] space-y-8 shadow-2xl relative overflow-hidden" id="contact">
           <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#4B5A20]/30 blur-3xl pointer-events-none"></div>
           <div className="max-w-3xl space-y-6 relative z-10">
-            <span className="inline-block text-xs font-mono-code tracking-[0.25em] uppercase text-[#AD9E49] bg-[#AD9E49]/10 px-4 py-1.5 rounded-full border border-[#AD9E49]/20 font-semibold">
-              BUILD YOUR DIGITAL PLATFORM
-            </span>
+
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-hanken leading-tight text-white">
               Start Growing With Web Development
             </h2>

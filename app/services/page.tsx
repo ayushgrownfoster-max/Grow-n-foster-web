@@ -110,9 +110,7 @@ export default function ServicesPage() {
         {/* Page Header */}
         <div className="text-center space-y-6 pt-8 animate-[slideRight_0.7s_ease-out_forwards]">
           <div className="inline-block">
-            <span className="text-xs font-mono-code tracking-[0.3em] uppercase text-[#4b5a20] bg-[#4b5a20]/10 px-4 py-1.5 rounded-full border border-[#4b5a20]/20 block mb-3 font-semibold">
-              WHAT WE DO
-            </span>
+
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold font-hanken tracking-tight text-black uppercase">
               SERVICES
             </h1>
