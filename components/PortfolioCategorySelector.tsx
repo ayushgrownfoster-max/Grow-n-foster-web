@@ -5,7 +5,12 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 interface PortfolioCategorySelectorProps {
-  currentCategory: "all" | "web-development" | "performance-marketing" | "lead-generation";
+  currentCategory:
+    | "all"
+    | "web-development"
+    | "performance-marketing"
+    | "lead-generation"
+    | "graphic-design";
 }
 
 export default function PortfolioCategorySelector({
@@ -22,6 +27,13 @@ export default function PortfolioCategorySelector({
       href: "/portfolio",
       icon: "grid_view",
       count: "13 Case Studies",
+    },
+    {
+      id: "graphic-design",
+      label: "Graphic Design",
+      href: "/portfolio/graphic-design",
+      icon: "palette",
+      count: "5 Projects",
     },
     {
       id: "lead-generation",
@@ -52,7 +64,7 @@ export default function PortfolioCategorySelector({
   return (
     <div className="w-full max-w-container-max mx-auto mb-12 space-y-4">
       {/* Desktop Tabs */}
-      <div className="hidden md:flex items-center justify-center p-2 bg-slate-100/80 backdrop-blur-md rounded-2xl border border-slate-200 shadow-xs max-w-2xl mx-auto gap-2">
+      <div className="hidden md:flex items-center justify-center p-2 bg-slate-100/80 backdrop-blur-md rounded-2xl border border-slate-200 shadow-xs max-w-4xl mx-auto gap-2">
         {categories.map((cat) => {
           const isActive = currentCategory === cat.id;
           return (

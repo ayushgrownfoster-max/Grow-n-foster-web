@@ -57,6 +57,13 @@ const servicesMenu = [
 
 const portfolioMenu = [
   {
+    title: "Graphic Design",
+    subtitle: "Brand identity, logo design, social ad graphics, packaging & video reels",
+    href: "/portfolio/graphic-design",
+    icon: "palette",
+    badge: "5 Projects",
+  },
+  {
     title: "Lead Generation",
     subtitle: "LinkedIn outreach & cold email campaigns for B2B pipeline growth",
     href: "/portfolio/lead-generation",
@@ -412,7 +419,7 @@ export default function Navbar() {
                     {/* Portfolio Dropdown Menu */}
                     {isThisDropdownOpen && item.dropdownType === "portfolio" && (
                       <div
-                        className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[440px] max-w-[90vw] z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+                        className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[520px] max-w-[90vw] z-50 animate-in fade-in slide-in-from-top-2 duration-200"
                         onMouseEnter={() => handleMouseEnter("portfolio")}
                         onMouseLeave={handleMouseLeave}
                       >

@@ -107,7 +107,7 @@ export default function PortfolioPage() {
             </h1>
           </div>
           <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto font-normal leading-relaxed">
-            Explore our real case studies in Web Development and Performance Marketing detailing how we drive exponential business growth.
+            Explore our real case studies across Graphic Design, Web Development, Lead Generation, and Performance Marketing.
           </p>
         </div>
 
@@ -131,6 +131,50 @@ export default function PortfolioPage() {
 
         {/* Category Selector Dropdown & Tabs */}
         <PortfolioCategorySelector currentCategory="all" />
+
+        {/* ── Graphic Design Section ── */}
+        <div className="space-y-10" id="graphic-design-section">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-b border-gray-200 pb-6">
+            <div className="space-y-2">
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-hanken tracking-tight text-black">
+                Graphic Design &amp; Video Portfolio
+              </h2>
+              <p className="text-gray-600 max-w-xl text-sm leading-relaxed">
+                Brand identity systems, logo designs, packaging vectors, social ad graphics, and dynamic YouTube video showreels.
+              </p>
+            </div>
+            <Link
+              href="/portfolio/graphic-design"
+              className="text-xs font-mono-code font-bold uppercase tracking-wider text-[#4b5a20] hover:underline flex items-center gap-1"
+            >
+              <span>View Dedicated Graphic Design Portfolio</span>
+              <span className="material-symbols-outlined text-sm">
+                arrow_forward
+              </span>
+            </Link>
+          </div>
+
+          <div className="bg-[#0E1205] rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="space-y-4 max-w-xl">
+              <span className="text-[10px] font-mono-code uppercase tracking-widest text-[#AD9E49] bg-[#AD9E49]/10 px-3 py-1 rounded-full border border-[#AD9E49]/20 font-bold inline-block">
+                BRANDING &amp; MULTIMEDIA
+              </span>
+              <h3 className="text-2xl sm:text-4xl font-extrabold font-hanken">
+                Graphic design &amp; video showreels that captivate.
+              </h3>
+              <p className="text-sm text-[#C8CFB4] leading-relaxed">
+                Explore brand guideline books, product packaging, social ad carousels, and embedded YouTube showreels for Aurora, Aurelia, Pulse Motion, and more.
+              </p>
+            </div>
+            <Link
+              href="/portfolio/graphic-design"
+              className="bg-[#94A269] text-[#0E1205] hover:bg-white px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider transition-colors shrink-0 flex items-center gap-2"
+            >
+              <span>Explore Graphic Design Work</span>
+              <span className="material-symbols-outlined text-base">arrow_forward</span>
+            </Link>
+          </div>
+        </div>
 
         {/* ── Web Development Section ── */}
         <div className="space-y-10" id="web-development-section">
