@@ -264,11 +264,11 @@ export default function SocialMediaCreativesSection() {
           <div className="flex items-center justify-between text-xs font-mono-code font-bold uppercase tracking-widest">
             <span className="flex items-center gap-2 text-red-400 bg-red-900/20 border border-red-800/30 px-3 py-1.5 rounded-full">
               <span className="material-symbols-outlined text-sm">close</span>
-              BEFORE — Low-quality visuals
+              BEFORE
             </span>
             <span className="flex items-center gap-2 text-[#94A269] bg-[#94A269]/10 border border-[#94A269]/20 px-3 py-1.5 rounded-full">
               <span className="material-symbols-outlined text-sm">check</span>
-              AFTER — Professional design
+              AFTER
             </span>
           </div>
 
@@ -320,12 +320,7 @@ export default function SocialMediaCreativesSection() {
             </div>
 
             {/* Corner label overlays */}
-            <div className="absolute top-3 left-3 z-20 bg-black/80 backdrop-blur-md text-red-400 text-[10px] font-mono-code font-bold uppercase px-3 py-1.5 rounded-lg border border-red-800/40 pointer-events-none">
-              BEFORE
-            </div>
-            <div className="absolute top-3 right-3 z-20 bg-black/80 backdrop-blur-md text-[#94A269] text-[10px] font-mono-code font-bold uppercase px-3 py-1.5 rounded-lg border border-[#94A269]/30 pointer-events-none">
-              AFTER
-            </div>
+
 
             {/* Drag hint */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 bg-black/60 backdrop-blur-md text-white text-[10px] font-mono-code font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border border-white/20 pointer-events-none flex items-center gap-2 shadow-lg">
