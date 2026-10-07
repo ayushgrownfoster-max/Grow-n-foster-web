@@ -44,7 +44,7 @@ export const graphicProcessSteps = [
 
 export const graphicClientList = [
   { name: "Netsxperts", industry: "IT & Endpoint Security" },
-  { name: "House of Symetry", industry: "Luxury Interior & Living" },
+  { name: "The Gate Property", industry: "Property Rennovation" },
   { name: "Digicomplish", industry: "Search & Digital Growth" },
   { name: "SparxDigital", industry: "Performance Marketing" },
 ];

@@ -48,12 +48,7 @@ const galleryImages: GalleryImage[] = [
   },
 ];
 
-const spanClasses: Record<string, string> = {
-  large: "col-span-2 row-span-2",
-  tall: "col-span-1 row-span-2",
-  wide: "col-span-2 row-span-1",
-  normal: "col-span-1 row-span-1",
-};
+
 
 export default function GraphicDesignGallery() {
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
@@ -125,12 +120,12 @@ export default function GraphicDesignGallery() {
         </div>
       </div>
 
-      {/* ── DESKTOP: Mosaic / Collage Grid ── */}
-      <div className="hidden md:grid grid-cols-4 grid-rows-3 gap-3 h-[700px]">
+      {/* ── DESKTOP: Clean 2-Column Grid ── */}
+      <div className="hidden md:grid grid-cols-2 gap-5">
         {galleryImages.map((img, idx) => (
           <div
             key={idx}
-            className={`relative overflow-hidden rounded-2xl cursor-pointer group border border-[#DDDDD0] ${spanClasses[img.span || "normal"]}`}
+            className="relative overflow-hidden rounded-2xl cursor-pointer group border border-[#DDDDD0] aspect-[4/3]"
             onClick={() => openLightbox(img.src, img.alt)}
           >
             <img
@@ -152,12 +147,10 @@ export default function GraphicDesignGallery() {
               </span>
             </div>
 
-            {/* Corner badge for large spans */}
-            {img.span === "large" && (
-              <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#4B5A20] text-white flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="material-symbols-outlined text-lg">open_in_full</span>
-              </div>
-            )}
+            {/* Index number badge */}
+            <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-[#0E1205]/70 backdrop-blur-sm text-white text-xs font-mono-code flex items-center justify-center border border-white/10">
+              {String(idx + 1).padStart(2, "0")}
+            </div>
           </div>
         ))}
       </div>

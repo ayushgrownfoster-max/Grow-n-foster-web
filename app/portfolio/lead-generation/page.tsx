@@ -37,13 +37,94 @@ export default function LeadGenerationPortfolioPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Hero Content */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="inline-block text-xs font-mono-code tracking-[0.25em] uppercase text-[#AD9E49] bg-[#AD9E49]/10 px-4 py-1.5 rounded-full border border-[#AD9E49]/20 font-semibold">
-                PORTFOLIO / LEAD GENERATION
-              </span>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight font-hanken">
-                Lead generation that fills your sales calendar.
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-[#C8CFB4] font-normal leading-relaxed max-w-2xl">
+              <div className="flex items-center gap-3">
+                <span className="inline-block text-xs font-mono-code tracking-[0.25em] uppercase text-[#AD9E49] bg-[#AD9E49]/10 px-4 py-1.5 rounded-full border border-[#AD9E49]/20 font-semibold">
+                  PORTFOLIO / LEAD GENERATION
+                </span>
+                {/* Target / Bullseye SVG sketch icon */}
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="opacity-60 flex-shrink-0 animate-pulse" aria-hidden="true">
+                  <circle cx="14" cy="14" r="10" stroke="#AD9E49" strokeWidth="1.5" fill="none" strokeDasharray="4 2" />
+                  <circle cx="14" cy="14" r="5" stroke="#94A269" strokeWidth="1.5" fill="none" />
+                  <circle cx="14" cy="14" r="2" fill="#AD9E49" />
+                </svg>
+              </div>
+
+              {/* Hero H1 with scattered SVG sketch decorations */}
+              <div className="relative">
+                {/* Floating star sparkle top-left */}
+                <svg
+                  width="32" height="32" viewBox="0 0 32 32" fill="none"
+                  className="absolute -top-6 -left-2 opacity-50"
+                  aria-hidden="true"
+                >
+                  <path d="M16 2L17.5 13L28 8L19 16L28 24L17.5 19L16 30L14.5 19L4 24L13 16L4 8L14.5 13L16 2Z"
+                    stroke="#AD9E49" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                </svg>
+
+                {/* Small scattered dots cluster top-right */}
+                <svg
+                  width="50" height="30" viewBox="0 0 50 30" fill="none"
+                  className="absolute -top-4 right-8 opacity-30 hidden sm:block"
+                  aria-hidden="true"
+                >
+                  <circle cx="5" cy="15" r="2.5" fill="#94A269" />
+                  <circle cx="16" cy="8" r="1.8" fill="#AD9E49" />
+                  <circle cx="27" cy="20" r="3" fill="#94A269" />
+                  <circle cx="40" cy="10" r="1.5" fill="#AD9E49" />
+                  <circle cx="48" cy="22" r="2" fill="#94A269" />
+                </svg>
+
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight font-hanken relative">
+                  {/* "Lead generation" with squiggle underline */}
+                  <span className="relative inline-block mr-3">
+                    <span className="relative z-10 text-[#94A269]">Lead generation</span>
+                    <svg
+                      className="absolute -bottom-2 left-0 w-full" height="10" viewBox="0 0 220 10" preserveAspectRatio="none"
+                      fill="none" aria-hidden="true"
+                    >
+                      <path d="M2 7 Q55 2 110 7 Q165 12 218 5" stroke="#AD9E49" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.7" />
+                    </svg>
+                  </span>
+                  {" "}that fills your{" "}
+                  <br className="hidden sm:block" />
+                  {/* "sales calendar" with dashed highlight box */}
+                  <span className="relative inline-block mr-3">
+                    <span className="relative z-10 text-white">sales calendar.</span>
+                    <svg
+                      className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none"
+                      fill="none" aria-hidden="true"
+                    >
+                      <rect x="2" y="4" width="96" height="90" rx="6"
+                        stroke="#AD9E49" strokeWidth="2" strokeDasharray="6 3"
+                        fill="#AD9E49" fillOpacity="0.1" opacity="0.8" />
+                    </svg>
+                  </span>
+                </h1>
+
+                {/* Small sketch arrow pointing down/right */}
+                <svg
+                  width="48" height="36" viewBox="0 0 48 36" fill="none"
+                  className="absolute -bottom-10 left-4 opacity-35 hidden lg:block"
+                  aria-hidden="true"
+                >
+                  <path d="M4 4 Q20 4 28 20 Q32 28 40 30" stroke="#94A269" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                  <path d="M34 28 L40 30 L37 24" stroke="#94A269" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                </svg>
+
+                {/* Plus sketch marks bottom-right */}
+                <svg
+                  width="60" height="40" viewBox="0 0 60 40" fill="none"
+                  className="absolute -bottom-8 right-0 opacity-25 hidden sm:block"
+                  aria-hidden="true"
+                >
+                  <line x1="8" y1="4" x2="8" y2="14" stroke="#AD9E49" strokeWidth="1.5" strokeLinecap="round" />
+                  <line x1="3" y1="9" x2="13" y2="9" stroke="#AD9E49" strokeWidth="1.5" strokeLinecap="round" />
+                  <line x1="32" y1="20" x2="32" y2="30" stroke="#94A269" strokeWidth="1.5" strokeLinecap="round" />
+                  <line x1="27" y1="25" x2="37" y2="25" stroke="#94A269" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </div>
+
+              <p className="text-base sm:text-lg md:text-xl text-[#C8CFB4] font-normal leading-relaxed max-w-2xl mt-8">
                 We find your ideal buyers, start the conversation on LinkedIn and email, and hand your team warm, qualified leads. Here is how that has worked for B2B and service businesses in the USA, Canada, UK, India and the GCC.
               </p>
             </div>

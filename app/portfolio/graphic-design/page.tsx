@@ -251,6 +251,79 @@ export default function GraphicDesignPortfolioPage() {
         {/* ── Visual Design Gallery: Mosaic (desktop) + Slider (mobile) ── */}
         <GraphicDesignGallery />
 
+        {/* ── YouTube Showreel Section ── */}
+        <section className="space-y-10">
+          {/* Section Header */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="space-y-2">
+              <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken text-[#161616]">
+                Watch our work in motion
+              </h2>
+              <p className="text-sm text-[#161616]/70 max-w-lg leading-relaxed">
+                See how our graphic design and visual content comes alive — a showcase of brand identities, social creatives, and video productions we&apos;ve crafted for our clients.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 text-xs font-mono-code text-[#4B5A20] font-bold bg-[#4B5A20]/10 border border-[#4B5A20]/20 px-4 py-2 rounded-full flex-shrink-0">
+              <span className="material-symbols-outlined text-sm">play_circle</span>
+              <span>Design Showreel</span>
+            </div>
+          </div>
+
+          {/* Video Embed Card */}
+          <div className="relative bg-[#0E1205] rounded-3xl overflow-hidden border border-[#DDDDD0]/20 shadow-2xl">
+            {/* Decorative top bar */}
+            <div className="flex items-center gap-2 px-6 py-4 border-b border-white/10">
+              <div className="flex gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+                <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
+                <div className="w-3 h-3 rounded-full bg-[#28C840]" />
+              </div>
+              <div className="flex-1 flex items-center justify-center">
+                <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-xs font-mono-code text-white/60">
+                  <span className="material-symbols-outlined text-sm text-[#94A269]">play_circle</span>
+                  Grow &amp; Foster — Graphic Design Showreel
+                </div>
+              </div>
+              <a
+                href="https://youtu.be/6ysVNhm1aJw?si=70U-JgPEJAUZ9ub2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-[#94A269] text-xs font-mono-code font-bold hover:text-white transition-colors"
+              >
+                <span>Open on YouTube</span>
+                <span className="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+            </div>
+
+            {/* Responsive iframe wrapper */}
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                src="https://www.youtube.com/embed/6ysVNhm1aJw?si=70U-JgPEJAUZ9ub2"
+                title="Grow & Foster — Graphic Design Showreel"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Bottom info strip */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-6 py-5 border-t border-white/10">
+              <div className="space-y-1">
+                <p className="text-white text-sm font-bold font-hanken">Graphic Design &amp; Video Content Showcase</p>
+                <p className="text-xs font-mono-code text-[#94A269]/80">Brand identity · Social creatives · Video production · Packaging design</p>
+              </div>
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#4B5A20] hover:bg-[#3a4718] text-white px-5 py-2.5 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider transition-all flex-shrink-0"
+              >
+                <span>Start Your Project</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Filterable Portfolio Grid & Videos */}
         <section className="space-y-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#DDDDD0] pb-8">

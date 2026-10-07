@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useActionState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { submitEmailCapture } from "@/app/actions/submitEmailCapture";
 
 const tabContents = {
@@ -233,10 +234,13 @@ export default function Home() {
                 {/* Main image container — no shadow/border/glow, sits flush with the white background */}
                 <div className="relative rounded-[48px] overflow-hidden bg-gray-50">
                   <div className="aspect-[4/5] relative">
-                    <img
+                    <Image
                       alt="Digital marketing professional"
-                      className="w-full h-full object-cover object-center"
                       src="/Website Image 1.png"
+                      fill
+                      priority
+                      sizes="(min-width: 1024px) 480px, 100vw"
+                      className="object-cover object-center"
                     />
                     {/* Subtle bottom fade */}
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(255,255,255,0.3) 0%, transparent 40%)" }}></div>
