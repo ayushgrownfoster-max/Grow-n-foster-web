@@ -4,16 +4,16 @@ import { useRef, useState, useCallback, useEffect } from "react";
 
 // ─── Social Media Creatives images ────────────────────────────────────────────
 const smImages = [
-  { src: "/SM -1.png", label: "Social Creative 01" },
-  { src: "/SM - 2.png", label: "Social Creative 02" },
-  { src: "/SM - 3.png", label: "Social Creative 03" },
-  { src: "/SM - 4.png", label: "Social Creative 04" },
-  { src: "/SM - 5.png", label: "Social Creative 05" },
-  { src: "/SM - 6.png", label: "Social Creative 06" },
-  { src: "/SM - 7.png", label: "Social Creative 07" },
-  { src: "/SM - 8.png", label: "Social Creative 08" },
-  { src: "/SM - 9.png", label: "Social Creative 09" },
-  { src: "/Ad Image - 2.png", label: "Social Creative 10" }
+  { src: "/SM - 6.png", label: "Social Creative 01" },
+  { src: "/Netsxpert posts.18th May.png", label: "Social Creative 02" },
+
+  // { src: "/Slow application drop-offs are costing businesses top talent. Career site chatbots keep candidat.jpg.jpeg", label: "Social Creative 04" },
+  { src: "/SM - 5.png", label: "Social Creative 03" },
+  //{ src: "/SM - 6.png", label: "Social Creative 06" },
+  { src: "/SM - 7.png", label: "Social Creative 04" },
+  //{ src: "/SM - 8.png", label: "Social Creative 08" },
+  { src: "/SM - 9.png", label: "Social Creative 05" },
+  { src: "/Ad Image - 2.png", label: "Social Creative 06" }
 ];
 
 export default function SocialMediaCreativesSection() {
@@ -95,7 +95,9 @@ export default function SocialMediaCreativesSection() {
   };
 
   const beforeImageSrc = "/Getting attention is one thing.Turning attention into paying clients is something different.A lo.jpg.jpeg";
-  const afterImageSrc = "/One of the most important responsibilities of leadership is developing people.Strong leaders do .jpg.jpeg";
+  const afterImageSrc = "/projects/graphic-design/21 Sep.png";
+
+
 
   return (
     <div className="space-y-20">
