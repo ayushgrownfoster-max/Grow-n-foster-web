@@ -94,13 +94,6 @@ export default function ContactPage() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#4b5a20]/10 blur-[120px] pointer-events-none rounded-full"></div>
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#4b5a20]/10 text-[#4b5a20] text-xs font-mono-code border border-[#4b5a20]/30 tracking-widest uppercase shadow-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4b5a20] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4b5a20]"></span>
-              </span>
-              CONTACT US
-            </div>
             <h1 className="font-hanken text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.08] tracking-tight text-slate-900">
               Let&apos;s Grow Your{" "}
               <span className="text-[#4b5a20] font-black">
@@ -145,12 +138,6 @@ export default function ContactPage() {
             {/* Form Column */}
             <div className="lg:col-span-3">
               <div className="space-y-4 mb-10">
-                <span className="text-[#4b5a20] font-bold tracking-widest text-xs font-mono-code uppercase flex items-center gap-2">
-                  <span className="material-symbols-outlined text-lg">
-                    edit_note
-                  </span>{" "}
-                  ENQUIRY FORM
-                </span>
                 <h2 className="font-hanken text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
                   Tell Us About Your Project
                 </h2>
@@ -453,17 +440,11 @@ export default function ContactPage() {
       </section>
 
       {/* Office / Location */}
-      <section id="contact-info" className="py-section-gap bg-white">
+      <section id="contact-info" className="pt-1 pb-section-gap bg-white">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div>
-                <span className="text-[#4b5a20] font-bold tracking-widest text-xs font-mono-code uppercase flex items-center gap-2">
-                  <span className="material-symbols-outlined text-lg">
-                    location_on
-                  </span>{" "}
-                  OUR LOCATION
-                </span>
                 <h2 className="font-hanken text-3xl md:text-4xl font-bold mt-4 tracking-tight text-slate-900">
                   Visit Our Office
                 </h2>
@@ -538,10 +519,7 @@ export default function ContactPage() {
       <section className="py-section-gap bg-slate-50 border-t border-slate-100">
         <div className="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-16">
-            <span className="text-[#4b5a20] font-bold tracking-widest text-xs font-mono-code uppercase flex items-center gap-2 justify-center">
-              <span className="material-symbols-outlined text-lg">help</span>{" "}
-              FREQUENTLY ASKED QUESTIONS
-            </span>
+
             <h2 className="font-hanken text-3xl md:text-4xl font-bold mt-4 tracking-tight text-slate-900">
               Got Questions?
             </h2>

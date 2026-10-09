@@ -11,7 +11,7 @@ const components: PortableTextComponents = {
       const imgUrl = urlFor(value).width(800).url();
       return (
         <figure className="my-10">
-          <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100">
+          <div className="relative w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200 shadow-sm">
             <Image
               src={imgUrl}
               alt={value.alt ?? "Blog image"}

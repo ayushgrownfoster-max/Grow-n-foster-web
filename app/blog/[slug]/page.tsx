@@ -386,9 +386,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* ── RIGHT MAIN ARTICLE (post-inner matching DesignInDC) ── */}
           <article className="min-w-0 max-w-4xl order-1 lg:order-2 w-full">
-            {/* Featured Image (DesignInDC post-inner cover image) */}
+            {/* Featured Image */}
             {coverImageUrl && (
-              <div className="relative w-full aspect-[16/9] md:aspect-[21/10] rounded-[26px] overflow-hidden shadow-xl mb-10 border border-slate-200/60">
+              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-md mb-10 border border-slate-200 bg-slate-100">
                 <Image
                   src={coverImageUrl}
                   alt={post.coverImage?.alt ?? post.title}
