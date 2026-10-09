@@ -4,6 +4,10 @@ import { notFound } from "next/navigation";
 import { getPageBySlug, getAllPageSlugs } from "@/lib/sanity/queries";
 import { DynamicPageRenderer } from "@/components/DynamicPageRenderer";
 
+// Must be a static string literal — Next.js route segment config cannot use expressions.
+// force-dynamic prevents worker crashes from generateStaticParams during dev.
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   params: Promise<{
     slug: string[];
@@ -11,6 +15,8 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
+  // Skip during dev — only run during production builds to avoid worker crashes
+  if (process.env.NODE_ENV === 'development') return [];
   const pages = await getAllPageSlugs();
   return pages
     .filter((p) => p.slug?.current)

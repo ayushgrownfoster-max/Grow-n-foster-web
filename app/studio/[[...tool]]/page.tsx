@@ -10,7 +10,7 @@
 import type { Metadata, Viewport } from 'next'
 import StudioClient from './StudioClient'
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: "Sanity Studio | Grow 'n' Foster",

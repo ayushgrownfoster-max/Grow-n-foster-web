@@ -17,19 +17,19 @@ const galleryImages: GalleryImage[] = [
     category: "Brand Identity",
   },
   {
-    src: "/projects/graphic-design/Design Gallery Images 1 .png",
+    src: "/projects/graphic-design/Design Gallery image 1 (1).png",
     alt: "Logo Design System & Logomark Variations",
     span: "tall",
     category: "Logo Design",
   },
   {
-    src: "/projects/graphic-design/Design Gallery Images 2.png",
+    src: "/projects/graphic-design/Design Gallery image 2.png",
     alt: "Social Media Ad Creatives & Carousel Templates",
     span: "wide",
     category: "Social Ads",
   },
   {
-    src: "/projects/graphic-design/Design Gallery Images 3.png",
+    src: "/projects/graphic-design/Design Gallery image 3.png",
     alt: "Editorial Typography & Magazine Layout Design",
     span: "normal",
     category: "Typography",
