@@ -370,7 +370,7 @@ export default function AustinLocationPageClient() {
                   How Grow n Foster Approaches Digital Marketing for Austin Businesses
                 </h2>
                 <p className="text-base sm:text-lg text-[#606853] leading-relaxed max-w-3xl">
-                  Every Austin engagement starts with research: we look at your current rankings, your competitors in the Austin market, and the actual search behavior of the customers you&apos;re trying to reach before recommending a channel mix. From there we build a strategy around your specific audience who they are, what they search, and where they convert instead of applying a one-size-fits-all playbook. Implementation is staged so early wins fund the next phase of work, and every campaign is tracked from day one so we know what&apos;s actually driving results. Reporting closes the loop each month with what changed, what it drove, and what we&apos;re adjusting next.
+                  Every Austin engagement begins with research: analyzing your current rankings, local competitors, and buyer search behavior. We then build a tailored strategy based on your audience’s habits rather than a generic playbook. Implementation is staged so quick wins help fund subsequent phases, supported by full campaign tracking from day one. Monthly reporting completes the loop by showing what changed, the pipeline it generated, and our planned adjustments.
                 </p>
               </div>
 

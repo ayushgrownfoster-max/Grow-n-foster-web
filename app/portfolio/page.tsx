@@ -107,7 +107,7 @@ export default function PortfolioPage() {
             </h1>
           </div>
           <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto font-normal leading-relaxed">
-            Explore our real case studies across Graphic Design, Web Development, Lead Generation, and Performance Marketing.
+            Explore our real case studies across SEO &amp; AI Search, Graphic Design, Web Development, Lead Generation, and Performance Marketing.
           </p>
         </div>
 
@@ -131,6 +131,50 @@ export default function PortfolioPage() {
 
         {/* Category Selector Dropdown & Tabs */}
         <PortfolioCategorySelector currentCategory="all" />
+
+        {/* ── SEO & AI Search Section ── */}
+        <div className="space-y-10" id="seo-section">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-b border-gray-200 pb-6">
+            <div className="space-y-2">
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-hanken tracking-tight text-black">
+                SEO &amp; AI Search Visibility
+              </h2>
+              <p className="text-gray-600 max-w-xl text-sm leading-relaxed">
+                Enterprise search strategies, technical audits, Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO).
+              </p>
+            </div>
+            <Link
+              href="/portfolio/seo"
+              className="text-xs font-mono-code font-bold uppercase tracking-wider text-[#4b5a20] hover:underline flex items-center gap-1"
+            >
+              <span>View Dedicated SEO Portfolio</span>
+              <span className="material-symbols-outlined text-sm">
+                arrow_forward
+              </span>
+            </Link>
+          </div>
+
+          <div className="bg-[#0E1205] rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="space-y-4 max-w-xl">
+              <span className="text-[10px] font-mono-code uppercase tracking-widest text-[#AD9E49] bg-[#AD9E49]/10 px-3 py-1 rounded-full border border-[#AD9E49]/20 font-bold inline-block">
+                SEARCH DOMINANCE &amp; AI CITATIONS
+              </span>
+              <h3 className="text-2xl sm:text-4xl font-extrabold font-hanken">
+                Search visibility &amp; AI citation engine built for compounding growth.
+              </h3>
+              <p className="text-sm text-[#C8CFB4] leading-relaxed">
+                Featured results across ThoughtSpot (187K+ traffic, 2.1K AI mentions), Numeric (#1 ranking positions, 777 cited pages), and Riot Platforms (65.6K traffic, 85% US share).
+              </p>
+            </div>
+            <Link
+              href="/portfolio/seo"
+              className="bg-[#94A269] text-[#0E1205] hover:bg-white px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider transition-colors shrink-0 flex items-center gap-2"
+            >
+              <span>Explore SEO Case Studies</span>
+              <span className="material-symbols-outlined text-base">arrow_forward</span>
+            </Link>
+          </div>
+        </div>
 
         {/* ── Graphic Design Section ── */}
         <div className="space-y-10" id="graphic-design-section">

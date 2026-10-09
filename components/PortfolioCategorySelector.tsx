@@ -7,6 +7,7 @@ import { useState } from "react";
 interface PortfolioCategorySelectorProps {
   currentCategory:
     | "all"
+    | "seo"
     | "web-development"
     | "performance-marketing"
     | "lead-generation"
@@ -26,7 +27,14 @@ export default function PortfolioCategorySelector({
       label: "All Projects",
       href: "/portfolio",
       icon: "grid_view",
-      count: "13 Case Studies",
+      count: "16+ Case Studies",
+    },
+    {
+      id: "seo",
+      label: "SEO & AI Search",
+      href: "/portfolio/seo",
+      icon: "travel_explore",
+      count: "3 Case Studies",
     },
     {
       id: "graphic-design",

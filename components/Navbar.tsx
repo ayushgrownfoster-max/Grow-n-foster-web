@@ -57,6 +57,13 @@ const servicesMenu = [
 
 const portfolioMenu = [
   {
+    title: "SEO & AI Search",
+    subtitle: "Enterprise SEO, AEO & GEO search dominance across Google & LLMs",
+    href: "/portfolio/seo",
+    icon: "travel_explore",
+    badge: "187K+ Traffic",
+  },
+  {
     title: "Graphic Design",
     subtitle: "Brand identity, logo design, social ad graphics, packaging & video reels",
     href: "/portfolio/graphic-design",
