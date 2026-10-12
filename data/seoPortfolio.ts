@@ -41,8 +41,6 @@ export interface FeaturedCompany {
   slug: string;
   category: string;
   industry: string;
-  badge: string;
-  overview: string;
   searchThemes: string[];
   keyHighlights: string[];
 }
@@ -404,9 +402,6 @@ export const featuredCompanyContexts: FeaturedCompany[] = [
     slug: "thoughtspot",
     category: "Enterprise Analytics / AI SaaS",
     industry: "Enterprise Business Intelligence & AI",
-    badge: "187.1K Organic Traffic",
-    overview:
-      "Helps organizations explore governed business data via natural language search, AI answers, and embedded analytics.",
     searchThemes: ["Analytics", "Business Intelligence (BI)", "Data Insights", "AI Analytics", "Enterprise Search"],
     keyHighlights: [
       "54.4K GSC Clicks & 6.4M Impressions",
@@ -420,9 +415,6 @@ export const featuredCompanyContexts: FeaturedCompany[] = [
     slug: "numeric",
     category: "B2B SaaS / Accounting Tech",
     industry: "Financial Operations & Automation",
-    badge: "9.3K+ Ranked Keywords",
-    overview:
-      "AI-native accounting platform automating close management, reporting, transaction workflows, and financial clarity.",
     searchThemes: [
       "Journal Entries",
       "Accounting Close Management",
@@ -442,9 +434,6 @@ export const featuredCompanyContexts: FeaturedCompany[] = [
     slug: "riot-platforms",
     category: "Digital Infrastructure / Tech",
     industry: "Data Centers, HPC & Bitcoin Infrastructure",
-    badge: "85% US Traffic Share",
-    overview:
-      "Vertically integrated infrastructure company spanning Bitcoin mining, engineering, and data-center development for AI/HPC workloads.",
     searchThemes: [
       "Digital Infrastructure",
       "Data Center Development",

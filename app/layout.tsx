@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Hanken_Grotesk, JetBrains_Mono, Syne, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -61,6 +62,21 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-background text-on-surface font-sans selection:bg-primary/30 antialiased overflow-x-hidden">
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9DV5W5E1VT"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9DV5W5E1VT');
+          `}
+        </Script>
+
         <Navbar />
         <main className="flex-grow pt-24">{children}</main>
         <Footer />

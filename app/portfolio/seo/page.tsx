@@ -488,9 +488,7 @@ export default function SeoPortfolioPage() {
               >
                 <div className="space-y-5">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono-code uppercase text-[#4B5A20] bg-[#4B5A20]/10 px-3 py-1 rounded-full border border-[#4B5A20]/20 font-bold">
-                      {co.badge}
-                    </span>
+
                     <span className="text-xs font-mono-code text-gray-400">Context</span>
                   </div>
 
@@ -503,9 +501,7 @@ export default function SeoPortfolioPage() {
                     </div>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                    {co.overview}
-                  </p>
+
 
                   <div className="space-y-2 pt-2 border-t border-gray-100">
                     <div className="text-[10px] font-mono-code text-gray-500 uppercase tracking-wider font-bold">
@@ -562,9 +558,7 @@ export default function SeoPortfolioPage() {
                   Multi-Brand Benchmark Matrix
                 </h3>
               </div>
-              <span className="text-[10px] font-mono-code text-gray-500 bg-[#F3F2EA] px-3 py-1 rounded-full border border-[#DDDDD0]">
-                Verified Dashboard Audits
-              </span>
+
             </div>
 
             <div className="overflow-x-auto">

@@ -1,20 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import PortfolioCategorySelector from "@/components/PortfolioCategorySelector";
+import PortfolioServicesShowcase from "@/components/PortfolioServicesShowcase";
 
 export const metadata = {
   title: "PORTFOLIO | Grow 'n' Foster Case Studies",
   description:
     "Explore real client case studies across Web Development and Performance Marketing delivered by Grow 'n' Foster.",
 };
-
-// Paths for public images arranged sequentially left-to-right
-const galleryImages = [
-  { src: "/Wp- 1.png", alt: "Work Showcase 1" },
-  { src: "/Wp - 2.2.png", alt: "Work Showcase 2" },
-  { src: "/Wp - 3.png", alt: "Work Showcase 3" },
-  { src: "/Wp - 4.png", alt: "Work Showcase 4" },
-];
 
 const caseStudies = [
   {
@@ -111,23 +104,8 @@ export default function PortfolioPage() {
           </p>
         </div>
 
-        {/* ── Public Images Gallery Grid (Left-to-Right Serial Order) ── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          {galleryImages.map((img, index) => (
-            <div
-              key={index}
-              className="relative h-48 sm:h-64 rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 shadow-sm hover:shadow-md transition-shadow duration-300"
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover object-top hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          ))}
-        </div>
+        {/* ── 5 Core Services Interactive Showcase (Interactive Photos & Effects) ── */}
+        <PortfolioServicesShowcase />
 
         {/* Category Selector Dropdown & Tabs */}
         <PortfolioCategorySelector currentCategory="all" />
