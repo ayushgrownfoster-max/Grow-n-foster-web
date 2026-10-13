@@ -313,16 +313,16 @@ export default function AboutClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* Left: Text */}
             <div className="lg:col-span-6 space-y-7">
-              <div className="about-fade about-fade-up is-visible inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#4b5a20]/20 bg-[#4b5a20]/10 shadow-sm">
+              <div className="about-fade about-fade-up is-visible inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#4b5a20]/30 bg-[#4b5a20]/10 shadow-sm">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#4b5a20] animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-widest text-[#2d4016]">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#4b5a20]">
                   Since 2020
                 </span>
               </div>
 
               <h1 className="about-fade about-fade-up delay-150 is-visible text-4xl sm:text-5xl lg:text-[54px] font-black tracking-tight text-[#142617] leading-[1.12]">
                 Growth strategists obsessed with{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2a5b1f] via-[#467c22] to-[#6f9e29]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4b5a20] via-[#5e7728] to-[#82a435]">
                   accelerating outcomes
                 </span>
               </h1>
@@ -337,7 +337,7 @@ export default function AboutClient() {
                 {["Strategy", "Media", "Engineering", "Analytics"].map((tag) => (
                   <span
                     key={tag}
-                    className="px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#2e4c1b] border border-[#4b5a20]/25 rounded-full bg-white/70 hover:bg-[#4b5a20]/10 hover:border-[#4b5a20]/40 transition-all duration-300 shadow-sm"
+                    className="px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#4b5a20] border border-[#4b5a20]/30 rounded-full bg-white/80 hover:bg-[#4b5a20] hover:text-white hover:border-[#4b5a20] transition-all duration-300 shadow-sm"
                   >
                     {tag}
                   </span>
@@ -375,8 +375,8 @@ export default function AboutClient() {
                       </p>
                     </div>
                     <div className="bg-white/95 backdrop-blur-md border border-white/60 rounded-2xl px-3.5 py-2.5 flex items-center gap-2 shadow-lg">
-                      <span className="w-2 h-2 rounded-full bg-[#407a22] animate-pulse" />
-                      <span className="text-xs font-bold text-[#2b4e18]">Active</span>
+                      <span className="w-2 h-2 rounded-full bg-[#4b5a20] animate-pulse" />
+                      <span className="text-xs font-bold text-[#4b5a20]">Active</span>
                     </div>
                   </div>
                 </div>
@@ -398,14 +398,14 @@ export default function AboutClient() {
             {impactStats.map((stat, i) => (
               <div
                 key={i}
-                className={`about-fade about-fade-up delay-${(i + 1) * 100} light-glass-card rounded-2xl p-6 sm:p-8 text-center group`}
+                className={`about-fade about-fade-up delay-${(i + 1) * 100} light-glass-card rounded-2xl p-6 sm:p-8 text-center group hover:border-[#4b5a20]/40 transition-all`}
               >
-                <div className="w-12 h-12 mx-auto rounded-2xl bg-[#4b5a20]/10 border border-[#4b5a20]/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#4b5a20]/15 transition-all duration-300">
-                  <span className="material-symbols-outlined text-2xl text-[#3b6620]">
+                <div className="w-12 h-12 mx-auto rounded-2xl bg-[#4b5a20]/12 border border-[#4b5a20]/25 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#4b5a20] group-hover:text-white transition-all duration-300 text-[#4b5a20]">
+                  <span className="material-symbols-outlined text-2xl">
                     {stat.icon}
                   </span>
                 </div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#152e18] tracking-tight mb-2">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#4b5a20] tracking-tight mb-2">
                   <StatCounter
                     target={stat.numVal}
                     suffix={stat.suffix}
@@ -431,7 +431,7 @@ export default function AboutClient() {
         <div className="relative max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
           {/* Section Header */}
           <div className="text-center mb-16 sm:mb-20 about-fade about-fade-up">
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#3e6a23] mb-3 px-3 py-1 rounded-full bg-[#4b5a20]/10 border border-[#4b5a20]/20">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#4b5a20] mb-3 px-3 py-1 rounded-full bg-[#4b5a20]/12 border border-[#4b5a20]/30">
               Our Foundation
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#142617] tracking-tight">
@@ -445,12 +445,12 @@ export default function AboutClient() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8">
             {/* Mission Card */}
-            <div className="about-fade about-fade-left delay-150 relative group rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-white via-[#f7fbf5] to-[#ebf6e7] border border-[#4b5a20]/20 hover:border-[#4b5a20]/40 transition-all duration-500 shadow-xl shadow-[#365427]/05 hover:shadow-2xl hover:shadow-[#365427]/10 overflow-hidden">
-              <div className="absolute top-0 right-0 w-44 h-44 bg-[radial-gradient(circle,rgba(150,195,100,0.2)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+            <div className="about-fade about-fade-left delay-150 relative group rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-white via-[#f7fbf5] to-[#ebf6e7] border border-[#4b5a20]/20 hover:border-[#4b5a20] transition-all duration-500 shadow-xl shadow-[#365427]/05 hover:shadow-2xl hover:shadow-[#4b5a20]/10 overflow-hidden">
+              <div className="absolute top-0 right-0 w-44 h-44 bg-[radial-gradient(circle,rgba(75,90,32,0.15)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
               <div className="relative">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/12 border border-[#4b5a20]/25 flex items-center justify-center group-hover:bg-[#4b5a20]/20 transition-colors">
-                    <span className="material-symbols-outlined text-3xl text-[#2f5e1a]">
+                  <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/15 border border-[#4b5a20]/30 flex items-center justify-center group-hover:bg-[#4b5a20] group-hover:text-white transition-colors text-[#4b5a20]">
+                    <span className="material-symbols-outlined text-3xl">
                       center_focus_strong
                     </span>
                   </div>
@@ -468,7 +468,7 @@ export default function AboutClient() {
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-0.5 bg-gradient-to-r from-[#4b5a20] to-[#88b03e]" />
-                  <span className="text-xs font-bold text-[#35611f] uppercase tracking-wider">
+                  <span className="text-xs font-bold text-[#4b5a20] uppercase tracking-wider">
                     Measurable Enterprise Outcomes
                   </span>
                 </div>
@@ -476,12 +476,12 @@ export default function AboutClient() {
             </div>
 
             {/* Vision Card */}
-            <div className="about-fade about-fade-right delay-250 relative group rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-white via-[#f7fbf5] to-[#ebf6e7] border border-[#4b5a20]/20 hover:border-[#4b5a20]/40 transition-all duration-500 shadow-xl shadow-[#365427]/05 hover:shadow-2xl hover:shadow-[#365427]/10 overflow-hidden">
-              <div className="absolute top-0 right-0 w-44 h-44 bg-[radial-gradient(circle,rgba(150,195,100,0.2)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+            <div className="about-fade about-fade-right delay-250 relative group rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-white via-[#f7fbf5] to-[#ebf6e7] border border-[#4b5a20]/20 hover:border-[#4b5a20] transition-all duration-500 shadow-xl shadow-[#365427]/05 hover:shadow-2xl hover:shadow-[#4b5a20]/10 overflow-hidden">
+              <div className="absolute top-0 right-0 w-44 h-44 bg-[radial-gradient(circle,rgba(75,90,32,0.15)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
               <div className="relative">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/12 border border-[#4b5a20]/25 flex items-center justify-center group-hover:bg-[#4b5a20]/20 transition-colors">
-                    <span className="material-symbols-outlined text-3xl text-[#2f5e1a]">
+                  <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/15 border border-[#4b5a20]/30 flex items-center justify-center group-hover:bg-[#4b5a20] group-hover:text-white transition-colors text-[#4b5a20]">
+                    <span className="material-symbols-outlined text-3xl">
                       visibility
                     </span>
                   </div>
@@ -499,7 +499,7 @@ export default function AboutClient() {
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-0.5 bg-gradient-to-r from-[#4b5a20] to-[#88b03e]" />
-                  <span className="text-xs font-bold text-[#35611f] uppercase tracking-wider">
+                  <span className="text-xs font-bold text-[#4b5a20] uppercase tracking-wider">
                     Clear Market Dominance
                   </span>
                 </div>
@@ -518,7 +518,7 @@ export default function AboutClient() {
             {/* Visual Panel */}
             <div className="lg:col-span-7 order-2 lg:order-1 about-fade about-fade-left">
               <div className="relative group">
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#6da23a]/25 to-[#bcce87]/30 blur-2xl pointer-events-none group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#4b5a20]/25 to-[#bcce87]/30 blur-2xl pointer-events-none group-hover:scale-105 transition-transform duration-700" />
                 <div className="relative rounded-3xl overflow-hidden border-2 border-white shadow-2xl shadow-[#365427]/12 bg-white">
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
                     <Image
@@ -551,7 +551,7 @@ export default function AboutClient() {
             {/* Story & Telemetry Cards */}
             <div className="lg:col-span-5 order-1 lg:order-2 space-y-7 about-fade about-fade-right delay-150">
               <div>
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#3e6a23] mb-3 inline-block px-3 py-1 rounded-full bg-[#4b5a20]/10 border border-[#4b5a20]/20">
+                <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#4b5a20] mb-3 inline-block px-3 py-1 rounded-full bg-[#4b5a20]/12 border border-[#4b5a20]/30">
                   Execution Rigor
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-black text-[#142617] tracking-tight leading-tight">
@@ -566,16 +566,16 @@ export default function AboutClient() {
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-2">
-                <div className="rounded-2xl p-5 bg-white/95 border border-[#4b5a20]/20 shadow-md hover:border-[#4b5a20]/40 transition-all">
-                  <div className="text-3xl font-black text-[#2e5d1a] tracking-tight">
+                <div className="rounded-2xl p-5 bg-white/95 border border-[#4b5a20]/25 shadow-md hover:border-[#4b5a20] transition-all">
+                  <div className="text-3xl font-black text-[#4b5a20] tracking-tight">
                     98.4%
                   </div>
                   <div className="text-[11px] text-[#47604a] font-bold uppercase tracking-wider mt-1">
                     SLA Deployment Precision
                   </div>
                 </div>
-                <div className="rounded-2xl p-5 bg-white/95 border border-[#4b5a20]/20 shadow-md hover:border-[#4b5a20]/40 transition-all">
-                  <div className="text-3xl font-black text-[#2e5d1a] tracking-tight">
+                <div className="rounded-2xl p-5 bg-white/95 border border-[#4b5a20]/25 shadow-md hover:border-[#4b5a20] transition-all">
+                  <div className="text-3xl font-black text-[#4b5a20] tracking-tight">
                     14.8x
                   </div>
                   <div className="text-[11px] text-[#47604a] font-bold uppercase tracking-wider mt-1">
@@ -613,31 +613,31 @@ export default function AboutClient() {
             {principles.map((item, idx) => (
               <div
                 key={idx}
-                className={`about-fade about-fade-up delay-${(idx + 1) * 150} light-glass-card relative rounded-3xl p-8 sm:p-10 border border-[#4b5a20]/18 group overflow-hidden`}
+                className={`about-fade about-fade-up delay-${(idx + 1) * 150} light-glass-card relative rounded-3xl p-8 sm:p-10 border border-[#4b5a20]/20 group overflow-hidden transition-all duration-500 hover:border-[#4b5a20] hover:shadow-2xl hover:shadow-[#4b5a20]/15`}
               >
-                {/* Background number watermark */}
-                <div className="absolute -top-3 -right-2 text-[100px] sm:text-[120px] font-black text-[#4b5a20]/[0.06] leading-none pointer-events-none select-none group-hover:text-[#4b5a20]/[0.10] transition-colors">
+                {/* Background number watermark — turns to #4b5a20 on card hover */}
+                <div className="absolute -top-3 -right-2 text-[100px] sm:text-[120px] font-black text-[#4b5a20]/10 group-hover:text-[#4b5a20] leading-none pointer-events-none select-none transition-all duration-500 ease-out group-hover:scale-105 z-0">
                   {item.num}
                 </div>
 
-                <div className="relative">
+                <div className="relative z-10">
                   <div className="flex items-center justify-between mb-7">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-2xl bg-[#4b5a20]/12 border border-[#4b5a20]/25 flex items-center justify-center group-hover:bg-[#4b5a20]/20 group-hover:scale-105 transition-all">
-                        <span className="material-symbols-outlined text-2xl text-[#2d5c19]">
+                      <div className="w-12 h-12 rounded-2xl bg-[#4b5a20]/15 border border-[#4b5a20]/30 flex items-center justify-center text-[#4b5a20] group-hover:bg-[#4b5a20] group-hover:text-white group-hover:scale-110 transition-all shadow-sm">
+                        <span className="material-symbols-outlined text-2xl">
                           {item.icon}
                         </span>
                       </div>
-                      <span className="text-xl font-black text-[#3a6320]/40">
+                      <span className="text-xl font-black text-[#4b5a20]">
                         {item.num}
                       </span>
                     </div>
-                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#3d6326] bg-[#4b5a20]/10 border border-[#4b5a20]/20 px-3.5 py-1 rounded-full">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#4b5a20] bg-white/95 backdrop-blur-sm border border-[#4b5a20]/30 px-3.5 py-1.5 rounded-full shadow-sm">
                       {item.subtitle}
                     </span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-[#142617] mb-3.5 tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-black text-[#142617] mb-3.5 tracking-tight group-hover:text-[#4b5a20] transition-colors">
                     {item.title}
                   </h3>
 
@@ -660,7 +660,7 @@ export default function AboutClient() {
         <div className="relative max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
           {/* Section Header */}
           <div className="text-center mb-16 sm:mb-24 about-fade about-fade-up">
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#3e6a23] mb-3 px-3 py-1 rounded-full bg-[#4b5a20]/10 border border-[#4b5a20]/20">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#4b5a20] mb-3 px-3 py-1 rounded-full bg-[#4b5a20]/12 border border-[#4b5a20]/30">
               The Journey
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#142617] tracking-tight">
@@ -673,7 +673,7 @@ export default function AboutClient() {
 
             {/* Tree Branch Canopy Sprout Icon */}
             <div className="mt-8 flex justify-center">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#4b5a20] to-[#283811] border-4 border-white shadow-xl shadow-[#4b5a20]/30 flex items-center justify-center pulse-node">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#4b5a20] to-[#283811] border-4 border-white shadow-xl shadow-[#4b5a20]/35 flex items-center justify-center pulse-node">
                 <span className="material-symbols-outlined text-3xl text-[#d4f28d]">
                   park
                 </span>
@@ -697,22 +697,22 @@ export default function AboutClient() {
                     {/* Left Column */}
                     <div className="flex justify-end pr-0">
                       {item.side === "left" ? (
-                        <div className="about-fade about-fade-left w-full max-w-lg light-glass-card rounded-3xl p-8 border border-[#4b5a20]/20 hover:border-[#4b5a20]/40 relative overflow-hidden group">
+                        <div className="about-fade about-fade-left w-full max-w-lg light-glass-card rounded-3xl p-8 border border-[#4b5a20]/20 hover:border-[#4b5a20] relative overflow-hidden group transition-all duration-500">
                           {/* Botanical leaf emblem in corner */}
-                          <div className="absolute top-5 right-5 w-10 h-10 rounded-xl bg-[#4b5a20]/08 border border-[#4b5a20]/15 flex items-center justify-center text-[#4b5a20]/60 group-hover:text-[#4b5a20] group-hover:scale-110 transition-all">
+                          <div className="absolute top-5 right-5 w-10 h-10 rounded-xl bg-[#4b5a20]/10 border border-[#4b5a20]/25 flex items-center justify-center text-[#4b5a20] group-hover:scale-110 group-hover:bg-[#4b5a20] group-hover:text-white transition-all shadow-sm">
                             <span className="material-symbols-outlined text-xl">
                               psychiatry
                             </span>
                           </div>
 
                           <div className="flex items-center gap-3 mb-4">
-                            <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#2f5e1a] to-[#6e9d29]">
+                            <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#4b5a20] to-[#719e2e]">
                               {item.year}
                             </span>
                             <div className="h-0.5 flex-1 max-w-[80px] bg-gradient-to-r from-[#4b5a20]/30 to-transparent" />
                           </div>
 
-                          <h3 className="text-xl font-black text-[#142617] mb-3 tracking-tight">
+                          <h3 className="text-xl font-black text-[#142617] mb-3 tracking-tight group-hover:text-[#4b5a20] transition-colors">
                             {item.title}
                           </h3>
 
@@ -729,7 +729,7 @@ export default function AboutClient() {
                       {item.side === "left" && (
                         <div className="absolute left-0 w-1/2 top-1/2 -translate-y-1/2 flex items-center">
                           <svg
-                            className="w-full h-8 text-[#5a7d2b]"
+                            className="w-full h-8 text-[#4b5a20]"
                             viewBox="0 0 48 32"
                             fill="none"
                             preserveAspectRatio="none"
@@ -743,7 +743,7 @@ export default function AboutClient() {
                             {/* Sprouting leaf on top of branch */}
                             <path
                               d="M 20,16 C 24,9 33,9 37,14 C 31,18 24,19 20,16 Z"
-                              fill="#78a335"
+                              fill="#6b8e2b"
                             />
                           </svg>
                         </div>
@@ -753,7 +753,7 @@ export default function AboutClient() {
                       {item.side === "right" && (
                         <div className="absolute left-1/2 right-0 w-1/2 top-1/2 -translate-y-1/2 flex items-center">
                           <svg
-                            className="w-full h-8 text-[#5a7d2b]"
+                            className="w-full h-8 text-[#4b5a20]"
                             viewBox="0 0 48 32"
                             fill="none"
                             preserveAspectRatio="none"
@@ -767,14 +767,14 @@ export default function AboutClient() {
                             {/* Sprouting leaf on top of branch */}
                             <path
                               d="M 28,16 C 24,9 15,9 11,14 C 17,18 24,19 28,16 Z"
-                              fill="#78a335"
+                              fill="#6b8e2b"
                             />
                           </svg>
                         </div>
                       )}
 
                       {/* Glowing Circular Node */}
-                      <div className="relative z-10 w-14 h-14 rounded-full bg-gradient-to-br from-[#4b5a20] to-[#253810] border-4 border-white shadow-xl shadow-[#4b5a20]/30 flex items-center justify-center pulse-node">
+                      <div className="relative z-10 w-14 h-14 rounded-full bg-gradient-to-br from-[#4b5a20] to-[#253810] border-4 border-white shadow-xl shadow-[#4b5a20]/35 flex items-center justify-center pulse-node">
                         <span className="material-symbols-outlined text-2xl text-[#d4f28d]">
                           {item.icon}
                         </span>
@@ -784,22 +784,22 @@ export default function AboutClient() {
                     {/* Right Column */}
                     <div className="flex justify-start pl-0">
                       {item.side === "right" ? (
-                        <div className="about-fade about-fade-right w-full max-w-lg light-glass-card rounded-3xl p-8 border border-[#4b5a20]/20 hover:border-[#4b5a20]/40 relative overflow-hidden group">
+                        <div className="about-fade about-fade-right w-full max-w-lg light-glass-card rounded-3xl p-8 border border-[#4b5a20]/20 hover:border-[#4b5a20] relative overflow-hidden group transition-all duration-500">
                           {/* Botanical leaf emblem in corner */}
-                          <div className="absolute top-5 right-5 w-10 h-10 rounded-xl bg-[#4b5a20]/08 border border-[#4b5a20]/15 flex items-center justify-center text-[#4b5a20]/60 group-hover:text-[#4b5a20] group-hover:scale-110 transition-all">
+                          <div className="absolute top-5 right-5 w-10 h-10 rounded-xl bg-[#4b5a20]/10 border border-[#4b5a20]/25 flex items-center justify-center text-[#4b5a20] group-hover:scale-110 group-hover:bg-[#4b5a20] group-hover:text-white transition-all shadow-sm">
                             <span className="material-symbols-outlined text-xl">
                               psychiatry
                             </span>
                           </div>
 
                           <div className="flex items-center gap-3 mb-4">
-                            <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#2f5e1a] to-[#6e9d29]">
+                            <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#4b5a20] to-[#719e2e]">
                               {item.year}
                             </span>
                             <div className="h-0.5 flex-1 max-w-[80px] bg-gradient-to-r from-[#4b5a20]/30 to-transparent" />
                           </div>
 
-                          <h3 className="text-xl font-black text-[#142617] mb-3 tracking-tight">
+                          <h3 className="text-xl font-black text-[#142617] mb-3 tracking-tight group-hover:text-[#4b5a20] transition-colors">
                             {item.title}
                           </h3>
 
@@ -833,7 +833,7 @@ export default function AboutClient() {
 
                     <div className="about-fade about-fade-up light-glass-card rounded-2xl p-6 border border-[#4b5a20]/20">
                       <div className="flex items-center gap-3 mb-3">
-                        <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#2f5e1a] to-[#6e9d29]">
+                        <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#4b5a20] to-[#719e2e]">
                           {item.year}
                         </span>
                         <div className="h-0.5 flex-1 bg-gradient-to-r from-[#4b5a20]/25 to-transparent" />
@@ -854,7 +854,7 @@ export default function AboutClient() {
             <div className="flex justify-center mt-12 md:mt-16 about-fade about-fade-up">
               <div className="flex flex-col items-center gap-2">
                 <div className="w-4 h-4 rounded-full bg-[#4b5a20] border-2 border-white shadow-md" />
-                <span className="text-xs uppercase tracking-widest text-[#3d6523] font-bold">
+                <span className="text-xs uppercase tracking-widest text-[#4b5a20] font-bold">
                   Growing Forward
                 </span>
               </div>
@@ -869,8 +869,8 @@ export default function AboutClient() {
       <section className="relative py-16 sm:py-24 bg-gradient-to-b from-[#eaf3e5] to-[#f4faf1]">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
           <div className="about-fade about-fade-scale relative rounded-3xl overflow-hidden shadow-2xl shadow-[#203a15]/20">
-            {/* Rich multi-layer emerald and forest gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#233d15] via-[#2f521c] to-[#1a2e10]" />
+            {/* Rich multi-layer emerald and forest gradient anchored by brand color #4b5a20 */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#4b5a20] via-[#3a4817] to-[#25320c]" />
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(188,206,135,0.25)_0%,transparent_60%)] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(110,165,55,0.18)_0%,transparent_60%)] pointer-events-none" />
             <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
@@ -904,7 +904,7 @@ export default function AboutClient() {
                 <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#213812] font-black text-sm uppercase tracking-wider rounded-2xl hover:bg-[#d8f5aa] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-xl shadow-black/25 text-center group"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#4b5a20] font-black text-sm uppercase tracking-wider rounded-2xl hover:bg-[#d8eba1] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-xl shadow-black/25 text-center group"
                   >
                     <span>Free Consultation</span>
                     <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
