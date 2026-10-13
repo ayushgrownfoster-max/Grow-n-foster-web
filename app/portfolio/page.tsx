@@ -389,7 +389,7 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="space-y-2 p-4 bg-white rounded-2xl border border-gray-200 shadow-xs">
               <div className="text-4xl font-extrabold font-mono-code text-[#4b5a20]">
-                $45M+
+                $10M+
               </div>
               <div className="text-xs font-mono-code text-gray-600">
                 Revenue Generated

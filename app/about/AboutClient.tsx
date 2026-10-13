@@ -3,19 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
 
 const principles = [
   {
     num: "01",
     title: "Radical Transparency",
-    subtitle: "Integrity Above All",
+
     description:
       "No inflated metrics or vanity reports. We provide clear, unfiltered visibility into your campaign performance, pipeline velocity, and true return on investment.",
     icon: "visibility",
@@ -23,7 +16,7 @@ const principles = [
   {
     num: "02",
     title: "Measurable Impact",
-    subtitle: "Outcomes Over Activity",
+
     description:
       "Mutual success is our only metric. Every strategy we deploy is directly tied to revenue growth, customer acquisition cost reduction, and market share expansion.",
     icon: "trending_up",
@@ -31,7 +24,7 @@ const principles = [
   {
     num: "03",
     title: "Elite Execution",
-    subtitle: "Precision & Speed",
+
     description:
       "We pair seasoned industry specialists with cutting-edge martech tooling to deliver fast, flawless campaign rollouts without operational friction.",
     icon: "bolt",
@@ -39,7 +32,7 @@ const principles = [
   {
     num: "04",
     title: "Long-Term Partnership",
-    subtitle: "Compounding Growth",
+
     description:
       "We operate as an extended growth arm for your executive leadership team, building sustainable marketing foundations that compound in value over time.",
     icon: "handshake",
@@ -175,14 +168,13 @@ export default function AboutClient() {
 
   return (
     <div
-      className={`about-page ${montserrat.className} w-full min-h-screen antialiased bg-[#f5faf2] text-[#1c3220] selection:bg-[#4b5a20]/20 selection:text-[#1c3220]`}
-      style={{ fontFamily: montserrat.style.fontFamily }}
+      className="about-page font-hanken w-full min-h-screen antialiased bg-[#F3F2EA] text-[#161616] selection:bg-[#4b5a20]/20 selection:text-[#4b5a20]"
     >
       {/* Dynamic Style Overrides — Zero Blur Filters on Content & Images */}
       <style>{`
         .about-page,
         .about-page *:not(.material-symbols-outlined) {
-          font-family: ${montserrat.style.fontFamily}, sans-serif !important;
+          font-family: var(--font-hanken), 'Hanken Grotesk', sans-serif !important;
         }
         .about-page .material-symbols-outlined {
           font-family: 'Material Symbols Outlined' !important;
@@ -270,41 +262,40 @@ export default function AboutClient() {
 
         /* Glassmorphic light card styling */
         .light-glass-card {
-          background: rgba(255, 255, 255, 0.92);
-          backdrop-filter: blur(12px);
-          border: 1px solid rgba(75, 90, 32, 0.14);
-          box-shadow: 0 10px 30px -10px rgba(35, 60, 25, 0.05), 0 2px 6px -1px rgba(35, 60, 25, 0.02);
+          background: #ffffff;
+          border: 1px solid #DDDDD0;
+          box-shadow: 0 2px 8px -2px rgba(35, 60, 25, 0.06);
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .light-glass-card:hover {
-          background: rgba(255, 255, 255, 0.98);
-          border-color: rgba(75, 90, 32, 0.35);
+          background: #ffffff;
+          border-color: rgba(75, 90, 32, 0.5);
           transform: translateY(-4px);
-          box-shadow: 0 20px 40px -12px rgba(35, 60, 25, 0.12), 0 4px 12px -2px rgba(35, 60, 25, 0.04);
+          box-shadow: 0 16px 36px -10px rgba(35, 60, 25, 0.12), 0 4px 12px -2px rgba(35, 60, 25, 0.06);
         }
       `}</style>
 
       {/* =========================================================================
           HERO SECTION — Fresh Light Green Gradient Theme
          ========================================================================= */}
-      <section className="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-24">
-        {/* Organic Light Green Ambient Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#eaf4e6] via-[#f3f9ef] to-[#f5faf2] pointer-events-none" />
-        <div className="absolute -top-32 -left-32 w-[550px] h-[550px] rounded-full bg-[radial-gradient(circle,rgba(188,206,135,0.45)_0%,transparent_70%)] blur-3xl pointer-events-none ambient-float-1" />
-        <div className="absolute top-24 right-[-10%] w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle,rgba(142,185,98,0.22)_0%,transparent_70%)] blur-3xl pointer-events-none ambient-float-2" />
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.035] pointer-events-none" />
+      <section className="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-24 bg-[#F3F2EA]">
+        {/* Pastel Ambient Glows matching SEO portfolio page */}
+        <div className="absolute inset-0 bg-[#F3F2EA] pointer-events-none" />
+        <div className="absolute -top-32 -left-32 w-[550px] h-[550px] rounded-full bg-[radial-gradient(circle,rgba(188,206,135,0.30)_0%,transparent_70%)] blur-3xl pointer-events-none ambient-float-1" />
+        <div className="absolute top-24 right-[-10%] w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle,rgba(75,90,32,0.10)_0%,transparent_70%)] blur-3xl pointer-events-none ambient-float-2" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.025] pointer-events-none" />
 
         <div className="relative max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
           {/* Breadcrumb */}
           <div className="flex items-center gap-3 mb-10 sm:mb-14 about-fade about-fade-up is-visible">
             <Link
               href="/"
-              className="text-xs tracking-widest uppercase text-[#4b5a20]/75 hover:text-[#2d3b14] transition-colors font-semibold"
+              className="text-xs tracking-widest uppercase text-[#161616]/50 hover:text-[#161616] transition-colors font-semibold"
             >
               Home
             </Link>
-            <span className="text-[#4b5a20]/30 font-bold">/</span>
-            <span className="text-xs tracking-widest uppercase text-[#2e4719] font-bold">
+            <span className="text-[#161616]/30 font-bold">/</span>
+            <span className="text-xs tracking-widest uppercase text-[#4b5a20] font-bold">
               About Us
             </span>
           </div>
@@ -313,21 +304,16 @@ export default function AboutClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* Left: Text */}
             <div className="lg:col-span-6 space-y-7">
-              <div className="about-fade about-fade-up is-visible inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#4b5a20]/30 bg-[#4b5a20]/10 shadow-sm">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#4b5a20] animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-widest text-[#4b5a20]">
-                  Since 2020
-                </span>
-              </div>
 
-              <h1 className="about-fade about-fade-up delay-150 is-visible text-4xl sm:text-5xl lg:text-[54px] font-black tracking-tight text-[#142617] leading-[1.12]">
+
+              <h1 className="about-fade about-fade-up delay-150 is-visible text-4xl sm:text-5xl lg:text-[54px] font-black tracking-tight text-[#161616] leading-[1.12]">
                 Growth strategists obsessed with{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4b5a20] via-[#5e7728] to-[#82a435]">
+                <span className="text-[#4b5a20]">
                   accelerating outcomes
                 </span>
               </h1>
 
-              <p className="about-fade about-fade-up delay-250 is-visible text-base sm:text-lg text-[#324b35] leading-relaxed max-w-lg font-medium">
+              <p className="about-fade about-fade-up delay-250 is-visible text-base sm:text-lg text-[#161616]/70 leading-relaxed max-w-lg font-medium">
                 Headquartered in New Delhi, we act as an embedded digital growth
                 partner for ambitious enterprises, high-velocity startups, and
                 brands looking for measurable revenue impact.
@@ -337,7 +323,7 @@ export default function AboutClient() {
                 {["Strategy", "Media", "Engineering", "Analytics"].map((tag) => (
                   <span
                     key={tag}
-                    className="px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#4b5a20] border border-[#4b5a20]/30 rounded-full bg-white/80 hover:bg-[#4b5a20] hover:text-white hover:border-[#4b5a20] transition-all duration-300 shadow-sm"
+                    className="px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#4b5a20] border border-[#4b5a20]/30 rounded-full bg-white hover:bg-[#4b5a20] hover:text-white hover:border-[#4b5a20] transition-all duration-300 shadow-sm"
                   >
                     {tag}
                   </span>
@@ -349,7 +335,7 @@ export default function AboutClient() {
             <div className="lg:col-span-6 about-fade about-fade-right delay-200 is-visible">
               <div className="relative group">
                 <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#97c474]/35 via-[#bcce87]/25 to-[#4b5a20]/20 blur-2xl pointer-events-none group-hover:scale-105 transition-transform duration-700" />
-                
+
                 <div className="relative rounded-3xl overflow-hidden border-2 border-white/90 shadow-2xl shadow-[#365427]/15 bg-white">
                   <div className="relative aspect-[4/3] w-full overflow-hidden">
                     <Image
@@ -366,18 +352,8 @@ export default function AboutClient() {
 
                   {/* Overlay Badge with Glassmorphism */}
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                    <div className="bg-white/95 backdrop-blur-md border border-white/60 rounded-2xl px-4 py-2.5 shadow-lg">
-                      <p className="text-[10px] uppercase tracking-widest text-[#4b5a20] font-extrabold">
-                        Executive Leadership
-                      </p>
-                      <p className="text-sm font-black text-[#142617]">
-                        NCR & Global Delivery
-                      </p>
-                    </div>
-                    <div className="bg-white/95 backdrop-blur-md border border-white/60 rounded-2xl px-3.5 py-2.5 flex items-center gap-2 shadow-lg">
-                      <span className="w-2 h-2 rounded-full bg-[#4b5a20] animate-pulse" />
-                      <span className="text-xs font-bold text-[#4b5a20]">Active</span>
-                    </div>
+
+
                   </div>
                 </div>
               </div>
@@ -391,21 +367,21 @@ export default function AboutClient() {
          ========================================================================= */}
       <section
         ref={statsSectionRef}
-        className="relative py-14 sm:py-18 bg-gradient-to-b from-[#f5faf2] via-[#ebf5e7] to-[#f4faf1] border-y border-[#4b5a20]/15"
+        className="relative py-14 sm:py-18 bg-[#F3F2EA] border-y border-[#DDDDD0]"
       >
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {impactStats.map((stat, i) => (
               <div
                 key={i}
-                className={`about-fade about-fade-up delay-${(i + 1) * 100} light-glass-card rounded-2xl p-6 sm:p-8 text-center group hover:border-[#4b5a20]/40 transition-all`}
+                className={`about-fade about-fade-up delay-${(i + 1) * 100} light-glass-card rounded-2xl p-6 sm:p-8 text-center group hover:border-[#4b5a20]/50 transition-all`}
               >
-                <div className="w-12 h-12 mx-auto rounded-2xl bg-[#4b5a20]/12 border border-[#4b5a20]/25 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#4b5a20] group-hover:text-white transition-all duration-300 text-[#4b5a20]">
+                <div className="w-12 h-12 mx-auto rounded-2xl bg-[#4b5a20]/10 border border-[#4b5a20]/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#4b5a20] group-hover:text-white transition-all duration-300 text-[#4b5a20]">
                   <span className="material-symbols-outlined text-2xl">
                     {stat.icon}
                   </span>
                 </div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#4b5a20] tracking-tight mb-2">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#161616] tracking-tight mb-2">
                   <StatCounter
                     target={stat.numVal}
                     suffix={stat.suffix}
@@ -413,7 +389,7 @@ export default function AboutClient() {
                     trigger={statsTriggered}
                   />
                 </div>
-                <div className="text-xs text-[#456149] font-bold uppercase tracking-wider">
+                <div className="text-xs text-[#161616]/60 font-bold uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>
@@ -425,19 +401,17 @@ export default function AboutClient() {
       {/* =========================================================================
           MISSION & VISION — Fresh Mint Gradient Foundation Cards
          ========================================================================= */}
-      <section className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-b from-[#f4faf1] via-[#eef7ec] to-[#f5faf2]">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(188,206,135,0.25)_0%,transparent_70%)] blur-2xl pointer-events-none" />
+      <section className="relative py-20 sm:py-28 overflow-hidden bg-[#F7F6EE]">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(188,206,135,0.18)_0%,transparent_70%)] blur-2xl pointer-events-none" />
 
         <div className="relative max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
           {/* Section Header */}
           <div className="text-center mb-16 sm:mb-20 about-fade about-fade-up">
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#4b5a20] mb-3 px-3 py-1 rounded-full bg-[#4b5a20]/12 border border-[#4b5a20]/30">
-              Our Foundation
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#142617] tracking-tight">
-              Mission & Vision
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#161616] tracking-tight">
+              Mission &{" "}<span className="text-[#4b5a20]">Vision</span>
             </h2>
-            <p className="mt-4 text-base text-[#3d5440] max-w-xl mx-auto leading-relaxed font-medium">
+            <p className="mt-4 text-base text-[#161616]/65 max-w-xl mx-auto leading-relaxed font-medium">
               Strategic mandates developed to give every partner clarity,
               confidence, and market leadership in a crowded digital landscape.
             </p>
@@ -445,11 +419,11 @@ export default function AboutClient() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8">
             {/* Mission Card */}
-            <div className="about-fade about-fade-left delay-150 relative group rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-white via-[#f7fbf5] to-[#ebf6e7] border border-[#4b5a20]/20 hover:border-[#4b5a20] transition-all duration-500 shadow-xl shadow-[#365427]/05 hover:shadow-2xl hover:shadow-[#4b5a20]/10 overflow-hidden">
-              <div className="absolute top-0 right-0 w-44 h-44 bg-[radial-gradient(circle,rgba(75,90,32,0.15)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+            <div className="about-fade about-fade-left delay-150 relative group rounded-3xl p-8 sm:p-10 bg-white border border-[#DDDDD0] hover:border-[#4b5a20] transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-[#4b5a20]/10 overflow-hidden">
+              <div className="absolute top-0 right-0 w-44 h-44 bg-[radial-gradient(circle,rgba(75,90,32,0.08)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
               <div className="relative">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/15 border border-[#4b5a20]/30 flex items-center justify-center group-hover:bg-[#4b5a20] group-hover:text-white transition-colors text-[#4b5a20]">
+                  <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/12 border border-[#4b5a20]/25 flex items-center justify-center group-hover:bg-[#4b5a20] group-hover:text-white transition-colors text-[#4b5a20]">
                     <span className="material-symbols-outlined text-3xl">
                       center_focus_strong
                     </span>
@@ -458,16 +432,16 @@ export default function AboutClient() {
                     Strategic Mandate
                   </span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-black text-[#142617] mb-4 tracking-tight">
-                  Our Mission
+                <h3 className="text-2xl sm:text-3xl font-black text-[#161616] mb-4 tracking-tight">
+                  Our <span className="text-[#4b5a20]">Mission</span>
                 </h3>
-                <p className="text-base text-[#354f38] leading-relaxed mb-8 font-medium">
+                <p className="text-base text-[#161616]/65 leading-relaxed mb-8 font-medium">
                   Empower business owners and marketing leaders with actionable
                   strategies that foster confident, sustainable growth. We cut
                   through digital noise to deliver measurable revenue outcomes.
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-0.5 bg-gradient-to-r from-[#4b5a20] to-[#88b03e]" />
+                  <div className="w-10 h-0.5 bg-[#4b5a20]" />
                   <span className="text-xs font-bold text-[#4b5a20] uppercase tracking-wider">
                     Measurable Enterprise Outcomes
                   </span>
@@ -476,11 +450,11 @@ export default function AboutClient() {
             </div>
 
             {/* Vision Card */}
-            <div className="about-fade about-fade-right delay-250 relative group rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-white via-[#f7fbf5] to-[#ebf6e7] border border-[#4b5a20]/20 hover:border-[#4b5a20] transition-all duration-500 shadow-xl shadow-[#365427]/05 hover:shadow-2xl hover:shadow-[#4b5a20]/10 overflow-hidden">
-              <div className="absolute top-0 right-0 w-44 h-44 bg-[radial-gradient(circle,rgba(75,90,32,0.15)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+            <div className="about-fade about-fade-right delay-250 relative group rounded-3xl p-8 sm:p-10 bg-white border border-[#DDDDD0] hover:border-[#4b5a20] transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-[#4b5a20]/10 overflow-hidden">
+              <div className="absolute top-0 right-0 w-44 h-44 bg-[radial-gradient(circle,rgba(75,90,32,0.08)_0%,transparent_70%)] pointer-events-none group-hover:scale-125 transition-transform duration-700" />
               <div className="relative">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/15 border border-[#4b5a20]/30 flex items-center justify-center group-hover:bg-[#4b5a20] group-hover:text-white transition-colors text-[#4b5a20]">
+                  <div className="w-14 h-14 rounded-2xl bg-[#4b5a20]/12 border border-[#4b5a20]/25 flex items-center justify-center group-hover:bg-[#4b5a20] group-hover:text-white transition-colors text-[#4b5a20]">
                     <span className="material-symbols-outlined text-3xl">
                       visibility
                     </span>
@@ -489,16 +463,16 @@ export default function AboutClient() {
                     Future Outlook
                   </span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-black text-[#142617] mb-4 tracking-tight">
-                  Our Vision
+                <h3 className="text-2xl sm:text-3xl font-black text-[#161616] mb-4 tracking-tight">
+                  Our <span className="text-[#4b5a20]">Vision</span>
                 </h3>
-                <p className="text-base text-[#354f38] leading-relaxed mb-8 font-medium">
+                <p className="text-base text-[#161616]/65 leading-relaxed mb-8 font-medium">
                   To be the premier growth guide for business owners navigating
                   the complex digital landscape, ensuring clarity, confidence,
                   and market dominance at every turn.
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-0.5 bg-gradient-to-r from-[#4b5a20] to-[#88b03e]" />
+                  <div className="w-10 h-0.5 bg-[#4b5a20]" />
                   <span className="text-xs font-bold text-[#4b5a20] uppercase tracking-wider">
                     Clear Market Dominance
                   </span>
@@ -512,7 +486,7 @@ export default function AboutClient() {
       {/* =========================================================================
           EXECUTION & WORKSPACE SPOTLIGHT — Razor-Sharp Full-Res Rendering
          ========================================================================= */}
-      <section className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-b from-[#ebf5e7] via-[#f2f8ee] to-[#eaf4e6]">
+      <section className="relative py-20 sm:py-28 overflow-hidden bg-[#F3F2EA]">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Visual Panel */}
@@ -551,14 +525,11 @@ export default function AboutClient() {
             {/* Story & Telemetry Cards */}
             <div className="lg:col-span-5 order-1 lg:order-2 space-y-7 about-fade about-fade-right delay-150">
               <div>
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#4b5a20] mb-3 inline-block px-3 py-1 rounded-full bg-[#4b5a20]/12 border border-[#4b5a20]/30">
-                  Execution Rigor
-                </span>
-                <h2 className="text-2xl sm:text-4xl font-black text-[#142617] tracking-tight leading-tight">
-                  High-Velocity Collaboration Powered by Unified Data
+                <h2 className="text-2xl sm:text-4xl font-black text-[#161616] tracking-tight leading-tight">
+                  High-Velocity Collaboration{" "}<span className="text-[#4b5a20]">Powered by Unified Data</span>
                 </h2>
               </div>
-              <p className="text-base text-[#344d37] leading-relaxed font-medium">
+              <p className="text-base text-[#161616]/65 leading-relaxed font-medium">
                 Our multidisciplinary team embeds straight into your executive
                 ecosystem. We analyze full-funnel telemetry in real time,
                 synchronizing paid media, conversion rate optimization, and
@@ -566,19 +537,19 @@ export default function AboutClient() {
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-2">
-                <div className="rounded-2xl p-5 bg-white/95 border border-[#4b5a20]/25 shadow-md hover:border-[#4b5a20] transition-all">
+                <div className="rounded-2xl p-5 bg-[#F3F2EA] border border-[#DDDDD0] shadow-xs hover:border-[#4b5a20] transition-all">
                   <div className="text-3xl font-black text-[#4b5a20] tracking-tight">
                     98.4%
                   </div>
-                  <div className="text-[11px] text-[#47604a] font-bold uppercase tracking-wider mt-1">
+                  <div className="text-[11px] text-[#4b5a20]/70 font-bold uppercase tracking-wider mt-1">
                     SLA Deployment Precision
                   </div>
                 </div>
-                <div className="rounded-2xl p-5 bg-white/95 border border-[#4b5a20]/25 shadow-md hover:border-[#4b5a20] transition-all">
+                <div className="rounded-2xl p-5 bg-[#F3F2EA] border border-[#DDDDD0] shadow-xs hover:border-[#4b5a20] transition-all">
                   <div className="text-3xl font-black text-[#4b5a20] tracking-tight">
                     14.8x
                   </div>
-                  <div className="text-[11px] text-[#47604a] font-bold uppercase tracking-wider mt-1">
+                  <div className="text-[11px] text-[#4b5a20]/70 font-bold uppercase tracking-wider mt-1">
                     Median Attributed ROAS
                   </div>
                 </div>
@@ -591,19 +562,16 @@ export default function AboutClient() {
       {/* =========================================================================
           CORE PRINCIPLES — 2x2 Clean Light Green Cards Grid
          ========================================================================= */}
-      <section className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-b from-[#eaf4e6] via-[#f3f9ef] to-[#ebf5e7]">
-        <div className="absolute bottom-0 left-0 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(188,206,135,0.2)_0%,transparent_70%)] pointer-events-none" />
+      <section className="relative py-20 sm:py-28 overflow-hidden bg-[#F7F6EE]">
+        <div className="absolute bottom-0 left-0 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(188,206,135,0.15)_0%,transparent_70%)] pointer-events-none" />
 
         <div className="relative max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
           {/* Section Header */}
           <div className="text-center mb-16 sm:mb-20 about-fade about-fade-up">
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#3e6a23] mb-3 px-3 py-1 rounded-full bg-[#4b5a20]/10 border border-[#4b5a20]/20">
-              The Principles
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#142617] tracking-tight">
-              Our Core Principles
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#161616] tracking-tight">
+              Our Core <span className="text-[#4b5a20]">Principles</span>
             </h2>
-            <p className="mt-4 text-base text-[#3d5440] max-w-xl mx-auto leading-relaxed font-medium">
+            <p className="mt-4 text-base text-[#161616]/65 max-w-xl mx-auto leading-relaxed font-medium">
               The non-negotiable standards that govern every campaign, technical
               decision, and communication we deliver.
             </p>
@@ -632,16 +600,14 @@ export default function AboutClient() {
                         {item.num}
                       </span>
                     </div>
-                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#4b5a20] bg-white/95 backdrop-blur-sm border border-[#4b5a20]/30 px-3.5 py-1.5 rounded-full shadow-sm">
-                      {item.subtitle}
-                    </span>
+
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-[#142617] mb-3.5 tracking-tight group-hover:text-[#4b5a20] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-black text-[#161616] mb-3.5 tracking-tight">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-[#375239] leading-relaxed font-medium">
+                  <p className="text-sm sm:text-base text-[#161616]/65 leading-relaxed font-medium">
                     {item.description}
                   </p>
                 </div>
@@ -654,19 +620,17 @@ export default function AboutClient() {
       {/* =========================================================================
           OUR GROWTH JOURNEY — Tree Branch Design with Pixel-Perfect Alignment
          ========================================================================= */}
-      <section className="relative py-24 sm:py-32 overflow-hidden bg-gradient-to-b from-[#ebf5e7] via-[#f4faf1] to-[#eaf3e5]">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse,rgba(188,206,135,0.3)_0%,transparent_70%)] pointer-events-none" />
+      <section className="relative py-24 sm:py-32 overflow-hidden bg-[#F3F2EA]">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse,rgba(188,206,135,0.20)_0%,transparent_70%)] pointer-events-none" />
 
         <div className="relative max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
           {/* Section Header */}
           <div className="text-center mb-16 sm:mb-24 about-fade about-fade-up">
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#4b5a20] mb-3 px-3 py-1 rounded-full bg-[#4b5a20]/12 border border-[#4b5a20]/30">
-              The Journey
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#142617] tracking-tight">
-              Our Growth Journey
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#161616] tracking-tight">
+              Our Growth <span className="text-[#4b5a20]">Journey</span>
             </h2>
-            <p className="mt-4 text-base text-[#3d5440] max-w-xl mx-auto leading-relaxed font-medium">
+            <p className="mt-4 text-base text-[#161616]/65 max-w-xl mx-auto leading-relaxed font-medium">
               From our beginnings in 2020 to expanding expertise across
               industries, services, and local initiatives.
             </p>
@@ -706,17 +670,17 @@ export default function AboutClient() {
                           </div>
 
                           <div className="flex items-center gap-3 mb-4">
-                            <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#4b5a20] to-[#719e2e]">
+                            <span className="text-3xl font-black text-[#4b5a20]">
                               {item.year}
                             </span>
-                            <div className="h-0.5 flex-1 max-w-[80px] bg-gradient-to-r from-[#4b5a20]/30 to-transparent" />
+                            <div className="h-0.5 flex-1 max-w-[80px] bg-[#4b5a20]/25" />
                           </div>
 
-                          <h3 className="text-xl font-black text-[#142617] mb-3 tracking-tight group-hover:text-[#4b5a20] transition-colors">
+                          <h3 className="text-xl font-black text-[#161616] mb-3 tracking-tight">
                             {item.title}
                           </h3>
 
-                          <p className="text-sm sm:text-base text-[#38523b] leading-relaxed font-medium">
+                          <p className="text-sm sm:text-base text-[#161616]/65 leading-relaxed font-medium">
                             {item.narrative}
                           </p>
                         </div>
@@ -793,17 +757,17 @@ export default function AboutClient() {
                           </div>
 
                           <div className="flex items-center gap-3 mb-4">
-                            <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#4b5a20] to-[#719e2e]">
+                            <span className="text-3xl font-black text-[#4b5a20]">
                               {item.year}
                             </span>
-                            <div className="h-0.5 flex-1 max-w-[80px] bg-gradient-to-r from-[#4b5a20]/30 to-transparent" />
+                            <div className="h-0.5 flex-1 max-w-[80px] bg-[#4b5a20]/25" />
                           </div>
 
-                          <h3 className="text-xl font-black text-[#142617] mb-3 tracking-tight group-hover:text-[#4b5a20] transition-colors">
+                          <h3 className="text-xl font-black text-[#161616] mb-3 tracking-tight">
                             {item.title}
                           </h3>
 
-                          <p className="text-sm sm:text-base text-[#38523b] leading-relaxed font-medium">
+                          <p className="text-sm sm:text-base text-[#161616]/65 leading-relaxed font-medium">
                             {item.narrative}
                           </p>
                         </div>
@@ -833,15 +797,15 @@ export default function AboutClient() {
 
                     <div className="about-fade about-fade-up light-glass-card rounded-2xl p-6 border border-[#4b5a20]/20">
                       <div className="flex items-center gap-3 mb-3">
-                        <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#4b5a20] to-[#719e2e]">
+                        <span className="text-2xl font-black text-[#4b5a20]">
                           {item.year}
                         </span>
-                        <div className="h-0.5 flex-1 bg-gradient-to-r from-[#4b5a20]/25 to-transparent" />
+                        <div className="h-0.5 flex-1 bg-[#4b5a20]/25" />
                       </div>
-                      <h3 className="text-lg font-black text-[#142617] mb-2">
+                      <h3 className="text-lg font-black text-[#161616] mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-[#38523b] leading-relaxed font-medium">
+                      <p className="text-sm text-[#161616]/65 leading-relaxed font-medium">
                         {item.narrative}
                       </p>
                     </div>
@@ -866,7 +830,7 @@ export default function AboutClient() {
       {/* =========================================================================
           CTA SECTION — Executive Green Gradient Banner with Rich Contrast
          ========================================================================= */}
-      <section className="relative py-16 sm:py-24 bg-gradient-to-b from-[#eaf3e5] to-[#f4faf1]">
+      <section className="relative py-16 sm:py-24 bg-[#F3F2EA]">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
           <div className="about-fade about-fade-scale relative rounded-3xl overflow-hidden shadow-2xl shadow-[#203a15]/20">
             {/* Rich multi-layer emerald and forest gradient anchored by brand color #4b5a20 */}
@@ -878,10 +842,7 @@ export default function AboutClient() {
             <div className="relative p-10 sm:p-14 lg:p-16">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div className="lg:col-span-8 space-y-5">
-                  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-xs font-bold uppercase tracking-widest text-[#d8f5aa]">
-                    <span className="material-symbols-outlined text-sm">mail</span>
-                    Collaboration & Inquiry
-                  </span>
+
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
                     Let&apos;s Build Your Growth Strategy Together
                   </h2>
