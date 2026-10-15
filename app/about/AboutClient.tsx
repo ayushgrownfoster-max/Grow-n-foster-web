@@ -507,15 +507,8 @@ export default function AboutClient() {
                   </div>
                   <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-[#142617]/90 to-transparent">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-bold text-white tracking-wide">
-                        Real-Time Growth Board & Telemetry
-                      </span>
-                      <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#95dc48] animate-pulse" />
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#d8f5aa]">
-                          Live
-                        </span>
-                      </span>
+
+
                     </div>
                   </div>
                 </div>

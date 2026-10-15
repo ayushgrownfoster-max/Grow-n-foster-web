@@ -14,44 +14,61 @@ export default defineType({
     }),
     defineField({
       name: "company",
-      title: "Company",
+      title: "Business / Company Name",
       type: "string",
     }),
     defineField({
       name: "email",
-      title: "Email",
+      title: "Work Email",
       type: "string",
       validation: (Rule) => Rule.required().email(),
     }),
     defineField({
       name: "phone",
-      title: "Phone",
+      title: "Phone Number",
       type: "string",
     }),
     defineField({
       name: "website",
-      title: "Website",
-      type: "url",
+      title: "Website URL",
+      type: "string",
     }),
     defineField({
       name: "service",
       title: "Service Interested In",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "budget",
-      title: "Budget Range",
+      title: "Monthly Marketing Budget",
       type: "string",
     }),
     defineField({
       name: "message",
-      title: "Message",
+      title: "Tell Us About Your Project or Goals",
       type: "text",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "preferredContact",
+      title: "Preferred Contact Method",
+      type: "string",
+      options: {
+        list: [
+          { title: "Email", value: "Email" },
+          { title: "Phone", value: "Phone" },
+          { title: "WhatsApp", value: "WhatsApp" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "Email",
     }),
     defineField({
       name: "contactMethod",
-      title: "Preferred Contact Method",
+      title: "Contact Method (Legacy)",
       type: "string",
+      hidden: ({ document }) => !document?.contactMethod,
     }),
     defineField({
       name: "submittedAt",
@@ -76,7 +93,16 @@ export default defineType({
   preview: {
     select: {
       title: "fullName",
-      subtitle: "email",
+      service: "service",
+      email: "email",
+      company: "company",
+    },
+    prepare({ title, service, email, company }) {
+      const companyPart = company ? ` (${company})` : "";
+      return {
+        title: `${title || "Anonymous"}${companyPart}`,
+        subtitle: service ? `${service} • ${email || ""}` : email,
+      };
     },
   },
 });
