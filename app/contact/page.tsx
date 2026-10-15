@@ -1,152 +1,83 @@
 "use client";
 
 import { useState, useActionState, useRef, useEffect } from "react";
-import Link from "next/link";
 import { submitContact } from "@/app/actions/submitContact";
 
-const seoServices = [
-  {
-    title: "Technical SEO",
-    description:
-      "Site structure, speed, indexing and crawlability fixes that give rankings a strong base.",
-    icon: "code_blocks",
-  },
-  {
-    title: "Content & Keyword Strategy",
-    description:
-      "Keyword research, topical maps and search-intent content that ranks and converts.",
-    icon: "manage_search",
-  },
-  {
-    title: "Local SEO & GBP",
-    description:
-      "City landing pages and Google Business Profile optimisation for local visibility.",
-    icon: "pin_drop",
-  },
-  {
-    title: "AEO & GEO",
-    description:
-      "Answer-first content built to earn citations in AI Overviews, ChatGPT, Gemini and Perplexity.",
-    icon: "smart_toy",
-  },
-  {
-    title: "On-Page & Off-Page SEO",
-    description:
-      "Titles, headings, internal links and relevant backlinks that build authority.",
-    icon: "link",
-  },
-  {
-    title: "SEO Reporting",
-    description:
-      "Search Console, GA4 and rank tracking reports that show clear business impact.",
-    icon: "query_stats",
-  },
+const serviceOptions = [
+  "SEO Services",
+  "Local SEO",
+  "LinkedIn Outreach",
+  "B2B Lead Generation",
+  "Social Media Marketing",
+  "Email Marketing",
+  "Content Marketing",
+  "Web Design & Development",
+  "Paid Advertising",
+  "Other",
 ];
 
-const seoProcessSteps = [
+const budgetOptions = [
+  "Under $1,000",
+  "$1,000 – $3,000",
+  "$3,000 – $5,000",
+  "$5,000 – $10,000",
+  "$10,000+",
+  "Not Sure Yet",
+];
+
+const contactMethods = ["Email", "Phone", "WhatsApp"];
+
+const whyChooseUs = [
   {
-    num: "01",
-    title: "SEO Audit & Competitor Analysis",
-    points: [
-      "Audit the website and review current SEO performance.",
-      "Analyse competitor keywords, content, and backlinks.",
-      "Identify content gaps and new ranking opportunities.",
-    ],
+    icon: "tune",
+    title: "Tailored Strategies",
+    desc: "We develop marketing strategies around your business, audience, industry, competition, and growth objectives.",
   },
   {
-    num: "02",
-    title: "Keyword Research & Strategy",
-    points: [
-      "Research keywords based on search intent and business goals.",
-      "Map keywords to pages and plan new content.",
-      "Create an SEO strategy and priority roadmap.",
-    ],
+    icon: "trending_up",
+    title: "Business-Focused Marketing",
+    desc: "Our approach focuses on meaningful outcomes such as visibility, qualified traffic, leads, and conversions.",
   },
   {
-    num: "03",
-    title: "Technical & On-Page SEO",
-    points: [
-      "Fix technical website issues and improve site speed.",
-      "Optimise page structure, metadata, and content.",
-      "Strengthen internal links between relevant pages.",
-    ],
+    icon: "hub",
+    title: "Integrated Digital Services",
+    desc: "From SEO and lead generation to social media, email marketing, and web development — our services work together.",
   },
   {
-    num: "04",
-    title: "Local SEO & Google Business Profile",
-    points: [
-      "Optimise the Google Business Profile (GBP).",
-      "Update business information and build local citations.",
-      "Target relevant location-based keywords.",
-    ],
-  },
-  {
-    num: "05",
-    title: "Content & Keyword Optimisation",
-    points: [
-      "Publish SEO-focused blogs and improve service pages.",
-      "Match content with user search intent.",
-      "Build topical authority through relevant content and internal links.",
-    ],
-  },
-  {
-    num: "06",
-    title: "Off-Page SEO",
-    points: [
-      "Build relevant, quality backlinks.",
-      "Strengthen website authority and online presence.",
-      "Improve local citations where relevant.",
-    ],
-  },
-  {
-    num: "07",
-    title: "Conversion Rate Optimisation (CRO)",
-    points: [
-      "Improve calls to action and contact forms.",
-      "Optimise landing pages for clarity and usability.",
-      "Help turn more relevant visitors into enquiries.",
-    ],
-  },
-  {
-    num: "08",
-    title: "Tracking & Performance Monitoring",
-    points: [
-      "Monitor organic traffic and keyword rankings.",
-      "Track GBP interactions and leads where applicable.",
-      "Review performance to understand what is working.",
-    ],
-  },
-  {
-    num: "09",
-    title: "Monthly Reporting & Improvements",
-    points: [
-      "Share monthly updates on traffic, rankings, and GBP performance.",
-      "Report leads and key SEO progress.",
-      "Use performance data to improve the next month's strategy.",
-    ],
+    icon: "forum",
+    title: "Clear Communication",
+    desc: "Stay informed with clear deliverables, reporting, communication, and project updates.",
   },
 ];
 
 const faqs = [
   {
-    q: "How quickly will your team respond to my enquiry?",
-    a: "We review and respond to every enquiry within 24 business hours. If your project is time-sensitive, please mention it in the project details field so our strategists can fast-track your review.",
+    q: "How can I contact Grow 'n' Foster?",
+    a: "You can reach us through the contact form on this page, email us at info@grownfoster.com, or call us during business hours (Monday–Friday, 9:00 AM–6:00 PM). We aim to respond to all enquiries within 24 hours.",
   },
   {
     q: "What services does Grow 'n' Foster provide?",
-    a: "We specialize in end-to-end digital growth: Technical SEO, Content Strategy, Local SEO & GBP, AEO & GEO, Paid Advertising (Google & Meta), B2B LinkedIn Outreach, and high-conversion Web Development.",
+    a: "We offer a comprehensive range of digital marketing services including SEO, Local SEO, LinkedIn Outreach, B2B Lead Generation, Social Media Marketing, Email Marketing, Content Marketing, Web Design & Development, and Paid Advertising.",
   },
   {
-    q: "Do you work with international clients outside India?",
-    a: "Yes. Over 60% of our clients operate across the United States, UK, Europe, Australia, and the UAE. Our team operates flexibly to support multiple time zones.",
+    q: "Do you work with businesses outside India?",
+    a: "Yes, we work with businesses globally. A significant portion of our clients are based in the US, UK, Europe, and the Middle East. Our digital-first approach allows us to deliver the same quality of service regardless of location.",
   },
   {
-    q: "Can you provide a customized SEO & digital marketing strategy?",
-    a: "Every engagement begins with an in-depth audit of your market, competitors, and growth bottleneck. We then craft a bespoke milestone-driven roadmap suited to your exact budget and targets.",
+    q: "Can I request a customized marketing strategy?",
+    a: "Absolutely. Every strategy we create is tailored to your business, audience, industry, and growth goals. Submit your requirements through our contact form and we'll develop a proposal specifically for your needs.",
   },
   {
-    q: "How does the onboarding process work once I reach out?",
-    a: "After you submit the form, we review your website and current presence. Within 24 hours we schedule a focused 30-minute discovery call, followed by a bespoke proposal and clear roadmap.",
+    q: "How quickly will your team respond?",
+    a: "We typically respond to all enquiries within 24 business hours. For urgent requests, please mention it in your message and we'll prioritize accordingly.",
+  },
+  {
+    q: "Can you work with our existing marketing team?",
+    a: "Yes, we frequently collaborate with in-house marketing teams. We can function as an extension of your team, handling specific channels or campaigns while working in sync with your internal processes.",
+  },
+  {
+    q: "How do I get started?",
+    a: "Simply submit an enquiry through our contact form or email us. From there, we'll schedule a discovery call to understand your business and goals, followed by a tailored strategy proposal. Once approved, we begin execution.",
   },
 ];
 
@@ -159,6 +90,7 @@ export default function ContactPage() {
   );
 
   const formRef = useRef<HTMLFormElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const [formData, setFormData] = useState({
@@ -173,7 +105,6 @@ export default function ContactPage() {
     preferredContact: "Email",
   });
 
-  const cardRef = useRef<HTMLDivElement>(null);
   const [submittedData, setSubmittedData] = useState<{
     fullName: string;
     email: string;
@@ -193,7 +124,7 @@ export default function ContactPage() {
       setSubmittedData({
         fullName: formData.fullName,
         email: formData.email,
-        service: formData.service || "SEO Services",
+        service: formData.service || "Digital Marketing",
       });
     }
   };
@@ -350,212 +281,208 @@ export default function ContactPage() {
                     onSubmit={handleFormSubmit}
                     className="space-y-4 sm:space-y-5"
                   >
-                {/* Row 1: Full Name & Business / Company Name */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1.5">
-                    <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
-                      Full Name <span className="text-[#44571d]">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="fullName"
-                      required
-                      value={formData.fullName}
-                      onChange={handleChange}
-                      placeholder="Alex Morgan"
-                      className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all"
-                    />
-                  </div>
+                    {/* Row 1: Full Name & Business / Company Name */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                      <div className="space-y-1.5">
+                        <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
+                          Full Name <span className="text-[#44571d]">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="fullName"
+                          required
+                          value={formData.fullName}
+                          onChange={handleChange}
+                          placeholder="Alex Morgan"
+                          className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all"
+                        />
+                      </div>
 
-                  <div className="space-y-1.5">
-                    <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
-                      Business / Company Name
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      placeholder="Acme Growth Inc."
-                      className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all"
-                    />
-                  </div>
-                </div>
+                      <div className="space-y-1.5">
+                        <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
+                          Business / Company Name
+                        </label>
+                        <input
+                          type="text"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleChange}
+                          placeholder="Acme Growth Inc."
+                          className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all"
+                        />
+                      </div>
+                    </div>
 
-                {/* Row 2: Work Email & Phone Number */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1.5">
-                    <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
-                      Work Email <span className="text-[#44571d]">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="alex@acme.com"
-                      className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all"
-                    />
-                  </div>
+                    {/* Row 2: Work Email & Phone Number */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                      <div className="space-y-1.5">
+                        <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
+                          Work Email <span className="text-[#44571d]">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="alex@acme.com"
+                          className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all"
+                        />
+                      </div>
 
-                  <div className="space-y-1.5">
-                    <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+1 (555) 000-0000"
-                      className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all"
-                    />
-                  </div>
-                </div>
+                      <div className="space-y-1.5">
+                        <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="+1 (555) 000-0000"
+                          className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all"
+                        />
+                      </div>
+                    </div>
 
-                {/* Row 3: Website URL */}
-                <div className="space-y-1.5">
-                  <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
-                    Website URL
-                  </label>
-                  <input
-                    type="url"
-                    name="website"
-                    value={formData.website}
-                    onChange={handleChange}
-                    placeholder="https://"
-                    className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all"
-                  />
-                </div>
+                    {/* Row 3: Website URL */}
+                    <div className="space-y-1.5">
+                      <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
+                        Website URL
+                      </label>
+                      <input
+                        type="url"
+                        name="website"
+                        value={formData.website}
+                        onChange={handleChange}
+                        placeholder="https://"
+                        className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all"
+                      />
+                    </div>
 
-                {/* Row 4: Service Interested in & Monthly Marketing Budget */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1.5">
-                    <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
-                      Service Interested in <span className="text-[#44571d]">*</span>
-                    </label>
-                    <div className="relative">
-                      <select
-                        name="service"
+                    {/* Row 4: Service Interested in & Monthly Marketing Budget */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                      <div className="space-y-1.5">
+                        <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
+                          Service Interested in <span className="text-[#44571d]">*</span>
+                        </label>
+                        <div className="relative">
+                          <select
+                            name="service"
+                            required
+                            value={formData.service}
+                            onChange={handleChange}
+                            className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all appearance-none pr-10 cursor-pointer"
+                          >
+                            <option value="" disabled>Select a service</option>
+                            {serviceOptions.map((s) => (
+                              <option key={s} value={s}>
+                                {s}
+                              </option>
+                            ))}
+                          </select>
+                          <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-[#566347] pointer-events-none text-xl">
+                            keyboard_arrow_down
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
+                          Monthly Marketing Budget
+                        </label>
+                        <div className="relative">
+                          <select
+                            name="budget"
+                            value={formData.budget}
+                            onChange={handleChange}
+                            className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all appearance-none pr-10 cursor-pointer"
+                          >
+                            <option value="">Select a range</option>
+                            {budgetOptions.map((b) => (
+                              <option key={b} value={b}>
+                                {b}
+                              </option>
+                            ))}
+                          </select>
+                          <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-[#566347] pointer-events-none text-xl">
+                            keyboard_arrow_down
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Row 5: Tell Us About Your Project or Goals */}
+                    <div className="space-y-1.5">
+                      <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
+                        Tell Us About Your Project or Goals <span className="text-[#44571d]">*</span>
+                      </label>
+                      <textarea
+                        name="message"
                         required
-                        value={formData.service}
+                        rows={4}
+                        value={formData.message}
                         onChange={handleChange}
-                        className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all appearance-none pr-10 cursor-pointer"
-                      >
-                        <option value="" disabled>Select a service</option>
-                        <option value="Technical SEO">Technical SEO</option>
-                        <option value="Content & Keyword Strategy">Content & Keyword Strategy</option>
-                        <option value="Local SEO & GBP">Local SEO & GBP</option>
-                        <option value="AEO & GEO">AEO & GEO</option>
-                        <option value="On-Page & Off-Page SEO">On-Page & Off-Page SEO</option>
-                        <option value="SEO Reporting & Audit">SEO Reporting & Audit</option>
-                        <option value="Full SEO Management">Full SEO Management</option>
-                        <option value="Paid Advertising (Google/Meta)">Paid Advertising (Google/Meta)</option>
-                        <option value="B2B LinkedIn Outreach">B2B LinkedIn Outreach</option>
-                        <option value="Web Design & Development">Web Design & Development</option>
-                        <option value="Other / Full Retainer">Other / Full Retainer</option>
-                      </select>
-                      <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-[#566347] pointer-events-none text-xl">
-                        keyboard_arrow_down
-                      </span>
+                        placeholder="Tell us about your business, current marketing, target goals, or the specific results you want to achieve..."
+                        className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl p-4 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all resize-y"
+                      />
                     </div>
-                  </div>
 
-                  <div className="space-y-1.5">
-                    <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
-                      Monthly Marketing Budget
-                    </label>
-                    <div className="relative">
-                      <select
-                        name="budget"
-                        value={formData.budget}
-                        onChange={handleChange}
-                        className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all appearance-none pr-10 cursor-pointer"
-                      >
-                        <option value="">Select a range</option>
-                        <option value="Less than $1,000 / month">Less than $1,000 / month</option>
-                        <option value="$1,000 - $3,000 / month">$1,000 - $3,000 / month</option>
-                        <option value="$3,000 - $5,000 / month">$3,000 - $5,000 / month</option>
-                        <option value="$5,000 - $10,000 / month">$5,000 - $10,000 / month</option>
-                        <option value="$10,000+ / month">$10,000+ / month</option>
-                      </select>
-                      <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-[#566347] pointer-events-none text-xl">
-                        keyboard_arrow_down
-                      </span>
+                    {/* Row 6: Preferred Contact Method */}
+                    <div className="space-y-1.5">
+                      <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
+                        Preferred Contact Method
+                      </label>
+                      <div className="relative">
+                        <select
+                          name="preferredContact"
+                          value={formData.preferredContact}
+                          onChange={handleChange}
+                          className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all appearance-none pr-10 cursor-pointer"
+                        >
+                          {contactMethods.map((m) => (
+                            <option key={m} value={m}>
+                              {m}
+                            </option>
+                          ))}
+                        </select>
+                        <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-[#566347] pointer-events-none text-xl">
+                          keyboard_arrow_down
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </div>
 
-                {/* Row 5: Tell Us About Your Project or Goals */}
-                <div className="space-y-1.5">
-                  <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
-                    Tell Us About Your Project or Goals <span className="text-[#44571d]">*</span>
-                  </label>
-                  <textarea
-                    name="message"
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your business, current traffic, target keywords, or the specific goals you want to achieve..."
-                    className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl p-4 text-sm text-[#11170a] placeholder:text-[#88947b] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all resize-y"
-                  />
-                </div>
-
-                {/* Row 6: Preferred Contact Method */}
-                <div className="space-y-1.5">
-                  <label className="text-[11px] sm:text-xs font-bold text-[#1a230f] tracking-wide block">
-                    Preferred Contact Method
-                  </label>
-                  <div className="relative">
-                    <select
-                      name="preferredContact"
-                      value={formData.preferredContact}
-                      onChange={handleChange}
-                      className="w-full bg-white border border-[#c4ceb7] focus:border-[#4b5a20] rounded-xl px-4 py-3 text-sm text-[#11170a] outline-none focus:ring-2 focus:ring-[#4b5a20]/25 transition-all appearance-none pr-10 cursor-pointer"
-                    >
-                      <option value="Email">Email</option>
-                      <option value="Phone">Phone</option>
-                      <option value="WhatsApp">WhatsApp</option>
-                    </select>
-                    <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-[#566347] pointer-events-none text-xl">
-                      keyboard_arrow_down
-                    </span>
-                  </div>
-                </div>
-
-                {/* Error Banner above Submit button if submission fails */}
-                {formState.message && !formState.success && (
-                  <div className="p-3.5 rounded-xl bg-red-100 border border-red-300 text-red-800 flex items-center gap-2.5 text-xs font-medium">
-                    <span className="material-symbols-outlined text-lg flex-shrink-0 text-red-600">
-                      error
-                    </span>
-                    <span>{formState.message}</span>
-                  </div>
-                )}
-
-                {/* Submit Button */}
-                <div className="pt-2">
-                  <button
-                    type="submit"
-                    disabled={isPending}
-                    className="w-full bg-[#465721] hover:bg-[#394819] text-white font-bold font-hanken py-4 rounded-xl sm:rounded-2xl text-sm sm:text-base transition-all duration-300 shadow-xl shadow-[#465721]/30 hover:shadow-2xl hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    {isPending ? (
-                      <>
-                        <span className="w-5 h-5 rounded-full border-2 border-white/30 border-t-white animate-spin" />
-                        <span>Submitting Your Enquiry...</span>
-                      </>
-                    ) : (
-                      <span>Send My Enquiry</span>
+                    {/* Error Banner above Submit button if submission fails */}
+                    {formState.message && !formState.success && (
+                      <div className="p-3.5 rounded-xl bg-red-100 border border-red-300 text-red-800 flex items-center gap-2.5 text-xs font-medium">
+                        <span className="material-symbols-outlined text-lg flex-shrink-0 text-red-600">
+                          error
+                        </span>
+                        <span>{formState.message}</span>
+                      </div>
                     )}
-                  </button>
-                </div>
-              </form>
-            </>
-          )}
-        </div>
+
+                    {/* Submit Button */}
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        disabled={isPending}
+                        className="w-full bg-[#465721] hover:bg-[#394819] text-white font-bold font-hanken py-4 rounded-xl sm:rounded-2xl text-sm sm:text-base transition-all duration-300 shadow-xl shadow-[#465721]/30 hover:shadow-2xl hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        {isPending ? (
+                          <>
+                            <span className="w-5 h-5 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+                            <span>Submitting Your Enquiry...</span>
+                          </>
+                        ) : (
+                          <span>Send My Enquiry</span>
+                        )}
+                      </button>
+                    </div>
+                  </form>
+                </>
+              )}
+            </div>
 
             {/* RIGHT COLUMN: VISIT OUR OFFICE */}
             <div className="lg:col-span-5 text-white space-y-8 pt-2">
@@ -658,46 +585,43 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ===================== SECTION: SEO SERVICES ===================== */}
+      {/* ===================== SECTION: WHY CHOOSE GROW 'N' FOSTER ===================== */}
       <section className="py-20 sm:py-28 bg-[#11170c] border-t border-[#202c16]">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-14">
           <div className="max-w-3xl space-y-3">
             <span className="text-[#96ab60] text-xs font-mono-code font-bold tracking-[0.2em] uppercase block">
-              OUR CAPABILITIES
+              WHY PARTNER WITH US
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              SEO Services
+              Why Choose Grow &apos;n&apos; Foster?
             </h2>
             <p className="text-[#aebba0] text-sm sm:text-base leading-relaxed">
-              Targeted, search-driven solutions designed to build organic authority, attract high-intent prospects, and drive measurable revenue.
+              We engineer bespoke growth engines that connect strategy, creative execution, and measurable pipeline ROI.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {seoServices.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="bg-[#162010] border border-[#26371a] hover:border-[#8da54c]/60 rounded-3xl p-8 space-y-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#4b5a20]/15 flex flex-col justify-between group"
+                className="bg-[#162010] border border-[#26371a] hover:border-[#8da54c]/60 rounded-3xl p-8 space-y-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#4b5a20]/15 flex flex-col justify-between group"
               >
                 <div className="space-y-4">
                   <div className="w-12 h-12 rounded-2xl bg-[#233116] border border-[#374c24] flex items-center justify-center text-[#96ab60] group-hover:bg-[#8da54c] group-hover:text-[#0e1509] group-hover:border-[#8da54c] transition-all">
                     <span className="material-symbols-outlined text-2xl">
-                      {service.icon}
+                      {item.icon}
                     </span>
                   </div>
                   <h3 className="text-xl font-bold text-white group-hover:text-[#96ab60] transition-colors">
-                    {service.title}
+                    {item.title}
                   </h3>
                   <p className="text-sm text-[#b5c2a7] leading-relaxed">
-                    {service.description}
+                    {item.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#233217] flex items-center justify-between text-xs font-mono-code text-[#96ab60]">
-                  <span>Explore Strategy</span>
-                  <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                    arrow_forward
-                  </span>
+                <div className="pt-4 border-t border-[#233217] flex items-center text-xs font-mono-code text-[#96ab60]">
+                  <span>Proven Practice</span>
                 </div>
               </div>
             ))}
@@ -705,78 +629,99 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ===================== SECTION: OUR SEO PROCESS ===================== */}
-      <section className="py-20 sm:py-28 bg-[#0e140b] border-t border-[#202c16]">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-16">
-          <div className="max-w-3xl space-y-4">
-            <span className="text-[#96ab60] text-xs font-mono-code font-bold tracking-[0.2em] uppercase block">
-              METHODOLOGY
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Our SEO Process
-            </h2>
-            <p className="text-[#aebba0] text-base sm:text-lg leading-relaxed">
-              A clear, step-by-step approach to improve search visibility, attract relevant visitors, and generate more enquiries.
-            </p>
-          </div>
+      {/* ===================== SECTION: OFFICE LOCATION & MAP ===================== */}
+      <section id="contact-info" className="py-20 sm:py-28 bg-[#0e140b] border-t border-[#202c16]">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-3">
+                <span className="text-[#96ab60] text-xs font-mono-code font-bold tracking-[0.2em] uppercase block">
+                  PHYSICAL HEADQUARTERS
+                </span>
+                <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                  Visit Our Office
+                </h2>
+                <p className="text-[#aebba0] text-sm sm:text-base leading-relaxed max-w-lg">
+                  Drop by our workspace to discuss your growth strategy in person. Our strategy team is always eager to connect.
+                </p>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {seoProcessSteps.map((step) => (
-              <div
-                key={step.num}
-                className="bg-[#141b0e] border border-[#26371a] hover:border-[#8da54c]/50 rounded-3xl p-8 space-y-5 transition-all duration-300 hover:shadow-xl hover:shadow-[#4b5a20]/10 flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-3xl sm:text-4xl font-extrabold font-mono-code text-[#8da54c]">
-                      {step.num}
-                    </span>
-                    <span className="w-8 h-8 rounded-full bg-[#202b15] border border-[#314221] flex items-center justify-center text-[#8da54c]">
-                      <span className="material-symbols-outlined text-base">
-                        trending_up
-                      </span>
+              <div className="space-y-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#1e2a14] border border-[#2d3e1d] flex items-center justify-center text-[#96ab60] flex-shrink-0">
+                    <span className="material-symbols-outlined text-xl">
+                      location_on
                     </span>
                   </div>
+                  <div>
+                    <p className="font-bold font-hanken text-base text-white">Address</p>
+                    <p className="text-[#b5c2a7] text-sm">
+                      Sector 7 Rohini, New Delhi, India 110085
+                    </p>
+                  </div>
+                </div>
 
-                  <h3 className="text-xl font-bold text-white tracking-tight">
-                    {step.title}
-                  </h3>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#1e2a14] border border-[#2d3e1d] flex items-center justify-center text-[#96ab60] flex-shrink-0">
+                    <span className="material-symbols-outlined text-xl">
+                      mail
+                    </span>
+                  </div>
+                  <div>
+                    <p className="font-bold font-hanken text-base text-white">Email</p>
+                    <a
+                      href="mailto:info@grownfoster.com"
+                      className="text-[#96ab60] text-sm font-mono-code hover:underline"
+                    >
+                      info@grownfoster.com
+                    </a>
+                  </div>
+                </div>
 
-                  <ul className="space-y-2.5 pt-2">
-                    {step.points.map((point, pIdx) => (
-                      <li
-                        key={pIdx}
-                        className="flex items-start gap-2.5 text-xs sm:text-sm text-[#b5c2a7] leading-relaxed"
-                      >
-                        <span className="material-symbols-outlined text-[#8da54c] text-sm mt-0.5 flex-shrink-0">
-                          check_circle
-                        </span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#1e2a14] border border-[#2d3e1d] flex items-center justify-center text-[#96ab60] flex-shrink-0">
+                    <span className="material-symbols-outlined text-xl">
+                      schedule
+                    </span>
+                  </div>
+                  <div>
+                    <p className="font-bold font-hanken text-base text-white">
+                      Business Hours
+                    </p>
+                    <p className="text-[#b5c2a7] text-sm">
+                      Monday–Friday, 9:00 AM–6:00 PM IST
+                    </p>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* Bottom Conversion Bar */}
-          <div className="p-8 sm:p-12 rounded-3xl bg-[#172210] border border-[#2d401e] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-            <div className="space-y-2 max-w-xl text-center md:text-left">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                Ready to Implement a Proven SEO Roadmap?
-              </h3>
-              <p className="text-sm text-[#b4c1a5]">
-                Book your discovery session today and receive a preliminary site audit from our team.
-              </p>
+              <div>
+                <a
+                  href="https://maps.google.com/?q=Sector+7+Rohini+New+Delhi+India+110085"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#8da54c] hover:bg-[#7d953f] text-[#0e1509] font-bold font-hanken text-sm px-7 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-[#8da54c]/20 hover:-translate-y-0.5"
+                >
+                  <span className="material-symbols-outlined text-lg">
+                    directions
+                  </span>
+                  <span>Get Directions on Google Maps</span>
+                </a>
+              </div>
             </div>
-            <a
-              href="#contact-form"
-              className="bg-[#8da54c] hover:bg-[#7b9240] text-[#0e1509] font-bold font-hanken text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-[#8da54c]/20 hover:-translate-y-0.5 inline-flex items-center gap-2 flex-shrink-0 cursor-pointer"
-            >
-              <span>Get Started Now</span>
-              <span className="material-symbols-outlined text-base">arrow_forward</span>
-            </a>
+
+            {/* Embedded Google Map */}
+            <div className="rounded-3xl overflow-hidden border border-[#28391b] aspect-video shadow-2xl relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.8877!2d77.1082!3d28.7186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01a7d0000001%3A0x1234567890abcdef!2sSector%207%2C%20Rohini%2C%20New%20Delhi%2C%20Delhi%20110085!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                title="Office Location Map"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -789,8 +734,11 @@ export default function ContactPage() {
               HAVE QUESTIONS?
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-              Frequently Asked Questions
+              Got Questions?
             </h2>
+            <p className="text-[#aebba0] text-sm sm:text-base">
+              Everything you need to know about working with Grow &apos;n&apos; Foster.
+            </p>
           </div>
 
           <div className="space-y-4">
