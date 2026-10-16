@@ -75,6 +75,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/usa/dallas-tx/search-engine-marketing/`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/locations/usa/chicago-il/`,
       lastModified: new Date(),
       changeFrequency: "weekly",

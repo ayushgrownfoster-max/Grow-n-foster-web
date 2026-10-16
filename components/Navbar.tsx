@@ -100,7 +100,7 @@ const marketsMenu = [
     flag: "🇺🇸",
     cities: [
       { name: "Austin Digital Marketing", href: "/locations/usa/austin-tx", isLive: true },
-      // { name: "Dallas Digital Marketing", href: "/locations/usa", isLive: false },
+      { name: "Dallas Search Engine Marketing", href: "/usa/dallas-tx/search-engine-marketing/", isLive: true },
       // { name: "Chicago Digital Marketing", href: "/locations/usa", isLive: false },
       // { name: "Miami Digital Marketing", href: "/locations/usa", isLive: false },
       // { name: "Los Angeles Digital Marketing", href: "/locations/usa", isLive: false },

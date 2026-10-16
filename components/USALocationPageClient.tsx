@@ -147,7 +147,7 @@ const faqs = [
 
 const usaLocations = [
   { label: "Austin, TX", href: "/locations/usa/austin-tx/" },
-  //{ label: "Dallas, TX", href: "/locations/usa/dallas-tx/" },
+  { label: "Dallas, TX", href: "/usa/dallas-tx/search-engine-marketing/" },
   //{ label: "Chicago, IL", href: "/locations/usa/chicago-il/" },
   //{ label: "Boston, MA", href: "/locations/usa/boston-ma/" },
   //{ label: "Los Angeles, CA", href: "/locations/usa/los-angeles-ca/" },
