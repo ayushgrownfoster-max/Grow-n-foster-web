@@ -63,13 +63,13 @@ export default function PragatiUjjayiniPage() {
         </div>
 
         {/* Project Showcase Screenshot */}
-        <div className="relative aspect-video rounded-[32px] md:rounded-[48px] overflow-hidden border border-slate-200 shadow-xl bg-slate-100 group">
+        <div className="relative rounded-[24px] md:rounded-[36px] overflow-hidden border border-slate-200 shadow-xl bg-slate-100 group">
           <img
             src="/projects/pragati-ujjayini-portfolio-image.png"
             alt={projectInfo.title}
-            className="w-full h-full object-cover object-top group-hover:scale-[1.01] transition-transform duration-500"
+            className="w-full h-auto block group-hover:scale-[1.008] transition-transform duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none"></div>
         </div>
 
         {/* Interactive Tabs Section */}
