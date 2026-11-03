@@ -329,17 +329,14 @@ export default function SeoOptimizationPage() {
             ].map((cap) => (
               <div key={cap.num} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
                 <div>
-                  <div className="relative h-44 w-full overflow-hidden bg-[#0E1205]/5">
+                  <div className="relative h-64 w-full overflow-hidden bg-[#0E1205]/5">
                     <img
                       src={cap.image}
                       alt={cap.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-md flex items-center justify-center text-[#4B5A20] shadow-md">
-                      <span className="material-symbols-outlined text-xl">{cap.icon}</span>
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
                   <div className="p-7 space-y-3">
                     <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
@@ -414,26 +411,23 @@ export default function SeoOptimizationPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "center_focus_strong", title: "Better Search Visibility", text: "SEO helps your business appear when potential customers search for products, services, and information related to your business.", image: "/services/seo/search-visibility.jpg" },
-              { icon: "filter_alt", title: "Qualified Organic Traffic", text: "Targeting relevant keywords and search intent helps bring visitors who are more likely to need what your business offers.", image: "/services/seo/organic-traffic.jpg" },
-              { icon: "how_to_reg", title: "More Qualified Leads", text: "When the right people find the right pages, your website has more opportunities to turn visitors into inquiries and customers.", image: "/services/seo/qualified-leads.jpg" },
-              { icon: "workspace_premium", title: "Stronger Online Authority", text: "Useful content and consistent optimization can help your website become a trusted source within your industry.", image: "/services/seo/online-authority.jpg" },
-              { icon: "devices", title: "Better Website Experience", text: "SEO improvements can also make your website easier to navigate, understand, and use across different devices.", image: "/services/seo/website-experience.jpg" },
-              { icon: "eco", title: "Sustainable Organic Growth", text: "SEO is designed for long term growth. A strong website continues attracting organic visitors without paying for every click.", image: "/services/seo/sustainable-growth.jpg" },
+              { title: "Better Search Visibility", text: "SEO helps your business appear when potential customers search for products, services, and information related to your business.", image: "/services/seo/search-visibility.jpg" },
+              { title: "Qualified Organic Traffic", text: "Targeting relevant keywords and search intent helps bring visitors who are more likely to need what your business offers.", image: "/services/seo/organic-traffic.jpg" },
+              { title: "More Qualified Leads", text: "When the right people find the right pages, your website has more opportunities to turn visitors into inquiries and customers.", image: "/services/seo/qualified-leads.jpg" },
+              { title: "Stronger Online Authority", text: "Useful content and consistent optimization can help your website become a trusted source within your industry.", image: "/services/seo/online-authority.jpg" },
+              { title: "Better Website Experience", text: "SEO improvements can also make your website easier to navigate, understand, and use across different devices.", image: "/services/seo/website-experience.jpg" },
+              { title: "Sustainable Organic Growth", text: "SEO is designed for long term growth. A strong website continues attracting organic visitors without paying for every click.", image: "/services/seo/sustainable-growth.jpg" },
             ].map((v, idx) => (
               <div key={idx} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
                 <div>
-                  <div className="relative h-44 w-full overflow-hidden bg-[#0E1205]/5">
+                  <div className="relative h-64 w-full overflow-hidden bg-[#0E1205]/5">
                     <img
                       src={v.image}
                       alt={v.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-md flex items-center justify-center text-[#4B5A20] shadow-md">
-                      <span className="material-symbols-outlined text-xl">{v.icon}</span>
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
                   <div className="p-7 space-y-3">
                     <h3 className="text-xl font-bold font-hanken text-[#161616]">{v.title}</h3>
