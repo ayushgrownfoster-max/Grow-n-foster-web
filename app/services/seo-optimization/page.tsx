@@ -445,27 +445,7 @@ export default function SeoOptimizationPage() {
           </div>
         </section>
 
-        {/* SECTION 7: MEASURABLE SEO GROWTH BANNER */}
-        <section className="bg-[#4B5A20] text-white rounded-3xl p-8 sm:p-14 border border-[#4B5A20] space-y-8 shadow-xl relative overflow-hidden" id="consultation">
-          <div className="max-w-3xl space-y-4">
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken leading-tight">
-              Ready to Grow Smarter? Partner with strategists who understand how to build a marketing ecosystem that fuels sustainable business expansion.
-            </h2>
-            <p className="text-sm sm:text-base text-[#C8CFB4] leading-relaxed">
-              Our SEO strategy connects optimization work with measurable business goals. We focus on continuous improvement instead of promising unrealistic results.
-            </p>
-          </div>
-          <div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 bg-[#0E1205] text-[#94A269] hover:text-white px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider hover:bg-[#161616] transition-all shadow-md"
-            >
-              <span>Book a Free Consultation</span>
-              <span className="material-symbols-outlined text-lg">calendar_today</span>
-            </Link>
-          </div>
-        </section>
 
         {/* SECTION 8: DATA DRIVEN SEO OPTIMIZATION */}
         <section className="space-y-10">
@@ -764,55 +744,28 @@ export default function SeoOptimizationPage() {
             ))}
           </div>
         </section>
+        {/* SECTION 7: MEASURABLE SEO GROWTH BANNER */}
+        <section className="bg-[#4B5A20] text-white rounded-3xl p-8 sm:p-14 border border-[#4B5A20] space-y-8 shadow-xl relative overflow-hidden" id="consultation">
+          <div className="max-w-3xl space-y-4">
 
-        {/* SECTION 13: FINAL BOTTOM CTA BANNER */}
-        <section className="bg-[#0E1205] text-white rounded-3xl p-8 sm:p-14 lg:p-16 border border-[#0E1205] shadow-2xl relative overflow-hidden" id="contact">
-          <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#4B5A20]/30 blur-3xl pointer-events-none"></div>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-            <div className="lg:col-span-7 space-y-6">
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-hanken leading-tight text-white">
-                Start Growing With SEO Optimization
-              </h2>
-              <p className="text-sm sm:text-base text-[#C8CFB4] leading-relaxed">
-                Your website should not just be online. It should help people find your business when they are looking for what you offer. With Grow N Foster SEO Optimization Services, you can build a stronger search presence, attract more relevant visitors, and create more opportunities for qualified leads.
-              </p>
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-3 bg-[#4B5A20] text-white hover:bg-[#394518] px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider transition-all shadow-lg"
-                >
-                  <span>Get Started Today</span>
-                  <span className="material-symbols-outlined text-base">arrow_forward</span>
-                </Link>
-                <a
-                  href="#consultation"
-                  className="inline-flex items-center justify-center rounded-xl bg-white/10 text-white hover:bg-white/20 border border-white/20 font-mono-code text-xs uppercase tracking-wider font-bold px-8 py-4 transition-all"
-                >
-                  Book a Free SEO Consultation
-                </a>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl group bg-white/5">
-                <img
-                  src="/services/seo/seo-growth-cta.jpg"
-                  alt="Enterprise SEO Growth and Real-Time Search Trajectory"
-                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0E1205]/80 via-transparent to-transparent pointer-events-none"></div>
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono-code text-[#C8CFB4] bg-[#0E1205]/85 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10">
-                  <span className="flex items-center gap-2 text-[#94A269] font-bold">
-                    <span className="w-2 h-2 rounded-full bg-[#94A269] animate-pulse"></span>
-                    Organic Multiplier
-                  </span>
-                  <span className="text-white font-bold">+340% Pipeline</span>
-                </div>
-              </div>
-            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken leading-tight">
+              Ready to Grow Smarter? Partner with strategists who understand how to build a marketing ecosystem that fuels sustainable business expansion.
+            </h2>
+            <p className="text-sm sm:text-base text-[#C8CFB4] leading-relaxed">
+              Our SEO strategy connects optimization work with measurable business goals. We focus on continuous improvement instead of promising unrealistic results.
+            </p>
+          </div>
+          <div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 bg-[#0E1205] text-[#94A269] hover:text-white px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider hover:bg-[#161616] transition-all shadow-md"
+            >
+              <span>Book a Free Consultation</span>
+              <span className="material-symbols-outlined text-lg">calendar_today</span>
+            </Link>
           </div>
         </section>
+
 
       </div>
     </div>
