@@ -314,28 +314,39 @@ export default function SeoOptimizationPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { num: "1", title: "SEO Audit & Website Analysis", icon: "troubleshoot", badge: "Full Technical Crawl", desc: "We review your website to find technical issues, content gaps, weak pages, indexing problems, and opportunities that affect search performance." },
-              { num: "2", title: "Keyword Research", icon: "key", badge: "Intent-Mapped Keywords", desc: "We identify relevant search terms your customers use and connect them with the right pages, services, and topics on your website." },
-              { num: "3", title: "Technical SEO", icon: "terminal", badge: "Core Web Vitals & Speed", desc: "We improve the technical foundation of your website so search engines can crawl, understand, and index your pages effectively." },
-              { num: "4", title: "On-Page SEO", icon: "web", badge: "Structural Metadata & Tags", desc: "We optimize titles, headings, content, internal links, URLs, and structural signals that help search engines rank your pages." },
-              { num: "5", title: "Content Optimization", icon: "edit_note", badge: "Topical Authority Depth", desc: "We improve existing content and identify new content opportunities based on customer questions, search intent, and relevant topics." },
-              { num: "6", title: "Local SEO", icon: "location_on", badge: "Local Map Pack Relevance", desc: "We help businesses improve visibility for location based searches so customers can find relevant products and services in their area." },
-              { num: "7", title: "Competitor SEO Analysis", icon: "stacked_bar_chart", badge: "Competitive Gap Intel", desc: "We study competing websites to understand their search visibility, content coverage, keywords, and market gaps." },
-              { num: "8", title: "Link Building", icon: "link", badge: "Authoritative Backlink Network", desc: "We develop relevant authority building strategies that strengthen your website credibility and organic ranking power." },
-              { num: "9", title: "E-Commerce SEO", icon: "shopping_bag", badge: "Category & SKU Scaling", desc: "We optimize product and category pages to help online stores reach customers searching for products through organic search." },
-              { num: "10", title: "AI SEO & Search Optimization", icon: "smart_toy", badge: "SGE & LLM Engine Indexing", desc: "We structure useful, clear, and relevant content so your business is indexed across modern AI search engines and answer engines." },
-              { num: "11", title: "GEO & Local Search Optimization", icon: "explore", badge: "Multi-Territory Growth", desc: "We improve location relevance where it matters, helping businesses target customers searching for services in specific cities." },
-              { num: "12", title: "SEO Analytics & Reporting", icon: "query_stats", badge: "Full Attribution Dashboards", desc: "We track organic traffic, search visibility, rankings, conversions, and qualified leads to understand what is working." },
+              { num: "1", title: "SEO Audit & Website Analysis", icon: "troubleshoot", badge: "Full Technical Crawl", desc: "We review your website to find technical issues, content gaps, weak pages, indexing problems, and opportunities that affect search performance.", image: "/services/seo/seo-audit.jpg" },
+              { num: "2", title: "Keyword Research", icon: "key", badge: "Intent-Mapped Keywords", desc: "We identify relevant search terms your customers use and connect them with the right pages, services, and topics on your website.", image: "/services/seo/keyword-research.jpg" },
+              { num: "3", title: "Technical SEO", icon: "terminal", badge: "Core Web Vitals & Speed", desc: "We improve the technical foundation of your website so search engines can crawl, understand, and index your pages effectively.", image: "/services/seo/technical-seo.jpg" },
+              { num: "4", title: "On-Page SEO", icon: "web", badge: "Structural Metadata & Tags", desc: "We optimize titles, headings, content, internal links, URLs, and structural signals that help search engines rank your pages.", image: "/services/seo/onpage-seo.jpg" },
+              { num: "5", title: "Content Optimization", icon: "edit_note", badge: "Topical Authority Depth", desc: "We improve existing content and identify new content opportunities based on customer questions, search intent, and relevant topics.", image: "/services/seo/content-optimization.jpg" },
+              { num: "6", title: "Local SEO", icon: "location_on", badge: "Local Map Pack Relevance", desc: "We help businesses improve visibility for location based searches so customers can find relevant products and services in their area.", image: "/services/seo/local-seo.jpg" },
+              { num: "7", title: "Competitor SEO Analysis", icon: "stacked_bar_chart", badge: "Competitive Gap Intel", desc: "We study competing websites to understand their search visibility, content coverage, keywords, and market gaps.", image: "/services/seo/competitor-analysis.jpg" },
+              { num: "8", title: "Link Building", icon: "link", badge: "Authoritative Backlink Network", desc: "We develop relevant authority building strategies that strengthen your website credibility and organic ranking power.", image: "/services/seo/link-building.jpg" },
+              { num: "9", title: "E-Commerce SEO", icon: "shopping_bag", badge: "Category & SKU Scaling", desc: "We optimize product and category pages to help online stores reach customers searching for products through organic search.", image: "/services/seo/ecommerce-seo.jpg" },
+              { num: "10", title: "AI SEO & Search Optimization", icon: "smart_toy", badge: "SGE & LLM Engine Indexing", desc: "We structure useful, clear, and relevant content so your business is indexed across modern AI search engines and answer engines.", image: "/services/seo/ai-seo.jpg" },
+              { num: "11", title: "GEO & Local Search Optimization", icon: "explore", badge: "Multi-Territory Growth", desc: "We improve location relevance where it matters, helping businesses target customers searching for services in specific cities.", image: "/services/seo/geo-local-search.jpg" },
+              { num: "12", title: "SEO Analytics & Reporting", icon: "query_stats", badge: "Full Attribution Dashboards", desc: "We track organic traffic, search visibility, rankings, conversions, and qualified leads to understand what is working.", image: "/services/seo/seo-analytics.jpg" },
             ].map((cap) => (
-              <div key={cap.num} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                    <span className="material-symbols-outlined text-2xl">{cap.icon}</span>
+              <div key={cap.num} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 w-full overflow-hidden bg-[#0E1205]/5">
+                    <img
+                      src={cap.image}
+                      alt={cap.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-md flex items-center justify-center text-[#4B5A20] shadow-md">
+                      <span className="material-symbols-outlined text-xl">{cap.icon}</span>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  <div className="p-7 space-y-3">
+                    <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
+                <div className="px-7 pb-6 pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
                   {cap.badge}
                 </div>
               </div>
@@ -403,19 +414,32 @@ export default function SeoOptimizationPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "center_focus_strong", title: "Better Search Visibility", text: "SEO helps your business appear when potential customers search for products, services, and information related to your business." },
-              { icon: "filter_alt", title: "Qualified Organic Traffic", text: "Targeting relevant keywords and search intent helps bring visitors who are more likely to need what your business offers." },
-              { icon: "how_to_reg", title: "More Qualified Leads", text: "When the right people find the right pages, your website has more opportunities to turn visitors into inquiries and customers." },
-              { icon: "workspace_premium", title: "Stronger Online Authority", text: "Useful content and consistent optimization can help your website become a trusted source within your industry." },
-              { icon: "devices", title: "Better Website Experience", text: "SEO improvements can also make your website easier to navigate, understand, and use across different devices." },
-              { icon: "eco", title: "Sustainable Organic Growth", text: "SEO is designed for long term growth. A strong website continues attracting organic visitors without paying for every click." },
+              { icon: "center_focus_strong", title: "Better Search Visibility", text: "SEO helps your business appear when potential customers search for products, services, and information related to your business.", image: "/services/seo/search-visibility.jpg" },
+              { icon: "filter_alt", title: "Qualified Organic Traffic", text: "Targeting relevant keywords and search intent helps bring visitors who are more likely to need what your business offers.", image: "/services/seo/organic-traffic.jpg" },
+              { icon: "how_to_reg", title: "More Qualified Leads", text: "When the right people find the right pages, your website has more opportunities to turn visitors into inquiries and customers.", image: "/services/seo/qualified-leads.jpg" },
+              { icon: "workspace_premium", title: "Stronger Online Authority", text: "Useful content and consistent optimization can help your website become a trusted source within your industry.", image: "/services/seo/online-authority.jpg" },
+              { icon: "devices", title: "Better Website Experience", text: "SEO improvements can also make your website easier to navigate, understand, and use across different devices.", image: "/services/seo/website-experience.jpg" },
+              { icon: "eco", title: "Sustainable Organic Growth", text: "SEO is designed for long term growth. A strong website continues attracting organic visitors without paying for every click.", image: "/services/seo/sustainable-growth.jpg" },
             ].map((v, idx) => (
-              <div key={idx} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs">
-                <div className="w-10 h-10 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                  <span className="material-symbols-outlined text-xl">{v.icon}</span>
+              <div key={idx} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 w-full overflow-hidden bg-[#0E1205]/5">
+                    <img
+                      src={v.image}
+                      alt={v.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-md flex items-center justify-center text-[#4B5A20] shadow-md">
+                      <span className="material-symbols-outlined text-xl">{v.icon}</span>
+                    </div>
+                  </div>
+                  <div className="p-7 space-y-3">
+                    <h3 className="text-xl font-bold font-hanken text-[#161616]">{v.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{v.text}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold font-hanken text-[#161616]">{v.title}</h3>
-                <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{v.text}</p>
               </div>
             ))}
           </div>
@@ -742,30 +766,50 @@ export default function SeoOptimizationPage() {
         </section>
 
         {/* SECTION 13: FINAL BOTTOM CTA BANNER */}
-        <section className="bg-[#0E1205] text-white rounded-3xl p-8 sm:p-16 border border-[#0E1205] space-y-8 shadow-2xl relative overflow-hidden" id="contact">
+        <section className="bg-[#0E1205] text-white rounded-3xl p-8 sm:p-14 lg:p-16 border border-[#0E1205] shadow-2xl relative overflow-hidden" id="contact">
           <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#4B5A20]/30 blur-3xl pointer-events-none"></div>
-          <div className="max-w-3xl space-y-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+            <div className="lg:col-span-7 space-y-6">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-hanken leading-tight text-white">
+                Start Growing With SEO Optimization
+              </h2>
+              <p className="text-sm sm:text-base text-[#C8CFB4] leading-relaxed">
+                Your website should not just be online. It should help people find your business when they are looking for what you offer. With Grow N Foster SEO Optimization Services, you can build a stronger search presence, attract more relevant visitors, and create more opportunities for qualified leads.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 bg-[#4B5A20] text-white hover:bg-[#394518] px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider transition-all shadow-lg"
+                >
+                  <span>Get Started Today</span>
+                  <span className="material-symbols-outlined text-base">arrow_forward</span>
+                </Link>
+                <a
+                  href="#consultation"
+                  className="inline-flex items-center justify-center rounded-xl bg-white/10 text-white hover:bg-white/20 border border-white/20 font-mono-code text-xs uppercase tracking-wider font-bold px-8 py-4 transition-all"
+                >
+                  Book a Free SEO Consultation
+                </a>
+              </div>
+            </div>
 
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-hanken leading-tight text-white">
-              Start Growing With SEO Optimization
-            </h2>
-            <p className="text-sm sm:text-base text-[#C8CFB4] leading-relaxed">
-              Your website should not just be online. It should help people find your business when they are looking for what you offer. With Grow N Foster SEO Optimization Services, you can build a stronger search presence, attract more relevant visitors, and create more opportunities for qualified leads.
-            </p>
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 bg-[#4B5A20] text-white hover:bg-[#394518] px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider transition-all shadow-lg"
-              >
-                <span>Get Started Today</span>
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
-              </Link>
-              <a
-                href="#consultation"
-                className="inline-flex items-center justify-center rounded-xl bg-white/10 text-white hover:bg-white/20 border border-white/20 font-mono-code text-xs uppercase tracking-wider font-bold px-8 py-4 transition-all"
-              >
-                Book a Free SEO Consultation
-              </a>
+            <div className="lg:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl group bg-white/5">
+                <img
+                  src="/services/seo/seo-growth-cta.jpg"
+                  alt="Enterprise SEO Growth and Real-Time Search Trajectory"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0E1205]/80 via-transparent to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono-code text-[#C8CFB4] bg-[#0E1205]/85 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10">
+                  <span className="flex items-center gap-2 text-[#94A269] font-bold">
+                    <span className="w-2 h-2 rounded-full bg-[#94A269] animate-pulse"></span>
+                    Organic Multiplier
+                  </span>
+                  <span className="text-white font-bold">+340% Pipeline</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
