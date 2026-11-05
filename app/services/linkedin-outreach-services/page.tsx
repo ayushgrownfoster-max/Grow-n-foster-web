@@ -425,28 +425,36 @@ export default function LinkedinOutreachServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { num: "1", title: "LinkedIn Prospect List Building", icon: "search", badge: "ICP & Role Filtering", desc: "We identify potential prospects based on your ideal customer profile, industry, company size, job role, location, and other business criteria." },
-              { num: "2", title: "Ideal Customer Profile Targeting", icon: "center_focus_strong", badge: "Laser-Focused ICP", desc: "We define the type of companies and decision makers that are most valuable so outreach efforts stay focused on the right audience." },
-              { num: "3", title: "LinkedIn Sales Navigator Outreach", icon: "work", badge: "Advanced Prospecting", desc: "We use LinkedIn Sales Navigator based research to identify relevant prospects and create focused outreach lists." },
-              { num: "4", title: "Decision Maker Identification", icon: "badge", badge: "VP/C-Suite Contacts", desc: "We help identify people who influence or make purchasing decisions so your outreach reaches the right contacts instead of random profiles." },
-              { num: "5", title: "Personalized LinkedIn Outreach", icon: "edit_note", badge: "Contextual Messaging", desc: "We create relevant messages based on the prospect, company, industry, and business context to make conversations feel natural." },
-              { num: "6", title: "LinkedIn Cold Message Strategy", icon: "chat", badge: "Value-First Messaging", desc: "A good cold message explains why you are reaching out without sounding generic. Our strategy focuses on relevance and conversation." },
-              { num: "7", title: "LinkedIn Outreach Automation", icon: "smart_toy", badge: "Structured Workflows", desc: "Where appropriate, we use structured processes and safe automation tools to make campaign management efficient while keeping messaging controlled." },
-              { num: "8", title: "LinkedIn Social Selling Management", icon: "groups", badge: "Relationship Nurture", desc: "We help businesses build relationships before asking for a sale, engaging prospects through useful conversations and consistent interactions." },
-              { num: "9", title: "Follow Up Campaigns", icon: "update", badge: "Multi-Touch Sequences", desc: "We create thoughtful follow up sequences designed to keep the conversation open without overwhelming the prospect." },
-              { num: "10", title: "Lead Qualification", icon: "verified", badge: "High-Intent Lead Triage", desc: "We help identify which conversations show genuine business interest so your sales team spends more time with relevant opportunities." },
-              { num: "11", title: "B2B Appointment Setting Services", icon: "event_available", badge: "Sales Call Booking", desc: "When a prospect shows interest, our B2B appointment setting services move qualified prospects toward meetings with your sales team." },
-              { num: "12", title: "Lead Tracking and Reporting", icon: "query_stats", badge: "Full Pipeline Attribution", desc: "We track outreach activity, connections, responses, conversations, qualified leads, and appointments to optimize performance." },
+              { num: "1", title: "LinkedIn Prospect List Building", badge: "ICP & Role Filtering", desc: "We identify potential prospects based on your ideal customer profile, industry, company size, job role, location, and other business criteria.", image: "/services/linkedin/prospect-list.jpg" },
+              { num: "2", title: "Ideal Customer Profile Targeting", badge: "Laser-Focused ICP", desc: "We define the type of companies and decision makers that are most valuable so outreach efforts stay focused on the right audience.", image: "/services/linkedin/icp-targeting.jpg" },
+              { num: "3", title: "LinkedIn Sales Navigator Outreach", badge: "Advanced Prospecting", desc: "We use LinkedIn Sales Navigator based research to identify relevant prospects and create focused outreach lists.", image: "/services/linkedin/sales-navigator.jpg" },
+              { num: "4", title: "Decision Maker Identification", badge: "VP/C-Suite Contacts", desc: "We help identify people who influence or make purchasing decisions so your outreach reaches the right contacts instead of random profiles.", image: "/services/linkedin/decision-maker.jpg" },
+              { num: "5", title: "Personalized LinkedIn Outreach", badge: "Contextual Messaging", desc: "We create relevant messages based on the prospect, company, industry, and business context to make conversations feel natural.", image: "/services/linkedin/personalized-outreach.jpg" },
+              { num: "6", title: "LinkedIn Cold Message Strategy", badge: "Value-First Messaging", desc: "A good cold message explains why you are reaching out without sounding generic. Our strategy focuses on relevance and conversation.", image: "/services/linkedin/cold-message.jpg" },
+              { num: "7", title: "LinkedIn Outreach Automation", badge: "Structured Workflows", desc: "Where appropriate, we use structured processes and safe automation tools to make campaign management efficient while keeping messaging controlled.", image: "/services/linkedin/outreach-automation.jpg" },
+              { num: "8", title: "LinkedIn Social Selling Management", badge: "Relationship Nurture", desc: "We help businesses build relationships before asking for a sale, engaging prospects through useful conversations and consistent interactions.", image: "/services/linkedin/social-selling.jpg" },
+              { num: "9", title: "Follow Up Campaigns", badge: "Multi-Touch Sequences", desc: "We create thoughtful follow up sequences designed to keep the conversation open without overwhelming the prospect.", image: "/services/linkedin/follow-up-campaigns.jpg" },
+              { num: "10", title: "Lead Qualification", badge: "High-Intent Lead Triage", desc: "We help identify which conversations show genuine business interest so your sales team spends more time with relevant opportunities.", image: "/services/linkedin/lead-qualification.jpg" },
+              { num: "11", title: "B2B Appointment Setting Services", badge: "Sales Call Booking", desc: "When a prospect shows interest, our B2B appointment setting services move qualified prospects toward meetings with your sales team.", image: "/services/linkedin/appointment-setting.jpg" },
+              { num: "12", title: "Lead Tracking and Reporting", badge: "Full Pipeline Attribution", desc: "We track outreach activity, connections, responses, conversations, qualified leads, and appointments to optimize performance.", image: "/services/linkedin/lead-tracking.jpg" },
             ].map((cap) => (
-              <div key={cap.num} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                    <span className="material-symbols-outlined text-2xl">{cap.icon}</span>
+              <div key={cap.num} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                    <img
+                      src={cap.image}
+                      alt={cap.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
-                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  <div className="p-7 space-y-3">
+                    <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
+                <div className="px-7 pb-6 pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
                   {cap.badge}
                 </div>
               </div>
@@ -703,22 +711,30 @@ export default function LinkedinOutreachServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "B2B Technology", icon: "developer_board", desc: "Reach technology leaders and business decision makers with outreach focused on business problems, software solutions, and growth opportunities." },
-              { title: "SaaS", icon: "cloud", desc: "Target relevant decision makers with personalized conversations around software needs, operational challenges, and product solutions." },
-              { title: "Professional Services", icon: "gavel", desc: "Connect with business owners, executives, and department leaders who may need specialized professional support." },
-              { title: "Consulting", icon: "psychology", desc: "Build conversations with organizations and decision makers who are actively looking for expertise, strategy, or operational support." },
-              { title: "Marketing Agencies", icon: "campaign", desc: "Help agencies connect with potential clients who may need digital marketing, SEO, content, advertising, or growth services." },
-              { title: "Business Services", icon: "corporate_fare", desc: "Identify companies and decision makers that match your service criteria and build targeted B2B lead generation campaigns." },
+              { title: "B2B Technology", desc: "Reach technology leaders and business decision makers with outreach focused on business problems, software solutions, and growth opportunities.", image: "/services/linkedin/b2b-tech.jpg" },
+              { title: "SaaS", desc: "Target relevant decision makers with personalized conversations around software needs, operational challenges, and product solutions.", image: "/services/linkedin/saas.jpg" },
+              { title: "Professional Services", desc: "Connect with business owners, executives, and department leaders who may need specialized professional support.", image: "/services/linkedin/professional-services.jpg" },
+              { title: "Consulting", desc: "Build conversations with organizations and decision makers who are actively looking for expertise, strategy, or operational support.", image: "/services/linkedin/consulting.jpg" },
+              { title: "Marketing Agencies", desc: "Help agencies connect with potential clients who may need digital marketing, SEO, content, advertising, or growth services.", image: "/services/linkedin/marketing-agencies.jpg" },
+              { title: "Business Services", desc: "Identify companies and decision makers that match your service criteria and build targeted B2B lead generation campaigns.", image: "/services/linkedin/business-services.jpg" },
             ].map((ind, i) => (
-              <div key={i} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between">
-                <div className="space-y-3">
-                  <div className="w-10 h-10 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                    <span className="material-symbols-outlined text-xl">{ind.icon}</span>
+              <div key={i} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                    <img
+                      src={ind.image}
+                      alt={ind.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
-                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{ind.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{ind.desc}</p>
+                  <div className="p-7 space-y-3">
+                    <h3 className="text-xl font-bold font-hanken text-[#161616]">{ind.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{ind.desc}</p>
+                  </div>
                 </div>
-                <div className="pt-2">
+                <div className="px-7 pb-5 pt-2">
                   <Link href="/contact" className="inline-flex items-center gap-1.5 text-xs font-mono-code font-bold uppercase text-[#4B5A20] hover:text-[#0E1205]">
                     <span>Book a Demo</span>
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
