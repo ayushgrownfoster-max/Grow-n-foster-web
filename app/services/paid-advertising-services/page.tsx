@@ -526,16 +526,17 @@ export default function PaidAdvertisingServicesPage() {
           <div className="max-w-3xl space-y-4">
 
             <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken leading-tight">
-              Ready to Grow Smarter? Partner with strategists who understand how to build a marketing ecosystem that fuels sustainable business expansion.
+              Ready to Grow Smarter?
             </h2>
             <p className="text-sm sm:text-base text-[#C8CFB4] leading-relaxed">
+              Partner with strategists who understand how to build a marketing ecosystem that fuels sustainable business expansion.
               Our paid advertising campaigns are built around measurable business goals. We monitor campaign performance to understand which audiences, platforms, keywords, messages, and offers are creating the strongest results. We focus on meaningful indicators such as qualified traffic, leads, conversions, cost per lead, revenue, and return on ad spend rather than measuring success through clicks alone.
             </p>
           </div>
           <div>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-[#0E1205] text-[#94A269] hover:text-white px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider hover:bg-[#161616] transition-all shadow-md"
+              className="inline-flex items-center gap-3 bg-white text-black hover:bg-gray-100 px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider transition-all shadow-md"
             >
               <span>Book a Free Consultation</span>
               <span className="material-symbols-outlined text-lg">calendar_today</span>

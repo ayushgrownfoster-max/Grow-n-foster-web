@@ -539,27 +539,7 @@ export default function LinkedinOutreachServicesPage() {
           </div>
         </section>
 
-        {/* SECTION 7: MEASURABLE B2B LEAD GROWTH BANNER */}
-        <section className="bg-[#4B5A20] text-white rounded-3xl p-8 sm:p-14 border border-[#4B5A20] space-y-8 shadow-xl relative overflow-hidden" id="consultation">
-          <div className="max-w-3xl space-y-4">
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken leading-tight">
-              Ready to Grow Smarter? Partner with strategists who understand how to build a marketing ecosystem that fuels sustainable business expansion.
-            </h2>
-            <p className="text-sm sm:text-base text-[#C8CFB4] leading-relaxed">
-              Our LinkedIn outreach campaigns are built around measurable activity and business outcomes. We monitor campaign performance to understand which audiences, messages, and approaches generate the strongest conversations.
-            </p>
-          </div>
-          <div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 bg-[#0E1205] text-[#94A269] hover:text-white px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider hover:bg-[#161616] transition-all shadow-md"
-            >
-              <span>Book a Free Consultation</span>
-              <span className="material-symbols-outlined text-lg">calendar_today</span>
-            </Link>
-          </div>
-        </section>
 
         {/* SECTION 8: DATA DRIVEN LINKEDIN OUTREACH */}
         <section className="space-y-10">
@@ -867,35 +847,28 @@ export default function LinkedinOutreachServicesPage() {
             ))}
           </div>
         </section>
+        {/* SECTION 7: MEASURABLE B2B LEAD GROWTH BANNER */}
+        <section className="bg-[#4B5A20] text-white rounded-3xl p-8 sm:p-14 border border-[#4B5A20] space-y-8 shadow-xl relative overflow-hidden" id="consultation">
+          <div className="max-w-3xl space-y-4">
 
-        {/* SECTION 13: FINAL BOTTOM CTA BANNER */}
-        <section className="bg-[#0E1205] text-white rounded-3xl p-8 sm:p-16 border border-[#0E1205] space-y-8 shadow-2xl relative overflow-hidden" id="contact">
-          <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#4B5A20]/30 blur-3xl pointer-events-none"></div>
-          <div className="max-w-3xl space-y-6 relative z-10">
-
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-hanken leading-tight text-white">
-              Start Growing With LinkedIn Outreach
+            <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken leading-tight">
+              Ready to Grow Smarter? Partner with strategists who understand how to build a marketing ecosystem that fuels sustainable business expansion.
             </h2>
             <p className="text-sm sm:text-base text-[#C8CFB4] leading-relaxed">
-              Your ideal customers are already building networks on LinkedIn. A focused outreach strategy can help your business find them, start meaningful conversations, and create new sales opportunities. With Grow N Foster, you can build a structured LinkedIn outreach process focused on B2B LinkedIn lead generation, qualified conversations, and pipeline growth.
+              Our LinkedIn outreach campaigns are built around measurable activity and business outcomes. We monitor campaign performance to understand which audiences, messages, and approaches generate the strongest conversations.
             </p>
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 bg-[#4B5A20] text-white hover:bg-[#394518] px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider transition-all shadow-lg"
-              >
-                <span>Get Started Today</span>
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
-              </Link>
-              <a
-                href="#consultation"
-                className="inline-flex items-center justify-center rounded-xl bg-white/10 text-white hover:bg-white/20 border border-white/20 font-mono-code text-xs uppercase tracking-wider font-bold px-8 py-4 transition-all"
-              >
-                Book a Free LinkedIn Outreach Consultation
-              </a>
-            </div>
+          </div>
+          <div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 bg-[#0E1205] text-[#94A269] hover:text-white px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider hover:bg-[#161616] transition-all shadow-md"
+            >
+              <span>Book a Free Consultation</span>
+              <span className="material-symbols-outlined text-lg">calendar_today</span>
+            </Link>
           </div>
         </section>
+
 
       </div>
     </div>

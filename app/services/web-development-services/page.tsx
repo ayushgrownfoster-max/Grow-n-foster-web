@@ -527,27 +527,7 @@ export default function WebDevelopmentServicesPage() {
           </div>
         </section>
 
-        {/* SECTION 7: GREEN CTA BANNER */}
-        <section className="bg-[#4B5A20] text-white rounded-3xl p-8 sm:p-14 border border-[#4B5A20] space-y-8 shadow-xl relative overflow-hidden" id="consultation">
-          <div className="max-w-3xl space-y-4">
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold font-hanken leading-tight">
-              Ready to Grow Smarter? Partner with strategists who understand how to build a marketing ecosystem that fuels sustainable business expansion.
-            </h2>
-            <p className="text-sm sm:text-base text-[#C8CFB4] leading-relaxed">
-              Our web development projects are built around clear business and user experience goals. We monitor website performance to understand how effectively the website attracts visitors, engages users, and supports business outcomes. We focus on meaningful indicators such as website performance, qualified traffic, engagement, inquiries, conversions, and customer actions rather than measuring success only by website appearance.
-            </p>
-          </div>
-          <div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 bg-[#0E1205] text-[#94A269] hover:text-white px-8 py-4 rounded-xl font-bold font-mono-code text-xs uppercase tracking-wider hover:bg-[#161616] transition-all shadow-md"
-            >
-              <span>Book a Free Consultation</span>
-              <span className="material-symbols-outlined text-lg">calendar_today</span>
-            </Link>
-          </div>
-        </section>
 
         {/* SECTION 8: DATA DRIVEN WEB DEVELOPMENT */}
         <section className="space-y-10">
