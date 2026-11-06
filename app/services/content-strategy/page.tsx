@@ -422,28 +422,36 @@ export default function ContentStrategyPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { num: "1", title: "Content Audit & Gap Analysis", icon: "manage_search", badge: "Competitive Blindspots", desc: "We review your existing content to identify low-performing assets, keyword gaps, and high-value opportunities." },
-              { num: "2", title: "Buyer Persona Mapping", icon: "groups", badge: "Target Persona Alignment", desc: "We map out buyer personas, decision triggers, and stage-specific content needs for every step of your buyer journey." },
-              { num: "3", title: "Topic Cluster Architecture", icon: "account_tree", badge: "Semantic Authority Hubs", desc: "We design hub-and-spoke topic structures that organize content logically, building authority on core business topics." },
-              { num: "4", title: "SEO Copywriting & Editorial", icon: "edit_note", badge: "High-Ranking Copy", desc: "Our editors produce engaging, well-researched articles and guides structured to rank at the top of search engine results." },
-              { num: "5", title: "Thought Leadership Content", icon: "workspace_premium", badge: "Executive Positioning", desc: "We write opinion pieces, market breakdowns, and founder perspectives that build executive brand authority." },
-              { num: "6", title: "Whitepapers & E-books", icon: "menu_book", badge: "High-Intent Lead Magnets", desc: "We produce in-depth industry reports and downloadable guides that convert visitors into qualified sales leads." },
-              { num: "7", title: "Case Study Storytelling", icon: "fact_check", badge: "Customer Proof Assets", desc: "We craft compelling customer success stories showcasing real metrics and ROI to build trust with prospects." },
-              { num: "8", title: "Multi-Channel Repurposing", icon: "sync", badge: "Amplified Reach", desc: "We transform long-form guides into LinkedIn posts, slide decks, newsletters, and video scripts for maximum reach." },
-              { num: "9", title: "Search Intent Optimization", icon: "target", badge: "High-Commercial Queries", desc: "We optimize content to match specific informational, commercial, and transactional user search queries." },
-              { num: "10", title: "Conversion Optimization (CRO)", icon: "tune", badge: "In-Line Lead Capture", desc: "We embed strategic CTAs, interactive widgets, and inline forms to convert content readers into inbound inquiries." },
-              { num: "11", title: "Content Distribution & Syndication", icon: "campaign", badge: "Outreach & Syndication", desc: "We amplify content reach through targeted email broadcasts, social syndication, and industry partner channels." },
-              { num: "12", title: "Analytics & Revenue Attribution", icon: "query_stats", badge: "Pipeline Impact Tracking", desc: "We measure traffic growth, time on page, download conversion rates, and attributed sales pipeline value." },
+              { num: "1", title: "Content Audit & Gap Analysis", badge: "Competitive Blindspots", desc: "We review your existing content to identify low-performing assets, keyword gaps, and high-value opportunities.", image: "/services/content/content-audit.jpg" },
+              { num: "2", title: "Buyer Persona Mapping", badge: "Target Persona Alignment", desc: "We map out buyer personas, decision triggers, and stage-specific content needs for every step of your buyer journey.", image: "/services/content/buyer-persona.jpg" },
+              { num: "3", title: "Topic Cluster Architecture", badge: "Semantic Authority Hubs", desc: "We design hub-and-spoke topic structures that organize content logically, building authority on core business topics.", image: "/services/content/topic-cluster.jpg" },
+              { num: "4", title: "SEO Copywriting & Editorial", badge: "High-Ranking Copy", desc: "Our editors produce engaging, well-researched articles and guides structured to rank at the top of search engine results.", image: "/services/content/seo-copywriting.jpg" },
+              { num: "5", title: "Thought Leadership Content", badge: "Executive Positioning", desc: "We write opinion pieces, market breakdowns, and founder perspectives that build executive brand authority.", image: "/services/content/thought-leadership.jpg" },
+              { num: "6", title: "Whitepapers & E-books", badge: "High-Intent Lead Magnets", desc: "We produce in-depth industry reports and downloadable guides that convert visitors into qualified sales leads.", image: "/services/content/whitepapers.jpg" },
+              { num: "7", title: "Case Study Storytelling", badge: "Customer Proof Assets", desc: "We craft compelling customer success stories showcasing real metrics and ROI to build trust with prospects.", image: "/services/content/case-study.jpg" },
+              { num: "8", title: "Multi-Channel Repurposing", badge: "Amplified Reach", desc: "We transform long-form guides into LinkedIn posts, slide decks, newsletters, and video scripts for maximum reach.", image: "/services/content/multi-channel.jpg" },
+              { num: "9", title: "Search Intent Optimization", badge: "High-Commercial Queries", desc: "We optimize content to match specific informational, commercial, and transactional user search queries.", image: "/services/content/search-intent.jpg" },
+              { num: "10", title: "Conversion Optimization (CRO)", badge: "In-Line Lead Capture", desc: "We embed strategic CTAs, interactive widgets, and inline forms to convert content readers into inbound inquiries.", image: "/services/content/cro.jpg" },
+              { num: "11", title: "Content Distribution & Syndication", badge: "Outreach & Syndication", desc: "We amplify content reach through targeted email broadcasts, social syndication, and industry partner channels.", image: "/services/content/distribution.jpg" },
+              { num: "12", title: "Analytics & Revenue Attribution", badge: "Pipeline Impact Tracking", desc: "We measure traffic growth, time on page, download conversion rates, and attributed sales pipeline value.", image: "/services/content/content-analytics.jpg" },
             ].map((cap) => (
-              <div key={cap.num} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                    <span className="material-symbols-outlined text-2xl">{cap.icon}</span>
+              <div key={cap.num} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                    <img
+                      src={cap.image}
+                      alt={cap.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
-                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  <div className="p-7 space-y-3">
+                    <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
+                <div className="px-7 pb-6 pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
                   {cap.badge}
                 </div>
               </div>
@@ -511,19 +519,27 @@ export default function ContentStrategyPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "center_focus_strong", title: "Build Sustainable Organic Traffic", text: "SEO-optimized topic clusters continue attracting relevant visitors long after publication without ongoing cost per click." },
-              { icon: "workspace_premium", title: "Establish Thought Leadership", text: "In-depth articles and founder perspectives position your company as a trusted authority within your industry." },
-              { icon: "savings", title: "Lower Customer Acquisition Cost", text: "Compounding organic traffic reduces your reliance on expensive paid ad channels over time." },
-              { icon: "how_to_reg", title: "Convert High-Intent Buyers", text: "Content tailored to commercial search intent answers buyer questions and guides them directly into sales conversations." },
-              { icon: "handshake", title: "Support Sales Enablement", text: "Case studies, whitepapers, and guides provide your sales team with authoritative collateral to close deals faster." },
-              { icon: "eco", title: "Build Compounding Brand Equity", text: "Evergreen content assets appreciate in value, building organic search equity and domain authority month after month." },
+              { title: "Build Sustainable Organic Traffic", text: "SEO-optimized topic clusters continue attracting relevant visitors long after publication without ongoing cost per click.", image: "/services/content/organic-traffic.jpg" },
+              { title: "Establish Thought Leadership", text: "In-depth articles and founder perspectives position your company as a trusted authority within your industry.", image: "/services/content/thought-leadership-pay.jpg" },
+              { title: "Lower Customer Acquisition Cost", text: "Compounding organic traffic reduces your reliance on expensive paid ad channels over time.", image: "/services/content/lower-cac.jpg" },
+              { title: "Convert High-Intent Buyers", text: "Content tailored to commercial search intent answers buyer questions and guides them directly into sales conversations.", image: "/services/content/convert-buyers.jpg" },
+              { title: "Support Sales Enablement", text: "Case studies, whitepapers, and guides provide your sales team with authoritative collateral to close deals faster.", image: "/services/content/sales-enablement.jpg" },
+              { title: "Build Compounding Brand Equity", text: "Evergreen content assets appreciate in value, building organic search equity and domain authority month after month.", image: "/services/content/brand-equity.jpg" },
             ].map((v, idx) => (
-              <div key={idx} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs">
-                <div className="w-10 h-10 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                  <span className="material-symbols-outlined text-xl">{v.icon}</span>
+              <div key={idx} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col group">
+                <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                  <img
+                    src={v.image}
+                    alt={v.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                 </div>
-                <h3 className="text-xl font-bold font-hanken text-[#161616]">{v.title}</h3>
-                <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{v.text}</p>
+                <div className="p-7 space-y-3">
+                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{v.title}</h3>
+                  <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{v.text}</p>
+                </div>
               </div>
             ))}
           </div>
