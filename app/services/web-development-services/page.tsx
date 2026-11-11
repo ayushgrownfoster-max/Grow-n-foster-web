@@ -419,29 +419,37 @@ export default function WebDevelopmentServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { num: "1", title: "Business Website Development", icon: "web", badge: "Professional Presence", desc: "We build professional business websites that clearly communicate your services, expertise, value, and brand while providing visitors with a simple path toward contacting your business." },
-              { num: "2", title: "Custom Website Development", icon: "code", badge: "Tailored Solutions", desc: "Every business has different requirements. Our custom website development process creates solutions around your specific functionality, content structure, integrations, and business goals." },
-              { num: "3", title: "Responsive Web Development", icon: "devices", badge: "All Screen Sizes", desc: "Your website should work smoothly across desktops, tablets, and mobile devices. We create responsive websites that adapt to different screen sizes and provide a consistent user experience." },
-              { num: "4", title: "E Commerce Website Development", icon: "shopping_cart", badge: "Online Store Build", desc: "We develop E Commerce websites designed to make product discovery, browsing, purchasing, and customer interaction simple and convenient." },
-              { num: "5", title: "Website User Experience", icon: "touch_app", badge: "Intuitive Navigation", desc: "A good website makes it easy for visitors to find what they need. We focus on navigation, page structure, content placement, usability, and clear calls to action." },
-              { num: "6", title: "Conversion Focused Web Development", icon: "conversion_path", badge: "CRO Strategy", desc: "A website should help visitors take the next step. We create layouts and experiences designed to support actions such as inquiries, bookings, consultations, sign ups, and purchases." },
-              { num: "7", title: "Website Speed Optimization", icon: "speed", badge: "Core Web Vitals", desc: "Slow websites can create a poor user experience. We focus on technical improvements that can help pages load efficiently and provide a smoother browsing experience." },
-              { num: "8", title: "SEO Friendly Web Development", icon: "manage_search", badge: "Search Ready Architecture", desc: "We build websites with search visibility in mind. This includes logical page structures, clean navigation, crawl friendly architecture, mobile usability, and technical foundations that support SEO." },
-              { num: "9", title: "Content Management System Development", icon: "edit_document", badge: "Easy Publishing", desc: "We create websites that allow businesses to manage and update their content efficiently. A suitable content management system can make publishing pages, articles, services, and updates easier." },
-              { num: "10", title: "Website Migration", icon: "move_up", badge: "Safe Transition", desc: "Moving a website requires careful planning. We help businesses migrate websites while paying attention to site structure, content, URLs, redirects, functionality, and search visibility." },
-              { num: "11", title: "Website Maintenance and Support", icon: "build_circle", badge: "Ongoing Care", desc: "Websites require ongoing attention after launch. We provide support for updates, technical issues, content changes, performance improvements, and ongoing website maintenance." },
-              { num: "12", title: "Website Security", icon: "lock", badge: "Protected Platform", desc: "We consider essential website security practices during development and ongoing maintenance to help protect website functionality, data, and user experiences." },
-              { num: "13", title: "Website Analytics and Tracking", icon: "analytics", badge: "Data and Insights", desc: "We help businesses understand how visitors interact with their websites by implementing relevant tracking and measurement systems that support better marketing and website decisions." },
+              { num: "1", title: "Business Website Development", badge: "Professional Presence", desc: "We build professional business websites that clearly communicate your services, expertise, value, and brand while providing visitors with a simple path toward contacting your business.", image: "/services/web-dev/business-website.jpg" },
+              { num: "2", title: "Custom Website Development", badge: "Tailored Solutions", desc: "Every business has different requirements. Our custom website development process creates solutions around your specific functionality, content structure, integrations, and business goals.", image: "/services/web-dev/custom-web-dev.jpg" },
+              { num: "3", title: "Responsive Web Development", badge: "All Screen Sizes", desc: "Your website should work smoothly across desktops, tablets, and mobile devices. We create responsive websites that adapt to different screen sizes and provide a consistent user experience.", image: "/services/web-dev/responsive-design.jpg" },
+              { num: "4", title: "E Commerce Website Development", badge: "Online Store Build", desc: "We develop E Commerce websites designed to make product discovery, browsing, purchasing, and customer interaction simple and convenient.", image: "/services/web-dev/ecommerce-dev.jpg" },
+              { num: "5", title: "Website User Experience", badge: "Intuitive Navigation", desc: "A good website makes it easy for visitors to find what they need. We focus on navigation, page structure, content placement, usability, and clear calls to action.", image: "/services/web-dev/user-experience.jpg" },
+              { num: "6", title: "Conversion Focused Web Development", badge: "CRO Strategy", desc: "A website should help visitors take the next step. We create layouts and experiences designed to support actions such as inquiries, bookings, consultations, sign ups, and purchases.", image: "/services/web-dev/conversion-web.jpg" },
+              { num: "7", title: "Website Speed Optimization", badge: "Core Web Vitals", desc: "Slow websites can create a poor user experience. We focus on technical improvements that can help pages load efficiently and provide a smoother browsing experience.", image: "/services/web-dev/speed-optimization.jpg" },
+              { num: "8", title: "SEO Friendly Web Development", badge: "Search Ready Architecture", desc: "We build websites with search visibility in mind. This includes logical page structures, clean navigation, crawl friendly architecture, mobile usability, and technical foundations that support SEO.", image: "/services/web-dev/seo-friendly.jpg" },
+              { num: "9", title: "Content Management System Development", badge: "Easy Publishing", desc: "We create websites that allow businesses to manage and update their content efficiently. A suitable content management system can make publishing pages, articles, services, and updates easier.", image: "/services/web-dev/cms-development.jpg" },
+              { num: "10", title: "Website Migration", badge: "Safe Transition", desc: "Moving a website requires careful planning. We help businesses migrate websites while paying attention to site structure, content, URLs, redirects, functionality, and search visibility.", image: "/services/web-dev/website-migration.jpg" },
+              { num: "11", title: "Website Maintenance and Support", badge: "Ongoing Care", desc: "Websites require ongoing attention after launch. We provide support for updates, technical issues, content changes, performance improvements, and ongoing website maintenance.", image: "/services/web-dev/maintenance-support.jpg" },
+              { num: "12", title: "Website Security", badge: "Protected Platform", desc: "We consider essential website security practices during development and ongoing maintenance to help protect website functionality, data, and user experiences.", image: "/services/web-dev/website-security.jpg" },
+              { num: "13", title: "Website Analytics and Tracking", badge: "Data and Insights", desc: "We help businesses understand how visitors interact with their websites by implementing relevant tracking and measurement systems that support better marketing and website decisions.", image: "/services/web-dev/website-analytics.jpg" },
             ].map((cap) => (
-              <div key={cap.num} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                    <span className="material-symbols-outlined text-2xl">{cap.icon}</span>
+              <div key={cap.num} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                    <img
+                      src={cap.image}
+                      alt={cap.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
-                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  <div className="p-7 space-y-3">
+                    <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
+                <div className="px-7 pb-6 pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
                   {cap.badge}
                 </div>
               </div>
@@ -509,19 +517,27 @@ export default function WebDevelopmentServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "handshake", title: "Create a Professional First Impression", text: "A modern and well structured website helps visitors understand your business and creates a stronger first impression." },
-              { icon: "touch_app", title: "Improve User Experience", text: "Clear navigation, readable content, responsive layouts, and simple page structures make it easier for visitors to find the information they need." },
-              { icon: "contact_mail", title: "Generate More Leads", text: "Conversion focused website development can guide visitors toward actions such as contacting your business, requesting information, or booking a consultation." },
-              { icon: "manage_search", title: "Support Search Visibility", text: "A strong technical website foundation can make it easier for search engines to crawl, understand, and index your pages." },
-              { icon: "verified_user", title: "Build Customer Trust", text: "Professional design, clear information, security, useful content, and consistent branding can help visitors feel more confident about your business." },
-              { icon: "eco", title: "Create a Scalable Digital Platform", text: "A well planned website can grow with your business. New pages, services, content, integrations, and functionality can be added as your requirements change." },
+              { title: "Create a Professional First Impression", text: "A modern and well structured website helps visitors understand your business and creates a stronger first impression.", image: "/services/web-dev/professional-impression.jpg" },
+              { title: "Improve User Experience", text: "Clear navigation, readable content, responsive layouts, and simple page structures make it easier for visitors to find the information they need.", image: "/services/web-dev/improved-ux.jpg" },
+              { title: "Generate More Leads", text: "Conversion focused website development can guide visitors toward actions such as contacting your business, requesting information, or booking a consultation.", image: "/services/web-dev/generate-more-leads.jpg" },
+              { title: "Support Search Visibility", text: "A strong technical website foundation can make it easier for search engines to crawl, understand, and index your pages.", image: "/services/web-dev/support-seo-visibility.jpg" },
+              { title: "Build Customer Trust", text: "Professional design, clear information, security, useful content, and consistent branding can help visitors feel more confident about your business.", image: "/services/web-dev/build-customer-trust.jpg" },
+              { title: "Create a Scalable Digital Platform", text: "A well planned website can grow with your business. New pages, services, content, integrations, and functionality can be added as your requirements change.", image: "/services/web-dev/scalable-platform.jpg" },
             ].map((v, idx) => (
-              <div key={idx} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs">
-                <div className="w-10 h-10 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                  <span className="material-symbols-outlined text-xl">{v.icon}</span>
+              <div key={idx} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col group">
+                <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                  <img
+                    src={v.image}
+                    alt={v.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                 </div>
-                <h3 className="text-xl font-bold font-hanken text-[#161616]">{v.title}</h3>
-                <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{v.text}</p>
+                <div className="p-7 space-y-3">
+                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{v.title}</h3>
+                  <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{v.text}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -679,22 +695,30 @@ export default function WebDevelopmentServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "B2B Technology", icon: "developer_board", desc: "Build websites that clearly explain complex technology solutions, communicate business benefits, showcase expertise, and guide decision makers toward relevant actions." },
-              { title: "SaaS", icon: "cloud", desc: "Create websites that explain software features, benefits, use cases, pricing information, product value, and customer outcomes while supporting demos and sign ups." },
-              { title: "Professional Services", icon: "gavel", desc: "Develop websites that communicate expertise, services, experience, credibility, and customer value while making it easy for potential clients to request information." },
-              { title: "Consulting", icon: "psychology", desc: "Create professional websites that showcase industry expertise, services, insights, case studies, and solutions while guiding potential clients toward consultations." },
-              { title: "Marketing Agencies", icon: "campaign", desc: "Build websites that communicate marketing capabilities, services, results, case studies, and strategic expertise while creating clear conversion paths for potential clients." },
-              { title: "E Commerce", icon: "storefront", desc: "Develop shopping experiences that make product discovery, navigation, product evaluation, checkout, and customer interaction simple and convenient." },
+              { title: "B2B Technology", desc: "Build websites that clearly explain complex technology solutions, communicate business benefits, showcase expertise, and guide decision makers toward relevant actions.", image: "/services/web-dev/b2b-tech.jpg" },
+              { title: "SaaS", desc: "Create websites that explain software features, benefits, use cases, pricing information, product value, and customer outcomes while supporting demos and sign ups.", image: "/services/web-dev/saas.jpg" },
+              { title: "Professional Services", desc: "Develop websites that communicate expertise, services, experience, credibility, and customer value while making it easy for potential clients to request information.", image: "/services/web-dev/professional-services.jpg" },
+              { title: "Consulting", desc: "Create professional websites that showcase industry expertise, services, insights, case studies, and solutions while guiding potential clients toward consultations.", image: "/services/web-dev/consulting.jpg" },
+              { title: "Marketing Agencies", desc: "Build websites that communicate marketing capabilities, services, results, case studies, and strategic expertise while creating clear conversion paths for potential clients.", image: "/services/web-dev/marketing-agencies.jpg" },
+              { title: "E Commerce", desc: "Develop shopping experiences that make product discovery, navigation, product evaluation, checkout, and customer interaction simple and convenient.", image: "/services/web-dev/ecommerce.jpg" },
             ].map((ind, i) => (
-              <div key={i} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between">
-                <div className="space-y-3">
-                  <div className="w-10 h-10 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                    <span className="material-symbols-outlined text-xl">{ind.icon}</span>
+              <div key={i} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                    <img
+                      src={ind.image}
+                      alt={ind.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
-                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{ind.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{ind.desc}</p>
+                  <div className="p-7 space-y-3">
+                    <h3 className="text-xl font-bold font-hanken text-[#161616]">{ind.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{ind.desc}</p>
+                  </div>
                 </div>
-                <div className="pt-2">
+                <div className="px-7 pb-5 pt-2">
                   <Link href="/contact" className="inline-flex items-center gap-1.5 text-xs font-mono-code font-bold uppercase text-[#4B5A20] hover:text-[#0E1205]">
                     <span>Book a Demo</span>
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>

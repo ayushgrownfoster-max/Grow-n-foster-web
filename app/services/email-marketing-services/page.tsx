@@ -433,28 +433,36 @@ export default function EmailMarketingServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { num: "1", title: "Email Marketing Strategy", icon: "campaign", badge: "Strategic Roadmap", desc: "We develop a clear email marketing strategy based on your business goals, target audience, customer journey, and sales process." },
-              { num: "2", title: "Email Campaign Management", icon: "mark_email_read", badge: "Scheduled Broadcasts", desc: "We plan, create, schedule, and manage email campaigns designed around lead generation, product promotion, and retention." },
-              { num: "3", title: "Email List Building", icon: "group_add", badge: "Target Lead Acquisition", desc: "We help businesses build and organize relevant email lists so campaigns reach people genuinely interested in their solutions." },
-              { num: "4", title: "Audience Segmentation", icon: "pie_chart", badge: "Behavioral List Split", desc: "We segment your audience based on factors such as interests, behavior, customer stage, engagement, and business requirements." },
-              { num: "5", title: "Personalized Email Marketing", icon: "badge", badge: "Dynamic Contextual Copy", desc: "We tailor messages based on audience characteristics, interests, previous interactions, and customer journey stages." },
-              { num: "6", title: "Email Copywriting", icon: "edit_note", badge: "Conversion-Focused Copy", desc: "We create clear and engaging email copy that communicates your message quickly, addresses needs, and encourages action." },
-              { num: "7", title: "Lead Nurturing Campaigns", icon: "auto_awesome", badge: "Multi-Step Drip Flows", desc: "Our lead nurturing campaigns keep your business connected with potential customers by providing useful information over time." },
-              { num: "8", title: "Email Marketing Automation", icon: "smart_toy", badge: "Triggered Lifecycle Journeys", desc: "Automation sends relevant messages based on customer actions and predefined journeys, making communication consistent." },
-              { num: "9", title: "Welcome Email Campaigns", icon: "waving_hand", badge: "Subscriber Onboarding", desc: "We create welcome emails that introduce your business, explain value, provide useful info, and guide new subscribers." },
-              { num: "10", title: "Newsletter Management", icon: "newspaper", badge: "Recurring Brand Touchpoints", desc: "We support newsletter planning, content creation, scheduling, and performance analysis to keep your audience engaged." },
-              { num: "11", title: "Customer Retention Emails", icon: "workspace_premium", badge: "Repeat Purchase & LTV", desc: "We create campaigns that support post-purchase engagement, repeat purchases, customer education, and long-term loyalty." },
-              { num: "12", title: "Email Testing and Optimization", icon: "tune", badge: "A/B Subject & Creative Audits", desc: "We analyze performance and test subject lines, content, calls to action, and audience segments for continuous improvement." },
+              { num: "1", title: "Email Marketing Strategy", badge: "Strategic Roadmap", desc: "We develop a clear email marketing strategy based on your business goals, target audience, customer journey, and sales process.", image: "/services/email/email-strategy.jpg" },
+              { num: "2", title: "Email Campaign Management", badge: "Scheduled Broadcasts", desc: "We plan, create, schedule, and manage email campaigns designed around lead generation, product promotion, and retention.", image: "/services/email/campaign-management.jpg" },
+              { num: "3", title: "Email List Building", badge: "Target Lead Acquisition", desc: "We help businesses build and organize relevant email lists so campaigns reach people genuinely interested in their solutions.", image: "/services/email/list-building.jpg" },
+              { num: "4", title: "Audience Segmentation", badge: "Behavioral List Split", desc: "We segment your audience based on factors such as interests, behavior, customer stage, engagement, and business requirements.", image: "/services/email/audience-segmentation.jpg" },
+              { num: "5", title: "Personalized Email Marketing", badge: "Dynamic Contextual Copy", desc: "We tailor messages based on audience characteristics, interests, previous interactions, and customer journey stages.", image: "/services/email/personalized-email.jpg" },
+              { num: "6", title: "Email Copywriting", badge: "Conversion-Focused Copy", desc: "We create clear and engaging email copy that communicates your message quickly, addresses needs, and encourages action.", image: "/services/email/email-copywriting.jpg" },
+              { num: "7", title: "Lead Nurturing Campaigns", badge: "Multi-Step Drip Flows", desc: "Our lead nurturing campaigns keep your business connected with potential customers by providing useful information over time.", image: "/services/email/lead-nurturing.jpg" },
+              { num: "8", title: "Email Marketing Automation", badge: "Triggered Lifecycle Journeys", desc: "Automation sends relevant messages based on customer actions and predefined journeys, making communication consistent.", image: "/services/email/email-automation.jpg" },
+              { num: "9", title: "Welcome Email Campaigns", badge: "Subscriber Onboarding", desc: "We create welcome emails that introduce your business, explain value, provide useful info, and guide new subscribers.", image: "/services/email/welcome-emails.jpg" },
+              { num: "10", title: "Newsletter Management", badge: "Recurring Brand Touchpoints", desc: "We support newsletter planning, content creation, scheduling, and performance analysis to keep your audience engaged.", image: "/services/email/newsletter-management.jpg" },
+              { num: "11", title: "Customer Retention Emails", badge: "Repeat Purchase & LTV", desc: "We create campaigns that support post-purchase engagement, repeat purchases, customer education, and long-term loyalty.", image: "/services/email/customer-retention.jpg" },
+              { num: "12", title: "Email Testing and Optimization", badge: "A/B Subject & Creative Audits", desc: "We analyze performance and test subject lines, content, calls to action, and audience segments for continuous improvement.", image: "/services/email/email-testing.jpg" },
             ].map((cap) => (
-              <div key={cap.num} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                    <span className="material-symbols-outlined text-2xl">{cap.icon}</span>
+              <div key={cap.num} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                    <img
+                      src={cap.image}
+                      alt={cap.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
-                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  <div className="p-7 space-y-3">
+                    <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
+                <div className="px-7 pb-6 pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
                   {cap.badge}
                 </div>
               </div>
@@ -715,22 +723,30 @@ export default function EmailMarketingServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "B2B Technology", icon: "developer_board", desc: "Create educational campaigns around technology challenges, industry trends, product solutions, and business outcomes to nurture technology decision makers." },
-              { title: "SaaS", icon: "cloud", desc: "Use email campaigns to educate prospects, introduce product features, support trials, nurture leads, and encourage engagement throughout the software buying journey." },
-              { title: "Professional Services", icon: "gavel", desc: "Create useful email content that demonstrates expertise, answers customer questions, shares insights, and keeps potential clients connected with your business." },
-              { title: "Consulting", icon: "psychology", desc: "Use newsletters, educational campaigns, industry insights, and lead nurturing emails to demonstrate expertise and build relationships with potential consulting clients." },
-              { title: "Marketing Agencies", icon: "campaign", desc: "Create campaigns around marketing strategies, industry insights, case studies, digital trends, and business growth opportunities to nurture potential clients." },
-              { title: "Business Services", icon: "corporate_fare", desc: "Use targeted email campaigns to explain services, answer customer questions, nurture prospects, promote relevant offers, and maintain long term client relationships." },
+              { title: "B2B Technology", desc: "Create educational campaigns around technology challenges, industry trends, product solutions, and business outcomes to nurture technology decision makers.", image: "/services/email/b2b-tech.jpg" },
+              { title: "SaaS", desc: "Use email campaigns to educate prospects, introduce product features, support trials, nurture leads, and encourage engagement throughout the software buying journey.", image: "/services/email/saas.jpg" },
+              { title: "Professional Services", desc: "Create useful email content that demonstrates expertise, answers customer questions, shares insights, and keeps potential clients connected with your business.", image: "/services/email/professional-services.jpg" },
+              { title: "Consulting", desc: "Use newsletters, educational campaigns, industry insights, and lead nurturing emails to demonstrate expertise and build relationships with potential consulting clients.", image: "/services/email/consulting.jpg" },
+              { title: "Marketing Agencies", desc: "Create campaigns around marketing strategies, industry insights, case studies, digital trends, and business growth opportunities to nurture potential clients.", image: "/services/email/marketing-agencies.jpg" },
+              { title: "Business Services", desc: "Use targeted email campaigns to explain services, answer customer questions, nurture prospects, promote relevant offers, and maintain long term client relationships.", image: "/services/email/business-services.jpg" },
             ].map((ind, i) => (
-              <div key={i} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between">
-                <div className="space-y-3">
-                  <div className="w-10 h-10 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                    <span className="material-symbols-outlined text-xl">{ind.icon}</span>
+              <div key={i} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                    <img
+                      src={ind.image}
+                      alt={ind.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
-                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{ind.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{ind.desc}</p>
+                  <div className="p-7 space-y-3">
+                    <h3 className="text-xl font-bold font-hanken text-[#161616]">{ind.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{ind.desc}</p>
+                  </div>
                 </div>
-                <div className="pt-2">
+                <div className="px-7 pb-5 pt-2">
                   <Link href="/contact" className="inline-flex items-center gap-1.5 text-xs font-mono-code font-bold uppercase text-[#4B5A20] hover:text-[#0E1205]">
                     <span>Book a Demo</span>
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>

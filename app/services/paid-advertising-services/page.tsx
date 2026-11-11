@@ -414,28 +414,36 @@ export default function PaidAdvertisingServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { num: "1", title: "PPC Management Services", icon: "ads_click", badge: "End-to-End Management", desc: "We manage your PPC campaigns from setup to optimization, including budgets, targeting, keywords, ads, bids, and performance tracking." },
-              { num: "2", title: "Google Ads Campaign Management", icon: "search", badge: "Search and Display", desc: "We create and manage Google Ads campaigns designed to reach customers actively searching for your products or services." },
-              { num: "3", title: "Paid Search Advertising", icon: "manage_search", badge: "High-Intent Traffic", desc: "We use search intent and relevant keywords to connect your business with users who are actively looking for solutions." },
-              { num: "4", title: "Social Media Advertising", icon: "share", badge: "Interest and Behavior", desc: "We create targeted social media campaigns that reach relevant audiences based on interests, behavior, demographics, and business goals." },
-              { num: "5", title: "Facebook and Instagram Ad Management", icon: "thumb_up", badge: "Meta Campaigns", desc: "We manage Facebook and Instagram campaigns including audience targeting, ad creation, testing, optimization, and performance tracking." },
-              { num: "6", title: "LinkedIn Advertising Solutions", icon: "work", badge: "B2B Decision Makers", desc: "We help B2B businesses reach decision makers, professionals, and specific company audiences through targeted LinkedIn advertising campaigns." },
-              { num: "7", title: "B2B Paid Advertising", icon: "corporate_fare", badge: "Business Audience", desc: "We create B2B paid advertising campaigns focused on reaching qualified business audiences and generating relevant sales opportunities." },
-              { num: "8", title: "Targeted Ad Campaign Strategy", icon: "gps_fixed", badge: "Precision Targeting", desc: "We develop a targeted ad campaign strategy based on your audience, offer, platform, budget, customer journey, and conversion goals." },
-              { num: "9", title: "Conversion Focused PPC", icon: "conversion_path", badge: "CRO Integrated", desc: "We optimize campaigns beyond clicks by focusing on landing pages, calls to action, lead forms, and other actions that support conversions." },
-              { num: "10", title: "Paid Traffic Lead Generation", icon: "filter_alt", badge: "Qualified Leads", desc: "We create paid campaigns designed to attract qualified traffic and turn visitors into leads through relevant offers and conversion focused landing pages." },
-              { num: "11", title: "Retargeting Campaigns", icon: "autorenew", badge: "Re-Engage Visitors", desc: "We reconnect with people who have previously visited your website or interacted with your business, helping keep your brand visible during the buying journey." },
-              { num: "12", title: "Return on Ad Spend Optimization", icon: "payments", badge: "ROAS Maximized", desc: "We analyze campaign performance, audience quality, conversions, costs, and revenue to identify opportunities for better return on ad spend." },
+              { num: "1", title: "PPC Management Services", badge: "End-to-End Management", desc: "We manage your PPC campaigns from setup to optimization, including budgets, targeting, keywords, ads, bids, and performance tracking.", image: "/services/paid-ads/ppc-management.jpg" },
+              { num: "2", title: "Google Ads Campaign Management", badge: "Search and Display", desc: "We create and manage Google Ads campaigns designed to reach customers actively searching for your products or services.", image: "/services/paid-ads/google-ads.jpg" },
+              { num: "3", title: "Paid Search Advertising", badge: "High-Intent Traffic", desc: "We use search intent and relevant keywords to connect your business with users who are actively looking for solutions.", image: "/services/paid-ads/paid-search.jpg" },
+              { num: "4", title: "Social Media Advertising", badge: "Interest and Behavior", desc: "We create targeted social media campaigns that reach relevant audiences based on interests, behavior, demographics, and business goals.", image: "/services/paid-ads/social-ads.jpg" },
+              { num: "5", title: "Facebook and Instagram Ad Management", badge: "Meta Campaigns", desc: "We manage Facebook and Instagram campaigns including audience targeting, ad creation, testing, optimization, and performance tracking.", image: "/services/paid-ads/meta-ads.jpg" },
+              { num: "6", title: "LinkedIn Advertising Solutions", badge: "B2B Decision Makers", desc: "We help B2B businesses reach decision makers, professionals, and specific company audiences through targeted LinkedIn advertising campaigns.", image: "/services/paid-ads/linkedin-ads.jpg" },
+              { num: "7", title: "B2B Paid Advertising", badge: "Business Audience", desc: "We create B2B paid advertising campaigns focused on reaching qualified business audiences and generating relevant sales opportunities.", image: "/services/paid-ads/b2b-advertising.jpg" },
+              { num: "8", title: "Targeted Ad Campaign Strategy", badge: "Precision Targeting", desc: "We develop a targeted ad campaign strategy based on your audience, offer, platform, budget, customer journey, and conversion goals.", image: "/services/paid-ads/targeted-strategy.jpg" },
+              { num: "9", title: "Conversion Focused PPC", badge: "CRO Integrated", desc: "We optimize campaigns beyond clicks by focusing on landing pages, calls to action, lead forms, and other actions that support conversions.", image: "/services/paid-ads/conversion-ppc.jpg" },
+              { num: "10", title: "Paid Traffic Lead Generation", badge: "Qualified Leads", desc: "We create paid campaigns designed to attract qualified traffic and turn visitors into leads through relevant offers and conversion focused landing pages.", image: "/services/paid-ads/paid-lead-gen.jpg" },
+              { num: "11", title: "Retargeting Campaigns", badge: "Re-Engage Visitors", desc: "We reconnect with people who have previously visited your website or interacted with your business, helping keep your brand visible during the buying journey.", image: "/services/paid-ads/retargeting.jpg" },
+              { num: "12", title: "Return on Ad Spend Optimization", badge: "ROAS Maximized", desc: "We analyze campaign performance, audience quality, conversions, costs, and revenue to identify opportunities for better return on ad spend.", image: "/services/paid-ads/roas-optimization.jpg" },
             ].map((cap) => (
-              <div key={cap.num} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                    <span className="material-symbols-outlined text-2xl">{cap.icon}</span>
+              <div key={cap.num} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                    <img
+                      src={cap.image}
+                      alt={cap.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
-                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  <div className="p-7 space-y-3">
+                    <h3 className="text-xl font-bold font-hanken text-[#161616]">{cap.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#161616]/70 leading-relaxed">{cap.desc}</p>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
+                <div className="px-7 pb-6 pt-4 border-t border-[#DDDDD0]/60 text-[11px] font-mono-code font-bold uppercase text-[#7E6E13]">
                   {cap.badge}
                 </div>
               </div>
@@ -503,19 +511,27 @@ export default function PaidAdvertisingServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "bolt", title: "Reach Customers Faster", text: "Paid advertising can help businesses reach relevant audiences without waiting for organic visibility to develop over time." },
-              { icon: "gps_fixed", title: "Target High Intent Audiences", text: "Paid search advertising can connect your business with people actively searching for products, services, or solutions related to your offer." },
-              { icon: "filter_alt", title: "Generate Qualified Leads", text: "Targeted campaigns can focus advertising budgets on audiences that are more closely aligned with your ideal customer profile." },
-              { icon: "account_balance_wallet", title: "Control Your Advertising Budget", text: "Paid campaigns allow businesses to manage budgets, set campaign priorities, test different approaches, and adjust spending based on performance." },
-              { icon: "analytics", title: "Measure Campaign Performance", text: "Advertising platforms provide detailed performance data that can help businesses understand traffic, engagement, conversions, and campaign efficiency." },
-              { icon: "trending_up", title: "Scale What Works", text: "Once successful audiences, campaigns, messages, and offers are identified, businesses can allocate more resources toward approaches that produce stronger results." },
+              { title: "Reach Customers Faster", text: "Paid advertising can help businesses reach relevant audiences without waiting for organic visibility to develop over time.", image: "/services/paid-ads/faster-reach.jpg" },
+              { title: "Target High Intent Audiences", text: "Paid search advertising can connect your business with people actively searching for products, services, or solutions related to your offer.", image: "/services/paid-ads/high-intent-audiences.jpg" },
+              { title: "Generate Qualified Leads", text: "Targeted campaigns can focus advertising budgets on audiences that are more closely aligned with your ideal customer profile.", image: "/services/paid-ads/generate-qualified-leads.jpg" },
+              { title: "Control Your Advertising Budget", text: "Paid campaigns allow businesses to manage budgets, set campaign priorities, test different approaches, and adjust spending based on performance.", image: "/services/paid-ads/control-budget.jpg" },
+              { title: "Measure Campaign Performance", text: "Advertising platforms provide detailed performance data that can help businesses understand traffic, engagement, conversions, and campaign efficiency.", image: "/services/paid-ads/measure-performance.jpg" },
+              { title: "Scale What Works", text: "Once successful audiences, campaigns, messages, and offers are identified, businesses can allocate more resources toward approaches that produce stronger results.", image: "/services/paid-ads/scale-growth.jpg" },
             ].map((v, idx) => (
-              <div key={idx} className="bg-white p-7 rounded-3xl border border-[#DDDDD0] space-y-4 shadow-xs">
-                <div className="w-10 h-10 rounded-2xl bg-[#F3F2EA] flex items-center justify-center text-[#4B5A20]">
-                  <span className="material-symbols-outlined text-xl">{v.icon}</span>
+              <div key={idx} className="bg-white rounded-3xl border border-[#DDDDD0] overflow-hidden shadow-xs hover:border-[#4B5A20] transition-colors flex flex-col group">
+                <div className="relative h-56 w-full overflow-hidden bg-[#0E1205]/5">
+                  <img
+                    src={v.image}
+                    alt={v.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                 </div>
-                <h3 className="text-xl font-bold font-hanken text-[#161616]">{v.title}</h3>
-                <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{v.text}</p>
+                <div className="p-7 space-y-3">
+                  <h3 className="text-xl font-bold font-hanken text-[#161616]">{v.title}</h3>
+                  <p className="text-xs sm:text-sm text-[#161616]/80 leading-relaxed">{v.text}</p>
+                </div>
               </div>
             ))}
           </div>
