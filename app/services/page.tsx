@@ -7,16 +7,16 @@ export const metadata = {
 };
 
 interface Service {
-  icon: string;
+  icon: string;                          
   title: string;
-  description: string;
+  description: string;              
   features: string[];
   image: string;
   delayClass: string;
-}
+}                                                                                                                                                                                                                                                                                                                                                                                     
 
 const servicesList: Service[] = [
-  {
+  {                                                                                                                                                                                                
     icon: "search",
     title: "SEO Optimization",
     description:

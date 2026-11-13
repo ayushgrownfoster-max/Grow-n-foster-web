@@ -315,8 +315,8 @@ export const featuredCaseStudies: FeaturedCaseStudy[] = [
       "Split past enquiries into two lists and ran a 6-email Mailchimp campaign from the school owner's own inbox.",
     numbers: [
       { value: "48%", label: "open rate" },
-      { value: "11", label: "parent replies" },
-      { value: "6", label: "tours booked" },
+      { value: "35", label: "parent replies" },
+      { value: "20", label: "tours booked" },
     ],
     numbersNote:
       "Measured across all 6 emails over the 3-week campaign. Source: Mailchimp reports and the school tour calendar.",
