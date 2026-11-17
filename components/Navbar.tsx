@@ -149,12 +149,37 @@ const marketsMenu = [
   },
 ];
 
+const tutorialsMenu = [
+  {
+    title: "Digital Marketing Tutorial",
+    subtitle: "Complete beginner-to-advanced guide with 12 chapters",
+    href: "/tutorials/digital-marketing",
+    icon: "campaign",
+    badge: "12 Topics",
+  },
+  {
+    title: "SEO Tutorial",
+    subtitle: "Keyword research, on-page SEO, link building & technical audits",
+    href: "/tutorials/seo",
+    icon: "search",
+    badge: "10 Topics",
+  },
+  {
+    title: "LinkedIn Outreach Tutorial",
+    subtitle: "B2B prospecting, Sales Navigator, messaging sequences & automation",
+    href: "/tutorials/linkedin-outreach",
+    icon: "work",
+    badge: "8 Topics",
+  },
+];
+
 const navItems = [
   { name: "HOME", href: "/" },
   { name: "SERVICES", href: "/services", hasDropdown: true, dropdownType: "services" },
   { name: "PORTFOLIO", href: "/portfolio", hasDropdown: true, dropdownType: "portfolio" },
   { name: "MARKETS", href: "/locations/usa", hasDropdown: true, dropdownType: "markets" },
   { name: "ABOUT US", href: "/about" },
+  { name: "TUTORIALS", href: "/tutorials", hasDropdown: true, dropdownType: "tutorials" },
   { name: "BLOG", href: "/blog" },
 ];
 
@@ -167,10 +192,11 @@ export default function Navbar() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<"services" | "portfolio" | "markets" | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<"services" | "portfolio" | "markets" | "tutorials" | null>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobilePortfolioOpen, setMobilePortfolioOpen] = useState(false);
   const [mobileMarketsOpen, setMobileMarketsOpen] = useState(false);
+  const [mobileTutorialsOpen, setMobileTutorialsOpen] = useState(false);
   const [expandedRegions, setExpandedRegions] = useState<Record<string, boolean>>({ "UNITED STATES": true });
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -202,7 +228,7 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  const handleMouseEnter = (type: "services" | "portfolio" | "markets") => {
+  const handleMouseEnter = (type: "services" | "portfolio" | "markets" | "tutorials") => {
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
     }
@@ -318,7 +344,7 @@ export default function Navbar() {
                   <div
                     key={item.href}
                     className="relative"
-                    onMouseEnter={() => handleMouseEnter(item.dropdownType as "services" | "portfolio" | "markets")}
+                    onMouseEnter={() => handleMouseEnter(item.dropdownType as "services" | "portfolio" | "markets" | "tutorials")}
                     onMouseLeave={handleMouseLeave}
                   >
                     <Link
