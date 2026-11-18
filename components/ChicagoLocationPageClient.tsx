@@ -206,9 +206,9 @@ const testimonials = [
     headline: "A More Structured SEO Approach",
     quote:
       "Grow n Foster helped us understand where our website needed improvement. Their approach to SEO, keyword targeting and website content gave us a clearer direction for improving our online visibility. Communication was straightforward, and we always knew what work was being prioritised.",
-    name: "Client Name",
+    name: "Mathew Hadden",
     role: "Business Owner",
-    initials: "CN",
+    initials: "MH",
   },
   {
     stars: 5,
@@ -216,9 +216,9 @@ const testimonials = [
     headline: "Better Focus on Lead Generation",
     quote:
       "We wanted a more organised way to attract potential customers online. The Grow n Foster team helped us review our marketing approach, improve our landing page strategy and focus on enquiries that were relevant to our business. The process was clear and easy to follow.",
-    name: "Client Name",
+    name: "Ankur Patel",
     role: "Business Manager",
-    initials: "CN",
+    initials: "AP",
   },
   {
     stars: 5,
@@ -226,9 +226,9 @@ const testimonials = [
     headline: "Clearer Campaign Management",
     quote:
       "Working with Grow n Foster made our digital advertising process easier to understand. From campaign planning to performance reviews, the team explained what was happening and where improvements could be made. We appreciated the practical approach and regular communication.",
-    name: "Client Name",
+    name: "Mark K",
     role: "Marketing Manager",
-    initials: "CN",
+    initials: "MK",
   },
 ];
 
@@ -702,9 +702,7 @@ export default function ChicagoLocationPageClient() {
         <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-5 reveal-left">
-              <span className="font-mono-code text-xs text-[#4B5A20] uppercase font-bold tracking-wider">
-                Why Work With Us
-              </span>
+
               <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00] leading-tight">
                 Why Work With Grow n Foster
               </h2>
@@ -746,9 +744,7 @@ export default function ChicagoLocationPageClient() {
         <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end reveal-bottom">
             <div className="lg:col-span-8 flex flex-col gap-4">
-              <span className="font-mono-code text-xs text-[#4B5A20] uppercase font-bold tracking-wider">
-                Our Process
-              </span>
+
               <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00] tracking-tight">
                 How We Work
               </h2>
@@ -1119,11 +1115,10 @@ export default function ChicagoLocationPageClient() {
               <Link
                 key={i}
                 href={loc.href}
-                className={`inline-flex items-center gap-2 px-5 py-3 rounded-full border text-xs font-mono-code transition-all duration-200 shadow-sm ${
-                  loc.active
-                    ? "bg-[#283500] text-white border-[#283500]"
-                    : "bg-white border-[#E2E8D5] text-[#283500] hover:bg-[#BFD189]/20 hover:border-[#BFD189]"
-                }`}
+                className={`inline-flex items-center gap-2 px-5 py-3 rounded-full border text-xs font-mono-code transition-all duration-200 shadow-sm ${loc.active
+                  ? "bg-[#283500] text-white border-[#283500]"
+                  : "bg-white border-[#E2E8D5] text-[#283500] hover:bg-[#BFD189]/20 hover:border-[#BFD189]"
+                  }`}
               >
                 <span className="material-symbols-outlined text-base text-[#BFD189]">location_on</span>
                 <span>{loc.label}</span>
