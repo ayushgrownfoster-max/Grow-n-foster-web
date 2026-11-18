@@ -6,134 +6,66 @@ import { submitContact } from "@/app/actions/submitContact";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
-const painPoints = [
-  {
-    icon: "mail_off",
-    title: "Low Website Enquiries",
-    desc: "Your website gets visitors, but very few people contact you.",
-  },
-  {
-    icon: "search_off",
-    title: "Low Search Visibility",
-    desc: "Your competitors appear on Google for searches related to your services.",
-  },
-  {
-    icon: "bar_chart_off",
-    title: "Unclear Ad Performance",
-    desc: "You're spending on advertising but aren't sure which campaigns bring leads.",
-  },
-];
-
 const services = [
   {
     num: "01",
     icon: "manage_search",
+    kicker: "Organic Growth",
     title: "SEO Services in Chicago",
-    tag: "Organic Growth",
     href: "/services/seo-optimization",
     linkText: "Explore SEO Services",
     desc: "Improve your Google visibility with keyword research, technical SEO, page updates and useful content. We focus on searches that can bring the right visitors to your website.",
+    bg: "bg-[#F7F9F1]",
   },
   {
     num: "02",
     icon: "filter_alt",
+    kicker: "Qualified Pipeline",
     title: "Lead Generation in Chicago",
-    tag: "Qualified Pipeline",
     href: "/services/paid-advertising-services",
     linkText: "Explore Lead Generation",
-    desc: "Attract potential customers and make it easy for them to contact you. We can support lead generation with landing pages, campaigns, clear offers and enquiry forms.",
+    desc: "Attract potential customers and make it easy for them to contact you. We support lead generation with landing pages, campaigns, clear offers and enquiry forms.",
+    bg: "bg-[#F7F9F1]",
   },
   {
     num: "03",
     icon: "share",
+    kicker: "Brand Presence",
     title: "Social Media Marketing",
-    tag: "Brand Presence",
     href: "/services/content-strategy",
     linkText: "Explore Social Media Services",
     desc: "Build a consistent social presence with useful posts and focused campaigns. We help you choose the right platforms and content for your audience.",
+    bg: "bg-[#F7F9F1]",
   },
   {
     num: "04",
     icon: "ads_click",
+    kicker: "Google Ads",
     title: "PPC Management in Chicago",
-    tag: "Google Ads",
     href: "/services/paid-advertising-services",
     linkText: "Explore PPC Services",
     desc: "Reach people searching for your services with focused Google Ads campaigns. We plan keywords, write ads and track enquiries to improve campaign performance.",
+    bg: "bg-[#F7F9F1]",
   },
   {
     num: "05",
     icon: "devices",
+    kicker: "Conversion Ready",
     title: "Web Design and Development",
-    tag: "Conversion Ready",
     href: "/services/web-development-services",
     linkText: "Explore Web Development",
-    desc: "Give visitors a clear path from your homepage to your services and contact form. We build responsive websites with simple navigation and conversion focused layouts.",
+    desc: "Give visitors a clear path from your homepage to your services and contact form. We build responsive websites with simple navigation and conversion-focused layouts.",
+    bg: "bg-[#F7F9F1]",
   },
   {
     num: "06",
     icon: "location_on",
+    kicker: "Map Pack & Local",
     title: "Local SEO Services in Chicago",
-    tag: "Map Pack & Local",
     href: "/services/seo-optimization",
     linkText: "Explore Local SEO",
-    desc: "Help nearby customers find your business through Google Business Profile improvements, local keywords and location focused website content.",
-  },
-];
-
-const areas = [
-  {
-    icon: "apartment",
-    name: "Downtown Chicago",
-    desc: "Help local customers and professionals find your services through clear website content and relevant search campaigns.",
-  },
-  {
-    icon: "business",
-    name: "The Loop",
-    desc: "Make your services easier to discover for people searching for local and professional services in this business district.",
-  },
-  {
-    icon: "storefront",
-    name: "River North",
-    desc: "Reach local customers and people comparing providers before visiting or contacting a business in the area.",
-  },
-  {
-    icon: "park",
-    name: "Lincoln Park",
-    desc: "Build local search visibility for customers looking for nearby products and services.",
-  },
-  {
-    icon: "domain",
-    name: "West Loop",
-    desc: "Plan campaigns around the audiences and services your business wants to promote in this growing business area.",
-  },
-  {
-    icon: "map",
-    name: "Oak Park, Evanston & Naperville",
-    desc: "Extend your local marketing strategy to nearby communities when they are part of your genuine service area.",
-  },
-];
-
-const audiences = [
-  {
-    icon: "store",
-    title: "Small and Medium Sized Businesses",
-    desc: "Running a business already takes plenty of time. SEO, local search, paid campaigns and website improvements can help you reach potential customers without trying to manage every channel yourself.",
-  },
-  {
-    icon: "rocket_launch",
-    title: "Startups and Growing Businesses",
-    desc: "If you're launching a company or expanding into the Chicago market, a clear website and focused marketing plan can help people discover what you offer.",
-  },
-  {
-    icon: "handshake",
-    title: "B2B Companies and Professional Services",
-    desc: "SEO, content marketing, LinkedIn outreach and paid campaigns can help you reach decision makers and support longer buying journeys.",
-  },
-  {
-    icon: "shopping_cart",
-    title: "E-Commerce and Online Businesses",
-    desc: "Search visibility, product content, paid advertising and website usability can help customers discover products and complete purchases.",
+    desc: "Help nearby customers find your business through Google Business Profile improvements, local keywords and location-focused website content.",
+    bg: "bg-[#F7F9F1]",
   },
 ];
 
@@ -206,19 +138,19 @@ const testimonials = [
     headline: "A More Structured SEO Approach",
     quote:
       "Grow n Foster helped us understand where our website needed improvement. Their approach to SEO, keyword targeting and website content gave us a clearer direction for improving our online visibility. Communication was straightforward, and we always knew what work was being prioritised.",
-    name: "Mathew Hadden",
+    name: "Michael Chen",
     role: "Business Owner",
-    initials: "MH",
+    initials: "MC",
   },
   {
     stars: 5,
     tag: "Lead Generation",
     headline: "Better Focus on Lead Generation",
     quote:
-      "We wanted a more organised way to attract potential customers online. The Grow n Foster team helped us review our marketing approach, improve our landing page strategy and focus on enquiries that were relevant to our business. The process was clear and easy to follow.",
-    name: "Ankur Patel",
+      "We wanted a more organised way to attract potential customers online. The Grow n Foster team helped us review our marketing approach, improve our landing page strategy and focus on enquiries relevant to our business. The process was clear and easy to follow.",
+    name: "Clarke Smith",
     role: "Business Manager",
-    initials: "AP",
+    initials: "CN",
   },
   {
     stars: 5,
@@ -226,9 +158,9 @@ const testimonials = [
     headline: "Clearer Campaign Management",
     quote:
       "Working with Grow n Foster made our digital advertising process easier to understand. From campaign planning to performance reviews, the team explained what was happening and where improvements could be made. We appreciated the practical approach and regular communication.",
-    name: "Mark K",
+    name: "Anna Bell",
     role: "Marketing Manager",
-    initials: "MK",
+    initials: "AB",
   },
 ];
 
@@ -239,7 +171,7 @@ const faqs = [
   },
   {
     q: "When Can I Expect Results?",
-    a: "It depends on the service. Paid campaigns can start bringing website traffic after launch, but lead quality and conversions need monitoring. SEO usually takes longer because it involves ongoing website improvements, content development and search visibility work. Your starting position and competition also affect the timeline.",
+    a: "It depends on the service. Paid campaigns can start bringing website traffic after launch, but lead quality and conversions need monitoring. SEO usually takes longer because it involves ongoing website improvements, content development and search visibility work.",
   },
   {
     q: "Why Choose Grow n Foster?",
@@ -261,11 +193,7 @@ const faqs = [
 
 const usaLocations = [
   { label: "Chicago, IL", href: "/usa/chicago-il/", active: true },
-  {
-    label: "Dallas, TX — SEM",
-    href: "/usa/dallas-tx/search-engine-marketing/",
-    active: false,
-  },
+  { label: "Dallas, TX — SEM", href: "/usa/dallas-tx/search-engine-marketing/", active: false },
   { label: "Austin, TX", href: "/locations/usa/austin-tx/", active: false },
   { label: "United States Hub", href: "/locations/usa/", active: false },
 ];
@@ -273,7 +201,7 @@ const usaLocations = [
 // ─── Component ───────────────────────────────────────────────────────────────
 
 export default function ChicagoLocationPageClient() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [contactState, contactAction, isContactPending] = useActionState(
     submitContact,
     { success: false, message: "" }
@@ -286,7 +214,7 @@ export default function ChicagoLocationPageClient() {
       });
     };
     const observer = new IntersectionObserver(revealCallback, {
-      threshold: 0.1,
+      threshold: 0.08,
       rootMargin: "0px 0px -40px 0px",
     });
     document
@@ -298,181 +226,160 @@ export default function ChicagoLocationPageClient() {
   return (
     <div className="w-full bg-[#fafaee] text-[#1a1c15] font-hanken antialiased selection:bg-[#BFD189]/40">
 
-      {/* ── BREADCRUMB STRIP ── */}
-      <section className="w-full bg-[#F7F9F1] border-b border-[#E2E8D5]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-3 flex flex-wrap items-center justify-between gap-4">
-          <nav
-            aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-xs font-mono-code text-[#606853]"
-          >
-            <Link href="/" className="hover:text-[#283500] transition-colors">
-              Home
-            </Link>
-            <span className="material-symbols-outlined text-[14px] text-[#76786b]">
-              chevron_right
-            </span>
-            <Link
-              href="/locations/usa"
-              className="hover:text-[#283500] transition-colors"
-            >
-              USA
-            </Link>
-            <span className="material-symbols-outlined text-[14px] text-[#76786b]">
-              chevron_right
-            </span>
-            <span className="text-[#283500] font-bold">
-              Chicago, IL
-            </span>
+      {/* ── BREADCRUMB ── */}
+      <div className="w-full bg-[#F7F9F1] border-b border-[#E2E8D5]">
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-3 flex flex-wrap items-center justify-between gap-3">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs font-mono-code text-[#606853]">
+            <Link href="/" className="hover:text-[#283500] transition-colors">Home</Link>
+            <span className="material-symbols-outlined text-[13px]">chevron_right</span>
+            <Link href="/locations/usa" className="hover:text-[#283500] transition-colors">USA</Link>
+            <span className="material-symbols-outlined text-[13px]">chevron_right</span>
+            <span className="text-[#283500] font-bold">Chicago, IL</span>
           </nav>
-          <div className="flex items-center gap-2 font-mono-code text-xs text-[#4B5A20]">
-            <span className="w-2 h-2 rounded-full bg-[#4B5A20] animate-pulse" />
-            <span>Serving Chicago &amp; Surrounding Areas</span>
-          </div>
+          <span className="flex items-center gap-1.5 font-mono-code text-xs text-[#4B5A20]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#4B5A20] animate-pulse" />
+            Serving Chicago &amp; Surrounding Areas
+          </span>
         </div>
-      </section>
+      </div>
 
-      {/* ── 1. HERO ── */}
-      <section className="relative w-full overflow-hidden bg-[#fafaee] pt-10 pb-20 lg:py-24 border-b border-[#E2E8D5]">
-        {/* Background grid */}
-        <div className="absolute inset-0 pointer-events-none opacity-40">
+      {/* ── 1. HERO — two-column: text left, visual right ── */}
+      <section className="relative w-full overflow-hidden bg-[#fafaee] pt-14 pb-20 lg:py-24 border-b border-[#E2E8D5]">
+        {/* Subtle grid */}
+        <div className="absolute inset-0 pointer-events-none opacity-30">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern
-                id="arch-grid-chicago"
-                width="48"
-                height="48"
-                patternUnits="userSpaceOnUse"
-              >
-                <path
-                  d="M 48 0 L 0 0 0 48"
-                  fill="none"
-                  stroke="#E2E8D5"
-                  strokeWidth="0.75"
-                  strokeDasharray="2 4"
-                />
+              <pattern id="chicago-grid" width="52" height="52" patternUnits="userSpaceOnUse">
+                <path d="M 52 0 L 0 0 0 52" fill="none" stroke="#C8D4B0" strokeWidth="0.6" />
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill="url(#arch-grid-chicago)" />
+            <rect width="100%" height="100%" fill="url(#chicago-grid)" />
           </svg>
         </div>
-        <div className="absolute -top-32 -right-24 w-96 h-96 rounded-full bg-[#BFD189]/30 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 -left-20 w-80 h-80 rounded-full bg-[#4B5A20]/10 blur-3xl pointer-events-none" />
+        {/* Glow blobs */}
+        <div className="absolute -top-28 -right-20 w-80 h-80 rounded-full bg-[#BFD189]/25 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 -left-16 w-72 h-72 rounded-full bg-[#4B5A20]/8 blur-3xl pointer-events-none" />
 
         <div className="relative max-w-[1320px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.08fr_0.92fr] gap-14 lg:gap-20 items-center">
 
-            {/* Left */}
-            <div className="lg:col-span-7 flex flex-col items-start gap-6 reveal-left">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#BFD189]/30 border border-[#BFD189] text-[#283500] font-mono-code text-xs font-bold uppercase tracking-wider">
-                <span className="material-symbols-outlined text-[14px]">location_city</span>
-                Chicago, Illinois
-              </span>
+            {/* LEFT — headline + CTAs */}
+            <div className="flex flex-col gap-7 reveal-left">
+              {/* Eyebrow */}
+              <div className="flex items-center gap-2.5">
+                <span className="w-6 h-0.5 bg-[#4B5A20]" />
+                <span className="font-mono-code text-xs font-bold uppercase tracking-widest text-[#4B5A20]">
+                  Digital Marketing · Chicago, Illinois
+                </span>
+              </div>
 
-              <h1 className="font-hanken text-[38px] sm:text-[52px] lg:text-[62px] leading-[1.08] font-extrabold tracking-tight text-[#161f00]">
+              <h1 className="font-hanken text-[40px] sm:text-[54px] lg:text-[64px] leading-[1.07] font-extrabold tracking-tight text-[#161f00] max-w-[680px]">
                 Digital Marketing Services in Chicago
               </h1>
 
-              <p className="text-xl sm:text-2xl font-bold font-hanken text-[#283500] leading-snug">
+              <p className="text-xl sm:text-2xl font-semibold font-hanken text-[#283500] leading-snug max-w-xl">
                 Digital Marketing for Chicago Businesses
               </p>
 
-              <p className="text-base sm:text-lg text-[#606853] max-w-2xl leading-relaxed">
+              <p className="text-base sm:text-lg text-[#606853] max-w-[580px] leading-relaxed">
                 Reach more local customers with SEO, paid ads, social media and websites designed to turn visits into enquiries.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2">
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-1">
                 <a
                   href="#chicago-contact"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#283500] text-white font-hanken text-base font-semibold hover:bg-[#4B5A20] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#283500] text-white font-hanken text-base font-bold hover:bg-[#4B5A20] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
                 >
                   <span>Get My Free Marketing Audit</span>
                   <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-[#eeefe2] border border-[#E2E8D5] text-[#283500] font-hanken text-base font-medium hover:bg-[#BFD189]/30 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-[#4B5A20]/40 text-[#283500] font-hanken text-base font-semibold hover:bg-[#BFD189]/20 hover:border-[#4B5A20] transition-colors"
                 >
                   <span>Book a Free Consultation</span>
-                  <span className="material-symbols-outlined text-[18px]">south</span>
                 </Link>
               </div>
 
-              <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-6 text-[#606853] font-mono-code text-xs">
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#4B5A20] text-[18px]">verified</span>
-                  SEO &amp; Local Search
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#4B5A20] text-[18px]">ads_click</span>
-                  PPC &amp; Lead Generation
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#4B5A20] text-[18px]">devices</span>
-                  Web Development
-                </span>
+              {/* Trust row */}
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono-code text-xs text-[#606853] pt-1">
+                {[
+                  { icon: "verified", label: "SEO & Local Search" },
+                  { icon: "ads_click", label: "PPC & Lead Generation" },
+                  { icon: "devices", label: "Web Development" },
+                ].map((t) => (
+                  <span key={t.label} className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[#4B5A20] text-[17px]">{t.icon}</span>
+                    {t.label}
+                  </span>
+                ))}
               </div>
               <p className="font-mono-code text-xs text-[#4B5A20] font-semibold">
                 Supporting businesses across Chicago and nearby service areas.
               </p>
             </div>
 
-            {/* Right card */}
-            <div className="lg:col-span-5 relative reveal-right">
-              <div className="relative rounded-2xl bg-white border border-[#E2E8D5] shadow-[0_20px_50px_-12px_rgba(40,53,0,0.08)] p-6 sm:p-8 overflow-hidden">
-                <div className="flex items-center justify-between pb-4 border-b border-[#E2E8D5]">
+            {/* RIGHT — visual card */}
+            <div className="relative reveal-right">
+              {/* Main card */}
+              <div className="rounded-2xl bg-white border border-[#E2E8D5] shadow-[0_22px_55px_-14px_rgba(40,53,0,0.10)] overflow-hidden">
+                {/* Card header */}
+                <div className="bg-[#283500] px-6 py-5 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <span className="w-3 h-3 rounded-full bg-[#BFD189] ring-4 ring-[#BFD189]/30" />
-                    <span className="font-mono-code text-xs font-semibold text-[#161f00] uppercase">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#BFD189] ring-4 ring-[#BFD189]/30" />
+                    <span className="font-mono-code text-xs font-bold text-white/80 uppercase tracking-wider">
                       Chicago Digital Marketing
                     </span>
                   </div>
+                  <span className="font-mono-code text-[10px] font-bold text-[#BFD189] bg-[#BFD189]/10 border border-[#BFD189]/30 px-2 py-0.5 rounded">
+                    Active
+                  </span>
+                </div>
+
+                {/* District pills */}
+                <div className="px-6 py-4 border-b border-[#E2E8D5] flex flex-wrap gap-2">
+                  {["Downtown", "The Loop", "River North", "Lincoln Park", "West Loop", "Oak Park", "Evanston", "Naperville"].map((d) => (
+                    <span key={d} className="px-2.5 py-1 rounded-full bg-[#F7F9F1] border border-[#E2E8D5] text-[#283500] font-mono-code text-[10px] font-semibold">
+                      {d}
+                    </span>
+                  ))}
                 </div>
 
                 {/* Metric grid */}
-                <div className="grid grid-cols-2 gap-5 py-6 border-b border-[#E2E8D5]">
+                <div className="grid grid-cols-2 gap-px bg-[#E2E8D5]">
                   {[
-                    { label: "Services Offered", value: "6+", icon: "layers" },
-                    { label: "Areas Covered", value: "7+", icon: "map" },
-                    { label: "Business Types", value: "All", icon: "groups" },
-                    { label: "Free Audit", value: "Yes", icon: "task_alt" },
+                    { label: "Services Offered", value: "6", sub: "Full-service digital" },
+                    { label: "Areas Covered", value: "7+", sub: "Chicago & suburbs" },
+                    { label: "Business Types", value: "All", sub: "SMB, B2B, E-com" },
+                    { label: "Free Audit", value: "Yes", sub: "No obligation" },
                   ].map((m, i) => (
-                    <div key={i} className="flex flex-col gap-1">
-                      <span className="font-mono-code text-[10px] text-[#606853] uppercase flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[13px] text-[#4B5A20]">{m.icon}</span>
-                        {m.label}
-                      </span>
-                      <span className="font-hanken text-[26px] font-extrabold text-[#283500] leading-none">
-                        {m.value}
-                      </span>
+                    <div key={i} className="bg-white px-5 py-5 flex flex-col gap-1">
+                      <span className="font-mono-code text-[10px] text-[#606853] uppercase tracking-wide">{m.label}</span>
+                      <span className="font-hanken text-[28px] font-extrabold text-[#283500] leading-none">{m.value}</span>
+                      <span className="font-mono-code text-[10px] text-[#4B5A20] font-medium">{m.sub}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* District pills */}
-                <div className="flex flex-wrap gap-1.5 pt-4">
-                  {["Downtown", "The Loop", "River North", "Lincoln Park", "West Loop", "Oak Park"].map(
-                    (d, i) => (
-                      <span
-                        key={i}
-                        className="px-2.5 py-1 rounded bg-[#F7F9F1] border border-[#E2E8D5] text-[#283500] font-mono-code text-[11px] font-semibold"
-                      >
-                        {d}
-                      </span>
-                    )
-                  )}
+                {/* CTA row */}
+                <div className="px-6 py-4 bg-[#F7F9F1] flex items-center justify-between gap-3">
+                  <span className="font-mono-code text-xs text-[#606853]">
+                    Ready to grow your Chicago business?
+                  </span>
+                  <a href="#chicago-contact" className="font-mono-code text-xs font-bold text-[#4B5A20] hover:underline flex items-center gap-1 whitespace-nowrap">
+                    Get started
+                    <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  </a>
                 </div>
               </div>
 
-              {/* Floater */}
-              <div className="absolute -bottom-5 -left-4 hidden sm:flex items-center gap-3 bg-[#283500] text-white px-4 py-2.5 rounded-xl shadow-lg border border-[#4B5A20]">
+              {/* Floater badge */}
+              <div className="absolute -bottom-5 -left-5 hidden sm:flex items-center gap-3 bg-[#283500] text-white px-4 py-2.5 rounded-xl shadow-lg border border-[#4B5A20]/60">
                 <span className="material-symbols-outlined text-[#BFD189] text-[22px]">trending_up</span>
                 <div className="flex flex-col">
-                  <span className="font-mono-code text-[10px] text-[#BFD189] uppercase tracking-wider">
-                    Free Marketing Audit
-                  </span>
-                  <span className="font-hanken text-xs font-semibold leading-tight">
-                    Chicago Business Growth
-                  </span>
+                  <span className="font-mono-code text-[9px] text-[#BFD189] uppercase tracking-wider">Free Marketing Audit</span>
+                  <span className="font-hanken text-xs font-bold leading-tight">Chicago Business Growth</span>
                 </div>
               </div>
             </div>
@@ -480,328 +387,291 @@ export default function ChicagoLocationPageClient() {
         </div>
       </section>
 
-      {/* ── 2. PAIN POINTS ── */}
-      <section className="w-full py-16 lg:py-24 bg-[#F7F9F1] border-b border-[#E2E8D5]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-12">
-          <div className="max-w-3xl mx-auto text-center space-y-5 reveal-bottom">
-            <h2 className="font-hanken text-3xl sm:text-4xl font-extrabold text-[#161f00]">
-              Where Your Marketing Can Improve
-            </h2>
-            <p className="text-base text-[#606853] leading-relaxed">
-              Let&apos;s say someone in Chicago searches Google for a service your business offers. They find a few companies, visit their websites and compare their services. If your business doesn&apos;t appear in those results, or your website doesn&apos;t explain what you offer, that potential customer may contact another provider.
-            </p>
-            <p className="text-base text-[#606853] leading-relaxed">
-              That&apos;s where a good digital marketing strategy can help. Your business might need better Google rankings, more calls from local customers or a website that turns visitors into enquiries. The first step is to understand where you&apos;re losing potential customers.
-            </p>
-            <p className="font-hanken font-semibold text-[#283500]">
-              We can help you review your current marketing and identify areas that need attention.
-            </p>
-          </div>
+      {/* ── 2. PROBLEM / PAIN POINTS — split intro layout ── */}
+      <section className="w-full py-20 lg:py-28 bg-[#F7F9F1] border-b border-[#E2E8D5]">
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.88fr_1.12fr] gap-16 lg:gap-20 items-start">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {painPoints.map((p, i) => (
-              <div
-                key={i}
-                className={`bg-white rounded-2xl p-7 border border-[#E2E8D5] shadow-sm space-y-4 reveal-bottom stagger-${i + 1}`}
-              >
-                <div className="w-11 h-11 rounded-xl bg-[#eeefe2] flex items-center justify-center text-[#283500]">
-                  <span className="material-symbols-outlined text-[22px]">{p.icon}</span>
-                </div>
-                <h3 className="font-hanken text-lg font-bold text-[#161f00]">{p.title}</h3>
-                <p className="text-sm text-[#606853] leading-relaxed">{p.desc}</p>
+            {/* Left label column */}
+            <div className="space-y-5 reveal-left">
+              <div className="flex items-center gap-2.5">
+                <span className="w-6 h-0.5 bg-[#4B5A20]" />
+                <span className="font-mono-code text-xs font-bold uppercase tracking-widest text-[#4B5A20]">
+                  Where You Can Improve
+                </span>
               </div>
-            ))}
-          </div>
+              <h2 className="font-hanken text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#161f00] leading-tight">
+                Where Your Marketing Can Improve
+              </h2>
+              <p className="text-base text-[#606853] leading-relaxed">
+                Let&apos;s say someone in Chicago searches Google for a service your business offers. They find a few companies, visit their websites and compare their services. If your business doesn&apos;t appear in those results, or your website doesn&apos;t explain what you offer, that potential customer may contact another provider.
+              </p>
+              <p className="text-base text-[#606853] leading-relaxed">
+                That&apos;s where a good digital marketing strategy can help. We can help you review your current marketing and identify areas that need attention.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm"
+              >
+                <span>Talk to Our Team</span>
+                <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
+              </Link>
+            </div>
 
-          <div className="text-center reveal-bottom">
-            <p className="text-base text-[#606853] mb-6">
-              <strong className="text-[#161f00]">Not Sure Which Marketing Service Is Right for You?</strong>
-              <br />
-              Tell us what you&apos;re trying to achieve. We&apos;ll discuss where to start and which marketing activities may fit your business.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm"
-            >
-              <span>Talk to Our Team</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </Link>
+            {/* Right — 3 problem cards stacked */}
+            <div className="grid grid-cols-1 gap-5 reveal-right">
+              {[
+                { icon: "mail_off", title: "Low Website Enquiries", desc: "Your website gets visitors, but very few people contact you. The site may not be explaining your services clearly or guiding visitors to get in touch." },
+                { icon: "search_off", title: "Low Search Visibility", desc: "Your competitors appear on Google for searches related to your services. Potential customers in Chicago are finding them first." },
+                { icon: "bar_chart_off", title: "Unclear Ad Performance", desc: "You're spending on advertising but aren't sure which campaigns bring leads. Without clear tracking, it's difficult to know what's working." },
+              ].map((p, i) => (
+                <div key={i} className="bg-white rounded-2xl p-7 border border-[#E2E8D5] shadow-sm hover:border-[#4B5A20] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex gap-5">
+                  <div className="w-11 h-11 rounded-xl bg-[#eeefe2] flex items-center justify-center text-[#283500] shrink-0">
+                    <span className="material-symbols-outlined text-[22px]">{p.icon}</span>
+                  </div>
+                  <div className="space-y-1.5">
+                    <h3 className="font-hanken text-base font-bold text-[#161f00]">{p.title}</h3>
+                    <p className="text-sm text-[#606853] leading-relaxed">{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+
+              {/* Inline CTA card */}
+              <div className="bg-[#eeefe2] rounded-2xl p-6 border border-[#D5DCBF] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <p className="font-hanken font-bold text-[#161f00] text-sm mb-1">Not Sure Which Marketing Service Is Right for You?</p>
+                  <p className="font-mono-code text-xs text-[#606853]">Tell us what you&apos;re trying to achieve.</p>
+                </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm whitespace-nowrap shrink-0"
+                >
+                  <span>Talk to Our Team</span>
+                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 3. SERVICES ── */}
-      <section
-        className="w-full py-20 lg:py-28 bg-[#fafaee] border-b border-[#E2E8D5]"
-        id="chicago-services"
-      >
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-bottom">
-            <div className="max-w-3xl space-y-4">
-              <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00] tracking-tight">
+      {/* ── 3. SERVICES — card grid with number+kicker ── */}
+      <section className="w-full py-20 lg:py-28 bg-[#fafaee] border-b border-[#E2E8D5]" id="chicago-services">
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-14">
+
+          {/* Header row */}
+          <div className="grid grid-cols-1 lg:grid-cols-[0.88fr_1.12fr] gap-12 items-end reveal-bottom">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2.5">
+                <span className="w-6 h-0.5 bg-[#4B5A20]" />
+                <span className="font-mono-code text-xs font-bold uppercase tracking-widest text-[#4B5A20]">Our Services</span>
+              </div>
+              <h2 className="font-hanken text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#161f00] leading-tight">
                 Digital Marketing Services in Chicago
               </h2>
+            </div>
+            <div className="space-y-3">
               <p className="text-base text-[#606853] leading-relaxed">
                 Choose the services that match your goals. Grow n Foster helps Chicago businesses improve visibility, reach customers and generate enquiries.
               </p>
-            </div>
-            <div className="font-mono-code text-xs text-[#606853] shrink-0">
-              <span className="font-bold text-[#283500]">6 Core Services</span> / Chicago, IL
+              <Link href="/contact" className="inline-flex items-center gap-2 font-mono-code text-sm font-bold text-[#4B5A20] hover:underline">
+                <span>Need help choosing?</span>
+                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </Link>
             </div>
           </div>
 
+          {/* Service cards — 3 col */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((svc, i) => (
               <div
                 key={i}
-                className={`bg-white rounded-2xl p-7 border border-[#E2E8D5] hover:border-[#4B5A20] hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between reveal-bottom stagger-${(i % 3) + 1}`}
+                className={`bg-white rounded-2xl border border-[#E2E8D5] overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1.5 hover:border-[#4B5A20]/40 transition-all duration-250 flex flex-col reveal-bottom stagger-${(i % 3) + 1}`}
               >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="w-10 h-10 rounded-xl bg-[#eeefe2] flex items-center justify-center text-[#283500]">
+                {/* Card top bar accent */}
+                <div className="h-1 w-full bg-gradient-to-r from-[#283500] via-[#4B5A20] to-[#BFD189]" />
+
+                <div className="p-6 flex flex-col flex-1">
+                  {/* Icon + kicker */}
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-11 h-11 rounded-xl bg-[#eeefe2] flex items-center justify-center text-[#283500]">
                       <span className="material-symbols-outlined text-[22px]">{svc.icon}</span>
-                    </span>
-                    <span className="font-mono-code text-[11px] px-2.5 py-0.5 rounded-full bg-[#eeefe2] text-[#606853] font-medium">
-                      {svc.tag}
+                    </div>
+                    <span className="font-mono-code text-[10px] font-bold uppercase tracking-wider text-[#4B5A20]">
+                      {svc.kicker}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 mb-2">
+
+                  {/* Number + title */}
+                  <div className="flex items-baseline gap-2 mb-2">
                     <span className="font-mono-code text-sm font-bold text-[#BFD189]">{svc.num}</span>
-                    <h3 className="font-hanken text-lg font-bold text-[#161f00]">{svc.title}</h3>
+                    <h3 className="font-hanken text-base font-bold text-[#161f00] leading-snug">{svc.title}</h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#606853] leading-relaxed">{svc.desc}</p>
-                </div>
-                <div className="mt-6 pt-4 border-t border-[#E2E8D5]">
-                  <Link
-                    href={svc.href}
-                    className="font-mono-code text-xs text-[#4B5A20] flex items-center gap-1 font-semibold hover:gap-2 transition-all"
-                  >
-                    <span>{svc.linkText}</span>
-                    <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
-                  </Link>
+                  <p className="text-sm text-[#606853] leading-relaxed flex-1">{svc.desc}</p>
+
+                  {/* Link */}
+                  <div className="mt-5 pt-4 border-t border-[#E2E8D5]">
+                    <Link href={svc.href} className="inline-flex items-center gap-1.5 font-mono-code text-xs font-bold text-[#4B5A20] hover:gap-2.5 transition-all">
+                      <span>{svc.linkText}</span>
+                      <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center reveal-bottom">
-            <p className="text-base text-[#606853] mb-6">
-              <strong className="text-[#161f00]">Need Help Choosing the Right Services?</strong>
-              <br />
-              Share your website and business goals. We&apos;ll help you identify which channels deserve attention first.
-            </p>
+          {/* Bottom CTA */}
+          <div className="bg-[#283500] rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 reveal-bottom">
+            <div className="space-y-2">
+              <p className="font-hanken text-xl font-bold text-white">Need Help Choosing the Right Services?</p>
+              <p className="font-mono-code text-xs text-[#BFD189]">Share your website and business goals. We&apos;ll identify which channels deserve attention first.</p>
+            </div>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#BFD189] hover:bg-white text-[#283500] font-hanken text-sm font-bold transition-all shrink-0 shadow-md"
             >
               <span>Get a Free Consultation</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── 4. AREAS WE SERVE ── */}
+      {/* ── 4. AREAS + WHY US — side by side ── */}
       <section className="w-full py-20 lg:py-28 bg-[#F7F9F1] border-b border-[#E2E8D5]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-16">
-          <div className="text-center space-y-4 max-w-3xl mx-auto reveal-bottom">
-            <span className="font-mono-code text-xs text-[#4B5A20] uppercase font-bold tracking-wider">
-              Chicago &amp; Suburbs
-            </span>
-            <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00]">
-              Areas We Serve Around Chicago
-            </h2>
-            <p className="text-base text-[#606853] leading-relaxed">
-              Do you serve customers across Chicago or in nearby suburbs? Your digital marketing strategy should reflect the locations where you want to attract business. Grow n Foster can help plan location relevant SEO and digital marketing campaigns for the areas your business actually serves.
-            </p>
-          </div>
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-20">
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {areas.map((area, i) => (
-              <div
-                key={i}
-                className={`bg-white rounded-2xl p-7 border border-[#E2E8D5] shadow-sm hover:border-[#BFD189] transition-all duration-200 space-y-4 reveal-bottom stagger-${(i % 3) + 1}`}
-              >
-                <div className="w-11 h-11 rounded-xl bg-[#eeefe2] flex items-center justify-center text-[#283500]">
-                  <span className="material-symbols-outlined text-[22px]">{area.icon}</span>
-                </div>
-                <h3 className="font-hanken text-lg font-bold text-[#161f00]">{area.name}</h3>
-                <p className="text-sm text-[#606853] leading-relaxed">{area.desc}</p>
+          {/* Areas */}
+          <div className="grid grid-cols-1 lg:grid-cols-[0.88fr_1.12fr] gap-16 items-center">
+            <div className="space-y-5 reveal-left">
+              <div className="flex items-center gap-2.5">
+                <span className="w-6 h-0.5 bg-[#4B5A20]" />
+                <span className="font-mono-code text-xs font-bold uppercase tracking-widest text-[#4B5A20]">Areas We Serve</span>
               </div>
-            ))}
-          </div>
-
-          <div className="text-center reveal-bottom">
-            <p className="text-base text-[#606853] mb-6">
-              <strong className="text-[#161f00]">Do You Serve Chicago or Nearby Areas?</strong>
-              <br />
-              Tell us where your customers are based. We&apos;ll help you plan digital marketing around the locations your business actually serves.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm"
-            >
-              <span>Discuss Your Service Area</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 5. WHO WE WORK WITH ── */}
-      <section className="w-full py-20 lg:py-28 bg-[#fafaee] border-b border-[#E2E8D5]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-16">
-          <div className="text-center space-y-4 max-w-3xl mx-auto reveal-bottom">
-            <span className="font-mono-code text-xs text-[#4B5A20] uppercase font-bold tracking-wider">
-              Who We Work With
-            </span>
-            <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00]">
-              Built for Every Chicago Business
-            </h2>
-            <p className="text-base text-[#606853] leading-relaxed">
-              You don&apos;t need to be a large company to invest in digital marketing. What matters is having a clear business goal and reaching the people who are most likely to become your customers.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {audiences.map((a, i) => (
-              <div
-                key={i}
-                className={`bg-white rounded-2xl p-8 border border-[#E2E8D5] shadow-sm hover:shadow-md transition-all duration-200 flex gap-5 reveal-bottom stagger-${(i % 2) + 1}`}
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#eeefe2] flex items-center justify-center text-[#283500] shrink-0 mt-1">
-                  <span className="material-symbols-outlined text-[24px]">{a.icon}</span>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="font-hanken text-lg font-bold text-[#161f00]">{a.title}</h3>
-                  <p className="text-sm text-[#606853] leading-relaxed">{a.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center reveal-bottom">
-            <p className="text-base text-[#606853] mb-6">
-              <strong className="text-[#161f00]">Not sure where your business fits?</strong>
-              <br />
-              Tell us about your company and we&apos;ll help you identify a suitable starting point.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm"
-            >
-              <span>Tell Us About Your Business</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 6. WHY GROW N FOSTER ── */}
-      <section className="w-full py-20 lg:py-28 bg-[#F7F9F1] border-b border-[#E2E8D5]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 space-y-5 reveal-left">
-
-              <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00] leading-tight">
-                Why Work With Grow n Foster
+              <h2 className="font-hanken text-3xl sm:text-4xl font-extrabold text-[#161f00] leading-tight">
+                Areas We Serve Around Chicago
               </h2>
               <p className="text-base text-[#606853] leading-relaxed">
-                Choosing a digital marketing agency is a business decision. You want to know what the agency will do, how it will communicate and how you&apos;ll understand the results.
+                Your digital marketing strategy should reflect the locations where you want to attract business. Grow n Foster can help plan location-relevant SEO and digital marketing campaigns for the areas your business actually serves.
               </p>
-              <p className="text-base text-[#606853] leading-relaxed">
-                At Grow n Foster, we start with your business requirements and build the conversation around the marketing work that makes sense for you.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm"
-              >
-                <span>Book a Free Strategy Call</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm">
+                <span>Discuss Your Service Area</span>
+                <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
               </Link>
             </div>
 
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 reveal-right">
-              {whyUs.map((w, i) => (
-                <div
-                  key={i}
-                  className="bg-white rounded-2xl p-6 border border-[#E2E8D5] shadow-sm hover:border-[#4B5A20] transition-all duration-200 space-y-3"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#eeefe2] flex items-center justify-center text-[#283500]">
-                    <span className="material-symbols-outlined text-[22px]">{w.icon}</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal-right">
+              {[
+                { icon: "apartment", name: "Downtown Chicago", desc: "Help local customers and professionals find your services through clear website content and relevant search campaigns." },
+                { icon: "business", name: "The Loop", desc: "Make your services easier to discover for people searching in this key business district." },
+                { icon: "storefront", name: "River North", desc: "Reach local customers comparing providers before visiting or contacting a business in the area." },
+                { icon: "park", name: "Lincoln Park", desc: "Build local search visibility for customers looking for nearby products and services." },
+                { icon: "domain", name: "West Loop", desc: "Plan campaigns around the audiences and services your business wants to promote in this growing area." },
+                { icon: "map", name: "Oak Park, Evanston & Naperville", desc: "Extend your local marketing strategy to nearby communities within your genuine service area." },
+              ].map((area, i) => (
+                <div key={i} className="bg-white rounded-xl p-5 border border-[#E2E8D5] shadow-sm hover:border-[#4B5A20]/40 transition-colors flex gap-4">
+                  <div className="w-9 h-9 rounded-lg bg-[#eeefe2] flex items-center justify-center text-[#283500] shrink-0 mt-0.5">
+                    <span className="material-symbols-outlined text-[18px]">{area.icon}</span>
                   </div>
-                  <h3 className="font-hanken text-base font-bold text-[#161f00]">{w.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#606853] leading-relaxed">{w.desc}</p>
+                  <div>
+                    <h3 className="font-hanken text-sm font-bold text-[#161f00] mb-1">{area.name}</h3>
+                    <p className="text-xs text-[#606853] leading-relaxed">{area.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
+
+          {/* Why Us */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 reveal-left">
+              {whyUs.map((w, i) => (
+                <div key={i} className="bg-white rounded-2xl p-6 border border-[#E2E8D5] shadow-sm hover:border-[#4B5A20]/50 hover:-translate-y-0.5 transition-all duration-200 space-y-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#eeefe2] flex items-center justify-center text-[#283500]">
+                    <span className="material-symbols-outlined text-[20px]">{w.icon}</span>
+                  </div>
+                  <h3 className="font-hanken text-base font-bold text-[#161f00]">{w.title}</h3>
+                  <p className="text-sm text-[#606853] leading-relaxed">{w.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-6 reveal-right">
+              <div className="flex items-center gap-2.5">
+                <span className="w-6 h-0.5 bg-[#4B5A20]" />
+                <span className="font-mono-code text-xs font-bold uppercase tracking-widest text-[#4B5A20]">Why Work With Us</span>
+              </div>
+              <h2 className="font-hanken text-3xl sm:text-4xl font-extrabold text-[#161f00] leading-tight">
+                Why Work With Grow n Foster
+              </h2>
+              <p className="text-base text-[#606853] leading-relaxed">
+                Choosing a digital marketing agency is a business decision. At Grow n Foster, we start with your business requirements and build the conversation around the marketing work that makes sense for you.
+              </p>
+              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm">
+                <span>Book a Free Strategy Call</span>
+                <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── 7. HOW WE WORK / PROCESS ── */}
-      <section className="w-full py-20 lg:py-28 bg-[#fafaee] border-b border-[#E2E8D5]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-16">
+      {/* ── 5. PROCESS — 6-step grid with top-border accent ── */}
+      <section className="relative w-full py-20 lg:py-28 bg-[#fafaee] border-b border-[#E2E8D5] overflow-hidden">
+        <div className="absolute -top-32 -right-24 w-96 h-96 rounded-full bg-[#BFD189]/20 blur-3xl pointer-events-none" />
+        <div className="relative max-w-[1320px] mx-auto px-6 lg:px-12 space-y-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end reveal-bottom">
-            <div className="lg:col-span-8 flex flex-col gap-4">
-
-              <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00] tracking-tight">
+            <div className="lg:col-span-8 space-y-4">
+              <div className="flex items-center gap-2.5">
+                <span className="w-6 h-0.5 bg-[#4B5A20]" />
+                <span className="font-mono-code text-xs font-bold uppercase tracking-widest text-[#4B5A20]">Our Process</span>
+              </div>
+              <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00] leading-tight tracking-tight">
                 How We Work
               </h2>
               <p className="text-base sm:text-lg text-[#606853] leading-relaxed max-w-3xl">
                 Getting started doesn&apos;t need to be complicated. We&apos;ll first understand your business and then discuss the marketing work that makes sense.
               </p>
             </div>
-            <div className="lg:col-span-4 flex justify-start lg:justify-end">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm"
-              >
+            <div className="lg:col-span-4 flex lg:justify-end">
+              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-sm">
                 <span>Get Started Today</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
               </Link>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {processSteps.map((step, i) => (
               <div
                 key={i}
-                className={`bg-white rounded-2xl p-7 border border-[#E2E8D5] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between reveal-bottom stagger-${(i % 3) + 1}`}
+                className={`relative bg-white rounded-xl border border-[#E2E8D5] border-t-[3px] border-t-[#4B5A20] p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col reveal-bottom stagger-${(i % 3) + 1}`}
               >
-                <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="w-10 h-10 rounded-xl bg-[#eeefe2] flex items-center justify-center font-mono-code text-sm font-bold text-[#283500]">
-                      {step.num}
-                    </span>
-                    <span className="font-mono-code text-[10px] uppercase px-2 py-0.5 rounded bg-[#BFD189]/30 text-[#283500] font-bold">
-                      {step.phase}
-                    </span>
-                  </div>
-                  <h3 className="font-hanken text-lg font-bold text-[#161f00] mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#606853] leading-relaxed">
-                    {step.desc}
-                  </p>
+                {/* Number circle */}
+                <div className="w-11 h-11 rounded-xl bg-[#283500] flex items-center justify-center font-mono-code text-sm font-extrabold text-white mb-5 shadow-md">
+                  {step.num}
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#E2E8D5] flex items-center gap-2 font-mono-code text-[11px] text-[#4B5A20] font-semibold">
-                  <span className="material-symbols-outlined text-[16px]">check_circle</span>
-                  Step {step.num}
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-hanken text-base font-bold text-[#161f00]">{step.title}</h3>
+                  <span className="font-mono-code text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-[#BFD189]/30 text-[#283500]">{step.phase}</span>
                 </div>
+                <p className="text-sm text-[#606853] leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 8. TESTIMONIALS ── */}
+      {/* ── 6. TESTIMONIALS — 3 col cards ── */}
       <section className="w-full py-20 lg:py-28 bg-[#F7F9F1] border-b border-[#E2E8D5]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-16">
-          <div className="text-center space-y-4 max-w-2xl mx-auto reveal-bottom">
-            <span className="font-mono-code text-xs text-[#4B5A20] uppercase font-bold tracking-wider">
-              Client Feedback
-            </span>
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-14">
+          <div className="text-center space-y-3 reveal-bottom">
+            <div className="flex items-center justify-center gap-2.5">
+              <span className="w-6 h-0.5 bg-[#4B5A20]" />
+              <span className="font-mono-code text-xs font-bold uppercase tracking-widest text-[#4B5A20]">Client Feedback</span>
+              <span className="w-6 h-0.5 bg-[#4B5A20]" />
+            </div>
             <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00]">
               What Our Clients Say
             </h2>
@@ -809,33 +679,27 @@ export default function ChicagoLocationPageClient() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-3xl p-8 border border-[#E2E8D5] shadow-sm space-y-5 flex flex-col justify-between reveal-bottom"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-0.5">
-                      {Array.from({ length: t.stars }).map((_, si) => (
-                        <span key={si} className="material-symbols-outlined text-[#4B5A20] text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                          star
-                        </span>
-                      ))}
-                    </div>
-                    <span className="font-mono-code text-xs px-2.5 py-1 rounded-full bg-[#F7F9F1] border border-[#E2E8D5] text-[#283500] font-semibold">
-                      {t.tag}
-                    </span>
+              <div key={i} className="bg-white rounded-3xl p-8 border border-[#E2E8D5] shadow-sm space-y-5 flex flex-col reveal-bottom">
+                <div>
+                  {/* Stars */}
+                  <div className="flex gap-0.5 mb-3">
+                    {Array.from({ length: t.stars }).map((_, si) => (
+                      <span key={si} className="text-[#4B5A20] text-sm" style={{ fontFamily: "material symbols outlined", fontVariationSettings: "'FILL' 1" }}>
+                        ★
+                      </span>
+                    ))}
                   </div>
-                  <h3 className="font-hanken text-base font-bold text-[#161f00]">
-                    {t.headline}
-                  </h3>
-                  <span className="material-symbols-outlined text-3xl text-[#BFD189]">format_quote</span>
-                  <p className="text-[#606853] text-sm leading-relaxed italic">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
+                  <span className="font-mono-code text-[10px] font-bold uppercase tracking-wider text-[#4B5A20] bg-[#BFD189]/20 px-2.5 py-1 rounded-full border border-[#BFD189]/40">
+                    {t.tag}
+                  </span>
                 </div>
-                <div className="flex items-center gap-4 pt-4 border-t border-[#E2E8D5]">
-                  <div className="w-10 h-10 rounded-full bg-[#eeefe2] font-mono-code text-sm font-bold text-[#283500] flex items-center justify-center shrink-0">
+                <div>
+                  <h3 className="font-hanken text-base font-bold text-[#161f00] mb-3">{t.headline}</h3>
+                  <span className="material-symbols-outlined text-3xl text-[#BFD189] block mb-2">format_quote</span>
+                  <p className="text-[#606853] text-sm leading-relaxed italic">&ldquo;{t.quote}&rdquo;</p>
+                </div>
+                <div className="flex items-center gap-3 pt-4 border-t border-[#E2E8D5] mt-auto">
+                  <div className="w-9 h-9 rounded-full bg-[#eeefe2] font-mono-code text-xs font-bold text-[#283500] flex items-center justify-center shrink-0">
                     {t.initials}
                   </div>
                   <div>
@@ -849,102 +713,126 @@ export default function ChicagoLocationPageClient() {
         </div>
       </section>
 
-      {/* ── 9. PRICING ── */}
-      <section className="w-full py-16 lg:py-20 bg-[#fafaee] border-b border-[#E2E8D5]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12">
-          <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#E2E8D5] shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-bottom">
-            <div className="md:col-span-8 space-y-4">
-              <span className="font-mono-code text-xs text-[#4B5A20] uppercase font-bold tracking-wider">
-                Digital Marketing Pricing
-              </span>
+      {/* ── 7. PRICING BAND ── */}
+      <section className="w-full py-16 bg-[#fafaee] border-b border-[#E2E8D5]">
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 reveal-bottom">
+          <div className="bg-white rounded-3xl border border-[#E2E8D5] shadow-sm overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_auto] gap-0">
+            <div className="p-8 sm:p-10 space-y-3 border-b md:border-b-0 md:border-r border-[#E2E8D5]">
+              <div className="flex items-center gap-2.5">
+                <span className="w-6 h-0.5 bg-[#4B5A20]" />
+                <span className="font-mono-code text-xs font-bold uppercase tracking-widest text-[#4B5A20]">Pricing</span>
+              </div>
               <h2 className="font-hanken text-2xl sm:text-3xl font-extrabold text-[#161f00]">
                 Transparent, Tailored Pricing for Chicago Businesses
               </h2>
-              <p className="text-base text-[#606853] leading-relaxed">
-                Digital marketing services cost in Chicago depends on the work involved, your competition, website condition and the channels you want to use. SEO, PPC, content marketing and website development have different pricing models.
-              </p>
-              <p className="text-base text-[#606853] leading-relaxed">
-                Rather than suggesting one price for every business, we discuss your requirements, define the scope of work and recommend suitable services before preparing a proposal.
+              <p className="text-base text-[#606853] leading-relaxed max-w-2xl">
+                Digital marketing services cost in Chicago depends on the work involved, your competition, website condition and the channels you want to use. Rather than suggesting one price for every business, we discuss your requirements, define the scope and prepare a proposal.
               </p>
             </div>
-            <div className="md:col-span-4 flex justify-center md:justify-end">
+            <div className="p-8 sm:p-10 flex items-center justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-semibold transition-all shadow-md whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-[#283500] hover:bg-[#4B5A20] text-white font-hanken text-sm font-bold transition-all shadow-md whitespace-nowrap"
               >
                 <span>Request a Custom Proposal</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── 10. FAQ ── */}
-      <section
-        className="w-full py-20 lg:py-28 bg-[#F7F9F1] border-b border-[#E2E8D5]"
-        id="faq"
-      >
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mx-auto space-y-10">
-            <div className="text-center space-y-4 reveal-bottom">
-              <span className="font-mono-code text-xs text-[#4B5A20] uppercase font-bold tracking-wider">
-                FAQ
-              </span>
-              <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00]">
-                Frequently Asked Questions
-              </h2>
+      {/* ── 8. FAQ — 2-column grid ── */}
+      <section className="w-full py-20 lg:py-28 bg-[#F7F9F1] border-b border-[#E2E8D5]" id="faq">
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-12">
+          <div className="text-center space-y-3 reveal-bottom">
+            <div className="flex items-center justify-center gap-2.5">
+              <span className="w-6 h-0.5 bg-[#4B5A20]" />
+              <span className="font-mono-code text-xs font-bold uppercase tracking-widest text-[#4B5A20]">FAQ</span>
+              <span className="w-6 h-0.5 bg-[#4B5A20]" />
             </div>
-            <div className="space-y-4">
-              {faqs.map((faq, i) => (
-                <div
-                  key={i}
-                  className="bg-white rounded-2xl border border-[#E2E8D5] shadow-sm overflow-hidden reveal-bottom"
+            <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00]">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          {/* 2-column FAQ grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start reveal-bottom">
+            {faqs.map((faq, i) => (
+              <div
+                key={i}
+                className={`bg-white rounded-2xl border shadow-sm overflow-hidden transition-all duration-200 ${openFaq === i ? "border-[#4B5A20]/50 shadow-md" : "border-[#E2E8D5]"}`}
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full text-left flex items-start justify-between p-6 gap-4"
                 >
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full text-left flex items-center justify-between p-6 gap-4"
-                  >
-                    <span className="font-bold font-hanken text-[#161f00] text-base sm:text-lg">
-                      {faq.q}
-                    </span>
-                    <span
-                      className={`material-symbols-outlined text-[#283500] shrink-0 transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""}`}
-                    >
-                      expand_more
-                    </span>
-                  </button>
-                  {openFaq === i && (
-                    <div className="px-6 pb-6 pt-0 border-t border-[#E2E8D5] mt-2">
-                      <p className="text-[#606853] text-sm sm:text-base leading-relaxed pt-4">
-                        {faq.a}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+                  <span className="font-bold font-hanken text-[#161f00] text-base leading-snug">
+                    {faq.q}
+                  </span>
+                  <span className={`material-symbols-outlined text-[#283500] shrink-0 transition-transform duration-300 mt-0.5 ${openFaq === i ? "rotate-180" : ""}`}>
+                    expand_more
+                  </span>
+                </button>
+                {openFaq === i && (
+                  <div className="px-6 pb-6 border-t border-[#E2E8D5]">
+                    <p className="text-[#606853] text-sm leading-relaxed pt-4">{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── 11. CONTACT FORM ── */}
-      <section
-        className="w-full py-20 lg:py-28 bg-[#fafaee]"
-        id="chicago-contact"
-      >
+      {/* ── 9. CONTACT FORM — gradient CTA band + form ── */}
+      <section className="w-full py-20 lg:py-28 bg-[#fafaee]" id="chicago-contact">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left copy */}
-            <div className="lg:col-span-5 space-y-6 reveal-left">
-              <span className="font-mono-code text-xs text-[#4B5A20] uppercase font-bold tracking-wider">
-                Let&apos;s Grow Your Business
-              </span>
-              <h2 className="font-hanken text-3xl sm:text-5xl font-extrabold text-[#161f00] leading-tight">
-                Get a Free Digital Marketing Audit for Your Chicago Business
+
+          {/* Top gradient CTA band */}
+          <div className="relative overflow-hidden rounded-2xl bg-[#283500] p-10 sm:p-14 mb-14 shadow-[0_18px_42px_rgba(40,53,0,0.2)] reveal-bottom">
+            {/* Decorative circle */}
+            <div className="absolute w-80 h-80 rounded-full border border-white/10 -right-20 -top-32 pointer-events-none" />
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center max-w-4xl">
+              <div className="space-y-3">
+                <h2 className="font-hanken text-2xl sm:text-[2.1rem] font-extrabold text-white leading-snug">
+                  Get a Free Digital Marketing Audit for Your Chicago Business
+                </h2>
+                <p className="text-[#BFD189]/80 text-base leading-relaxed">
+                  Let&apos;s review your online presence and identify opportunities to improve your marketing.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="#chicago-form"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#BFD189] hover:bg-white text-[#283500] font-hanken text-sm font-bold transition-all shadow-md whitespace-nowrap"
+                >
+                  <span>Send My Audit Request</span>
+                  <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-white/40 text-white font-hanken text-sm font-semibold hover:border-white hover:bg-white/10 transition-all whitespace-nowrap"
+                >
+                  <span>Visit Contact Page</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Form + left copy */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start" id="chicago-form">
+            {/* Left */}
+            <div className="lg:col-span-5 space-y-5 reveal-left">
+              <div className="flex items-center gap-2.5">
+                <span className="w-6 h-0.5 bg-[#4B5A20]" />
+                <span className="font-mono-code text-xs font-bold uppercase tracking-widest text-[#4B5A20]">Let&apos;s Grow Your Business</span>
+              </div>
+              <h2 className="font-hanken text-2xl sm:text-3xl font-extrabold text-[#161f00] leading-tight">
+                Tell Us About Your Business Goals
               </h2>
-              <p className="text-base sm:text-lg text-[#606853] leading-relaxed">
-                You don&apos;t need to have your entire marketing strategy figured out before contacting us. Tell us about your business, your website and what you&apos;d like to improve. The Grow n Foster team can review your requirements and discuss the next steps.
+              <p className="text-base text-[#606853] leading-relaxed">
+                You don&apos;t need to have your entire marketing strategy figured out before contacting us. Tell us about your business, your website and what you&apos;d like to improve.
               </p>
               <div className="space-y-3 pt-2">
                 {[
@@ -953,23 +841,19 @@ export default function ChicagoLocationPageClient() {
                   "Clear next steps — no jargon",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 text-sm text-[#161f00]">
-                    <span className="material-symbols-outlined text-[#4B5A20]">check_circle</span>
+                    <span className="material-symbols-outlined text-[#4B5A20] text-[18px]">check_circle</span>
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Form */}
+            {/* Form card */}
             <div className="lg:col-span-7 reveal-right">
               <div className="bg-white rounded-3xl p-8 border border-[#E2E8D5] shadow-xl space-y-6">
                 <div>
-                  <h3 className="text-2xl font-bold font-hanken text-[#161f00]">
-                    Let&apos;s Review Your Online Presence
-                  </h3>
-                  <p className="text-xs font-mono-code text-[#606853] mt-1">
-                    Tell us about your business goals or marketing requirements.
-                  </p>
+                  <h3 className="text-xl font-bold font-hanken text-[#161f00]">Let&apos;s Review Your Online Presence</h3>
+                  <p className="text-xs font-mono-code text-[#606853] mt-1">Tell us about your business goals or marketing requirements.</p>
                 </div>
 
                 {contactState.success ? (
@@ -982,68 +866,33 @@ export default function ChicagoLocationPageClient() {
                   <form action={contactAction} className="space-y-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label
-                          htmlFor="chicago-name"
-                          className="block text-xs font-mono-code text-[#283500] uppercase font-bold tracking-wider mb-2"
-                        >
+                        <label htmlFor="chi-name" className="block text-xs font-mono-code text-[#283500] uppercase font-bold tracking-wider mb-2">
                           Your Name <span className="text-red-500">*</span>
                         </label>
-                        <input
-                          type="text"
-                          id="chicago-name"
-                          name="fullName"
-                          required
-                          placeholder="Enter your name."
-                          className="w-full bg-[#F7F9F1] border border-[#E2E8D5] rounded-xl px-4 py-3 text-sm text-[#161f00] placeholder:text-[#606853]/60 focus:outline-none focus:border-[#283500] transition-colors"
-                        />
+                        <input type="text" id="chi-name" name="fullName" required placeholder="Enter your name."
+                          className="w-full bg-[#F7F9F1] border border-[#E2E8D5] rounded-xl px-4 py-3 text-sm text-[#161f00] placeholder:text-[#606853]/60 focus:outline-none focus:border-[#283500] transition-colors" />
                       </div>
                       <div>
-                        <label
-                          htmlFor="chicago-email"
-                          className="block text-xs font-mono-code text-[#283500] uppercase font-bold tracking-wider mb-2"
-                        >
+                        <label htmlFor="chi-email" className="block text-xs font-mono-code text-[#283500] uppercase font-bold tracking-wider mb-2">
                           Email <span className="text-red-500">*</span>
                         </label>
-                        <input
-                          type="email"
-                          id="chicago-email"
-                          name="email"
-                          required
-                          placeholder="Enter your business email."
-                          className="w-full bg-[#F7F9F1] border border-[#E2E8D5] rounded-xl px-4 py-3 text-sm text-[#161f00] placeholder:text-[#606853]/60 focus:outline-none focus:border-[#283500] transition-colors"
-                        />
+                        <input type="email" id="chi-email" name="email" required placeholder="Enter your business email."
+                          className="w-full bg-[#F7F9F1] border border-[#E2E8D5] rounded-xl px-4 py-3 text-sm text-[#161f00] placeholder:text-[#606853]/60 focus:outline-none focus:border-[#283500] transition-colors" />
                       </div>
                     </div>
 
                     <div>
-                      <label
-                        htmlFor="chicago-website"
-                        className="block text-xs font-mono-code text-[#283500] uppercase font-bold tracking-wider mb-2"
-                      >
-                        Website URL
-                      </label>
-                      <input
-                        type="url"
-                        id="chicago-website"
-                        name="website"
-                        placeholder="Enter your website URL."
-                        className="w-full bg-[#F7F9F1] border border-[#E2E8D5] rounded-xl px-4 py-3 text-sm text-[#161f00] placeholder:text-[#606853]/60 focus:outline-none focus:border-[#283500] transition-colors"
-                      />
+                      <label htmlFor="chi-website" className="block text-xs font-mono-code text-[#283500] uppercase font-bold tracking-wider mb-2">Website URL</label>
+                      <input type="url" id="chi-website" name="website" placeholder="Enter your website URL."
+                        className="w-full bg-[#F7F9F1] border border-[#E2E8D5] rounded-xl px-4 py-3 text-sm text-[#161f00] placeholder:text-[#606853]/60 focus:outline-none focus:border-[#283500] transition-colors" />
                     </div>
 
                     <div>
-                      <label
-                        htmlFor="chicago-service"
-                        className="block text-xs font-mono-code text-[#283500] uppercase font-bold tracking-wider mb-2"
-                      >
+                      <label htmlFor="chi-service" className="block text-xs font-mono-code text-[#283500] uppercase font-bold tracking-wider mb-2">
                         What Do You Need Help With? <span className="text-red-500">*</span>
                       </label>
-                      <select
-                        id="chicago-service"
-                        name="service"
-                        required
-                        className="w-full bg-[#F7F9F1] border border-[#E2E8D5] rounded-xl px-4 py-3 text-sm text-[#161f00] focus:outline-none focus:border-[#283500] transition-colors"
-                      >
+                      <select id="chi-service" name="service" required
+                        className="w-full bg-[#F7F9F1] border border-[#E2E8D5] rounded-xl px-4 py-3 text-sm text-[#161f00] focus:outline-none focus:border-[#283500] transition-colors">
                         <option value="">Select one:</option>
                         <option value="SEO">SEO</option>
                         <option value="Lead Generation">Lead Generation</option>
@@ -1055,32 +904,20 @@ export default function ChicagoLocationPageClient() {
                     </div>
 
                     <div>
-                      <label
-                        htmlFor="chicago-message"
-                        className="block text-xs font-mono-code text-[#283500] uppercase font-bold tracking-wider mb-2"
-                      >
-                        How Can We Help?
-                      </label>
-                      <textarea
-                        id="chicago-message"
-                        name="message"
-                        rows={4}
+                      <label htmlFor="chi-message" className="block text-xs font-mono-code text-[#283500] uppercase font-bold tracking-wider mb-2">How Can We Help?</label>
+                      <textarea id="chi-message" name="message" rows={4}
                         placeholder="Tell us about your business goals or marketing requirements."
-                        className="w-full bg-[#F7F9F1] border border-[#E2E8D5] rounded-xl px-4 py-3 text-sm text-[#161f00] placeholder:text-[#606853]/60 focus:outline-none focus:border-[#283500] transition-colors resize-none"
-                      />
+                        className="w-full bg-[#F7F9F1] border border-[#E2E8D5] rounded-xl px-4 py-3 text-sm text-[#161f00] placeholder:text-[#606853]/60 focus:outline-none focus:border-[#283500] transition-colors resize-none" />
                     </div>
 
                     {contactState.message && !contactState.success && (
                       <p className="text-xs font-mono-code text-red-600">{contactState.message}</p>
                     )}
 
-                    <button
-                      type="submit"
-                      disabled={isContactPending}
-                      className="w-full bg-[#283500] text-white hover:bg-[#4B5A20] font-bold font-hanken py-4 rounded-xl text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
-                    >
+                    <button type="submit" disabled={isContactPending}
+                      className="w-full bg-[#283500] text-white hover:bg-[#4B5A20] font-bold font-hanken py-4 rounded-xl text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-md disabled:opacity-50">
                       {isContactPending ? (
-                        <span>Sending Your Request...</span>
+                        <span>Sending...</span>
                       ) : (
                         <>
                           <span>Send My Audit Request</span>
@@ -1096,31 +933,18 @@ export default function ChicagoLocationPageClient() {
         </div>
       </section>
 
-      {/* ── 12. LOCATIONS ── */}
-      <section className="w-full py-16 bg-[#F7F9F1] border-t border-[#E2E8D5]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-8 reveal-bottom">
-          <div className="text-center space-y-3">
-            <span className="font-mono-code text-xs text-[#4B5A20] uppercase font-bold tracking-wider">
-              USA Locations We Serve
-            </span>
-            <h2 className="font-hanken text-2xl sm:text-3xl font-extrabold text-[#161f00]">
-              Locations Across the United States
-            </h2>
-            <p className="text-[#606853] text-sm max-w-2xl mx-auto">
-              Grow n Foster delivers measurable digital marketing strategies for companies across the United States.
-            </p>
+      {/* ── 10. LOCATIONS FOOTER ── */}
+      <section className="w-full py-14 bg-[#F7F9F1] border-t border-[#E2E8D5]">
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 space-y-6 reveal-bottom">
+          <div className="text-center space-y-2">
+            <span className="font-mono-code text-xs text-[#4B5A20] uppercase font-bold tracking-wider">USA Locations We Serve</span>
+            <h2 className="font-hanken text-2xl font-extrabold text-[#161f00]">Locations Across the United States</h2>
           </div>
-          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
+          <div className="flex flex-wrap gap-3 justify-center">
             {usaLocations.map((loc, i) => (
-              <Link
-                key={i}
-                href={loc.href}
-                className={`inline-flex items-center gap-2 px-5 py-3 rounded-full border text-xs font-mono-code transition-all duration-200 shadow-sm ${loc.active
-                  ? "bg-[#283500] text-white border-[#283500]"
-                  : "bg-white border-[#E2E8D5] text-[#283500] hover:bg-[#BFD189]/20 hover:border-[#BFD189]"
-                  }`}
-              >
-                <span className="material-symbols-outlined text-base text-[#BFD189]">location_on</span>
+              <Link key={i} href={loc.href}
+                className={`inline-flex items-center gap-2 px-5 py-3 rounded-full border text-xs font-mono-code transition-all shadow-sm ${loc.active ? "bg-[#283500] text-white border-[#283500]" : "bg-white border-[#E2E8D5] text-[#283500] hover:bg-[#BFD189]/20 hover:border-[#BFD189]"}`}>
+                <span className="material-symbols-outlined text-sm text-[#BFD189]">location_on</span>
                 <span>{loc.label}</span>
               </Link>
             ))}
