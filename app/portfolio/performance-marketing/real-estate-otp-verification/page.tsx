@@ -6,6 +6,9 @@ export const metadata = {
   title: "Real Estate OTP Verification Case Study | Grow 'n' Foster",
   description:
     "See how SMS OTP verification in Meta lead forms cut fake real estate leads by 95%+ in Gurugram NCR.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/portfolio/performance-marketing/real-estate-otp-verification",
+  },
 };
 
 export default function RealEstateOtpCaseStudyPage() {

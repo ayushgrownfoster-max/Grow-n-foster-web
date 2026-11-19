@@ -6,6 +6,9 @@ export const metadata = {
   title: "Boutique Wellness Pilates Case Study | Grow 'n' Foster",
   description:
     "Learn how Meta & Google Ads filled a ₹1.5L Pilates membership in Gurugram with 10–15% trial conversion.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/portfolio/performance-marketing/boutique-wellness",
+  },
 };
 
 export default function BoutiqueWellnessCaseStudyPage() {

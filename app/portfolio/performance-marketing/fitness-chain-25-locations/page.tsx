@@ -6,6 +6,9 @@ export const metadata = {
   title: "25-Location Gym Network Case Study | Grow 'n' Foster",
   description:
     "Explore how a centralized ad account architecture simplified multi-location lead gen across 25 gyms.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/portfolio/performance-marketing/fitness-chain-25-locations",
+  },
 };
 
 export default function FitnessChainCaseStudyPage() {

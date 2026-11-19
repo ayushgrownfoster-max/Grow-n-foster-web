@@ -6,6 +6,9 @@ export const metadata = {
   title: "Import & Export Dubai Case Study | Grow 'n' Foster",
   description:
     "Discover how Click-to-WhatsApp Meta & Google ads connected an Indian food exporter with Dubai procurement heads.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/portfolio/performance-marketing/import-export-dubai",
+  },
 };
 
 export default function ImportExportDubaiCaseStudyPage() {

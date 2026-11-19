@@ -6,6 +6,9 @@ export const metadata = {
   title: "Aptibit Cold Email Case Study | Grow 'n' Foster",
   description:
     "Discover how cold email outreach pitched enterprise AI solutions and booked 12 high-value meetings for Aptibit.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/portfolio/lead-generation/aptibit",
+  },
 };
 
 export default function AptibitCaseStudyPage() {

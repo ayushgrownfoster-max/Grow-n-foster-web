@@ -6,6 +6,9 @@ export const metadata = {
   title: "Digicomplish Lead Generation Case Study | Grow 'n' Foster",
   description:
     "Discover how LinkedIn outreach booked 18 qualified HR leadership meetings for Digicomplish recruitment services over 12 weeks.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/portfolio/lead-generation/digicomplish",
+  },
 };
 
 export default function DigicomplishCaseStudyPage() {

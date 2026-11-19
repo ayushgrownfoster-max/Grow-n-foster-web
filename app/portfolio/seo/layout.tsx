@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "SEO & AI Search Portfolio | Grow 'n' Foster Case Studies",
   description:
     "Explore Grow 'n' Foster's SEO, AEO, and Generative Engine Optimization (GEO) portfolio featuring 150+ projects, AI citations, and case studies for ThoughtSpot, Numeric, and Riot Platforms.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/portfolio/seo",
+  },
   openGraph: {
     title: "SEO & AI Search Portfolio | Grow 'n' Foster",
     description:

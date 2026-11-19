@@ -6,6 +6,9 @@ export const metadata = {
   title: "Primrose School of Rockland Case Study | Grow 'n' Foster",
   description:
     "Learn how a $4,000 tuition offer Mailchimp email campaign booked 6 school tours with a 48% open rate in 3 weeks.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/portfolio/lead-generation/primrose-school",
+  },
 };
 
 export default function PrimroseSchoolCaseStudyPage() {
