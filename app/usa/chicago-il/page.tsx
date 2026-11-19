@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Need more customers in Chicago? Explore SEO, Google Ads, social media and lead generation services from Grow n Foster. Book a free consultation.",
   alternates: {
-    canonical: "https://grownfoster.com/usa/chicago-il/",
+    canonical: "https://www.grownfoster.com/usa/chicago-il",
   },
   openGraph: {
     title: "Digital Marketing Services Chicago | Grow n Foster",
     description:
       "Need more customers in Chicago? Explore SEO, lead generation, social media, PPC, web development and local SEO from Grow n Foster.",
-    url: "https://grownfoster.com/usa/chicago-il/",
+    url: "https://www.grownfoster.com/usa/chicago-il",
     type: "website",
     siteName: "Grow n Foster",
   },

@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   title: "Blog | Grow 'n' Foster — Digital Marketing Insights",
   description:
     "Expert insights on SEO, social media marketing, B2B lead generation, content strategy, and more from the Grow 'n' Foster team.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/blog",
+  },
+  openGraph: {
+    title: "Blog | Grow 'n' Foster — Digital Marketing Insights",
+    description:
+      "Expert insights on SEO, social media marketing, B2B lead generation, content strategy, and more from the Grow 'n' Foster team.",
+    url: "https://www.grownfoster.com/blog",
+    type: "website",
+  },
 };
 
 const CATEGORIES = [

@@ -5,6 +5,16 @@ export const metadata = {
   title: "Web Development Portfolio | Grow 'n' Foster",
   description:
     "Explore Next.js web applications, 3D WebGL viewers, SaaS platforms, and custom e-commerce stores built by Grow 'n' Foster.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/portfolio/web-development",
+  },
+  openGraph: {
+    title: "Web Development Portfolio | Grow 'n' Foster",
+    description:
+      "Explore Next.js web applications, 3D WebGL viewers, SaaS platforms, and custom e-commerce stores built by Grow 'n' Foster.",
+    url: "https://www.grownfoster.com/portfolio/web-development",
+    type: "website",
+  },
 };
 
 const webDevCaseStudies = [

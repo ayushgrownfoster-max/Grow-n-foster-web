@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
     title: `Digital Marketing Services in ${cityName} | Grow n Foster`,
     description: `Grow n Foster helps businesses in ${cityName} scale with data-driven digital marketing services including SEO, paid media, content marketing, and lead generation.`,
     alternates: {
-      canonical: `https://grownfoster.com/locations/usa/${rawCity}/`,
+      canonical: `https://www.grownfoster.com/locations/usa/${rawCity}`,
     },
   };
 }

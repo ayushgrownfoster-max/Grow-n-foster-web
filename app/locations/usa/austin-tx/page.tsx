@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Partner with Grow n Foster for digital marketing services in Austin. Data-driven strategy, transparent reporting and measurable growth. Book a consultation.",
   alternates: {
-    canonical: "https://grownfoster.com/locations/usa/austin-tx/",
+    canonical: "https://www.grownfoster.com/locations/usa/austin-tx",
   },
   openGraph: {
     title: "Digital Marketing Services for Austin | Grow n Foster",
     description:
       "Partner with Grow n Foster for digital marketing services in Austin. Data-driven strategy, transparent reporting and measurable growth. Book a consultation.",
-    url: "https://grownfoster.com/locations/usa/austin-tx/",
+    url: "https://www.grownfoster.com/locations/usa/austin-tx",
     type: "website",
     siteName: "Grow n Foster",
   },

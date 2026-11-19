@@ -25,7 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : undefined;
 
   const canonicalUrl =
-    post.canonicalUrl || `https://www.grownfoster.com/blog/${slug}`;
+    post.canonicalUrl && !post.canonicalUrl.includes("grownfoster.com")
+      ? post.canonicalUrl
+      : `https://www.grownfoster.com/blog/${slug}`;
 
   return {
     metadataBase: new URL("https://www.grownfoster.com"),
@@ -94,7 +96,9 @@ export default async function BlogPostPage({ params }: Props) {
     : null;
 
   const pageCanonicalUrl =
-    post.canonicalUrl || `https://www.grownfoster.com/blog/${slug}`;
+    post.canonicalUrl && !post.canonicalUrl.includes("grownfoster.com")
+      ? post.canonicalUrl
+      : `https://www.grownfoster.com/blog/${slug}`;
 
   const faqJsonLd =
     post.faqItems && post.faqItems.length > 0

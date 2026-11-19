@@ -4,6 +4,16 @@ export const metadata = {
   title: "SERVICES | Grow 'n' Foster Digital Marketing",
   description:
     "Explore our high-impact digital marketing services: SEO, LinkedIn outreach, content strategy, email marketing, and web development.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/services",
+  },
+  openGraph: {
+    title: "SERVICES | Grow 'n' Foster Digital Marketing",
+    description:
+      "Explore our high-impact digital marketing services: SEO, LinkedIn outreach, content strategy, email marketing, and web development.",
+    url: "https://www.grownfoster.com/services",
+    type: "website",
+  },
 };
 
 interface Service {

@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Explore search engine marketing in Dallas, including Google Ads management, PPC strategy, campaign costs, and conversion optimization.",
   alternates: {
-    canonical: "https://grownfoster.com/usa/dallas-tx/search-engine-marketing/",
+    canonical: "https://www.grownfoster.com/usa/dallas-tx/search-engine-marketing",
   },
   openGraph: {
     title: "Search Engine Marketing Dallas | Grow n Foster",
     description:
       "Explore search engine marketing in Dallas, including Google Ads management, PPC strategy, campaign costs, and conversion optimization.",
-    url: "https://grownfoster.com/usa/dallas-tx/search-engine-marketing/",
+    url: "https://www.grownfoster.com/usa/dallas-tx/search-engine-marketing",
     type: "website",
     siteName: "Grow n Foster",
   },

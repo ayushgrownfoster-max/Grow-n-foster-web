@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Grow n Foster helps US businesses grow with data-driven digital marketing services SEO, paid media, content, and lead generation. Get a free strategy consultation.",
   alternates: {
-    canonical: "https://grownfoster.com/locations/usa/",
+    canonical: "https://www.grownfoster.com/locations/usa",
   },
   openGraph: {
     title: "Digital Marketing Services in the USA | Grow n Foster",
     description:
       "Grow n Foster helps US businesses grow with data-driven digital marketing services SEO, paid media, content, and lead generation. Get a free strategy consultation.",
-    url: "https://grownfoster.com/locations/usa/",
+    url: "https://www.grownfoster.com/locations/usa",
     type: "website",
     siteName: "Grow n Foster",
   },

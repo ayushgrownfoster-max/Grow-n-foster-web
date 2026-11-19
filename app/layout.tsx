@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   title: "Grow 'n' Foster | Elite Digital Marketing Agency",
   description:
     "Grow 'n' Foster delivers comprehensive digital marketing services to boost your brand visibility, drive qualified traffic, and increase conversions.",
-  alternates: {
-    canonical: "/",
-  },
   verification: {
     google: "bLD8qLvEuP1WiNy_iL3bWaqkgidcxSLYMcAevrWhpQ0",
   },

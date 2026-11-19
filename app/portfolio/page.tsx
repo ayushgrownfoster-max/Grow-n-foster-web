@@ -7,6 +7,16 @@ export const metadata = {
   title: "PORTFOLIO | Grow 'n' Foster Case Studies",
   description:
     "Explore real client case studies across Web Development and Performance Marketing delivered by Grow 'n' Foster.",
+  alternates: {
+    canonical: "https://www.grownfoster.com/portfolio",
+  },
+  openGraph: {
+    title: "PORTFOLIO | Grow 'n' Foster Case Studies",
+    description:
+      "Explore real client case studies across Web Development and Performance Marketing delivered by Grow 'n' Foster.",
+    url: "https://www.grownfoster.com/portfolio",
+    type: "website",
+  },
 };
 
 const caseStudies = [
