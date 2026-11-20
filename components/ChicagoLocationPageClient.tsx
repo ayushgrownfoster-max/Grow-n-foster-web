@@ -16,6 +16,7 @@ const services = [
     linkText: "Explore SEO Services",
     desc: "Improve your Google visibility with keyword research, technical SEO, page updates and useful content. We focus on searches that can bring the right visitors to your website.",
     bg: "bg-[#F7F9F1]",
+    image: "/WhatsApp Image 2026-11-18 at 2.07.11 PM.jpeg",
   },
   {
     num: "02",
@@ -26,6 +27,7 @@ const services = [
     linkText: "Explore Lead Generation",
     desc: "Attract potential customers and make it easy for them to contact you. We support lead generation with landing pages, campaigns, clear offers and enquiry forms.",
     bg: "bg-[#F7F9F1]",
+    image: "/WhatsApp Image 2026-11-18 at 2.07.01 PM.jpeg",
   },
   {
     num: "03",
@@ -36,6 +38,7 @@ const services = [
     linkText: "Explore Social Media Services",
     desc: "Build a consistent social presence with useful posts and focused campaigns. We help you choose the right platforms and content for your audience.",
     bg: "bg-[#F7F9F1]",
+    image: "/WhatsApp Image 2026-11-18 at 2.06.49 PM.jpeg",
   },
   {
     num: "04",
@@ -46,6 +49,7 @@ const services = [
     linkText: "Explore PPC Services",
     desc: "Reach people searching for your services with focused Google Ads campaigns. We plan keywords, write ads and track enquiries to improve campaign performance.",
     bg: "bg-[#F7F9F1]",
+    image: "/WhatsApp Image 2026-11-18 at 2.06.36 PM.jpeg",
   },
   {
     num: "05",
@@ -56,6 +60,7 @@ const services = [
     linkText: "Explore Web Development",
     desc: "Give visitors a clear path from your homepage to your services and contact form. We build responsive websites with simple navigation and conversion-focused layouts.",
     bg: "bg-[#F7F9F1]",
+    image: "/WhatsApp Image 2026-11-18 at 2.02.54 PM.jpeg",
   },
   {
     num: "06",
@@ -66,6 +71,7 @@ const services = [
     linkText: "Explore Local SEO",
     desc: "Help nearby customers find your business through Google Business Profile improvements, local keywords and location-focused website content.",
     bg: "bg-[#F7F9F1]",
+    image: "/WhatsApp Image 2026-11-18 at 2.06.16 PM.jpeg",
   },
 ];
 
@@ -486,27 +492,38 @@ export default function ChicagoLocationPageClient() {
             {services.map((svc, i) => (
               <div
                 key={i}
-                className={`bg-white rounded-2xl border border-[#E2E8D5] overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1.5 hover:border-[#4B5A20]/40 transition-all duration-250 flex flex-col reveal-bottom stagger-${(i % 3) + 1}`}
+                className={`bg-white rounded-2xl border border-[#E2E8D5] overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1.5 hover:border-[#4B5A20]/40 transition-all duration-250 flex flex-col reveal-bottom stagger-${(i % 3) + 1} group`}
               >
-                {/* Card top bar accent */}
-                <div className="h-1 w-full bg-gradient-to-r from-[#283500] via-[#4B5A20] to-[#BFD189]" />
-
-                <div className="p-6 flex flex-col flex-1">
-                  {/* Icon + kicker */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-11 h-11 rounded-xl bg-[#eeefe2] flex items-center justify-center text-[#283500]">
-                      <span className="material-symbols-outlined text-[22px]">{svc.icon}</span>
-                    </div>
-                    <span className="font-mono-code text-[10px] font-bold uppercase tracking-wider text-[#4B5A20]">
-                      {svc.kicker}
+                {/* Image Banner */}
+                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#eeefe2]">
+                  <img
+                    src={svc.image}
+                    alt={svc.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent pointer-events-none" />
+                  <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-xs text-[#283500] font-mono-code text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs border border-[#E2E8D5]/60">
+                    {svc.kicker}
+                  </div>
+                  <div className="absolute bottom-3 left-4">
+                    <span className="font-mono-code text-xs font-bold text-[#BFD189] bg-[#283500]/80 backdrop-blur-xs px-2 py-0.5 rounded-md">
+                      {svc.num}
                     </span>
                   </div>
+                </div>
 
-                  {/* Number + title */}
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="font-mono-code text-sm font-bold text-[#BFD189]">{svc.num}</span>
-                    <h3 className="font-hanken text-base font-bold text-[#161f00] leading-snug">{svc.title}</h3>
+                <div className="p-6 flex flex-col flex-1">
+                  {/* Icon + Title */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#eeefe2] flex items-center justify-center text-[#283500] shrink-0">
+                      <span className="material-symbols-outlined text-[20px]">{svc.icon}</span>
+                    </div>
+                    <h3 className="font-hanken text-lg font-bold text-[#161f00] leading-snug group-hover:text-[#4B5A20] transition-colors">
+                      {svc.title}
+                    </h3>
                   </div>
+
                   <p className="text-sm text-[#606853] leading-relaxed flex-1">{svc.desc}</p>
 
                   {/* Link */}
