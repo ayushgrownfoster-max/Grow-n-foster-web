@@ -46,9 +46,7 @@ export default function KnowledgeBaseRightRail({
               </div>
             ))}
           </div>
-          <div className="text-[10px] text-center font-mono-code text-[#4B5A20] font-semibold">
-            Grow &apos;n&apos; Foster Growth Diagnostics
-          </div>
+
         </div>
 
         <p className="text-xs text-[#161616]/75 leading-relaxed text-center font-hanken">
