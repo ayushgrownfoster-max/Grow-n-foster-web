@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "tutorial",
-  title: "Tutorial Articles (TutorialsPoint Style)",
+  title: "Knowledge Base Articles (TutorialsPoint Style)",
   type: "document",
   icon: () => "📚",
   fields: [
@@ -17,7 +17,7 @@ export default defineType({
       name: "slug",
       title: "URL Slug",
       type: "slug",
-      description: "e.g. 'overview', 'seo', 'home'. Custom URL for targeting clients using SEO.",
+      description: "Custom URL for targeting clients using SEO. Automatically generated from topic title (e.g. 'digital-marketing-seo').",
       options: {
         source: "title",
         maxLength: 96,
@@ -25,19 +25,20 @@ export default defineType({
           input
             .toLowerCase()
             .trim()
-            .replace(/^digital\s*marketing\s*-\s*/i, "")
             .replace(/\s+/g, "-")
             .replace(/[^\w-]+/g, "")
+            .replace(/--+/g, "-")
+            .replace(/^-+|-+$/g, "")
             .slice(0, 96),
       },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "series",
-      title: "Tutorial Series",
+      title: "Knowledge Base Series",
       type: "string",
-      initialValue: "Digital Marketing Tutorial",
-      description: "The course or series this topic belongs to (e.g. 'Digital Marketing Tutorial', 'SEO Tutorial')",
+      initialValue: "Digital Marketing",
+      description: "The course or series this topic belongs to (e.g. 'Digital Marketing', 'SEO', 'LinkedIn Outreach')",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -45,7 +46,7 @@ export default defineType({
       title: "Series URL Segment",
       type: "string",
       initialValue: "digital-marketing",
-      description: "Base folder URL, e.g. 'digital-marketing'. The full route will be /tutorials/digital-marketing/[slug]",
+      description: "Base folder URL, e.g. 'digital-marketing'. The full route will be /knowledge-base/[series]/[slug]",
       validation: (Rule) => Rule.required(),
     }),
     defineField({

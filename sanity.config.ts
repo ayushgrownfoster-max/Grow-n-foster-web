@@ -48,7 +48,7 @@ export default defineConfig({
               .title("Blog Posts")
               .icon(() => "📝"),
             S.documentTypeListItem("tutorial")
-              .title("Tutorials (TutorialsPoint)")
+              .title("Knowledge Base Articles")
               .icon(() => "📚"),
             S.divider(),
             S.listItem()

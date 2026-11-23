@@ -348,3 +348,23 @@ body {
 .testimonial-marquee-reverse:hover .testimonial-track-reverse {
   animation-play-state: paused;
 }
+
+/* Knowledge Base Topics Scrollbar matching TutorialsPoint */
+.custom-kb-scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+.custom-kb-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+.custom-kb-scrollbar::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+.custom-kb-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+.custom-kb-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}

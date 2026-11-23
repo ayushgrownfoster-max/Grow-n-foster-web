@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPostSlugs, getAllPageSlugs } from "@/lib/sanity/queries";
+import { getAllTutorialSlugs, getAllTutorialSeries } from "@/lib/sanity/tutorialQueries";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.grownfoster.com";
@@ -274,14 +275,40 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily",
       priority: 0.9,
     },
-    // Tutorials Hub
+    // Knowledge Base Hub
     {
-      url: `${baseUrl}/tutorials`,
+      url: `${baseUrl}/knowledge-base`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.8,
+      priority: 0.85,
     },
   ];
+
+  // Dynamic knowledge base series & topic routes
+  let knowledgeBaseRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const seriesList = await getAllTutorialSeries();
+    for (const s of seriesList) {
+      knowledgeBaseRoutes.push({
+        url: `${baseUrl}/knowledge-base/${s.seriesSlug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.8,
+      });
+    }
+
+    const topicSlugs = await getAllTutorialSlugs();
+    for (const t of topicSlugs) {
+      knowledgeBaseRoutes.push({
+        url: `${baseUrl}/knowledge-base/${t.seriesSlug}/${t.slug.current}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.75,
+      });
+    }
+  } catch (error) {
+    console.error("Error generating knowledge base sitemap entries:", error);
+  }
 
   // Dynamic blog articles fetched directly from Sanity CMS
   let blogRoutes: MetadataRoute.Sitemap = [];
@@ -311,5 +338,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Error generating custom page sitemap entries:", error);
   }
 
-  return [...staticRoutes, ...blogRoutes, ...customPageRoutes];
+  return [...staticRoutes, ...knowledgeBaseRoutes, ...blogRoutes, ...customPageRoutes];
 }
