@@ -199,6 +199,7 @@ const faqs = [
 
 const usaLocations = [
   { label: "Chicago, IL", href: "/usa/chicago-il/", active: true },
+  { label: "Boston, MA", href: "/locations/usa/boston-ma/", active: false },
   { label: "Dallas, TX — SEM", href: "/usa/dallas-tx/search-engine-marketing/", active: false },
   { label: "Austin, TX", href: "/locations/usa/austin-tx/", active: false },
   { label: "United States Hub", href: "/locations/usa/", active: false },
